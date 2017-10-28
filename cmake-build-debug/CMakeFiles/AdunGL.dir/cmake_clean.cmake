@@ -1,0 +1,10 @@
+file(REMOVE_RECURSE
+  "CMakeFiles/AdunGL.dir/main.cpp.o"
+  "AdunGL.pdb"
+  "AdunGL"
+)
+
+# Per-language clean rules from dependency scanning.
+foreach(lang CXX)
+  include(CMakeFiles/AdunGL.dir/cmake_clean_${lang}.cmake OPTIONAL)
+endforeach()
