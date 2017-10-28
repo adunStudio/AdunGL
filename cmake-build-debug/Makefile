@@ -123,6 +123,33 @@ AdunGL/fast:
 	$(MAKE) -f CMakeFiles/AdunGL.dir/build.make CMakeFiles/AdunGL.dir/build
 .PHONY : AdunGL/fast
 
+graphics/window.o: graphics/window.cpp.o
+
+.PHONY : graphics/window.o
+
+# target to build an object file
+graphics/window.cpp.o:
+	$(MAKE) -f CMakeFiles/AdunGL.dir/build.make CMakeFiles/AdunGL.dir/graphics/window.cpp.o
+.PHONY : graphics/window.cpp.o
+
+graphics/window.i: graphics/window.cpp.i
+
+.PHONY : graphics/window.i
+
+# target to preprocess a source file
+graphics/window.cpp.i:
+	$(MAKE) -f CMakeFiles/AdunGL.dir/build.make CMakeFiles/AdunGL.dir/graphics/window.cpp.i
+.PHONY : graphics/window.cpp.i
+
+graphics/window.s: graphics/window.cpp.s
+
+.PHONY : graphics/window.s
+
+# target to generate assembly for a file
+graphics/window.cpp.s:
+	$(MAKE) -f CMakeFiles/AdunGL.dir/build.make CMakeFiles/AdunGL.dir/graphics/window.cpp.s
+.PHONY : graphics/window.cpp.s
+
 main.o: main.cpp.o
 
 .PHONY : main.o
@@ -159,6 +186,9 @@ help:
 	@echo "... rebuild_cache"
 	@echo "... edit_cache"
 	@echo "... AdunGL"
+	@echo "... graphics/window.o"
+	@echo "... graphics/window.i"
+	@echo "... graphics/window.s"
 	@echo "... main.o"
 	@echo "... main.i"
 	@echo "... main.s"

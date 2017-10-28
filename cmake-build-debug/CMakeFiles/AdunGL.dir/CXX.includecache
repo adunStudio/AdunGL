@@ -6,7 +6,25 @@
 
 #IncludeRegexTransform: 
 
+/Users/adun/Desktop/AdunGL/graphics/window.cpp
+window.h
+/Users/adun/Desktop/AdunGL/graphics/window.h
+
+/Users/adun/Desktop/AdunGL/graphics/window.h
+iostream
+-
+OpenGL/gl.h
+-
+OpenGL/glu.h
+-
+GLUT/glut.h
+-
+cassert
+-
+
 /Users/adun/Desktop/AdunGL/main.cpp
 iostream
 -
+graphics/window.h
+/Users/adun/Desktop/AdunGL/graphics/window.h
 

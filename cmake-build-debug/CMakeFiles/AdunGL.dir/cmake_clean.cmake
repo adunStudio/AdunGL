@@ -1,5 +1,6 @@
 file(REMOVE_RECURSE
   "CMakeFiles/AdunGL.dir/main.cpp.o"
+  "CMakeFiles/AdunGL.dir/graphics/window.cpp.o"
   "AdunGL.pdb"
   "AdunGL"
 )
