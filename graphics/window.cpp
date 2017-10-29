@@ -11,9 +11,19 @@ namespace AdunGL
         GLvoid reshapeCallback(int w, int h);
         GLvoid updateCallback();
         GLvoid renderCallback();
-
+        GLvoid keyboardDownCallback(unsigned char key, int x, int y);
+        GLvoid keyboardUpCallback(unsigned char key, int x, int y);
+        GLvoid specialKeyboardCallback(int key, int x, int y);
+        GLvoid mouseCallback(int button, int state, int x, int y);
+        GLvoid mouseMoveCallback(int x, int y);
 
         Window* Window::instance_ = nullptr;
+
+        bool Window::keys[MAX_KEYS] = { false };
+        bool Window::mouseButtons[MAX_BUTTONS] = { false };
+
+        double Window::mx;
+        double Window::my;
 
         Window::Window(const char* name, int width, int height)
                 : name(name), width(width), height(height)
@@ -21,22 +31,37 @@ namespace AdunGL
             this->init();
         }
 
-        Window::~Window() {
+        Window::~Window()
+        {
             glutDestroyWindow(window);
         }
 
         void Window::init()
         {
-
             glutInitDisplayMode(GLUT_DOUBLE | GLUT_RGBA);
             glutInitWindowPosition(100, 100);
             glutInitWindowSize(width, height);
 
             window = glutCreateWindow(name);
 
-            glutIdleFunc(updateCallback);
-            glutDisplayFunc(renderCallback);
+            //glutIdleFunc(updateCallback);
+            //glutDisplayFunc(renderCallback);
             glutReshapeFunc(reshapeCallback);
+            glutKeyboardFunc(keyboardDownCallback);
+            glutKeyboardUpFunc(keyboardUpCallback);
+            glutSpecialFunc(specialKeyboardCallback);
+            glutMouseFunc(mouseCallback);
+            glutPassiveMotionFunc(mouseMoveCallback);
+        }
+
+        void Window::update(void (*func)())
+        {
+            glutIdleFunc(func);
+        }
+
+        void Window::render(void (*func)())
+        {
+            glutDisplayFunc(func);
         }
 
         void Window::run() const
@@ -64,12 +89,12 @@ namespace AdunGL
             glLoadIdentity();
         }
 
-        GLvoid updateCallback()
+        /*GLvoid updateCallback()
         {
 
-        }
+        }*/
 
-        GLvoid renderCallback()
+        /*GLvoid renderCallback()
         {
             Window::instance().clear();
 
@@ -82,6 +107,57 @@ namespace AdunGL
             glEnd();
 
             glutSwapBuffers();
+        }*/
+
+        GLvoid keyboardDownCallback(unsigned char key, int x, int y)
+        {
+            Window::keys[static_cast<int>(key)] = true;
         }
+
+        GLvoid keyboardUpCallback(unsigned char key, int x, int y)
+        {
+            Window::keys[static_cast<int>(key)] = false;
+        }
+
+        GLvoid specialKeyboardCallback(int key, int x, int y)
+        {
+
+        }
+
+        GLvoid mouseCallback(int button, int state, int x, int y)
+        {
+            Window::mouseButtons[button] = (state == GLUT_LEFT_BUTTON);
+        }
+
+        GLvoid mouseMoveCallback(int x, int y)
+        {
+            Window::mx = x;
+            Window::my = y;
+        }
+
+        bool Window::isKeyPressed(unsigned char key)
+        {
+            // TODO: Log this!
+            if(static_cast<int>(key) >= MAX_KEYS)
+                return false;
+
+            return keys[static_cast<int>(key)];
+        }
+
+        bool Window::isMouseButtonPressed(int button)
+        {
+            // TODO: Log this!
+            if(button >= MAX_BUTTONS)
+                return false;
+
+            return mouseButtons[button];
+        }
+
+        void Window::getMousePosition(int& x, int& y)
+        {
+            x = mx;
+            y = my;
+        }
+
     }
 }
