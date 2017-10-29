@@ -6,6 +6,7 @@ set(CMAKE_DEPENDS_LANGUAGES
 set(CMAKE_DEPENDS_CHECK_CXX
   "/Users/adun/Desktop/AdunGL/graphics/window.cpp" "/Users/adun/Desktop/AdunGL/cmake-build-debug/CMakeFiles/AdunGL.dir/graphics/window.cpp.o"
   "/Users/adun/Desktop/AdunGL/main.cpp" "/Users/adun/Desktop/AdunGL/cmake-build-debug/CMakeFiles/AdunGL.dir/main.cpp.o"
+  "/Users/adun/Desktop/AdunGL/maths/vec2.cpp" "/Users/adun/Desktop/AdunGL/cmake-build-debug/CMakeFiles/AdunGL.dir/maths/vec2.cpp.o"
   )
 set(CMAKE_CXX_COMPILER_ID "AppleClang")
 

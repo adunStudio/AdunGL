@@ -177,6 +177,33 @@ main.cpp.s:
 	$(MAKE) -f CMakeFiles/AdunGL.dir/build.make CMakeFiles/AdunGL.dir/main.cpp.s
 .PHONY : main.cpp.s
 
+maths/vec2.o: maths/vec2.cpp.o
+
+.PHONY : maths/vec2.o
+
+# target to build an object file
+maths/vec2.cpp.o:
+	$(MAKE) -f CMakeFiles/AdunGL.dir/build.make CMakeFiles/AdunGL.dir/maths/vec2.cpp.o
+.PHONY : maths/vec2.cpp.o
+
+maths/vec2.i: maths/vec2.cpp.i
+
+.PHONY : maths/vec2.i
+
+# target to preprocess a source file
+maths/vec2.cpp.i:
+	$(MAKE) -f CMakeFiles/AdunGL.dir/build.make CMakeFiles/AdunGL.dir/maths/vec2.cpp.i
+.PHONY : maths/vec2.cpp.i
+
+maths/vec2.s: maths/vec2.cpp.s
+
+.PHONY : maths/vec2.s
+
+# target to generate assembly for a file
+maths/vec2.cpp.s:
+	$(MAKE) -f CMakeFiles/AdunGL.dir/build.make CMakeFiles/AdunGL.dir/maths/vec2.cpp.s
+.PHONY : maths/vec2.cpp.s
+
 # Help Target
 help:
 	@echo "The following are some of the valid targets for this Makefile:"
@@ -192,6 +219,9 @@ help:
 	@echo "... main.o"
 	@echo "... main.i"
 	@echo "... main.s"
+	@echo "... maths/vec2.o"
+	@echo "... maths/vec2.i"
+	@echo "... maths/vec2.s"
 .PHONY : help
 
 

@@ -1,9 +1,15 @@
 #include <iostream>
 #include "graphics/window.h"
+#include "maths/maths.h"
 
 using namespace std;
 using namespace AdunGL;
 using namespace graphics;
+using namespace maths;
+
+Vec2 v1(1.0f, 20.f);
+Vec2 v2(2.0f, 1.0f);
+Vec2 v3(3.0f, 21.0f);
 
 int main(int argc, char** argv)
 {
@@ -16,7 +22,12 @@ int main(int argc, char** argv)
     cout << "window width: " << window.getWidth()  << endl;
     cout << "window height:" << window.getHeight() << endl;
 
+    v1 +=  v2;
+
     window.update([]() {
+
+        cout << v1 << endl;
+        cout << (v1 == v3) << endl;
 
         if(Window::isKeyPressed('a'))
             cout << "a키 눌림" << endl;
@@ -27,7 +38,7 @@ int main(int argc, char** argv)
         int x, y;
         Window::getMousePosition(x, y);
 
-        cout << x << " : " << y << endl;
+        //cout << x << " : " << y << endl;
     });
 
     window.render([]() {

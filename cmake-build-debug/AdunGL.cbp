@@ -91,6 +91,15 @@
 		<Unit filename="/Users/adun/Desktop/AdunGL/main.cpp">
 			<Option target="AdunGL"/>
 		</Unit>
+		<Unit filename="/Users/adun/Desktop/AdunGL/maths/maths.h">
+			<Option target="AdunGL"/>
+		</Unit>
+		<Unit filename="/Users/adun/Desktop/AdunGL/maths/vec2.cpp">
+			<Option target="AdunGL"/>
+		</Unit>
+		<Unit filename="/Users/adun/Desktop/AdunGL/maths/vec2.h">
+			<Option target="AdunGL"/>
+		</Unit>
 		<Unit filename="/Users/adun/Desktop/AdunGL/CMakeLists.txt">
 			<Option virtualFolder="CMake Files\"/>
 		</Unit>

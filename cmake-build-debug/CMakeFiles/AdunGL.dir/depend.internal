@@ -7,3 +7,8 @@ CMakeFiles/AdunGL.dir/graphics/window.cpp.o
 CMakeFiles/AdunGL.dir/main.cpp.o
  /Users/adun/Desktop/AdunGL/graphics/window.h
  /Users/adun/Desktop/AdunGL/main.cpp
+ /Users/adun/Desktop/AdunGL/maths/maths.h
+ /Users/adun/Desktop/AdunGL/maths/vec2.h
+CMakeFiles/AdunGL.dir/maths/vec2.cpp.o
+ /Users/adun/Desktop/AdunGL/maths/Vec2.h
+ /Users/adun/Desktop/AdunGL/maths/vec2.cpp

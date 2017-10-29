@@ -27,4 +27,22 @@ iostream
 -
 graphics/window.h
 /Users/adun/Desktop/AdunGL/graphics/window.h
+maths/maths.h
+/Users/adun/Desktop/AdunGL/maths/maths.h
+
+/Users/adun/Desktop/AdunGL/maths/Vec2.h
+iostream
+-
+
+/Users/adun/Desktop/AdunGL/maths/maths.h
+vec2.h
+/Users/adun/Desktop/AdunGL/maths/vec2.h
+
+/Users/adun/Desktop/AdunGL/maths/vec2.cpp
+Vec2.h
+/Users/adun/Desktop/AdunGL/maths/Vec2.h
+
+/Users/adun/Desktop/AdunGL/maths/vec2.h
+iostream
+-
 
