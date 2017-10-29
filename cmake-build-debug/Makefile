@@ -123,6 +123,33 @@ AdunGL/fast:
 	$(MAKE) -f CMakeFiles/AdunGL.dir/build.make CMakeFiles/AdunGL.dir/build
 .PHONY : AdunGL/fast
 
+graphics/shader.o: graphics/shader.cpp.o
+
+.PHONY : graphics/shader.o
+
+# target to build an object file
+graphics/shader.cpp.o:
+	$(MAKE) -f CMakeFiles/AdunGL.dir/build.make CMakeFiles/AdunGL.dir/graphics/shader.cpp.o
+.PHONY : graphics/shader.cpp.o
+
+graphics/shader.i: graphics/shader.cpp.i
+
+.PHONY : graphics/shader.i
+
+# target to preprocess a source file
+graphics/shader.cpp.i:
+	$(MAKE) -f CMakeFiles/AdunGL.dir/build.make CMakeFiles/AdunGL.dir/graphics/shader.cpp.i
+.PHONY : graphics/shader.cpp.i
+
+graphics/shader.s: graphics/shader.cpp.s
+
+.PHONY : graphics/shader.s
+
+# target to generate assembly for a file
+graphics/shader.cpp.s:
+	$(MAKE) -f CMakeFiles/AdunGL.dir/build.make CMakeFiles/AdunGL.dir/graphics/shader.cpp.s
+.PHONY : graphics/shader.cpp.s
+
 graphics/window.o: graphics/window.cpp.o
 
 .PHONY : graphics/window.o
@@ -321,6 +348,9 @@ help:
 	@echo "... rebuild_cache"
 	@echo "... edit_cache"
 	@echo "... AdunGL"
+	@echo "... graphics/shader.o"
+	@echo "... graphics/shader.i"
+	@echo "... graphics/shader.s"
 	@echo "... graphics/window.o"
 	@echo "... graphics/window.i"
 	@echo "... graphics/window.s"

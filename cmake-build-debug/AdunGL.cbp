@@ -82,6 +82,12 @@
 				</MakeCommands>
 			</Target>
 		</Build>
+		<Unit filename="/Users/adun/Desktop/AdunGL/graphics/shader.cpp">
+			<Option target="AdunGL"/>
+		</Unit>
+		<Unit filename="/Users/adun/Desktop/AdunGL/graphics/shader.h">
+			<Option target="AdunGL"/>
+		</Unit>
 		<Unit filename="/Users/adun/Desktop/AdunGL/graphics/window.cpp">
 			<Option target="AdunGL"/>
 		</Unit>

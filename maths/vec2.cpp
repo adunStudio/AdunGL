@@ -2,7 +2,7 @@
 // Created by adun on 2017. 10. 29..
 //
 
-#include "Vec2.h"
+#include "vec2.h"
 
 namespace AdunGL
 {

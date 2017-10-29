@@ -6,6 +6,20 @@
 
 #IncludeRegexTransform: 
 
+/Users/adun/Desktop/AdunGL/graphics/shader.cpp
+shader.h
+/Users/adun/Desktop/AdunGL/graphics/shader.h
+
+/Users/adun/Desktop/AdunGL/graphics/shader.h
+iostream
+-
+vector
+-
+GL/glut.h
+-
+../utils/fileutils.h
+/Users/adun/Desktop/AdunGL/utils/fileutils.h
+
 /Users/adun/Desktop/AdunGL/graphics/window.cpp
 window.h
 /Users/adun/Desktop/AdunGL/graphics/window.h
@@ -15,11 +29,7 @@ functional
 /Users/adun/Desktop/AdunGL/graphics/window.h
 iostream
 -
-OpenGL/gl.h
--
-OpenGL/glu.h
--
-GLUT/glut.h
+GL/glut.h
 -
 cassert
 -
@@ -27,16 +37,16 @@ cassert
 /Users/adun/Desktop/AdunGL/main.cpp
 iostream
 -
+GL/glut.h
+-
 graphics/window.h
 /Users/adun/Desktop/AdunGL/graphics/window.h
+graphics/shader.h
+/Users/adun/Desktop/AdunGL/graphics/shader.h
 maths/maths.h
 /Users/adun/Desktop/AdunGL/maths/maths.h
 utils/fileutils.h
 /Users/adun/Desktop/AdunGL/utils/fileutils.h
-
-/Users/adun/Desktop/AdunGL/maths/Vec2.h
-iostream
--
 
 /Users/adun/Desktop/AdunGL/maths/math_func.h
 cmath
@@ -69,8 +79,8 @@ vec4.h
 /Users/adun/Desktop/AdunGL/maths/vec4.h
 
 /Users/adun/Desktop/AdunGL/maths/vec2.cpp
-Vec2.h
-/Users/adun/Desktop/AdunGL/maths/Vec2.h
+vec2.h
+/Users/adun/Desktop/AdunGL/maths/vec2.h
 
 /Users/adun/Desktop/AdunGL/maths/vec2.h
 iostream
