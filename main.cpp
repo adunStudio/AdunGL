@@ -11,9 +11,13 @@ Vec2 v2(1.0f, 20.f);
 Vec3 v3(2.0f, 1.0f, 3.0f);
 Vec4 v4(3.0f, 21.0f, 4.3f, 34.3f);
 
+Matrix4 position = Matrix4::perspective(1, 1, 1, 1);
+
 int main(int argc, char** argv)
 {
     std::cout << "Hello, AdunGL!" << std::endl;
+
+    position *= Matrix4::identity();
 
     Window window = Window::instance(argc, argv, "AdunGL", 800, 600);
 
@@ -38,9 +42,9 @@ int main(int argc, char** argv)
 
     window.render([]() {
 
-        cout << v2 << endl;
-        cout << v3 << endl;
-        cout << v4 << endl;
+        //cout << v2 << endl;
+        //cout << v3 << endl;
+        //cout << v4 << endl;
 
         Window::instance().clear();
 

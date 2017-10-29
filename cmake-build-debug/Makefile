@@ -177,6 +177,33 @@ main.cpp.s:
 	$(MAKE) -f CMakeFiles/AdunGL.dir/build.make CMakeFiles/AdunGL.dir/main.cpp.s
 .PHONY : main.cpp.s
 
+maths/matrix4.o: maths/matrix4.cpp.o
+
+.PHONY : maths/matrix4.o
+
+# target to build an object file
+maths/matrix4.cpp.o:
+	$(MAKE) -f CMakeFiles/AdunGL.dir/build.make CMakeFiles/AdunGL.dir/maths/matrix4.cpp.o
+.PHONY : maths/matrix4.cpp.o
+
+maths/matrix4.i: maths/matrix4.cpp.i
+
+.PHONY : maths/matrix4.i
+
+# target to preprocess a source file
+maths/matrix4.cpp.i:
+	$(MAKE) -f CMakeFiles/AdunGL.dir/build.make CMakeFiles/AdunGL.dir/maths/matrix4.cpp.i
+.PHONY : maths/matrix4.cpp.i
+
+maths/matrix4.s: maths/matrix4.cpp.s
+
+.PHONY : maths/matrix4.s
+
+# target to generate assembly for a file
+maths/matrix4.cpp.s:
+	$(MAKE) -f CMakeFiles/AdunGL.dir/build.make CMakeFiles/AdunGL.dir/maths/matrix4.cpp.s
+.PHONY : maths/matrix4.cpp.s
+
 maths/vec2.o: maths/vec2.cpp.o
 
 .PHONY : maths/vec2.o
@@ -273,6 +300,9 @@ help:
 	@echo "... main.o"
 	@echo "... main.i"
 	@echo "... main.s"
+	@echo "... maths/matrix4.o"
+	@echo "... maths/matrix4.i"
+	@echo "... maths/matrix4.s"
 	@echo "... maths/vec2.o"
 	@echo "... maths/vec2.i"
 	@echo "... maths/vec2.s"

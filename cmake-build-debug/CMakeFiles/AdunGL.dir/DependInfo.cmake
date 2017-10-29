@@ -6,6 +6,7 @@ set(CMAKE_DEPENDS_LANGUAGES
 set(CMAKE_DEPENDS_CHECK_CXX
   "/Users/adun/Desktop/AdunGL/graphics/window.cpp" "/Users/adun/Desktop/AdunGL/cmake-build-debug/CMakeFiles/AdunGL.dir/graphics/window.cpp.o"
   "/Users/adun/Desktop/AdunGL/main.cpp" "/Users/adun/Desktop/AdunGL/cmake-build-debug/CMakeFiles/AdunGL.dir/main.cpp.o"
+  "/Users/adun/Desktop/AdunGL/maths/matrix4.cpp" "/Users/adun/Desktop/AdunGL/cmake-build-debug/CMakeFiles/AdunGL.dir/maths/matrix4.cpp.o"
   "/Users/adun/Desktop/AdunGL/maths/vec2.cpp" "/Users/adun/Desktop/AdunGL/cmake-build-debug/CMakeFiles/AdunGL.dir/maths/vec2.cpp.o"
   "/Users/adun/Desktop/AdunGL/maths/vec3.cpp" "/Users/adun/Desktop/AdunGL/cmake-build-debug/CMakeFiles/AdunGL.dir/maths/vec3.cpp.o"
   "/Users/adun/Desktop/AdunGL/maths/vec4.cpp" "/Users/adun/Desktop/AdunGL/cmake-build-debug/CMakeFiles/AdunGL.dir/maths/vec4.cpp.o"
