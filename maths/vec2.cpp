@@ -102,9 +102,9 @@ namespace AdunGL
             return !(*this == other);
         }
 
-        std::ostream& operator<<(std::ostream& stream, const Vec2& Vector)
+        std::ostream& operator<<(std::ostream& stream, const Vec2& vector)
         {
-            stream << "Vec2:(" << Vector.x << ", " << Vector.y << ")";
+            stream << "Vec2:(" << vector.x << ", " << vector.y << ")";
 
             return stream;
         }

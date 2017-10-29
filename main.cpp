@@ -7,9 +7,9 @@ using namespace AdunGL;
 using namespace graphics;
 using namespace maths;
 
-Vec2 v1(1.0f, 20.f);
-Vec2 v2(2.0f, 1.0f);
-Vec2 v3(3.0f, 21.0f);
+Vec2 v2(1.0f, 20.f);
+Vec3 v3(2.0f, 1.0f, 3.0f);
+Vec4 v4(3.0f, 21.0f, 4.3f, 34.3f);
 
 int main(int argc, char** argv)
 {
@@ -22,12 +22,7 @@ int main(int argc, char** argv)
     cout << "window width: " << window.getWidth()  << endl;
     cout << "window height:" << window.getHeight() << endl;
 
-    v1 +=  v2;
-
     window.update([]() {
-
-        cout << v1 << endl;
-        cout << (v1 == v3) << endl;
 
         if(Window::isKeyPressed('a'))
             cout << "a키 눌림" << endl;
@@ -42,6 +37,10 @@ int main(int argc, char** argv)
     });
 
     window.render([]() {
+
+        cout << v2 << endl;
+        cout << v3 << endl;
+        cout << v4 << endl;
 
         Window::instance().clear();
 

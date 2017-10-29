@@ -204,6 +204,60 @@ maths/vec2.cpp.s:
 	$(MAKE) -f CMakeFiles/AdunGL.dir/build.make CMakeFiles/AdunGL.dir/maths/vec2.cpp.s
 .PHONY : maths/vec2.cpp.s
 
+maths/vec3.o: maths/vec3.cpp.o
+
+.PHONY : maths/vec3.o
+
+# target to build an object file
+maths/vec3.cpp.o:
+	$(MAKE) -f CMakeFiles/AdunGL.dir/build.make CMakeFiles/AdunGL.dir/maths/vec3.cpp.o
+.PHONY : maths/vec3.cpp.o
+
+maths/vec3.i: maths/vec3.cpp.i
+
+.PHONY : maths/vec3.i
+
+# target to preprocess a source file
+maths/vec3.cpp.i:
+	$(MAKE) -f CMakeFiles/AdunGL.dir/build.make CMakeFiles/AdunGL.dir/maths/vec3.cpp.i
+.PHONY : maths/vec3.cpp.i
+
+maths/vec3.s: maths/vec3.cpp.s
+
+.PHONY : maths/vec3.s
+
+# target to generate assembly for a file
+maths/vec3.cpp.s:
+	$(MAKE) -f CMakeFiles/AdunGL.dir/build.make CMakeFiles/AdunGL.dir/maths/vec3.cpp.s
+.PHONY : maths/vec3.cpp.s
+
+maths/vec4.o: maths/vec4.cpp.o
+
+.PHONY : maths/vec4.o
+
+# target to build an object file
+maths/vec4.cpp.o:
+	$(MAKE) -f CMakeFiles/AdunGL.dir/build.make CMakeFiles/AdunGL.dir/maths/vec4.cpp.o
+.PHONY : maths/vec4.cpp.o
+
+maths/vec4.i: maths/vec4.cpp.i
+
+.PHONY : maths/vec4.i
+
+# target to preprocess a source file
+maths/vec4.cpp.i:
+	$(MAKE) -f CMakeFiles/AdunGL.dir/build.make CMakeFiles/AdunGL.dir/maths/vec4.cpp.i
+.PHONY : maths/vec4.cpp.i
+
+maths/vec4.s: maths/vec4.cpp.s
+
+.PHONY : maths/vec4.s
+
+# target to generate assembly for a file
+maths/vec4.cpp.s:
+	$(MAKE) -f CMakeFiles/AdunGL.dir/build.make CMakeFiles/AdunGL.dir/maths/vec4.cpp.s
+.PHONY : maths/vec4.cpp.s
+
 # Help Target
 help:
 	@echo "The following are some of the valid targets for this Makefile:"
@@ -222,6 +276,12 @@ help:
 	@echo "... maths/vec2.o"
 	@echo "... maths/vec2.i"
 	@echo "... maths/vec2.s"
+	@echo "... maths/vec3.o"
+	@echo "... maths/vec3.i"
+	@echo "... maths/vec3.s"
+	@echo "... maths/vec4.o"
+	@echo "... maths/vec4.i"
+	@echo "... maths/vec4.s"
 .PHONY : help
 
 

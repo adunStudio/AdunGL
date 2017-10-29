@@ -36,7 +36,7 @@ namespace AdunGL
             bool operator==(const Vec2& other);
             bool operator!=(const Vec2& other);
 
-            friend std::ostream& operator<<(std::ostream& stream, const Vec2& Vector);
+            friend std::ostream& operator<<(std::ostream& stream, const Vec2& vector);
         };
     }
 }

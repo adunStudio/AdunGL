@@ -3,6 +3,7 @@
 //
 
 #include "window.h"
+#include <functional>
 
 namespace AdunGL
 {

@@ -8,7 +8,15 @@ CMakeFiles/AdunGL.dir/main.cpp.o: ../graphics/window.h
 CMakeFiles/AdunGL.dir/main.cpp.o: ../main.cpp
 CMakeFiles/AdunGL.dir/main.cpp.o: ../maths/maths.h
 CMakeFiles/AdunGL.dir/main.cpp.o: ../maths/vec2.h
+CMakeFiles/AdunGL.dir/main.cpp.o: ../maths/vec3.h
+CMakeFiles/AdunGL.dir/main.cpp.o: ../maths/vec4.h
 
 CMakeFiles/AdunGL.dir/maths/vec2.cpp.o: ../maths/Vec2.h
 CMakeFiles/AdunGL.dir/maths/vec2.cpp.o: ../maths/vec2.cpp
+
+CMakeFiles/AdunGL.dir/maths/vec3.cpp.o: ../maths/vec3.cpp
+CMakeFiles/AdunGL.dir/maths/vec3.cpp.o: ../maths/vec3.h
+
+CMakeFiles/AdunGL.dir/maths/vec4.cpp.o: ../maths/vec4.cpp
+CMakeFiles/AdunGL.dir/maths/vec4.cpp.o: ../maths/vec4.h
 

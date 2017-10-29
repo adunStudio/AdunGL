@@ -9,6 +9,8 @@
 /Users/adun/Desktop/AdunGL/graphics/window.cpp
 window.h
 /Users/adun/Desktop/AdunGL/graphics/window.h
+functional
+-
 
 /Users/adun/Desktop/AdunGL/graphics/window.h
 iostream
@@ -37,12 +39,32 @@ iostream
 /Users/adun/Desktop/AdunGL/maths/maths.h
 vec2.h
 /Users/adun/Desktop/AdunGL/maths/vec2.h
+vec3.h
+/Users/adun/Desktop/AdunGL/maths/vec3.h
+vec4.h
+/Users/adun/Desktop/AdunGL/maths/vec4.h
 
 /Users/adun/Desktop/AdunGL/maths/vec2.cpp
 Vec2.h
 /Users/adun/Desktop/AdunGL/maths/Vec2.h
 
 /Users/adun/Desktop/AdunGL/maths/vec2.h
+iostream
+-
+
+/Users/adun/Desktop/AdunGL/maths/vec3.cpp
+vec3.h
+/Users/adun/Desktop/AdunGL/maths/vec3.h
+
+/Users/adun/Desktop/AdunGL/maths/vec3.h
+iostream
+-
+
+/Users/adun/Desktop/AdunGL/maths/vec4.cpp
+vec4.h
+/Users/adun/Desktop/AdunGL/maths/vec4.h
+
+/Users/adun/Desktop/AdunGL/maths/vec4.h
 iostream
 -
 
