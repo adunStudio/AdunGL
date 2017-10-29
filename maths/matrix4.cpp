@@ -91,8 +91,9 @@ namespace AdunGL
             result.elements[1 + 1 * 4] = q;
             result.elements[2 + 2 * 4] = b;
             result.elements[2 + 3 * 4] = -1.0f;
-            result.elements[2 + 2 * 4] = c;
-
+            result.elements[3 + 2 * 4] = c;
+            //result.elements[3 + 2 * 4] = -1.0f;
+            //result.elements[3 + 2 * 4] = c;
             return result;
         }
 
