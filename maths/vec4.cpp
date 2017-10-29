@@ -8,14 +8,6 @@ namespace AdunGL
 {
     namespace maths
     {
-        Vec4::Vec4()
-        {
-            x = 0.0f;
-            y = 0.0f;
-            z = 0.0f;
-            w = 0.0f;
-        }
-
         Vec4::Vec4(const float& x, const float& y, const float& z, const float& w)
         {
             this->x = x;

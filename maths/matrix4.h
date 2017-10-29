@@ -8,6 +8,7 @@
 #include <cmath>
 #include "math_func.h"
 #include "vec3.h"
+#include "vec4.h"
 
 namespace AdunGL
 {
@@ -15,10 +16,21 @@ namespace AdunGL
     {
         struct Matrix4
         {
-            float elements[4 * 4];
+            union
+            {
+                float elements[4 * 4];
+                Vec4 rows[4];
+            };
 
             Matrix4();
             Matrix4(float diagonal);
+
+            Vec4 getColumn(int index)
+            {
+                // row index *= 4;
+                // row return Vec4(elements[index + 0], elements[index + 1], elements[index + 2], elements[index + 3]);
+                return Vec4(elements[index + 0 * 4], elements[index + 1 * 4], elements[index + 2 * 4], elements[index + 3 * 4]);
+            }
 
             Matrix4& multiply(const Matrix4& other);
             friend Matrix4& operator*(Matrix4 left, const Matrix4& right);

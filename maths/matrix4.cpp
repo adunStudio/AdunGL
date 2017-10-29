@@ -70,9 +70,9 @@ namespace AdunGL
             result.elements[1 + 1 * 4] = 2.0f / (top - bottom);
             result.elements[2 + 2 * 4] = 2.0f / (near - far);
 
-            result.elements[0 + 3 * 4] = (left + right) / (left - right);
-            result.elements[1 + 3 * 4] = (bottom + top) / (bottom - top);
-            result.elements[2 + 3 * 4] = (far + near) / (far - near);
+            result.elements[3 + 0 * 4] = (left + right) / (left - right);
+            result.elements[3 + 1 * 4] = (bottom + top) / (bottom - top);
+            result.elements[3 + 2 * 4] = (far + near) / (far - near);
 
             return result;
         }
@@ -90,8 +90,8 @@ namespace AdunGL
             result.elements[0 + 0 * 4] = a;
             result.elements[1 + 1 * 4] = q;
             result.elements[2 + 2 * 4] = b;
-            result.elements[3 + 2 * 4] = -1.0f;
-            result.elements[2 + 3 * 4] = c;
+            result.elements[2 + 3 * 4] = -1.0f;
+            result.elements[2 + 2 * 4] = c;
 
             return result;
         }
@@ -104,9 +104,9 @@ namespace AdunGL
         {
             Matrix4 result(1.0f);
 
-            result.elements[0 + 3 * 4] = translation.x;
-            result.elements[1 + 3 * 4] = translation.y;
-            result.elements[2 + 3 * 4] = translation.z;
+            result.elements[3 + 0 * 4] = translation.x;
+            result.elements[3 + 1 * 4] = translation.y;
+            result.elements[3 + 2 * 4] = translation.z;
 
             return result;
         }
@@ -126,17 +126,17 @@ namespace AdunGL
             float y = axis.y;
             float z = axis.z;
 
-            result.elements[0 + 0 * 4] = x * omc + c;
-            result.elements[1 + 0 * 4] = y * x * omc + z * s;
-            result.elements[2 + 0 * 4] = x * z * omc - z * s;
+            result.elements[0 + 0 * 4] = x * x * omc + c;
+            result.elements[0 + 1 * 4] = y * x * omc + z * s;
+            result.elements[0 + 2 * 4] = x * z * omc - y * s;
 
-            result.elements[0 + 1 * 4] = x * y * omc - z * s;
-            result.elements[1 + 1 * 4] = y * omc + c;
-            result.elements[2 + 1 * 4] = y * z * omc + x * s;
+            result.elements[1 + 0 * 4] = x * y * omc - z * s;
+            result.elements[1 + 1 * 4] = y * y * omc + c;
+            result.elements[1 + 2 * 4] = y * z * omc + x * s;
 
-            result.elements[0 + 2 * 4] = x * z * omc + y * s;
-            result.elements[1 + 2 * 4] = y * z * omc - x * s;
-            result.elements[2 + 2 * 4] = z * omc + c;
+            result.elements[2 + 0 * 4] = x * z * omc + y * s;
+            result.elements[2 + 1 * 4] = y * z * omc - x * s;
+            result.elements[2 + 2 * 4] = z * z * omc + c;
 
             return result;
         }

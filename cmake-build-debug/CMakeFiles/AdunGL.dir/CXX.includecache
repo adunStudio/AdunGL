@@ -51,8 +51,6 @@ vec4.h
 /Users/adun/Desktop/AdunGL/maths/vec4.h
 matrix4.h
 /Users/adun/Desktop/AdunGL/maths/matrix4.h
-cmath
--
 
 /Users/adun/Desktop/AdunGL/maths/matrix4.cpp
 matrix4.h
@@ -65,6 +63,8 @@ math_func.h
 /Users/adun/Desktop/AdunGL/maths/math_func.h
 vec3.h
 /Users/adun/Desktop/AdunGL/maths/vec3.h
+vec4.h
+/Users/adun/Desktop/AdunGL/maths/vec4.h
 
 /Users/adun/Desktop/AdunGL/maths/vec2.cpp
 Vec2.h

@@ -17,6 +17,7 @@ CMakeFiles/AdunGL.dir/maths/matrix4.cpp.o: ../maths/math_func.h
 CMakeFiles/AdunGL.dir/maths/matrix4.cpp.o: ../maths/matrix4.cpp
 CMakeFiles/AdunGL.dir/maths/matrix4.cpp.o: ../maths/matrix4.h
 CMakeFiles/AdunGL.dir/maths/matrix4.cpp.o: ../maths/vec3.h
+CMakeFiles/AdunGL.dir/maths/matrix4.cpp.o: ../maths/vec4.h
 
 CMakeFiles/AdunGL.dir/maths/vec2.cpp.o: ../maths/Vec2.h
 CMakeFiles/AdunGL.dir/maths/vec2.cpp.o: ../maths/vec2.cpp
