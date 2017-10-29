@@ -1,11 +1,13 @@
 #include <iostream>
 #include "graphics/window.h"
 #include "maths/maths.h"
+#include "utils/fileutils.h"
 
 using namespace std;
 using namespace AdunGL;
 using namespace graphics;
 using namespace maths;
+using namespace utils;
 
 Vec2 v2(1.0f, 20.f);
 Vec3 v3(2.0f, 1.0f, 3.0f);
@@ -15,6 +17,9 @@ Vec4 v4(3.0f, 21.0f, 4.3f, 34.3f);
 int main(int argc, char** argv)
 {
     std::cout << "Hello, AdunGL!" << std::endl;
+
+    string file = read_file("/Users/adun/Desktop/AdunGL/test");
+    cout << file << endl;
 
     Matrix4 position = Matrix4::translation(Vec3(2, 3, 4));
     position *= Matrix4::identity();

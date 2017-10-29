@@ -31,6 +31,8 @@ graphics/window.h
 /Users/adun/Desktop/AdunGL/graphics/window.h
 maths/maths.h
 /Users/adun/Desktop/AdunGL/maths/maths.h
+utils/fileutils.h
+/Users/adun/Desktop/AdunGL/utils/fileutils.h
 
 /Users/adun/Desktop/AdunGL/maths/Vec2.h
 iostream
@@ -88,5 +90,17 @@ vec4.h
 
 /Users/adun/Desktop/AdunGL/maths/vec4.h
 iostream
+-
+
+/Users/adun/Desktop/AdunGL/utils/fileutils.cpp
+fileutils.h
+/Users/adun/Desktop/AdunGL/utils/fileutils.h
+
+/Users/adun/Desktop/AdunGL/utils/fileutils.h
+string
+-
+fstream
+-
+cassert
 -
 

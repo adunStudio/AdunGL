@@ -285,6 +285,33 @@ maths/vec4.cpp.s:
 	$(MAKE) -f CMakeFiles/AdunGL.dir/build.make CMakeFiles/AdunGL.dir/maths/vec4.cpp.s
 .PHONY : maths/vec4.cpp.s
 
+utils/fileutils.o: utils/fileutils.cpp.o
+
+.PHONY : utils/fileutils.o
+
+# target to build an object file
+utils/fileutils.cpp.o:
+	$(MAKE) -f CMakeFiles/AdunGL.dir/build.make CMakeFiles/AdunGL.dir/utils/fileutils.cpp.o
+.PHONY : utils/fileutils.cpp.o
+
+utils/fileutils.i: utils/fileutils.cpp.i
+
+.PHONY : utils/fileutils.i
+
+# target to preprocess a source file
+utils/fileutils.cpp.i:
+	$(MAKE) -f CMakeFiles/AdunGL.dir/build.make CMakeFiles/AdunGL.dir/utils/fileutils.cpp.i
+.PHONY : utils/fileutils.cpp.i
+
+utils/fileutils.s: utils/fileutils.cpp.s
+
+.PHONY : utils/fileutils.s
+
+# target to generate assembly for a file
+utils/fileutils.cpp.s:
+	$(MAKE) -f CMakeFiles/AdunGL.dir/build.make CMakeFiles/AdunGL.dir/utils/fileutils.cpp.s
+.PHONY : utils/fileutils.cpp.s
+
 # Help Target
 help:
 	@echo "The following are some of the valid targets for this Makefile:"
@@ -312,6 +339,9 @@ help:
 	@echo "... maths/vec4.o"
 	@echo "... maths/vec4.i"
 	@echo "... maths/vec4.s"
+	@echo "... utils/fileutils.o"
+	@echo "... utils/fileutils.i"
+	@echo "... utils/fileutils.s"
 .PHONY : help
 
 

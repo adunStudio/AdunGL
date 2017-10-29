@@ -5,6 +5,7 @@ file(REMOVE_RECURSE
   "CMakeFiles/AdunGL.dir/maths/vec3.cpp.o"
   "CMakeFiles/AdunGL.dir/maths/vec4.cpp.o"
   "CMakeFiles/AdunGL.dir/maths/matrix4.cpp.o"
+  "CMakeFiles/AdunGL.dir/utils/fileutils.cpp.o"
   "AdunGL.pdb"
   "AdunGL"
 )

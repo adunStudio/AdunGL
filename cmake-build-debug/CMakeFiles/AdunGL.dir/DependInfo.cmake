@@ -10,6 +10,7 @@ set(CMAKE_DEPENDS_CHECK_CXX
   "/Users/adun/Desktop/AdunGL/maths/vec2.cpp" "/Users/adun/Desktop/AdunGL/cmake-build-debug/CMakeFiles/AdunGL.dir/maths/vec2.cpp.o"
   "/Users/adun/Desktop/AdunGL/maths/vec3.cpp" "/Users/adun/Desktop/AdunGL/cmake-build-debug/CMakeFiles/AdunGL.dir/maths/vec3.cpp.o"
   "/Users/adun/Desktop/AdunGL/maths/vec4.cpp" "/Users/adun/Desktop/AdunGL/cmake-build-debug/CMakeFiles/AdunGL.dir/maths/vec4.cpp.o"
+  "/Users/adun/Desktop/AdunGL/utils/fileutils.cpp" "/Users/adun/Desktop/AdunGL/cmake-build-debug/CMakeFiles/AdunGL.dir/utils/fileutils.cpp.o"
   )
 set(CMAKE_CXX_COMPILER_ID "AppleClang")
 

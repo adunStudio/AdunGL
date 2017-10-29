@@ -121,6 +121,12 @@
 		<Unit filename="/Users/adun/Desktop/AdunGL/maths/vec4.h">
 			<Option target="AdunGL"/>
 		</Unit>
+		<Unit filename="/Users/adun/Desktop/AdunGL/utils/fileutils.cpp">
+			<Option target="AdunGL"/>
+		</Unit>
+		<Unit filename="/Users/adun/Desktop/AdunGL/utils/fileutils.h">
+			<Option target="AdunGL"/>
+		</Unit>
 		<Unit filename="/Users/adun/Desktop/AdunGL/CMakeLists.txt">
 			<Option virtualFolder="CMake Files\"/>
 		</Unit>
