@@ -50,14 +50,13 @@ namespace AdunGL
 
             void clear() const;
 
-            GLvoid update() const;
-
-            GLvoid render() const;
-            GLvoid reshape(int w, int h);
-
             void run() const;
 
             bool closed() const;
+
+            friend GLvoid updateCallback();
+            friend GLvoid renderCallback();
+            friend GLvoid reshapeCallback(int w, int h);
 
             inline const unsigned char* getVersion() const { return glGetString(GL_VERSION); }
 
@@ -67,23 +66,7 @@ namespace AdunGL
         private:
             Window(const char* name, int width, int height);
             Window() = default;
-
             void init();
-
-            static GLvoid updateCallback()
-            {
-                instance_->update();
-            }
-
-            static GLvoid renderCallback()
-            {
-                instance_->render();
-            }
-
-            static GLvoid reshapeCallback(int w, int h)
-            {
-                instance_->reshape(w, h);
-            }
         };
     }
 }

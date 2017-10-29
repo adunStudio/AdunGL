@@ -8,6 +8,11 @@ namespace AdunGL
 {
     namespace graphics
     {
+        GLvoid reshapeCallback(int w, int h);
+        GLvoid updateCallback();
+        GLvoid renderCallback();
+
+
         Window* Window::instance_ = nullptr;
 
         Window::Window(const char* name, int width, int height)
@@ -29,9 +34,9 @@ namespace AdunGL
 
             window = glutCreateWindow(name);
 
-            glutIdleFunc(Window::updateCallback);
-            glutDisplayFunc(Window::renderCallback);
-            glutReshapeFunc(Window::reshapeCallback);
+            glutIdleFunc(updateCallback);
+            glutDisplayFunc(renderCallback);
+            glutReshapeFunc(reshapeCallback);
         }
 
         void Window::run() const
@@ -51,15 +56,22 @@ namespace AdunGL
             glColor4f(1, 1, 1, 1);
         }
 
-        void Window::update() const
+        GLvoid reshapeCallback(int w, int h)
+        {
+            Window::instance().width = w;
+            Window::instance().height= h;
+            glViewport (0, 0, w, h);
+            glLoadIdentity();
+        }
+
+        GLvoid updateCallback()
         {
 
         }
 
-
-        void Window::render() const
+        GLvoid renderCallback()
         {
-            clear();
+            Window::instance().clear();
 
             glBegin(GL_TRIANGLES);
             {
@@ -70,15 +82,6 @@ namespace AdunGL
             glEnd();
 
             glutSwapBuffers();
-        }
-
-        void Window::reshape(int w, int h)
-        {
-            width = w;
-            height= h;
-            glViewport (0, 0, w, h);
-            glLoadIdentity();
-            //glOrtho(0, w, 0, h, -1, 1);
         }
     }
 }
