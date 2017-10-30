@@ -177,28 +177,28 @@ CMakeFiles/AdunGL.dir/maths/vec4.cpp.o.provides: CMakeFiles/AdunGL.dir/maths/vec
 CMakeFiles/AdunGL.dir/maths/vec4.cpp.o.provides.build: CMakeFiles/AdunGL.dir/maths/vec4.cpp.o
 
 
-CMakeFiles/AdunGL.dir/maths/matrix4.cpp.o: CMakeFiles/AdunGL.dir/flags.make
-CMakeFiles/AdunGL.dir/maths/matrix4.cpp.o: ../maths/matrix4.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/Users/adun/Desktop/AdunGL/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_6) "Building CXX object CMakeFiles/AdunGL.dir/maths/matrix4.cpp.o"
-	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/c++   $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/AdunGL.dir/maths/matrix4.cpp.o -c /Users/adun/Desktop/AdunGL/maths/matrix4.cpp
+CMakeFiles/AdunGL.dir/maths/mat4.cpp.o: CMakeFiles/AdunGL.dir/flags.make
+CMakeFiles/AdunGL.dir/maths/mat4.cpp.o: ../maths/mat4.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/Users/adun/Desktop/AdunGL/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_6) "Building CXX object CMakeFiles/AdunGL.dir/maths/mat4.cpp.o"
+	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/c++   $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/AdunGL.dir/maths/mat4.cpp.o -c /Users/adun/Desktop/AdunGL/maths/mat4.cpp
 
-CMakeFiles/AdunGL.dir/maths/matrix4.cpp.i: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/AdunGL.dir/maths/matrix4.cpp.i"
-	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /Users/adun/Desktop/AdunGL/maths/matrix4.cpp > CMakeFiles/AdunGL.dir/maths/matrix4.cpp.i
+CMakeFiles/AdunGL.dir/maths/mat4.cpp.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/AdunGL.dir/maths/mat4.cpp.i"
+	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /Users/adun/Desktop/AdunGL/maths/mat4.cpp > CMakeFiles/AdunGL.dir/maths/mat4.cpp.i
 
-CMakeFiles/AdunGL.dir/maths/matrix4.cpp.s: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/AdunGL.dir/maths/matrix4.cpp.s"
-	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /Users/adun/Desktop/AdunGL/maths/matrix4.cpp -o CMakeFiles/AdunGL.dir/maths/matrix4.cpp.s
+CMakeFiles/AdunGL.dir/maths/mat4.cpp.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/AdunGL.dir/maths/mat4.cpp.s"
+	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /Users/adun/Desktop/AdunGL/maths/mat4.cpp -o CMakeFiles/AdunGL.dir/maths/mat4.cpp.s
 
-CMakeFiles/AdunGL.dir/maths/matrix4.cpp.o.requires:
+CMakeFiles/AdunGL.dir/maths/mat4.cpp.o.requires:
 
-.PHONY : CMakeFiles/AdunGL.dir/maths/matrix4.cpp.o.requires
+.PHONY : CMakeFiles/AdunGL.dir/maths/mat4.cpp.o.requires
 
-CMakeFiles/AdunGL.dir/maths/matrix4.cpp.o.provides: CMakeFiles/AdunGL.dir/maths/matrix4.cpp.o.requires
-	$(MAKE) -f CMakeFiles/AdunGL.dir/build.make CMakeFiles/AdunGL.dir/maths/matrix4.cpp.o.provides.build
-.PHONY : CMakeFiles/AdunGL.dir/maths/matrix4.cpp.o.provides
+CMakeFiles/AdunGL.dir/maths/mat4.cpp.o.provides: CMakeFiles/AdunGL.dir/maths/mat4.cpp.o.requires
+	$(MAKE) -f CMakeFiles/AdunGL.dir/build.make CMakeFiles/AdunGL.dir/maths/mat4.cpp.o.provides.build
+.PHONY : CMakeFiles/AdunGL.dir/maths/mat4.cpp.o.provides
 
-CMakeFiles/AdunGL.dir/maths/matrix4.cpp.o.provides.build: CMakeFiles/AdunGL.dir/maths/matrix4.cpp.o
+CMakeFiles/AdunGL.dir/maths/mat4.cpp.o.provides.build: CMakeFiles/AdunGL.dir/maths/mat4.cpp.o
 
 
 CMakeFiles/AdunGL.dir/utils/fileutils.cpp.o: CMakeFiles/AdunGL.dir/flags.make
@@ -256,7 +256,7 @@ AdunGL_OBJECTS = \
 "CMakeFiles/AdunGL.dir/maths/vec2.cpp.o" \
 "CMakeFiles/AdunGL.dir/maths/vec3.cpp.o" \
 "CMakeFiles/AdunGL.dir/maths/vec4.cpp.o" \
-"CMakeFiles/AdunGL.dir/maths/matrix4.cpp.o" \
+"CMakeFiles/AdunGL.dir/maths/mat4.cpp.o" \
 "CMakeFiles/AdunGL.dir/utils/fileutils.cpp.o" \
 "CMakeFiles/AdunGL.dir/graphics/shader.cpp.o"
 
@@ -268,7 +268,7 @@ AdunGL: CMakeFiles/AdunGL.dir/graphics/window.cpp.o
 AdunGL: CMakeFiles/AdunGL.dir/maths/vec2.cpp.o
 AdunGL: CMakeFiles/AdunGL.dir/maths/vec3.cpp.o
 AdunGL: CMakeFiles/AdunGL.dir/maths/vec4.cpp.o
-AdunGL: CMakeFiles/AdunGL.dir/maths/matrix4.cpp.o
+AdunGL: CMakeFiles/AdunGL.dir/maths/mat4.cpp.o
 AdunGL: CMakeFiles/AdunGL.dir/utils/fileutils.cpp.o
 AdunGL: CMakeFiles/AdunGL.dir/graphics/shader.cpp.o
 AdunGL: CMakeFiles/AdunGL.dir/build.make
@@ -286,7 +286,7 @@ CMakeFiles/AdunGL.dir/requires: CMakeFiles/AdunGL.dir/graphics/window.cpp.o.requ
 CMakeFiles/AdunGL.dir/requires: CMakeFiles/AdunGL.dir/maths/vec2.cpp.o.requires
 CMakeFiles/AdunGL.dir/requires: CMakeFiles/AdunGL.dir/maths/vec3.cpp.o.requires
 CMakeFiles/AdunGL.dir/requires: CMakeFiles/AdunGL.dir/maths/vec4.cpp.o.requires
-CMakeFiles/AdunGL.dir/requires: CMakeFiles/AdunGL.dir/maths/matrix4.cpp.o.requires
+CMakeFiles/AdunGL.dir/requires: CMakeFiles/AdunGL.dir/maths/mat4.cpp.o.requires
 CMakeFiles/AdunGL.dir/requires: CMakeFiles/AdunGL.dir/utils/fileutils.cpp.o.requires
 CMakeFiles/AdunGL.dir/requires: CMakeFiles/AdunGL.dir/graphics/shader.cpp.o.requires
 

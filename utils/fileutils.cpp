@@ -8,7 +8,7 @@ namespace  AdunGL
 {
     namespace utils
     {
-        std::string read_file(const char* filepath)
+        std::string FileUtils::read_file(const char* filepath)
         {
 
             FILE* file = fopen(filepath, "rb");
@@ -40,4 +40,3 @@ namespace  AdunGL
 }
 
 
-//Users/adun/Desktop/AdunGL/test.txt

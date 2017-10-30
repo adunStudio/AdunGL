@@ -2,8 +2,8 @@
 // Created by adun on 2017. 10. 29..
 //
 
-#ifndef ADUNGL_Vec2_H
-#define ADUNGL_Vec2_H
+#ifndef ADUNGL_vec2_H
+#define ADUNGL_vec2_H
 
 #include <iostream>
 
@@ -11,33 +11,33 @@ namespace AdunGL
 {
     namespace maths
     {
-        struct Vec2
+        struct vec2
         {
             float x, y;
 
-            Vec2();
-            Vec2(const float& x, const float& y);
+            vec2();
+            vec2(const float& x, const float& y);
 
-            Vec2& add(const Vec2& other);
-            Vec2& subtract(const Vec2& other);
-            Vec2& multiply(const Vec2& other);
-            Vec2& divide(const Vec2& other);
+            vec2& add(const vec2& other);
+            vec2& subtract(const vec2& other);
+            vec2& multiply(const vec2& other);
+            vec2& divide(const vec2& other);
 
-            friend Vec2& operator+(Vec2& left, const Vec2& right);
-            friend Vec2& operator-(Vec2& left, const Vec2& right);
-            friend Vec2& operator*(Vec2& left, const Vec2& right);
-            friend Vec2& operator/(Vec2& left, const Vec2& right);
+            friend vec2& operator+(vec2& left, const vec2& right);
+            friend vec2& operator-(vec2& left, const vec2& right);
+            friend vec2& operator*(vec2& left, const vec2& right);
+            friend vec2& operator/(vec2& left, const vec2& right);
 
-            Vec2& operator+=(const Vec2& other);
-            Vec2& operator-=(const Vec2& other);
-            Vec2& operator*=(const Vec2& other);
-            Vec2& operator/=(const Vec2& other);
+            vec2& operator+=(const vec2& other);
+            vec2& operator-=(const vec2& other);
+            vec2& operator*=(const vec2& other);
+            vec2& operator/=(const vec2& other);
 
-            bool operator==(const Vec2& other);
-            bool operator!=(const Vec2& other);
+            bool operator==(const vec2& other);
+            bool operator!=(const vec2& other);
 
-            friend std::ostream& operator<<(std::ostream& stream, const Vec2& vector);
+            friend std::ostream& operator<<(std::ostream& stream, const vec2& vector);
         };
     }
 }
-#endif //ADUNGL_Vec2_H
+#endif //ADUNGL_vec2_H

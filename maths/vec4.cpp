@@ -8,7 +8,7 @@ namespace AdunGL
 {
     namespace maths
     {
-        Vec4::Vec4(const float& x, const float& y, const float& z, const float& w)
+        vec4::vec4(const float& x, const float& y, const float& z, const float& w)
         {
             this->x = x;
             this->y = y;
@@ -16,7 +16,7 @@ namespace AdunGL
             this->w = w;
         }
 
-        Vec4& Vec4::add(const Vec4& other)
+        vec4& vec4::add(const vec4& other)
         {
             x += other.x;
             y += other.y;
@@ -26,7 +26,7 @@ namespace AdunGL
             return *this;
         }
 
-        Vec4& Vec4::subtract(const Vec4 &other)
+        vec4& vec4::subtract(const vec4 &other)
         {
             x -= other.x;
             y -= other.y;
@@ -36,7 +36,7 @@ namespace AdunGL
             return *this;
         }
 
-        Vec4& Vec4::multiply(const Vec4 &other)
+        vec4& vec4::multiply(const vec4 &other)
         {
             x *= other.x;
             y *= other.y;
@@ -46,7 +46,7 @@ namespace AdunGL
             return *this;
         }
 
-        Vec4& Vec4::divide(const Vec4 &other)
+        vec4& vec4::divide(const vec4 &other)
         {
             x /= other.x;
             y /= other.y;
@@ -56,59 +56,59 @@ namespace AdunGL
             return *this;
         }
 
-        Vec4& operator+(Vec4& left, const Vec4& right)
+        vec4& operator+(vec4& left, const vec4& right)
         {
             return left.add(right);
         }
 
-        Vec4& operator-(Vec4& left, const Vec4& right)
+        vec4& operator-(vec4& left, const vec4& right)
         {
             return left.subtract(right);
         }
 
-        Vec4& operator*(Vec4& left, const Vec4& right)
+        vec4& operator*(vec4& left, const vec4& right)
         {
             return left.multiply(right);
         }
 
-        Vec4& operator/(Vec4& left, const Vec4& right)
+        vec4& operator/(vec4& left, const vec4& right)
         {
             return left.divide(right);
         }
 
-        Vec4& Vec4::operator+=(const Vec4& other)
+        vec4& vec4::operator+=(const vec4& other)
         {
             return add(other);
         }
 
-        Vec4& Vec4::operator-=(const Vec4& other)
+        vec4& vec4::operator-=(const vec4& other)
         {
             return subtract(other);
         }
 
-        Vec4& Vec4::operator*=(const Vec4& other)
+        vec4& vec4::operator*=(const vec4& other)
         {
             return multiply(other);
         }
 
-        Vec4& Vec4::operator/=(const Vec4& other)
+        vec4& vec4::operator/=(const vec4& other)
         {
             return divide(other);
         }
 
-        bool Vec4::operator==(const Vec4& other)
+        bool vec4::operator==(const vec4& other)
         {
             return x == other.x && y == other.y && z == other.z && w == other.w;
         }
 
-        bool Vec4::operator!=(const Vec4& other)
+        bool vec4::operator!=(const vec4& other)
         {
             return !(*this == other);
         }
 
-        std::ostream& operator<<(std::ostream& stream, const Vec4& vector)
+        std::ostream& operator<<(std::ostream& stream, const vec4& vector)
         {
-            stream << "Vec4:(" << vector.x << ", " << vector.y << ", " << vector.z  << ", " << vector.w << ")";
+            stream << "vec4:(" << vector.x << ", " << vector.y << ", " << vector.z  << ", " << vector.w << ")";
 
             return stream;
         }

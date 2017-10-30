@@ -13,7 +13,10 @@ namespace AdunGL
 {
     namespace utils
     {
-        std::string read_file(const char* filepath);
+        struct FileUtils
+        {
+            static std::string read_file(const char* filepath);
+        };
     }
 }
 #endif //ADUNGL_FILEUTILS_H

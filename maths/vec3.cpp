@@ -8,21 +8,21 @@ namespace AdunGL
 {
     namespace maths
     {
-        Vec3::Vec3()
+        vec3::vec3()
         {
             x = 0.0f;
             y = 0.0f;
             z = 0.0f;
         }
 
-        Vec3::Vec3(const float& x, const float& y, const float& z)
+        vec3::vec3(const float& x, const float& y, const float& z)
         {
             this->x = x;
             this->y = y;
             this->z = z;
         }
 
-        Vec3& Vec3::add(const Vec3& other)
+        vec3& vec3::add(const vec3& other)
         {
             x += other.x;
             y += other.y;
@@ -31,7 +31,7 @@ namespace AdunGL
             return *this;
         }
 
-        Vec3& Vec3::subtract(const Vec3 &other)
+        vec3& vec3::subtract(const vec3 &other)
         {
             x -= other.x;
             y -= other.y;
@@ -40,7 +40,7 @@ namespace AdunGL
             return *this;
         }
 
-        Vec3& Vec3::multiply(const Vec3 &other)
+        vec3& vec3::multiply(const vec3 &other)
         {
             x *= other.x;
             y *= other.y;
@@ -49,7 +49,7 @@ namespace AdunGL
             return *this;
         }
 
-        Vec3& Vec3::divide(const Vec3 &other)
+        vec3& vec3::divide(const vec3 &other)
         {
             x /= other.x;
             y /= other.y;
@@ -58,59 +58,59 @@ namespace AdunGL
             return *this;
         }
 
-        Vec3& operator+(Vec3& left, const Vec3& right)
+        vec3& operator+(vec3& left, const vec3& right)
         {
             return left.add(right);
         }
 
-        Vec3& operator-(Vec3& left, const Vec3& right)
+        vec3& operator-(vec3& left, const vec3& right)
         {
             return left.subtract(right);
         }
 
-        Vec3& operator*(Vec3& left, const Vec3& right)
+        vec3& operator*(vec3& left, const vec3& right)
         {
             return left.multiply(right);
         }
 
-        Vec3& operator/(Vec3& left, const Vec3& right)
+        vec3& operator/(vec3& left, const vec3& right)
         {
             return left.divide(right);
         }
 
-        Vec3& Vec3::operator+=(const Vec3& other)
+        vec3& vec3::operator+=(const vec3& other)
         {
             return add(other);
         }
 
-        Vec3& Vec3::operator-=(const Vec3& other)
+        vec3& vec3::operator-=(const vec3& other)
         {
             return subtract(other);
         }
 
-        Vec3& Vec3::operator*=(const Vec3& other)
+        vec3& vec3::operator*=(const vec3& other)
         {
             return multiply(other);
         }
 
-        Vec3& Vec3::operator/=(const Vec3& other)
+        vec3& vec3::operator/=(const vec3& other)
         {
             return divide(other);
         }
 
-        bool Vec3::operator==(const Vec3& other)
+        bool vec3::operator==(const vec3& other)
         {
             return x == other.x && y == other.y && z == other.z;
         }
 
-        bool Vec3::operator!=(const Vec3& other)
+        bool vec3::operator!=(const vec3& other)
         {
             return !(*this == other);
         }
 
-        std::ostream& operator<<(std::ostream& stream, const Vec3& vector)
+        std::ostream& operator<<(std::ostream& stream, const vec3& vector)
         {
-            stream << "Vec3:(" << vector.x << ", " << vector.y << ", " << vector.z << ")";
+            stream << "vec3:(" << vector.x << ", " << vector.y << ", " << vector.z << ")";
 
             return stream;
         }

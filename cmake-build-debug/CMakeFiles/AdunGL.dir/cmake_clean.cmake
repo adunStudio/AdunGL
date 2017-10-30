@@ -4,7 +4,7 @@ file(REMOVE_RECURSE
   "CMakeFiles/AdunGL.dir/maths/vec2.cpp.o"
   "CMakeFiles/AdunGL.dir/maths/vec3.cpp.o"
   "CMakeFiles/AdunGL.dir/maths/vec4.cpp.o"
-  "CMakeFiles/AdunGL.dir/maths/matrix4.cpp.o"
+  "CMakeFiles/AdunGL.dir/maths/mat4.cpp.o"
   "CMakeFiles/AdunGL.dir/utils/fileutils.cpp.o"
   "CMakeFiles/AdunGL.dir/graphics/shader.cpp.o"
   "AdunGL.pdb"

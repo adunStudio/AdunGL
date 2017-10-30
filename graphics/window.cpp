@@ -42,7 +42,6 @@ namespace AdunGL
             glutInitDisplayMode(GLUT_DOUBLE | GLUT_RGBA);
             glutInitWindowPosition(100, 100);
             glutInitWindowSize(width, height);
-
             window = glutCreateWindow(name);
 
             //glutIdleFunc(updateCallback);

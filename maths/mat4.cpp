@@ -2,19 +2,19 @@
 // Created by adun on 2017. 10. 29..
 //
 
-#include "matrix4.h"
+#include "mat4.h"
 
 namespace AdunGL
 {
     namespace maths
     {
-        Matrix4::Matrix4()
+        mat4::mat4()
         {
             for(int i = 0; i < 4 * 4; ++i)
                 elements[i] = 0.0f;
         }
 
-        Matrix4::Matrix4(float diagonal)
+        mat4::mat4(float diagonal)
         {
             for(int i = 0; i < 4 * 4; ++i)
                 elements[i] = 0.0f;
@@ -25,12 +25,12 @@ namespace AdunGL
             elements[3 + 3 * 4] = diagonal;
         }
 
-        Matrix4 Matrix4::identity()
+        mat4 mat4::identity()
         {
-            return Matrix4(1.0f);
+            return mat4(1.0f);
         }
 
-        Matrix4& Matrix4::multiply(const Matrix4& other)
+        mat4& mat4::multiply(const mat4& other)
         {
             for(int y = 0; y < 4; ++y)
             {
@@ -50,21 +50,21 @@ namespace AdunGL
             return *this;
         }
 
-        Matrix4& operator*(Matrix4 left, const Matrix4& right)
+        mat4& operator*(mat4 left, const mat4& right)
         {
             return left.multiply(right);
         }
 
-        Matrix4& Matrix4::operator*=(const Matrix4& other)
+        mat4& mat4::operator*=(const mat4& other)
         {
             return multiply(other);
         }
 
         // https://msdn.microsoft.com/ko-kr/library/windows/desktop/dd373965(v=vs.85).aspx
         // https://www.safaribooksonline.com/library/view/opengl-es-2/9781941222560/f_0137.html
-        Matrix4 Matrix4::orthographic(float left, float right, float bottom, float top, float near, float far)
+        mat4 mat4::orthographic(float left, float right, float bottom, float top, float near, float far)
         {
-            Matrix4 result(1.0f);
+            mat4 result(1.0f);
 
             result.elements[0 + 0 * 4] = 2.0f / (right - left);
             result.elements[1 + 1 * 4] = 2.0f / (top - bottom);
@@ -78,9 +78,9 @@ namespace AdunGL
         }
 
         // http://ogldev.atspace.org/www/tutorial12/tutorial12.html
-        Matrix4 Matrix4::perspective(float fov, float aspectRatio, float near, float far)
+        mat4 mat4::perspective(float fov, float aspectRatio, float near, float far)
         {
-            Matrix4 result(1.0f);
+            mat4 result(1.0f);
 
             float q = static_cast<float>( 1.0f / tan(toRadians(0.5f * fov)) );
             float a = q / aspectRatio;
@@ -101,9 +101,9 @@ namespace AdunGL
         // 0 1 0 y
         // 0 0 1 z
         // 0 0 0 1
-        Matrix4 Matrix4::translation(const Vec3& translation)
+        mat4 mat4::translation(const vec3& translation)
         {
-            Matrix4 result(1.0f);
+            mat4 result(1.0f);
 
             result.elements[3 + 0 * 4] = translation.x;
             result.elements[3 + 1 * 4] = translation.y;
@@ -114,9 +114,9 @@ namespace AdunGL
 
         // http://www.songho.ca/opengl/gl_anglestoaxes.html
         // RxRyRz
-        Matrix4 Matrix4::rotation(float angle, const Vec3& axis)
+        mat4 mat4::rotation(float angle, const vec3& axis)
         {
-            Matrix4 result(1.0f);
+            mat4 result(1.0f);
 
             float r = toRadians(angle);
             float c = static_cast<float>(cos(r));
@@ -146,9 +146,9 @@ namespace AdunGL
         // 0  sy  0  0
         // 0   0  sz 0
         // 0   0  0  1
-        Matrix4 Matrix4::scale(const Vec3& scale)
+        mat4 mat4::scale(const vec3& scale)
         {
-            Matrix4 result(1.0f);
+            mat4 result(1.0f);
 
             result.elements[0 + 0 * 4] = scale.x;
             result.elements[1 + 1 * 4] = scale.y;

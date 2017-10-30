@@ -16,6 +16,11 @@ namespace AdunGL
             shaderID = load();
         }
 
+        Shader::~Shader()
+        {
+            glDeleteShader(shaderID);
+        }
+
         GLuint Shader::load()
         {
             GLuint program = glCreateProgram();
@@ -23,8 +28,11 @@ namespace AdunGL
             GLuint fragment = glCreateShader(GL_FRAGMENT_SHADER);
 
             /* Read */
-            const char* vertSource = read_file(vertPath).c_str();
-            const char* fragSource = read_file(fragPath).c_str();
+            std::string vertSourceString = FileUtils::read_file(vertPath);
+            std::string fragSourceString = FileUtils::read_file(fragPath);
+
+            const char* vertSource = vertSourceString.c_str();
+            const char* fragSource = fragSourceString.c_str();
 
             GLint result;
 

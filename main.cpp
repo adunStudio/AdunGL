@@ -12,10 +12,9 @@ using namespace maths;
 using namespace utils;
 
 GLuint vao;
-
+Shader* shader;
 int main(int argc, char** argv)
 {
-
 
     std::cout << "Hello, AdunGL!" << std::endl;
 
@@ -29,6 +28,12 @@ int main(int argc, char** argv)
     glGenVertexArraysAPPLE(1, &vao);
     glBindVertexArrayAPPLE(vao);
 
+    shader = new Shader(
+            "/Users/adun/Desktop/AdunGL/shaders/basic.vert",
+            "/Users/adun/Desktop/AdunGL/shaders/basic.frag"
+    );
+
+
     window.update([]() {
 
     });
@@ -36,7 +41,13 @@ int main(int argc, char** argv)
     window.render([]() {
         Window::instance().clear();
 
-
+        glBegin(GL_TRIANGLES);
+        {
+            glVertex2f(-0.5, -0.5);
+            glVertex2f(-0.0, 0.5);
+            glVertex2f(0.5, -0.5);
+        }
+        glEnd();
 
         glutSwapBuffers();
     });

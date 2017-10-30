@@ -12,17 +12,17 @@ CMakeFiles/AdunGL.dir/main.cpp.o
  /Users/adun/Desktop/AdunGL/graphics/shader.h
  /Users/adun/Desktop/AdunGL/graphics/window.h
  /Users/adun/Desktop/AdunGL/main.cpp
+ /Users/adun/Desktop/AdunGL/maths/mat4.h
  /Users/adun/Desktop/AdunGL/maths/math_func.h
  /Users/adun/Desktop/AdunGL/maths/maths.h
- /Users/adun/Desktop/AdunGL/maths/matrix4.h
  /Users/adun/Desktop/AdunGL/maths/vec2.h
  /Users/adun/Desktop/AdunGL/maths/vec3.h
  /Users/adun/Desktop/AdunGL/maths/vec4.h
  /Users/adun/Desktop/AdunGL/utils/fileutils.h
-CMakeFiles/AdunGL.dir/maths/matrix4.cpp.o
+CMakeFiles/AdunGL.dir/maths/mat4.cpp.o
+ /Users/adun/Desktop/AdunGL/maths/mat4.cpp
+ /Users/adun/Desktop/AdunGL/maths/mat4.h
  /Users/adun/Desktop/AdunGL/maths/math_func.h
- /Users/adun/Desktop/AdunGL/maths/matrix4.cpp
- /Users/adun/Desktop/AdunGL/maths/matrix4.h
  /Users/adun/Desktop/AdunGL/maths/vec3.h
  /Users/adun/Desktop/AdunGL/maths/vec4.h
 CMakeFiles/AdunGL.dir/maths/vec2.cpp.o
