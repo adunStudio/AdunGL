@@ -7,7 +7,7 @@
 
 #include <iostream>
 #include <vector>
-#include <GL/glut.h>
+#include <GL/freeglut.h>
 
 #include "../utils/fileutils.h"
 

@@ -6,7 +6,8 @@
 #define ADUNGL_WINDOW_H
 
 #include <iostream>
-#include <GL/glut.h>
+#include <GL/freeglut.h>
+
 #include <cassert>
 
 using namespace std;
@@ -77,6 +78,7 @@ namespace AdunGL
             Window(const char* name, int width, int height);
             Window() = default;
             void init();
+
 
             //friend GLvoid updateCallback();
             //friend GLvoid renderCallback();

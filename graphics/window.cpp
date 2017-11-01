@@ -52,6 +52,8 @@ namespace AdunGL
             glutSpecialFunc(specialKeyboardCallback);
             glutMouseFunc(mouseCallback);
             glutPassiveMotionFunc(mouseMoveCallback);
+
+            //printf("Supported GLSL version is %s.\n", (char *)glGetString(GL_SHADING_LANGUAGE_VERSION));
         }
 
         void Window::update(void (*func)())

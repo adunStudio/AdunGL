@@ -9,3 +9,9 @@ set(SOURCE_FILES main.cpp graphics/window.cpp graphics/window.h maths/vec2.cpp m
 
 
 add_executable(AdunGL ${SOURCE_FILES} )
+
+FIND_PATH(GLX_INCLUDE_DIR GL/glx.h PATHS /opt/X11/include /usr/X11/include /usr/X11R6/include)
+FIND_LIBRARY(OPENGL_gl_LIBRARY GL PATHS /opt/X11/lib /usr/X11/lib /usr/X11R6/lib)
+FIND_LIBRARY(OPENGL_glu_LIBRARY GLU PATHS /opt/X11/lib /usr/X11/lib /usr/X11R6/lib)
+LIST(APPEND LIBS ${OPENGL_gl_LIBRARY})
+INCLUDE_DIRECTORIES(${GLX_INCLUDE_DIR})

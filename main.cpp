@@ -1,5 +1,5 @@
 #include <iostream>
-#include <GL/glut.h>
+#include <GL/freeglut.h>
 #include "graphics/window.h"
 #include "graphics/shader.h"
 #include "maths/maths.h"

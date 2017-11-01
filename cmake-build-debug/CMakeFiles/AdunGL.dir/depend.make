@@ -4,9 +4,25 @@
 CMakeFiles/AdunGL.dir/graphics/shader.cpp.o: ../graphics/shader.cpp
 CMakeFiles/AdunGL.dir/graphics/shader.cpp.o: ../graphics/shader.h
 CMakeFiles/AdunGL.dir/graphics/shader.cpp.o: ../utils/fileutils.h
+CMakeFiles/AdunGL.dir/graphics/shader.cpp.o: /usr/X11R6/include/GL/freeglut.h
+CMakeFiles/AdunGL.dir/graphics/shader.cpp.o: /usr/X11R6/include/GL/freeglut_ext.h
+CMakeFiles/AdunGL.dir/graphics/shader.cpp.o: /usr/X11R6/include/GL/freeglut_std.h
+CMakeFiles/AdunGL.dir/graphics/shader.cpp.o: /usr/X11R6/include/GL/gl.h
+CMakeFiles/AdunGL.dir/graphics/shader.cpp.o: /usr/X11R6/include/GL/gl_mangle.h
+CMakeFiles/AdunGL.dir/graphics/shader.cpp.o: /usr/X11R6/include/GL/glext.h
+CMakeFiles/AdunGL.dir/graphics/shader.cpp.o: /usr/X11R6/include/GL/glu.h
+CMakeFiles/AdunGL.dir/graphics/shader.cpp.o: /usr/X11R6/include/GL/glu_mangle.h
 
 CMakeFiles/AdunGL.dir/graphics/window.cpp.o: ../graphics/window.cpp
 CMakeFiles/AdunGL.dir/graphics/window.cpp.o: ../graphics/window.h
+CMakeFiles/AdunGL.dir/graphics/window.cpp.o: /usr/X11R6/include/GL/freeglut.h
+CMakeFiles/AdunGL.dir/graphics/window.cpp.o: /usr/X11R6/include/GL/freeglut_ext.h
+CMakeFiles/AdunGL.dir/graphics/window.cpp.o: /usr/X11R6/include/GL/freeglut_std.h
+CMakeFiles/AdunGL.dir/graphics/window.cpp.o: /usr/X11R6/include/GL/gl.h
+CMakeFiles/AdunGL.dir/graphics/window.cpp.o: /usr/X11R6/include/GL/gl_mangle.h
+CMakeFiles/AdunGL.dir/graphics/window.cpp.o: /usr/X11R6/include/GL/glext.h
+CMakeFiles/AdunGL.dir/graphics/window.cpp.o: /usr/X11R6/include/GL/glu.h
+CMakeFiles/AdunGL.dir/graphics/window.cpp.o: /usr/X11R6/include/GL/glu_mangle.h
 
 CMakeFiles/AdunGL.dir/main.cpp.o: ../graphics/shader.h
 CMakeFiles/AdunGL.dir/main.cpp.o: ../graphics/window.h
@@ -18,6 +34,14 @@ CMakeFiles/AdunGL.dir/main.cpp.o: ../maths/vec2.h
 CMakeFiles/AdunGL.dir/main.cpp.o: ../maths/vec3.h
 CMakeFiles/AdunGL.dir/main.cpp.o: ../maths/vec4.h
 CMakeFiles/AdunGL.dir/main.cpp.o: ../utils/fileutils.h
+CMakeFiles/AdunGL.dir/main.cpp.o: /usr/X11R6/include/GL/freeglut.h
+CMakeFiles/AdunGL.dir/main.cpp.o: /usr/X11R6/include/GL/freeglut_ext.h
+CMakeFiles/AdunGL.dir/main.cpp.o: /usr/X11R6/include/GL/freeglut_std.h
+CMakeFiles/AdunGL.dir/main.cpp.o: /usr/X11R6/include/GL/gl.h
+CMakeFiles/AdunGL.dir/main.cpp.o: /usr/X11R6/include/GL/gl_mangle.h
+CMakeFiles/AdunGL.dir/main.cpp.o: /usr/X11R6/include/GL/glext.h
+CMakeFiles/AdunGL.dir/main.cpp.o: /usr/X11R6/include/GL/glu.h
+CMakeFiles/AdunGL.dir/main.cpp.o: /usr/X11R6/include/GL/glu_mangle.h
 
 CMakeFiles/AdunGL.dir/maths/mat4.cpp.o: ../maths/mat4.cpp
 CMakeFiles/AdunGL.dir/maths/mat4.cpp.o: ../maths/mat4.h

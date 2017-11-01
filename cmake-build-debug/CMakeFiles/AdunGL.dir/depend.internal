@@ -5,9 +5,25 @@ CMakeFiles/AdunGL.dir/graphics/shader.cpp.o
  /Users/adun/Desktop/AdunGL/graphics/shader.cpp
  /Users/adun/Desktop/AdunGL/graphics/shader.h
  /Users/adun/Desktop/AdunGL/utils/fileutils.h
+ /usr/X11R6/include/GL/freeglut.h
+ /usr/X11R6/include/GL/freeglut_ext.h
+ /usr/X11R6/include/GL/freeglut_std.h
+ /usr/X11R6/include/GL/gl.h
+ /usr/X11R6/include/GL/gl_mangle.h
+ /usr/X11R6/include/GL/glext.h
+ /usr/X11R6/include/GL/glu.h
+ /usr/X11R6/include/GL/glu_mangle.h
 CMakeFiles/AdunGL.dir/graphics/window.cpp.o
  /Users/adun/Desktop/AdunGL/graphics/window.cpp
  /Users/adun/Desktop/AdunGL/graphics/window.h
+ /usr/X11R6/include/GL/freeglut.h
+ /usr/X11R6/include/GL/freeglut_ext.h
+ /usr/X11R6/include/GL/freeglut_std.h
+ /usr/X11R6/include/GL/gl.h
+ /usr/X11R6/include/GL/gl_mangle.h
+ /usr/X11R6/include/GL/glext.h
+ /usr/X11R6/include/GL/glu.h
+ /usr/X11R6/include/GL/glu_mangle.h
 CMakeFiles/AdunGL.dir/main.cpp.o
  /Users/adun/Desktop/AdunGL/graphics/shader.h
  /Users/adun/Desktop/AdunGL/graphics/window.h
@@ -19,6 +35,14 @@ CMakeFiles/AdunGL.dir/main.cpp.o
  /Users/adun/Desktop/AdunGL/maths/vec3.h
  /Users/adun/Desktop/AdunGL/maths/vec4.h
  /Users/adun/Desktop/AdunGL/utils/fileutils.h
+ /usr/X11R6/include/GL/freeglut.h
+ /usr/X11R6/include/GL/freeglut_ext.h
+ /usr/X11R6/include/GL/freeglut_std.h
+ /usr/X11R6/include/GL/gl.h
+ /usr/X11R6/include/GL/gl_mangle.h
+ /usr/X11R6/include/GL/glext.h
+ /usr/X11R6/include/GL/glu.h
+ /usr/X11R6/include/GL/glu_mangle.h
 CMakeFiles/AdunGL.dir/maths/mat4.cpp.o
  /Users/adun/Desktop/AdunGL/maths/mat4.cpp
  /Users/adun/Desktop/AdunGL/maths/mat4.h

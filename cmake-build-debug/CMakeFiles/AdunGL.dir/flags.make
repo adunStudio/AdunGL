@@ -6,5 +6,5 @@ CXX_FLAGS =  -std=c++11 -framework GLUT -framework OpenGL -g
 
 CXX_DEFINES = 
 
-CXX_INCLUDES = 
+CXX_INCLUDES = -I/usr/X11R6/include 
 
