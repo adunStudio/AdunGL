@@ -1,8 +1,6 @@
-#version 330 core
+#version 120
 
-layout (location = 0) in Vec4 color;
-
-void main()
+void main(void)
 {
-    color = Vec4(1.0, 0.0, 1.0, 1.0);
+    gl_FragColor = vec4(1.0, 0.0, 0.9, 1.0);
 }

@@ -23,8 +23,21 @@ namespace AdunGL
 
         GLuint Shader::load()
         {
+            /*
+             * 프로그램(쉐이더에 대한) 컨테이너를 위한 객체를 생성한다.
+             * 이 함수는 컨테이너에 대한 핸들을 반환한다.
+             * GLuint glCreateProgram(void);
+             */
             GLuint program = glCreateProgram();
-            GLuint vertex = glCreateShader(GL_VERTEX_SHADER);
+
+            /*
+             * 쉐이더 컨테이너로써 수행하는 오브젝트(쉐이더 핸들)를 반환한다.
+             * 이 함수는 쉐이더의 핸들을 반환한다.
+             * GLuint glCreateShader(GLenum shaderType);
+             * Parameter:
+             * shaderType - GL_VERTEX_SHADER 또는 GL_FRAGMENT_SHADER
+             */
+            GLuint vertex   = glCreateShader(GL_VERTEX_SHADER);
             GLuint fragment = glCreateShader(GL_FRAGMENT_SHADER);
 
             /* Read */
@@ -38,7 +51,24 @@ namespace AdunGL
 
 
             /* Vertex */
+
+            /*
+             * 특정한 소스 코드를 추가한다. 소스코드는 문자 배열이다.
+             * void glShaderSource(GLuint shader, int numOfString. const char** strings, int *lenOfStrings);
+             * Parameters:
+             * shader - 쉐이더의 핸들
+             * numOfStrings - 문자 배열의 구성 요소 수
+             * strings - 문자 배열
+             * lenOfStrings - 각 문자열의 길이를 가지는 배열 또는 NUL값(문자열들이 NULL로 끝남)
+             */
             glShaderSource(vertex, 1, &vertSource, NULL);
+
+            /*
+             * 쉐이더 코드를 컴파일한다.
+             * void glCompileShader(GLuint shader);
+             * Parameters:
+             * shader - 쉐이더의 핸들
+             */
             glCompileShader(vertex);
 
             glGetShaderiv(vertex, GL_COMPILE_STATUS, &result);
@@ -87,14 +117,28 @@ namespace AdunGL
 
 
             /* Attach */
+
+            /*
+             * 생성한 쉐이더를 프로그램 컨테이너에 붙인다.
+             * void glAttachShader(GLuint program, GLuint shader);
+             * Parameters:
+             * Program - 프로그램 컨테이너 핸들
+             * shader - 프로그램 컨테이너에 붙이고자 하는 쉐이더의 핸들
+             */
             glAttachShader(program, vertex);
             glAttachShader(program, fragment);
 
+            /*
+             * 프로그램을 링크한다. 이 단계를 수행하기 위해서 쉐이더는 반드시 컴파일 되어있어야한다.
+             * void glLinkProgram(GLuint program);
+             * Parameters:
+             * program - 프로그램 컨테이너의 핸들
+             */
             glLinkProgram(program);
             glValidateProgram(program);
 
-            glDeleteShader(vertex);
-            glDeleteShader(fragment);
+            //glDeleteShader(vertex);
+            //glDeleteShader(fragment);
 
             return program;
         }

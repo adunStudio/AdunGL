@@ -6,8 +6,7 @@
 #define ADUNGL_WINDOW_H
 
 #include <iostream>
-#include <GL/freeglut.h>
-
+#include <GLUT/glut.h>
 #include <cassert>
 
 using namespace std;
@@ -70,6 +69,7 @@ namespace AdunGL
             void render(void (*func)());
 
             inline const unsigned char* getVersion() const { return glGetString(GL_VERSION); }
+            inline const unsigned char* getGLSLVersion() const { return glGetString(GL_SHADING_LANGUAGE_VERSION); }
 
             inline int getWidth() const { return width;  }
             inline int getHeight()const { return height; }

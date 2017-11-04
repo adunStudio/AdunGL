@@ -3,7 +3,6 @@
 //
 
 #include "window.h"
-#include <functional>
 
 namespace AdunGL
 {
@@ -42,6 +41,7 @@ namespace AdunGL
             glutInitDisplayMode(GLUT_DOUBLE | GLUT_RGBA);
             glutInitWindowPosition(100, 100);
             glutInitWindowSize(width, height);
+
             window = glutCreateWindow(name);
 
             //glutIdleFunc(updateCallback);
@@ -52,8 +52,6 @@ namespace AdunGL
             glutSpecialFunc(specialKeyboardCallback);
             glutMouseFunc(mouseCallback);
             glutPassiveMotionFunc(mouseMoveCallback);
-
-            //printf("Supported GLSL version is %s.\n", (char *)glGetString(GL_SHADING_LANGUAGE_VERSION));
         }
 
         void Window::update(void (*func)())

@@ -1,5 +1,5 @@
 #include <iostream>
-#include <GL/freeglut.h>
+#include <GLUT/glut.h>
 #include "graphics/window.h"
 #include "graphics/shader.h"
 #include "maths/maths.h"
@@ -11,28 +11,37 @@ using namespace graphics;
 using namespace maths;
 using namespace utils;
 
-GLuint vao;
-Shader* shader;
 int main(int argc, char** argv)
 {
-
     std::cout << "Hello, AdunGL!" << std::endl;
 
     Window window = Window::instance(argc, argv, "AdunGL", 800, 600);
 
-    cout << "OpenGL Version: " << window.getVersion() << endl;
+    printf("Supported OpenGL version is %s.\n", window.getVersion());
+    printf("Supported GLSL version is %s.\n", window.getGLSLVersion());
 
-    cout << "window width: " << window.getWidth()  << endl;
-    cout << "window height:" << window.getHeight() << endl;
+    GLuint vbo;
 
-    glGenVertexArraysAPPLE(1, &vao);
-    glBindVertexArrayAPPLE(vao);
+    GLfloat vertices[] =
+            {
+                    -0.5f, -0.5f, 0.0f,
+                    -0.5f,  0.5f, 0.0f,
+                     0.5f,  0.5f, 0.0f,
+                     0.5f,  0.5f, 0.0f,
+                     0.5f, -0.5f, 0.0f,
+                    -0.5f, -0.5f, 0.0f,
+            };
 
-    shader = new Shader(
-            "/Users/adun/Desktop/AdunGL/shaders/basic.vert",
-            "/Users/adun/Desktop/AdunGL/shaders/basic.frag"
-    );
 
+    glGenBuffers(1, &vbo);
+    glBindBuffer(GL_ARRAY_BUFFER, vbo);
+    glBufferData(GL_ARRAY_BUFFER, sizeof(vertices), vertices, GL_STATIC_DRAW);
+    glVertexAttribPointer(0, 3, GL_FLOAT, GL_FALSE, 0, 0);
+    glEnableVertexAttribArray(0);
+
+    Shader shader("/Users/adun/Desktop/AdunGL/shaders/basic.vert", "/Users/adun/Desktop/AdunGL/shaders/basic.frag");
+
+    shader.enable();
 
     window.update([]() {
 
@@ -41,18 +50,11 @@ int main(int argc, char** argv)
     window.render([]() {
         Window::instance().clear();
 
-        glBegin(GL_TRIANGLES);
-        {
-            glVertex2f(-0.5, -0.5);
-            glVertex2f(-0.0, 0.5);
-            glVertex2f(0.5, -0.5);
-        }
-        glEnd();
+        glDrawArrays(GL_TRIANGLES, 0, 6);
 
         glutSwapBuffers();
     });
 
     window.run();
-
     return 1;
 }

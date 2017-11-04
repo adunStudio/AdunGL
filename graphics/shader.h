@@ -7,8 +7,7 @@
 
 #include <iostream>
 #include <vector>
-#include <GL/freeglut.h>
-
+#include <GLUT/glut.h>
 #include "../utils/fileutils.h"
 
 namespace AdunGL
