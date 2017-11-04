@@ -24,12 +24,12 @@ int main(int argc, char** argv)
 
     GLfloat vertices[] =
             {
-                    4, 3, 0,
-                    12, 3, 0,
-                    4, 6 , 0,
-                    4, 6 , 0,
-                    12, 6 , 0,
-                    12, 3 , 0
+                    0, 0, 0,
+                    8, 0, 0,
+                    0, 3 , 0,
+                    0, 3 , 0,
+                    8, 3 , 0,
+                    8, 0 , 0
             };
 
 
@@ -43,9 +43,14 @@ int main(int argc, char** argv)
 
     Shader shader("/Users/adun/Desktop/AdunGL/shaders/basic.vert", "/Users/adun/Desktop/AdunGL/shaders/basic.frag");
     shader.enable();
+    shader.setUniformMat4("pr_matrix", ortho);
+    //shader.setUniformMat4("ml_matrix", mat4::rotation(45.0f, vec3(0, 0, 1)));
+    shader.setUniformMat4("ml_matrix", mat4::translation(vec3(4, 3, 0)));
+
+    shader.setUniform2f("light_pos", vec2 (4.0f, 1.5f));
+    shader.setUniform4f("colour", vec4(0.2f, 0.3f, 0.8f, 1.0f));
 
 
-    glUniformMatrix4fv(glGetUniformLocation(shader.shaderID, "pr_matrix"), 1, GL_FALSE, ortho.elements);
     window.update([]() {
 
     });

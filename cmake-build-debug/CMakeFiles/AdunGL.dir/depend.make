@@ -3,6 +3,12 @@
 
 CMakeFiles/AdunGL.dir/graphics/shader.cpp.o: ../graphics/shader.cpp
 CMakeFiles/AdunGL.dir/graphics/shader.cpp.o: ../graphics/shader.h
+CMakeFiles/AdunGL.dir/graphics/shader.cpp.o: ../maths/mat4.h
+CMakeFiles/AdunGL.dir/graphics/shader.cpp.o: ../maths/math_func.h
+CMakeFiles/AdunGL.dir/graphics/shader.cpp.o: ../maths/maths.h
+CMakeFiles/AdunGL.dir/graphics/shader.cpp.o: ../maths/vec2.h
+CMakeFiles/AdunGL.dir/graphics/shader.cpp.o: ../maths/vec3.h
+CMakeFiles/AdunGL.dir/graphics/shader.cpp.o: ../maths/vec4.h
 CMakeFiles/AdunGL.dir/graphics/shader.cpp.o: ../utils/fileutils.h
 
 CMakeFiles/AdunGL.dir/graphics/window.cpp.o: ../graphics/window.cpp

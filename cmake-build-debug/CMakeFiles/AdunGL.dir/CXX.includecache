@@ -19,6 +19,8 @@ GLUT/glut.h
 -
 ../utils/fileutils.h
 /Users/adun/Desktop/AdunGL/utils/fileutils.h
+../maths/maths.h
+/Users/adun/Desktop/AdunGL/maths/maths.h
 
 /Users/adun/Desktop/AdunGL/graphics/window.cpp
 window.h
