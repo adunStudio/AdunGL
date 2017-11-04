@@ -150,7 +150,7 @@ namespace AdunGL
 
         void Shader::disable() const
         {
-           glUseProgram(0);
+            glUseProgram(0);
         }
 
     }

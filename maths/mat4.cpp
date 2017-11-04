@@ -70,9 +70,9 @@ namespace AdunGL
             result.elements[1 + 1 * 4] = 2.0f / (top - bottom);
             result.elements[2 + 2 * 4] = 2.0f / (near - far);
 
-            result.elements[3 + 0 * 4] = (left + right) / (left - right);
-            result.elements[3 + 1 * 4] = (bottom + top) / (bottom - top);
-            result.elements[3 + 2 * 4] = (far + near) / (far - near);
+            result.elements[0 + 3 * 4] = (left + right) / (left - right);
+            result.elements[1 + 3 * 4] = (bottom + top) / (bottom - top);
+            result.elements[2 + 3 * 4] = (far + near) / (far - near);
 
             return result;
         }
@@ -146,7 +146,7 @@ namespace AdunGL
         // 0  sy  0  0
         // 0   0  sz 0
         // 0   0  0  1
-        mat4 mat4::scale(const vec3& scale)
+        mat4 mat4::scale(const vec3 & scale)
         {
             mat4 result(1.0f);
 

@@ -19,10 +19,11 @@ namespace AdunGL
         class Shader
         {
         private:
-            GLuint shaderID;
             const char* vertPath, * fragPath;
 
         public:
+            GLuint shaderID;
+
             Shader(const char* vertPath, const char* fragPath);
             ~Shader();
 

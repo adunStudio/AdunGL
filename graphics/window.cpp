@@ -86,7 +86,7 @@ namespace AdunGL
             Window::instance().width = w;
             Window::instance().height= h;
             glViewport (0, 0, w, h);
-            glLoadIdentity();
+            //glLoadIdentity();
         }
 
         /*GLvoid updateCallback()
