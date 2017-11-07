@@ -8,6 +8,7 @@
 #include <iostream>
 #include <GLUT/glut.h>
 #include <cassert>
+#include <map>
 
 using namespace std;
 
@@ -25,6 +26,8 @@ namespace AdunGL
 
             static bool keys[MAX_KEYS];
             static bool mouseButtons[MAX_BUTTONS];
+            static map<string, bool> keyMaps;
+
 
             static double mx, my;
 
@@ -48,6 +51,7 @@ namespace AdunGL
             }
 
             static bool isKeyPressed(unsigned char key);
+            static bool isKeyPressed(const string& key);
             static bool isMouseButtonPressed(int button);
             static void getMousePosition(int& x, int& y);
 
@@ -59,7 +63,7 @@ namespace AdunGL
         public:
             ~Window();
 
-            void clear() const;
+            void clear(float r = 0.0f, float g = 0.0f, float b = 0.0f) const;
 
             void run() const;
 
@@ -67,25 +71,28 @@ namespace AdunGL
 
             void update(void (*func)());
             void render(void (*func)());
+            void reshape(void (func)(int, int));
+            void timer(void (*func)(int));
 
             inline const unsigned char* getVersion() const { return glGetString(GL_VERSION); }
             inline const unsigned char* getGLSLVersion() const { return glGetString(GL_SHADING_LANGUAGE_VERSION); }
 
             inline int getWidth() const { return width;  }
             inline int getHeight()const { return height; }
+            inline void setWidth(int w) { width = w; }
+            inline void setHeight(int h) { height = h; }
+
+            inline void draw() { glutSwapBuffers(); }
 
         private:
             Window(const char* name, int width, int height);
             Window() = default;
             void init();
 
-
-            //friend GLvoid updateCallback();
-            //friend GLvoid renderCallback();
-            friend GLvoid reshapeCallback(int w, int h);
             friend GLvoid keyboardDownCallback(unsigned char key, int x, int y);
             friend GLvoid keyboardUpCallback(unsigned char key, int x, int y);
-            friend GLvoid specialKeyboardCallback(int key, int x, int y);
+            friend GLvoid specialKeyboardUpCallback(int key, int x, int y);
+            friend GLvoid specialKeyboardDownCallback(int key, int x, int y);
             friend GLvoid mouseCallback(int button, int state, int x, int y);
             friend GLvoid mouseMoveCallback(int x, int y);
         };

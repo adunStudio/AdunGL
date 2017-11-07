@@ -17,6 +17,8 @@ namespace AdunGL
             return degrees * (M_PI / 180.0f);
         }
 
+        const float RADIAN = static_cast<float>(M_PI / 180);
+
     }
 }
 

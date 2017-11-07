@@ -57,28 +57,28 @@ include CMakeFiles/AdunGL.dir/progress.make
 # Include the compile flags for this target's objects.
 include CMakeFiles/AdunGL.dir/flags.make
 
-CMakeFiles/AdunGL.dir/main.cpp.o: CMakeFiles/AdunGL.dir/flags.make
-CMakeFiles/AdunGL.dir/main.cpp.o: ../main.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/Users/adun/Desktop/AdunGL/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_1) "Building CXX object CMakeFiles/AdunGL.dir/main.cpp.o"
-	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/c++   $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/AdunGL.dir/main.cpp.o -c /Users/adun/Desktop/AdunGL/main.cpp
+CMakeFiles/AdunGL.dir/example22.cpp.o: CMakeFiles/AdunGL.dir/flags.make
+CMakeFiles/AdunGL.dir/example22.cpp.o: ../example22.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/Users/adun/Desktop/AdunGL/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_1) "Building CXX object CMakeFiles/AdunGL.dir/example22.cpp.o"
+	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/c++   $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/AdunGL.dir/example22.cpp.o -c /Users/adun/Desktop/AdunGL/example22.cpp
 
-CMakeFiles/AdunGL.dir/main.cpp.i: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/AdunGL.dir/main.cpp.i"
-	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /Users/adun/Desktop/AdunGL/main.cpp > CMakeFiles/AdunGL.dir/main.cpp.i
+CMakeFiles/AdunGL.dir/example22.cpp.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/AdunGL.dir/example22.cpp.i"
+	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /Users/adun/Desktop/AdunGL/example22.cpp > CMakeFiles/AdunGL.dir/example22.cpp.i
 
-CMakeFiles/AdunGL.dir/main.cpp.s: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/AdunGL.dir/main.cpp.s"
-	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /Users/adun/Desktop/AdunGL/main.cpp -o CMakeFiles/AdunGL.dir/main.cpp.s
+CMakeFiles/AdunGL.dir/example22.cpp.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/AdunGL.dir/example22.cpp.s"
+	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /Users/adun/Desktop/AdunGL/example22.cpp -o CMakeFiles/AdunGL.dir/example22.cpp.s
 
-CMakeFiles/AdunGL.dir/main.cpp.o.requires:
+CMakeFiles/AdunGL.dir/example22.cpp.o.requires:
 
-.PHONY : CMakeFiles/AdunGL.dir/main.cpp.o.requires
+.PHONY : CMakeFiles/AdunGL.dir/example22.cpp.o.requires
 
-CMakeFiles/AdunGL.dir/main.cpp.o.provides: CMakeFiles/AdunGL.dir/main.cpp.o.requires
-	$(MAKE) -f CMakeFiles/AdunGL.dir/build.make CMakeFiles/AdunGL.dir/main.cpp.o.provides.build
-.PHONY : CMakeFiles/AdunGL.dir/main.cpp.o.provides
+CMakeFiles/AdunGL.dir/example22.cpp.o.provides: CMakeFiles/AdunGL.dir/example22.cpp.o.requires
+	$(MAKE) -f CMakeFiles/AdunGL.dir/build.make CMakeFiles/AdunGL.dir/example22.cpp.o.provides.build
+.PHONY : CMakeFiles/AdunGL.dir/example22.cpp.o.provides
 
-CMakeFiles/AdunGL.dir/main.cpp.o.provides.build: CMakeFiles/AdunGL.dir/main.cpp.o
+CMakeFiles/AdunGL.dir/example22.cpp.o.provides.build: CMakeFiles/AdunGL.dir/example22.cpp.o
 
 
 CMakeFiles/AdunGL.dir/graphics/window.cpp.o: CMakeFiles/AdunGL.dir/flags.make
@@ -249,21 +249,121 @@ CMakeFiles/AdunGL.dir/graphics/shader.cpp.o.provides: CMakeFiles/AdunGL.dir/grap
 CMakeFiles/AdunGL.dir/graphics/shader.cpp.o.provides.build: CMakeFiles/AdunGL.dir/graphics/shader.cpp.o
 
 
+CMakeFiles/AdunGL.dir/graphics/buffers/buffer.cpp.o: CMakeFiles/AdunGL.dir/flags.make
+CMakeFiles/AdunGL.dir/graphics/buffers/buffer.cpp.o: ../graphics/buffers/buffer.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/Users/adun/Desktop/AdunGL/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_9) "Building CXX object CMakeFiles/AdunGL.dir/graphics/buffers/buffer.cpp.o"
+	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/c++   $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/AdunGL.dir/graphics/buffers/buffer.cpp.o -c /Users/adun/Desktop/AdunGL/graphics/buffers/buffer.cpp
+
+CMakeFiles/AdunGL.dir/graphics/buffers/buffer.cpp.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/AdunGL.dir/graphics/buffers/buffer.cpp.i"
+	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /Users/adun/Desktop/AdunGL/graphics/buffers/buffer.cpp > CMakeFiles/AdunGL.dir/graphics/buffers/buffer.cpp.i
+
+CMakeFiles/AdunGL.dir/graphics/buffers/buffer.cpp.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/AdunGL.dir/graphics/buffers/buffer.cpp.s"
+	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /Users/adun/Desktop/AdunGL/graphics/buffers/buffer.cpp -o CMakeFiles/AdunGL.dir/graphics/buffers/buffer.cpp.s
+
+CMakeFiles/AdunGL.dir/graphics/buffers/buffer.cpp.o.requires:
+
+.PHONY : CMakeFiles/AdunGL.dir/graphics/buffers/buffer.cpp.o.requires
+
+CMakeFiles/AdunGL.dir/graphics/buffers/buffer.cpp.o.provides: CMakeFiles/AdunGL.dir/graphics/buffers/buffer.cpp.o.requires
+	$(MAKE) -f CMakeFiles/AdunGL.dir/build.make CMakeFiles/AdunGL.dir/graphics/buffers/buffer.cpp.o.provides.build
+.PHONY : CMakeFiles/AdunGL.dir/graphics/buffers/buffer.cpp.o.provides
+
+CMakeFiles/AdunGL.dir/graphics/buffers/buffer.cpp.o.provides.build: CMakeFiles/AdunGL.dir/graphics/buffers/buffer.cpp.o
+
+
+CMakeFiles/AdunGL.dir/graphics/buffers/indexBuffer.cpp.o: CMakeFiles/AdunGL.dir/flags.make
+CMakeFiles/AdunGL.dir/graphics/buffers/indexBuffer.cpp.o: ../graphics/buffers/indexBuffer.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/Users/adun/Desktop/AdunGL/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_10) "Building CXX object CMakeFiles/AdunGL.dir/graphics/buffers/indexBuffer.cpp.o"
+	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/c++   $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/AdunGL.dir/graphics/buffers/indexBuffer.cpp.o -c /Users/adun/Desktop/AdunGL/graphics/buffers/indexBuffer.cpp
+
+CMakeFiles/AdunGL.dir/graphics/buffers/indexBuffer.cpp.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/AdunGL.dir/graphics/buffers/indexBuffer.cpp.i"
+	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /Users/adun/Desktop/AdunGL/graphics/buffers/indexBuffer.cpp > CMakeFiles/AdunGL.dir/graphics/buffers/indexBuffer.cpp.i
+
+CMakeFiles/AdunGL.dir/graphics/buffers/indexBuffer.cpp.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/AdunGL.dir/graphics/buffers/indexBuffer.cpp.s"
+	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /Users/adun/Desktop/AdunGL/graphics/buffers/indexBuffer.cpp -o CMakeFiles/AdunGL.dir/graphics/buffers/indexBuffer.cpp.s
+
+CMakeFiles/AdunGL.dir/graphics/buffers/indexBuffer.cpp.o.requires:
+
+.PHONY : CMakeFiles/AdunGL.dir/graphics/buffers/indexBuffer.cpp.o.requires
+
+CMakeFiles/AdunGL.dir/graphics/buffers/indexBuffer.cpp.o.provides: CMakeFiles/AdunGL.dir/graphics/buffers/indexBuffer.cpp.o.requires
+	$(MAKE) -f CMakeFiles/AdunGL.dir/build.make CMakeFiles/AdunGL.dir/graphics/buffers/indexBuffer.cpp.o.provides.build
+.PHONY : CMakeFiles/AdunGL.dir/graphics/buffers/indexBuffer.cpp.o.provides
+
+CMakeFiles/AdunGL.dir/graphics/buffers/indexBuffer.cpp.o.provides.build: CMakeFiles/AdunGL.dir/graphics/buffers/indexBuffer.cpp.o
+
+
+CMakeFiles/AdunGL.dir/graphics/buffers/vertexArray.cpp.o: CMakeFiles/AdunGL.dir/flags.make
+CMakeFiles/AdunGL.dir/graphics/buffers/vertexArray.cpp.o: ../graphics/buffers/vertexArray.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/Users/adun/Desktop/AdunGL/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_11) "Building CXX object CMakeFiles/AdunGL.dir/graphics/buffers/vertexArray.cpp.o"
+	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/c++   $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/AdunGL.dir/graphics/buffers/vertexArray.cpp.o -c /Users/adun/Desktop/AdunGL/graphics/buffers/vertexArray.cpp
+
+CMakeFiles/AdunGL.dir/graphics/buffers/vertexArray.cpp.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/AdunGL.dir/graphics/buffers/vertexArray.cpp.i"
+	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /Users/adun/Desktop/AdunGL/graphics/buffers/vertexArray.cpp > CMakeFiles/AdunGL.dir/graphics/buffers/vertexArray.cpp.i
+
+CMakeFiles/AdunGL.dir/graphics/buffers/vertexArray.cpp.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/AdunGL.dir/graphics/buffers/vertexArray.cpp.s"
+	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /Users/adun/Desktop/AdunGL/graphics/buffers/vertexArray.cpp -o CMakeFiles/AdunGL.dir/graphics/buffers/vertexArray.cpp.s
+
+CMakeFiles/AdunGL.dir/graphics/buffers/vertexArray.cpp.o.requires:
+
+.PHONY : CMakeFiles/AdunGL.dir/graphics/buffers/vertexArray.cpp.o.requires
+
+CMakeFiles/AdunGL.dir/graphics/buffers/vertexArray.cpp.o.provides: CMakeFiles/AdunGL.dir/graphics/buffers/vertexArray.cpp.o.requires
+	$(MAKE) -f CMakeFiles/AdunGL.dir/build.make CMakeFiles/AdunGL.dir/graphics/buffers/vertexArray.cpp.o.provides.build
+.PHONY : CMakeFiles/AdunGL.dir/graphics/buffers/vertexArray.cpp.o.provides
+
+CMakeFiles/AdunGL.dir/graphics/buffers/vertexArray.cpp.o.provides.build: CMakeFiles/AdunGL.dir/graphics/buffers/vertexArray.cpp.o
+
+
+CMakeFiles/AdunGL.dir/graphics/camera.cpp.o: CMakeFiles/AdunGL.dir/flags.make
+CMakeFiles/AdunGL.dir/graphics/camera.cpp.o: ../graphics/camera.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/Users/adun/Desktop/AdunGL/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_12) "Building CXX object CMakeFiles/AdunGL.dir/graphics/camera.cpp.o"
+	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/c++   $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/AdunGL.dir/graphics/camera.cpp.o -c /Users/adun/Desktop/AdunGL/graphics/camera.cpp
+
+CMakeFiles/AdunGL.dir/graphics/camera.cpp.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/AdunGL.dir/graphics/camera.cpp.i"
+	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /Users/adun/Desktop/AdunGL/graphics/camera.cpp > CMakeFiles/AdunGL.dir/graphics/camera.cpp.i
+
+CMakeFiles/AdunGL.dir/graphics/camera.cpp.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/AdunGL.dir/graphics/camera.cpp.s"
+	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /Users/adun/Desktop/AdunGL/graphics/camera.cpp -o CMakeFiles/AdunGL.dir/graphics/camera.cpp.s
+
+CMakeFiles/AdunGL.dir/graphics/camera.cpp.o.requires:
+
+.PHONY : CMakeFiles/AdunGL.dir/graphics/camera.cpp.o.requires
+
+CMakeFiles/AdunGL.dir/graphics/camera.cpp.o.provides: CMakeFiles/AdunGL.dir/graphics/camera.cpp.o.requires
+	$(MAKE) -f CMakeFiles/AdunGL.dir/build.make CMakeFiles/AdunGL.dir/graphics/camera.cpp.o.provides.build
+.PHONY : CMakeFiles/AdunGL.dir/graphics/camera.cpp.o.provides
+
+CMakeFiles/AdunGL.dir/graphics/camera.cpp.o.provides.build: CMakeFiles/AdunGL.dir/graphics/camera.cpp.o
+
+
 # Object files for target AdunGL
 AdunGL_OBJECTS = \
-"CMakeFiles/AdunGL.dir/main.cpp.o" \
+"CMakeFiles/AdunGL.dir/example22.cpp.o" \
 "CMakeFiles/AdunGL.dir/graphics/window.cpp.o" \
 "CMakeFiles/AdunGL.dir/maths/vec2.cpp.o" \
 "CMakeFiles/AdunGL.dir/maths/vec3.cpp.o" \
 "CMakeFiles/AdunGL.dir/maths/vec4.cpp.o" \
 "CMakeFiles/AdunGL.dir/maths/mat4.cpp.o" \
 "CMakeFiles/AdunGL.dir/utils/fileutils.cpp.o" \
-"CMakeFiles/AdunGL.dir/graphics/shader.cpp.o"
+"CMakeFiles/AdunGL.dir/graphics/shader.cpp.o" \
+"CMakeFiles/AdunGL.dir/graphics/buffers/buffer.cpp.o" \
+"CMakeFiles/AdunGL.dir/graphics/buffers/indexBuffer.cpp.o" \
+"CMakeFiles/AdunGL.dir/graphics/buffers/vertexArray.cpp.o" \
+"CMakeFiles/AdunGL.dir/graphics/camera.cpp.o"
 
 # External object files for target AdunGL
 AdunGL_EXTERNAL_OBJECTS =
 
-AdunGL: CMakeFiles/AdunGL.dir/main.cpp.o
+AdunGL: CMakeFiles/AdunGL.dir/example22.cpp.o
 AdunGL: CMakeFiles/AdunGL.dir/graphics/window.cpp.o
 AdunGL: CMakeFiles/AdunGL.dir/maths/vec2.cpp.o
 AdunGL: CMakeFiles/AdunGL.dir/maths/vec3.cpp.o
@@ -271,9 +371,13 @@ AdunGL: CMakeFiles/AdunGL.dir/maths/vec4.cpp.o
 AdunGL: CMakeFiles/AdunGL.dir/maths/mat4.cpp.o
 AdunGL: CMakeFiles/AdunGL.dir/utils/fileutils.cpp.o
 AdunGL: CMakeFiles/AdunGL.dir/graphics/shader.cpp.o
+AdunGL: CMakeFiles/AdunGL.dir/graphics/buffers/buffer.cpp.o
+AdunGL: CMakeFiles/AdunGL.dir/graphics/buffers/indexBuffer.cpp.o
+AdunGL: CMakeFiles/AdunGL.dir/graphics/buffers/vertexArray.cpp.o
+AdunGL: CMakeFiles/AdunGL.dir/graphics/camera.cpp.o
 AdunGL: CMakeFiles/AdunGL.dir/build.make
 AdunGL: CMakeFiles/AdunGL.dir/link.txt
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --bold --progress-dir=/Users/adun/Desktop/AdunGL/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_9) "Linking CXX executable AdunGL"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --bold --progress-dir=/Users/adun/Desktop/AdunGL/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_13) "Linking CXX executable AdunGL"
 	$(CMAKE_COMMAND) -E cmake_link_script CMakeFiles/AdunGL.dir/link.txt --verbose=$(VERBOSE)
 
 # Rule to build all files generated by this target.
@@ -281,7 +385,7 @@ CMakeFiles/AdunGL.dir/build: AdunGL
 
 .PHONY : CMakeFiles/AdunGL.dir/build
 
-CMakeFiles/AdunGL.dir/requires: CMakeFiles/AdunGL.dir/main.cpp.o.requires
+CMakeFiles/AdunGL.dir/requires: CMakeFiles/AdunGL.dir/example22.cpp.o.requires
 CMakeFiles/AdunGL.dir/requires: CMakeFiles/AdunGL.dir/graphics/window.cpp.o.requires
 CMakeFiles/AdunGL.dir/requires: CMakeFiles/AdunGL.dir/maths/vec2.cpp.o.requires
 CMakeFiles/AdunGL.dir/requires: CMakeFiles/AdunGL.dir/maths/vec3.cpp.o.requires
@@ -289,6 +393,10 @@ CMakeFiles/AdunGL.dir/requires: CMakeFiles/AdunGL.dir/maths/vec4.cpp.o.requires
 CMakeFiles/AdunGL.dir/requires: CMakeFiles/AdunGL.dir/maths/mat4.cpp.o.requires
 CMakeFiles/AdunGL.dir/requires: CMakeFiles/AdunGL.dir/utils/fileutils.cpp.o.requires
 CMakeFiles/AdunGL.dir/requires: CMakeFiles/AdunGL.dir/graphics/shader.cpp.o.requires
+CMakeFiles/AdunGL.dir/requires: CMakeFiles/AdunGL.dir/graphics/buffers/buffer.cpp.o.requires
+CMakeFiles/AdunGL.dir/requires: CMakeFiles/AdunGL.dir/graphics/buffers/indexBuffer.cpp.o.requires
+CMakeFiles/AdunGL.dir/requires: CMakeFiles/AdunGL.dir/graphics/buffers/vertexArray.cpp.o.requires
+CMakeFiles/AdunGL.dir/requires: CMakeFiles/AdunGL.dir/graphics/camera.cpp.o.requires
 
 .PHONY : CMakeFiles/AdunGL.dir/requires
 

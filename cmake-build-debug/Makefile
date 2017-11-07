@@ -123,6 +123,141 @@ AdunGL/fast:
 	$(MAKE) -f CMakeFiles/AdunGL.dir/build.make CMakeFiles/AdunGL.dir/build
 .PHONY : AdunGL/fast
 
+example22.o: example22.cpp.o
+
+.PHONY : example22.o
+
+# target to build an object file
+example22.cpp.o:
+	$(MAKE) -f CMakeFiles/AdunGL.dir/build.make CMakeFiles/AdunGL.dir/example22.cpp.o
+.PHONY : example22.cpp.o
+
+example22.i: example22.cpp.i
+
+.PHONY : example22.i
+
+# target to preprocess a source file
+example22.cpp.i:
+	$(MAKE) -f CMakeFiles/AdunGL.dir/build.make CMakeFiles/AdunGL.dir/example22.cpp.i
+.PHONY : example22.cpp.i
+
+example22.s: example22.cpp.s
+
+.PHONY : example22.s
+
+# target to generate assembly for a file
+example22.cpp.s:
+	$(MAKE) -f CMakeFiles/AdunGL.dir/build.make CMakeFiles/AdunGL.dir/example22.cpp.s
+.PHONY : example22.cpp.s
+
+graphics/buffers/buffer.o: graphics/buffers/buffer.cpp.o
+
+.PHONY : graphics/buffers/buffer.o
+
+# target to build an object file
+graphics/buffers/buffer.cpp.o:
+	$(MAKE) -f CMakeFiles/AdunGL.dir/build.make CMakeFiles/AdunGL.dir/graphics/buffers/buffer.cpp.o
+.PHONY : graphics/buffers/buffer.cpp.o
+
+graphics/buffers/buffer.i: graphics/buffers/buffer.cpp.i
+
+.PHONY : graphics/buffers/buffer.i
+
+# target to preprocess a source file
+graphics/buffers/buffer.cpp.i:
+	$(MAKE) -f CMakeFiles/AdunGL.dir/build.make CMakeFiles/AdunGL.dir/graphics/buffers/buffer.cpp.i
+.PHONY : graphics/buffers/buffer.cpp.i
+
+graphics/buffers/buffer.s: graphics/buffers/buffer.cpp.s
+
+.PHONY : graphics/buffers/buffer.s
+
+# target to generate assembly for a file
+graphics/buffers/buffer.cpp.s:
+	$(MAKE) -f CMakeFiles/AdunGL.dir/build.make CMakeFiles/AdunGL.dir/graphics/buffers/buffer.cpp.s
+.PHONY : graphics/buffers/buffer.cpp.s
+
+graphics/buffers/indexBuffer.o: graphics/buffers/indexBuffer.cpp.o
+
+.PHONY : graphics/buffers/indexBuffer.o
+
+# target to build an object file
+graphics/buffers/indexBuffer.cpp.o:
+	$(MAKE) -f CMakeFiles/AdunGL.dir/build.make CMakeFiles/AdunGL.dir/graphics/buffers/indexBuffer.cpp.o
+.PHONY : graphics/buffers/indexBuffer.cpp.o
+
+graphics/buffers/indexBuffer.i: graphics/buffers/indexBuffer.cpp.i
+
+.PHONY : graphics/buffers/indexBuffer.i
+
+# target to preprocess a source file
+graphics/buffers/indexBuffer.cpp.i:
+	$(MAKE) -f CMakeFiles/AdunGL.dir/build.make CMakeFiles/AdunGL.dir/graphics/buffers/indexBuffer.cpp.i
+.PHONY : graphics/buffers/indexBuffer.cpp.i
+
+graphics/buffers/indexBuffer.s: graphics/buffers/indexBuffer.cpp.s
+
+.PHONY : graphics/buffers/indexBuffer.s
+
+# target to generate assembly for a file
+graphics/buffers/indexBuffer.cpp.s:
+	$(MAKE) -f CMakeFiles/AdunGL.dir/build.make CMakeFiles/AdunGL.dir/graphics/buffers/indexBuffer.cpp.s
+.PHONY : graphics/buffers/indexBuffer.cpp.s
+
+graphics/buffers/vertexArray.o: graphics/buffers/vertexArray.cpp.o
+
+.PHONY : graphics/buffers/vertexArray.o
+
+# target to build an object file
+graphics/buffers/vertexArray.cpp.o:
+	$(MAKE) -f CMakeFiles/AdunGL.dir/build.make CMakeFiles/AdunGL.dir/graphics/buffers/vertexArray.cpp.o
+.PHONY : graphics/buffers/vertexArray.cpp.o
+
+graphics/buffers/vertexArray.i: graphics/buffers/vertexArray.cpp.i
+
+.PHONY : graphics/buffers/vertexArray.i
+
+# target to preprocess a source file
+graphics/buffers/vertexArray.cpp.i:
+	$(MAKE) -f CMakeFiles/AdunGL.dir/build.make CMakeFiles/AdunGL.dir/graphics/buffers/vertexArray.cpp.i
+.PHONY : graphics/buffers/vertexArray.cpp.i
+
+graphics/buffers/vertexArray.s: graphics/buffers/vertexArray.cpp.s
+
+.PHONY : graphics/buffers/vertexArray.s
+
+# target to generate assembly for a file
+graphics/buffers/vertexArray.cpp.s:
+	$(MAKE) -f CMakeFiles/AdunGL.dir/build.make CMakeFiles/AdunGL.dir/graphics/buffers/vertexArray.cpp.s
+.PHONY : graphics/buffers/vertexArray.cpp.s
+
+graphics/camera.o: graphics/camera.cpp.o
+
+.PHONY : graphics/camera.o
+
+# target to build an object file
+graphics/camera.cpp.o:
+	$(MAKE) -f CMakeFiles/AdunGL.dir/build.make CMakeFiles/AdunGL.dir/graphics/camera.cpp.o
+.PHONY : graphics/camera.cpp.o
+
+graphics/camera.i: graphics/camera.cpp.i
+
+.PHONY : graphics/camera.i
+
+# target to preprocess a source file
+graphics/camera.cpp.i:
+	$(MAKE) -f CMakeFiles/AdunGL.dir/build.make CMakeFiles/AdunGL.dir/graphics/camera.cpp.i
+.PHONY : graphics/camera.cpp.i
+
+graphics/camera.s: graphics/camera.cpp.s
+
+.PHONY : graphics/camera.s
+
+# target to generate assembly for a file
+graphics/camera.cpp.s:
+	$(MAKE) -f CMakeFiles/AdunGL.dir/build.make CMakeFiles/AdunGL.dir/graphics/camera.cpp.s
+.PHONY : graphics/camera.cpp.s
+
 graphics/shader.o: graphics/shader.cpp.o
 
 .PHONY : graphics/shader.o
@@ -176,33 +311,6 @@ graphics/window.s: graphics/window.cpp.s
 graphics/window.cpp.s:
 	$(MAKE) -f CMakeFiles/AdunGL.dir/build.make CMakeFiles/AdunGL.dir/graphics/window.cpp.s
 .PHONY : graphics/window.cpp.s
-
-main.o: main.cpp.o
-
-.PHONY : main.o
-
-# target to build an object file
-main.cpp.o:
-	$(MAKE) -f CMakeFiles/AdunGL.dir/build.make CMakeFiles/AdunGL.dir/main.cpp.o
-.PHONY : main.cpp.o
-
-main.i: main.cpp.i
-
-.PHONY : main.i
-
-# target to preprocess a source file
-main.cpp.i:
-	$(MAKE) -f CMakeFiles/AdunGL.dir/build.make CMakeFiles/AdunGL.dir/main.cpp.i
-.PHONY : main.cpp.i
-
-main.s: main.cpp.s
-
-.PHONY : main.s
-
-# target to generate assembly for a file
-main.cpp.s:
-	$(MAKE) -f CMakeFiles/AdunGL.dir/build.make CMakeFiles/AdunGL.dir/main.cpp.s
-.PHONY : main.cpp.s
 
 maths/mat4.o: maths/mat4.cpp.o
 
@@ -348,15 +456,27 @@ help:
 	@echo "... rebuild_cache"
 	@echo "... edit_cache"
 	@echo "... AdunGL"
+	@echo "... example22.o"
+	@echo "... example22.i"
+	@echo "... example22.s"
+	@echo "... graphics/buffers/buffer.o"
+	@echo "... graphics/buffers/buffer.i"
+	@echo "... graphics/buffers/buffer.s"
+	@echo "... graphics/buffers/indexBuffer.o"
+	@echo "... graphics/buffers/indexBuffer.i"
+	@echo "... graphics/buffers/indexBuffer.s"
+	@echo "... graphics/buffers/vertexArray.o"
+	@echo "... graphics/buffers/vertexArray.i"
+	@echo "... graphics/buffers/vertexArray.s"
+	@echo "... graphics/camera.o"
+	@echo "... graphics/camera.i"
+	@echo "... graphics/camera.s"
 	@echo "... graphics/shader.o"
 	@echo "... graphics/shader.i"
 	@echo "... graphics/shader.s"
 	@echo "... graphics/window.o"
 	@echo "... graphics/window.i"
 	@echo "... graphics/window.s"
-	@echo "... main.o"
-	@echo "... main.i"
-	@echo "... main.s"
 	@echo "... maths/mat4.o"
 	@echo "... maths/mat4.i"
 	@echo "... maths/mat4.s"

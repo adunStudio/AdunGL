@@ -84,6 +84,33 @@
 				</MakeCommands>
 			</Target>
 		</Build>
+		<Unit filename="/Users/adun/Desktop/AdunGL/example22.cpp">
+			<Option target="AdunGL"/>
+		</Unit>
+		<Unit filename="/Users/adun/Desktop/AdunGL/graphics/buffers/buffer.cpp">
+			<Option target="AdunGL"/>
+		</Unit>
+		<Unit filename="/Users/adun/Desktop/AdunGL/graphics/buffers/buffer.h">
+			<Option target="AdunGL"/>
+		</Unit>
+		<Unit filename="/Users/adun/Desktop/AdunGL/graphics/buffers/indexBuffer.cpp">
+			<Option target="AdunGL"/>
+		</Unit>
+		<Unit filename="/Users/adun/Desktop/AdunGL/graphics/buffers/indexBuffer.h">
+			<Option target="AdunGL"/>
+		</Unit>
+		<Unit filename="/Users/adun/Desktop/AdunGL/graphics/buffers/vertexArray.cpp">
+			<Option target="AdunGL"/>
+		</Unit>
+		<Unit filename="/Users/adun/Desktop/AdunGL/graphics/buffers/vertexArray.h">
+			<Option target="AdunGL"/>
+		</Unit>
+		<Unit filename="/Users/adun/Desktop/AdunGL/graphics/camera.cpp">
+			<Option target="AdunGL"/>
+		</Unit>
+		<Unit filename="/Users/adun/Desktop/AdunGL/graphics/camera.h">
+			<Option target="AdunGL"/>
+		</Unit>
 		<Unit filename="/Users/adun/Desktop/AdunGL/graphics/shader.cpp">
 			<Option target="AdunGL"/>
 		</Unit>
@@ -94,9 +121,6 @@
 			<Option target="AdunGL"/>
 		</Unit>
 		<Unit filename="/Users/adun/Desktop/AdunGL/graphics/window.h">
-			<Option target="AdunGL"/>
-		</Unit>
-		<Unit filename="/Users/adun/Desktop/AdunGL/main.cpp">
 			<Option target="AdunGL"/>
 		</Unit>
 		<Unit filename="/Users/adun/Desktop/AdunGL/maths/mat4.cpp">
