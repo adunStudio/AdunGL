@@ -137,7 +137,7 @@ namespace AdunGL
         GLvoid mouseMoveCallback(int x, int y)
         {
             Window::mx =  x; // - Window::instance().width / 2;
-            Window::my =  y;//(y - Window::instance().height / 2) * -1 ;
+            Window::my =  y; //(y - Window::instance().height / 2) * -1 ;
         }
 
         bool Window::isKeyPressed(unsigned char key)

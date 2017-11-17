@@ -75,6 +75,8 @@ namespace AdunGL
             result.elements[2 + 3 * 4] = (far + near) / (far - near);
 
             return result;
+
+
         }
 
         // http://ogldev.atspace.org/www/tutorial12/tutorial12.html

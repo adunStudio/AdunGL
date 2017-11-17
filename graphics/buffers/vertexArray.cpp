@@ -34,6 +34,7 @@ namespace AdunGL
             // void glEnableVertexAttribArray(GLuint index) & void glDisableVertexAttribArray(GLuint index)
             glEnableVertexAttribArray(index);
 
+
             // 꼭짓점 값을 읽을때 어떻게 프로그래램에서 읽어야 하는지 정의해준다.
             // void glVertexAttribPointer(GLuint index, GLint size, GLenum type, GLboolean normalized, GLsizei stride, const GLvoid * pointer)
             // index -> 꼭지점 데이터 배열의 인덱스 (Vertex shader의 layout(location=x)에서 x에 해당한다.)

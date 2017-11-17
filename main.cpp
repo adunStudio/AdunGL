@@ -20,14 +20,9 @@ void render();
 Shader* shader;
 Buffer* vbo;
 IndexBuffer* ibo;
-VertexArray* vao;
+VertexArray* vao, *sprite1, *sprite2;
 
-GLushort indices[] =
-        {
-                0, 1, 2,
-                2, 3, 0
 
-        };
 
 int main(int argc, char** argv)
 {
@@ -46,13 +41,38 @@ int main(int argc, char** argv)
                     8, 0, 0
             };
 
+    GLushort indices[] =
+            {
+                    0, 1, 2,
+                    2, 3, 0
 
+            };
+
+    GLfloat colorsA[] = {
+            1, 0, 1, 1,
+            1, 0, 1, 1,
+            1, 0, 1, 1,
+            1, 0, 1, 1,
+    };
+
+    GLfloat colorsB[] = {
+            0.2, 0.3, 0.8, 1,
+            0.2, 0.3, 0.8, 1,
+            0.2, 0.3, 0.8, 1,
+            0.2, 0.3, 0.8, 1,
+    };
 
     vao = new VertexArray();
-    vbo = new Buffer(vertices, 4 * 3, 3);
+    sprite1 = new VertexArray();
+    sprite2 = new VertexArray();
+
+    //vbo = new Buffer(vertices, 4 * 3, 3);
     ibo = new IndexBuffer(indices, 6);
 
-    vao->addBuffer(vbo, 0);
+    sprite1->addBuffer(new Buffer(vertices, 4 * 3, 3), 0);
+    sprite1->addBuffer(new Buffer(colorsA, 4 * 4, 4), 1);
+    sprite2->addBuffer(new Buffer(vertices, 4 * 3, 3), 0);
+    sprite2->addBuffer(new Buffer(colorsB, 4 * 4, 4), 1);
 
 
 
@@ -65,7 +85,7 @@ int main(int argc, char** argv)
     shader->setUniformMat4("ml_matrix", mat4::translation(vec3(4, 3, 0)));
 
     shader->setUniform2f("light_pos", vec2 (4.0f, 1.5f));
-    shader->setUniform4f("colour", vec4(0.2f, 0.3f, 0.8f, 1.0f));
+   // shader->setUniform4f("colour", vec4(0.2f, 0.3f, 0.8f, 1.0f));
 
 
     window.update(update);
@@ -97,8 +117,6 @@ void update()
 
 void render()
 {
-    vao->bind();
-    ibo->bind();
 
     // 배열 데이터로부터 기본 모델을 렌더링한다 배열에는 인덱스가 적용되며 유효한 인덱스값의 범위 또한 지정된다
     // 배열 데이터를 순차적으로 읽는 것이 아니라 인덱스 배열을 순차적으로 읽는 함수이다.
@@ -108,8 +126,20 @@ void render()
     // GLsizei: 배열 내에 있는 좌표 사이의 바이트 간격
     //    type: 인덱스 배열에 사용되는 데이터 타입
     // GLvoid*: 인덱스 배열의 위치를 지정하는 포인터
-    glDrawElements(GL_TRIANGLES, ibo->getCount(), GL_UNSIGNED_SHORT, 0);
 
+    sprite1->bind();
+    ibo->bind();
+    shader->setUniformMat4("ml_matrix", mat4::translation(vec3(4, 3, 0)));
+    glDrawElements(GL_TRIANGLES, ibo->getCount(), GL_UNSIGNED_SHORT, 0);
+    ibo->unbind();
+    sprite1->unbind();
+
+    sprite2->bind();
+    ibo->bind();
+    shader->setUniformMat4("ml_matrix", mat4::translation(vec3(0, 0, 0)));
+    glDrawElements(GL_TRIANGLES, ibo->getCount(), GL_UNSIGNED_SHORT, 0);
+    ibo->unbind();
+    sprite2->unbind();
 
     // 버텍스 배열로부터 순차적인 기본 모델을 만들어낸다.
     // 설정된 버텍스 배열의 내용을 사용하여 일련의 기본 모델들을 그리는 데 사용되는 함수이다.
@@ -119,7 +149,5 @@ void render()
     // GLsizei: 사용할 인덱스의 수
     // glDrawArrays(GL_TRIANGLES, 0, 12);
 
-    ibo->unbind();
-    vao->unbind();
 }
 
