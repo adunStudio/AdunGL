@@ -1,10 +1,4 @@
-
-# CMake
-cmake-build-debug/*
-
-# idea
-idea/*
-.idea/*
-
-# Example
+cmake-build-debug/
+*idea/
+.idea/
 example*.cpp
