@@ -231,6 +231,33 @@ graphics/camera.cpp.s:
 	$(MAKE) -f CMakeFiles/AdunGL.dir/build.make CMakeFiles/AdunGL.dir/graphics/camera.cpp.s
 .PHONY : graphics/camera.cpp.s
 
+graphics/renderable2d.o: graphics/renderable2d.cpp.o
+
+.PHONY : graphics/renderable2d.o
+
+# target to build an object file
+graphics/renderable2d.cpp.o:
+	$(MAKE) -f CMakeFiles/AdunGL.dir/build.make CMakeFiles/AdunGL.dir/graphics/renderable2d.cpp.o
+.PHONY : graphics/renderable2d.cpp.o
+
+graphics/renderable2d.i: graphics/renderable2d.cpp.i
+
+.PHONY : graphics/renderable2d.i
+
+# target to preprocess a source file
+graphics/renderable2d.cpp.i:
+	$(MAKE) -f CMakeFiles/AdunGL.dir/build.make CMakeFiles/AdunGL.dir/graphics/renderable2d.cpp.i
+.PHONY : graphics/renderable2d.cpp.i
+
+graphics/renderable2d.s: graphics/renderable2d.cpp.s
+
+.PHONY : graphics/renderable2d.s
+
+# target to generate assembly for a file
+graphics/renderable2d.cpp.s:
+	$(MAKE) -f CMakeFiles/AdunGL.dir/build.make CMakeFiles/AdunGL.dir/graphics/renderable2d.cpp.s
+.PHONY : graphics/renderable2d.cpp.s
+
 graphics/shader.o: graphics/shader.cpp.o
 
 .PHONY : graphics/shader.o
@@ -468,6 +495,9 @@ help:
 	@echo "... graphics/camera.o"
 	@echo "... graphics/camera.i"
 	@echo "... graphics/camera.s"
+	@echo "... graphics/renderable2d.o"
+	@echo "... graphics/renderable2d.i"
+	@echo "... graphics/renderable2d.s"
 	@echo "... graphics/shader.o"
 	@echo "... graphics/shader.i"
 	@echo "... graphics/shader.s"

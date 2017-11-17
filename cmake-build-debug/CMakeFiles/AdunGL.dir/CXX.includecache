@@ -44,6 +44,20 @@ cassert
 GLUT/glut.h
 -
 
+/Users/adun/Desktop/AdunGL/graphics/renderable2d.cpp
+renderable2d.h
+/Users/adun/Desktop/AdunGL/graphics/renderable2d.h
+
+/Users/adun/Desktop/AdunGL/graphics/renderable2d.h
+buffers/buffer.h
+/Users/adun/Desktop/AdunGL/graphics/buffers/buffer.h
+buffers/indexBuffer.h
+/Users/adun/Desktop/AdunGL/graphics/buffers/indexBuffer.h
+buffers/vertexArray.h
+/Users/adun/Desktop/AdunGL/graphics/buffers/vertexArray.h
+../maths/maths.h
+/Users/adun/Desktop/AdunGL/maths/maths.h
+
 /Users/adun/Desktop/AdunGL/graphics/shader.cpp
 shader.h
 /Users/adun/Desktop/AdunGL/graphics/shader.h

@@ -35,6 +35,25 @@ CMakeFiles/AdunGL.dir/graphics/buffers/vertexArray.cpp.o: /usr/X11R6/include/GL/
 CMakeFiles/AdunGL.dir/graphics/camera.cpp.o: ../graphics/camera.cpp
 CMakeFiles/AdunGL.dir/graphics/camera.cpp.o: ../graphics/camera.h
 
+CMakeFiles/AdunGL.dir/graphics/renderable2d.cpp.o: ../graphics/buffers/buffer.h
+CMakeFiles/AdunGL.dir/graphics/renderable2d.cpp.o: ../graphics/buffers/indexBuffer.h
+CMakeFiles/AdunGL.dir/graphics/renderable2d.cpp.o: ../graphics/buffers/vertexArray.h
+CMakeFiles/AdunGL.dir/graphics/renderable2d.cpp.o: ../graphics/renderable2d.cpp
+CMakeFiles/AdunGL.dir/graphics/renderable2d.cpp.o: ../graphics/renderable2d.h
+CMakeFiles/AdunGL.dir/graphics/renderable2d.cpp.o: ../maths/mat4.h
+CMakeFiles/AdunGL.dir/graphics/renderable2d.cpp.o: ../maths/math_func.h
+CMakeFiles/AdunGL.dir/graphics/renderable2d.cpp.o: ../maths/maths.h
+CMakeFiles/AdunGL.dir/graphics/renderable2d.cpp.o: ../maths/vec2.h
+CMakeFiles/AdunGL.dir/graphics/renderable2d.cpp.o: ../maths/vec3.h
+CMakeFiles/AdunGL.dir/graphics/renderable2d.cpp.o: ../maths/vec4.h
+CMakeFiles/AdunGL.dir/graphics/renderable2d.cpp.o: /usr/X11R6/include/GL/freeglut_std.h
+CMakeFiles/AdunGL.dir/graphics/renderable2d.cpp.o: /usr/X11R6/include/GL/gl.h
+CMakeFiles/AdunGL.dir/graphics/renderable2d.cpp.o: /usr/X11R6/include/GL/gl_mangle.h
+CMakeFiles/AdunGL.dir/graphics/renderable2d.cpp.o: /usr/X11R6/include/GL/glext.h
+CMakeFiles/AdunGL.dir/graphics/renderable2d.cpp.o: /usr/X11R6/include/GL/glu.h
+CMakeFiles/AdunGL.dir/graphics/renderable2d.cpp.o: /usr/X11R6/include/GL/glu_mangle.h
+CMakeFiles/AdunGL.dir/graphics/renderable2d.cpp.o: /usr/X11R6/include/GL/glut.h
+
 CMakeFiles/AdunGL.dir/graphics/shader.cpp.o: ../graphics/shader.cpp
 CMakeFiles/AdunGL.dir/graphics/shader.cpp.o: ../graphics/shader.h
 CMakeFiles/AdunGL.dir/graphics/shader.cpp.o: ../maths/mat4.h

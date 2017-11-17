@@ -108,6 +108,12 @@
 		<Unit filename="/Users/adun/Desktop/AdunGL/graphics/camera.h">
 			<Option target="AdunGL"/>
 		</Unit>
+		<Unit filename="/Users/adun/Desktop/AdunGL/graphics/renderable2d.cpp">
+			<Option target="AdunGL"/>
+		</Unit>
+		<Unit filename="/Users/adun/Desktop/AdunGL/graphics/renderable2d.h">
+			<Option target="AdunGL"/>
+		</Unit>
 		<Unit filename="/Users/adun/Desktop/AdunGL/graphics/shader.cpp">
 			<Option target="AdunGL"/>
 		</Unit>

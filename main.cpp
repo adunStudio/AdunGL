@@ -35,10 +35,10 @@ int main(int argc, char** argv)
 
     GLfloat vertices[] =
             {
-                    0, 0, 0,
-                    0, 3, 0,
-                    8, 3, 0,
-                    8, 0, 0
+                    0, 0, 0,    // 좌 하단
+                    0, 3, 0,    // 좌 상단
+                    8, 3, 0,    // 우 상단
+                    8, 0, 0     // 우 하단
             };
 
     GLushort indices[] =

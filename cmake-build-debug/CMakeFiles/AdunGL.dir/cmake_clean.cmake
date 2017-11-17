@@ -11,6 +11,7 @@ file(REMOVE_RECURSE
   "CMakeFiles/AdunGL.dir/graphics/buffers/indexBuffer.cpp.o"
   "CMakeFiles/AdunGL.dir/graphics/buffers/vertexArray.cpp.o"
   "CMakeFiles/AdunGL.dir/graphics/camera.cpp.o"
+  "CMakeFiles/AdunGL.dir/graphics/renderable2d.cpp.o"
   "AdunGL.pdb"
   "AdunGL"
 )
