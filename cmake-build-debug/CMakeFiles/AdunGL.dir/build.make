@@ -57,28 +57,28 @@ include CMakeFiles/AdunGL.dir/progress.make
 # Include the compile flags for this target's objects.
 include CMakeFiles/AdunGL.dir/flags.make
 
-CMakeFiles/AdunGL.dir/example22.cpp.o: CMakeFiles/AdunGL.dir/flags.make
-CMakeFiles/AdunGL.dir/example22.cpp.o: ../example22.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/Users/adun/Desktop/AdunGL/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_1) "Building CXX object CMakeFiles/AdunGL.dir/example22.cpp.o"
-	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/c++   $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/AdunGL.dir/example22.cpp.o -c /Users/adun/Desktop/AdunGL/example22.cpp
+CMakeFiles/AdunGL.dir/main.cpp.o: CMakeFiles/AdunGL.dir/flags.make
+CMakeFiles/AdunGL.dir/main.cpp.o: ../main.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/Users/adun/Desktop/AdunGL/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_1) "Building CXX object CMakeFiles/AdunGL.dir/main.cpp.o"
+	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/c++   $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/AdunGL.dir/main.cpp.o -c /Users/adun/Desktop/AdunGL/main.cpp
 
-CMakeFiles/AdunGL.dir/example22.cpp.i: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/AdunGL.dir/example22.cpp.i"
-	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /Users/adun/Desktop/AdunGL/example22.cpp > CMakeFiles/AdunGL.dir/example22.cpp.i
+CMakeFiles/AdunGL.dir/main.cpp.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/AdunGL.dir/main.cpp.i"
+	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /Users/adun/Desktop/AdunGL/main.cpp > CMakeFiles/AdunGL.dir/main.cpp.i
 
-CMakeFiles/AdunGL.dir/example22.cpp.s: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/AdunGL.dir/example22.cpp.s"
-	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /Users/adun/Desktop/AdunGL/example22.cpp -o CMakeFiles/AdunGL.dir/example22.cpp.s
+CMakeFiles/AdunGL.dir/main.cpp.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/AdunGL.dir/main.cpp.s"
+	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /Users/adun/Desktop/AdunGL/main.cpp -o CMakeFiles/AdunGL.dir/main.cpp.s
 
-CMakeFiles/AdunGL.dir/example22.cpp.o.requires:
+CMakeFiles/AdunGL.dir/main.cpp.o.requires:
 
-.PHONY : CMakeFiles/AdunGL.dir/example22.cpp.o.requires
+.PHONY : CMakeFiles/AdunGL.dir/main.cpp.o.requires
 
-CMakeFiles/AdunGL.dir/example22.cpp.o.provides: CMakeFiles/AdunGL.dir/example22.cpp.o.requires
-	$(MAKE) -f CMakeFiles/AdunGL.dir/build.make CMakeFiles/AdunGL.dir/example22.cpp.o.provides.build
-.PHONY : CMakeFiles/AdunGL.dir/example22.cpp.o.provides
+CMakeFiles/AdunGL.dir/main.cpp.o.provides: CMakeFiles/AdunGL.dir/main.cpp.o.requires
+	$(MAKE) -f CMakeFiles/AdunGL.dir/build.make CMakeFiles/AdunGL.dir/main.cpp.o.provides.build
+.PHONY : CMakeFiles/AdunGL.dir/main.cpp.o.provides
 
-CMakeFiles/AdunGL.dir/example22.cpp.o.provides.build: CMakeFiles/AdunGL.dir/example22.cpp.o
+CMakeFiles/AdunGL.dir/main.cpp.o.provides.build: CMakeFiles/AdunGL.dir/main.cpp.o
 
 
 CMakeFiles/AdunGL.dir/graphics/window.cpp.o: CMakeFiles/AdunGL.dir/flags.make
@@ -347,7 +347,7 @@ CMakeFiles/AdunGL.dir/graphics/camera.cpp.o.provides.build: CMakeFiles/AdunGL.di
 
 # Object files for target AdunGL
 AdunGL_OBJECTS = \
-"CMakeFiles/AdunGL.dir/example22.cpp.o" \
+"CMakeFiles/AdunGL.dir/main.cpp.o" \
 "CMakeFiles/AdunGL.dir/graphics/window.cpp.o" \
 "CMakeFiles/AdunGL.dir/maths/vec2.cpp.o" \
 "CMakeFiles/AdunGL.dir/maths/vec3.cpp.o" \
@@ -363,7 +363,7 @@ AdunGL_OBJECTS = \
 # External object files for target AdunGL
 AdunGL_EXTERNAL_OBJECTS =
 
-AdunGL: CMakeFiles/AdunGL.dir/example22.cpp.o
+AdunGL: CMakeFiles/AdunGL.dir/main.cpp.o
 AdunGL: CMakeFiles/AdunGL.dir/graphics/window.cpp.o
 AdunGL: CMakeFiles/AdunGL.dir/maths/vec2.cpp.o
 AdunGL: CMakeFiles/AdunGL.dir/maths/vec3.cpp.o
@@ -385,7 +385,7 @@ CMakeFiles/AdunGL.dir/build: AdunGL
 
 .PHONY : CMakeFiles/AdunGL.dir/build
 
-CMakeFiles/AdunGL.dir/requires: CMakeFiles/AdunGL.dir/example22.cpp.o.requires
+CMakeFiles/AdunGL.dir/requires: CMakeFiles/AdunGL.dir/main.cpp.o.requires
 CMakeFiles/AdunGL.dir/requires: CMakeFiles/AdunGL.dir/graphics/window.cpp.o.requires
 CMakeFiles/AdunGL.dir/requires: CMakeFiles/AdunGL.dir/maths/vec2.cpp.o.requires
 CMakeFiles/AdunGL.dir/requires: CMakeFiles/AdunGL.dir/maths/vec3.cpp.o.requires

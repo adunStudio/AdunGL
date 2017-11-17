@@ -15,6 +15,8 @@ namespace AdunGL
         GLvoid mouseCallback(int button, int state, int x, int y);
         GLvoid mouseMoveCallback(int x, int y);
 
+        bool Window::DEFAULT_MOUSE = true;
+
         Window* Window::instance_ = nullptr;
 
         bool Window::keys[MAX_KEYS] = { false };
@@ -42,7 +44,7 @@ namespace AdunGL
             glutInitWindowSize(width, height);
 
             window = glutCreateWindow(name);
-            glEnable(GL_DEPTH_TEST);
+            //glEnable(GL_DEPTH_TEST);
 
             //glutIdleFunc(updateCallback);
             //glutDisplayFunc(renderCallback);
@@ -51,8 +53,10 @@ namespace AdunGL
             glutKeyboardUpFunc(keyboardUpCallback);
             glutSpecialFunc(specialKeyboardDownCallback);
             glutSpecialUpFunc(specialKeyboardUpCallback);
-            glutMouseFunc(mouseCallback);
+            if(DEFAULT_MOUSE)
+                glutMouseFunc(mouseCallback);
             glutPassiveMotionFunc(mouseMoveCallback);
+            glutMotionFunc(mouseMoveCallback);
         }
 
         void Window::update(void (*func)())
@@ -127,7 +131,7 @@ namespace AdunGL
 
         GLvoid mouseCallback(int button, int state, int x, int y)
         {
-            Window::mouseButtons[button] = (state == GLUT_LEFT_BUTTON);
+            Window::mouseButtons[button] = (state == GLUT_DOWN);
         }
 
         GLvoid mouseMoveCallback(int x, int y)

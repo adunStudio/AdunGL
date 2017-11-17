@@ -4,13 +4,13 @@ set(CMAKE_DEPENDS_LANGUAGES
   )
 # The set of files for implicit dependencies of each language:
 set(CMAKE_DEPENDS_CHECK_CXX
-  "/Users/adun/Desktop/AdunGL/example22.cpp" "/Users/adun/Desktop/AdunGL/cmake-build-debug/CMakeFiles/AdunGL.dir/example22.cpp.o"
   "/Users/adun/Desktop/AdunGL/graphics/buffers/buffer.cpp" "/Users/adun/Desktop/AdunGL/cmake-build-debug/CMakeFiles/AdunGL.dir/graphics/buffers/buffer.cpp.o"
   "/Users/adun/Desktop/AdunGL/graphics/buffers/indexBuffer.cpp" "/Users/adun/Desktop/AdunGL/cmake-build-debug/CMakeFiles/AdunGL.dir/graphics/buffers/indexBuffer.cpp.o"
   "/Users/adun/Desktop/AdunGL/graphics/buffers/vertexArray.cpp" "/Users/adun/Desktop/AdunGL/cmake-build-debug/CMakeFiles/AdunGL.dir/graphics/buffers/vertexArray.cpp.o"
   "/Users/adun/Desktop/AdunGL/graphics/camera.cpp" "/Users/adun/Desktop/AdunGL/cmake-build-debug/CMakeFiles/AdunGL.dir/graphics/camera.cpp.o"
   "/Users/adun/Desktop/AdunGL/graphics/shader.cpp" "/Users/adun/Desktop/AdunGL/cmake-build-debug/CMakeFiles/AdunGL.dir/graphics/shader.cpp.o"
   "/Users/adun/Desktop/AdunGL/graphics/window.cpp" "/Users/adun/Desktop/AdunGL/cmake-build-debug/CMakeFiles/AdunGL.dir/graphics/window.cpp.o"
+  "/Users/adun/Desktop/AdunGL/main.cpp" "/Users/adun/Desktop/AdunGL/cmake-build-debug/CMakeFiles/AdunGL.dir/main.cpp.o"
   "/Users/adun/Desktop/AdunGL/maths/mat4.cpp" "/Users/adun/Desktop/AdunGL/cmake-build-debug/CMakeFiles/AdunGL.dir/maths/mat4.cpp.o"
   "/Users/adun/Desktop/AdunGL/maths/vec2.cpp" "/Users/adun/Desktop/AdunGL/cmake-build-debug/CMakeFiles/AdunGL.dir/maths/vec2.cpp.o"
   "/Users/adun/Desktop/AdunGL/maths/vec3.cpp" "/Users/adun/Desktop/AdunGL/cmake-build-debug/CMakeFiles/AdunGL.dir/maths/vec3.cpp.o"

@@ -15,12 +15,19 @@ using namespace maths;
 using namespace utils;
 
 void update();
+void render();
 
 Shader* shader;
 Buffer* vbo;
 IndexBuffer* ibo;
 VertexArray* vao;
 
+GLushort indices[] =
+        {
+                0, 1, 2,
+                2, 3, 0
+
+        };
 
 int main(int argc, char** argv)
 {
@@ -31,85 +38,23 @@ int main(int argc, char** argv)
     printf("Supported OpenGL version is %s.\n", window.getVersion());
     printf("Supported GLSL version is %s.\n", window.getGLSLVersion());
 
-#if 0
-    GLfloat vertices[] =
-            {
-                    0, 0, 0,
-                    8, 0, 0,
-                    0, 3 , 0,
-                    0, 3 , 0,
-                    8, 3 , 0,
-                    8, 0 , 0
-            };
-
-    GLuint vbo;
-
-    // 버퍼 생성
-    // void glGenBuffers(GLsizei n, GLuint* buffers)
-    // glGenBuffers([생성할 버퍼 개수 integer], [버퍼 변수 array of GLuint])
-    glGenBuffers(1, &vbo);
-
-    // 버퍼 바인드
-    // void glBindBuffer(GLenum target, GLuint buffer)
-    // GL_ARRAY_BUFFER -> 꼭지점 값이 들어간다는 것을 의미
-    glBindBuffer(GL_ARRAY_BUFFER, vbo);
-
-    // 바인드된 버퍼에 데이터를 넣는다.
-    // void glBufferData( GLenum target, GLsizeiptr size, const GLvoid * data, GLenum usage)
-    // GL_STATIC_DRAW -> 데이터가 변경되지 않는다.
-    glBufferData(GL_ARRAY_BUFFER, sizeof(vertices), vertices, GL_STATIC_DRAW);
-
-    // 꼭짓점 값을 읽을때 어떻게 프로그래램에서 읽어야 하는지 정의해준다.
-    // void glVertexAttribPointer(GLuint index, GLint size, GLenum type, GLboolean normalized, GLsizei stride, const GLvoid * pointer)
-    // index -> 꼭지점 데이터 배열의 인덱
-    // size -> 꼭지점에서 사용하는 파라미터 개수
-    // normalize-> 데이터에 대해서 정규화를 할지에 대한 결정을 하는 것이다. 데이터의 범위를 [-1, 1]로 변경을 하는 것
-    // stride, pointer -> offset
-    glVertexAttribPointer(0, 3, GL_FLOAT, GL_FALSE, 0, 0);
-
-    // 저장된 꼭지점(Vertex)을 사용가능하게 하는 것이다.
-    // void glEnableVertexAttribArray(GLuint index) & void glDisableVertexAttribArray(GLuint index)
-    glEnableVertexAttribArray(0);
-
-    /*
-    1. glGen* 함수를 통해서 값을 생성하고
-
-    2. glBind* 함수를 통해서 변수에 Binding을 하고,
-
-    3. glBufferData 함수로 값을 저장하고,
-
-    4. Display에 대한 Callback을 받았을 때, glEnableVertexAttibArray() 함수를 통해 사용할 배열을 활성화시키고,
-
-    5. glVertexAttribPointer()함수를 통해 값을 어떻게 읽을지에 대해서 파라미터 지정을 하고,
-
-    6. 마지막으로 glDrawArray()함수를 통해 그리고 glDisableVertexAttribArray()함수를 통해 배열을 비활성화 시킨다.
-    */
-
-
-
-#else
-
     GLfloat vertices[] =
             {
                     0, 0, 0,
                     0, 3, 0,
-                    8, 0, 0,
-                    0, 3, 0
+                    8, 3, 0,
+                    8, 0, 0
             };
 
-    GLushort indices[] =
-            {
-                    0, 1, 2,
-                    2, 3, 0
 
-            };
+
+    vao = new VertexArray();
     vbo = new Buffer(vertices, 4 * 3, 3);
     ibo = new IndexBuffer(indices, 6);
 
     vao->addBuffer(vbo, 0);
 
 
-#endif
 
     mat4 ortho = mat4::orthographic(0.0f, 16.0f, 0.0f, 9.0f, -1.0f, 1.0f);
 
@@ -125,21 +70,15 @@ int main(int argc, char** argv)
 
     window.update(update);
 
+    // void glEnableClientState(GLenum 배열)
+    // OpenGL 버텍스 배열로 사용될 배열 타입을 사용 가능 또는 불가능하도록 설정한다.
+    // 지오메트리 정의에 사용될 벌텍스 배열을 지정할 것인지 그렇지 않을 것인지를 OpenGL에 알리는 역할을 한다.
+    glEnableClientState(GL_VERTEX_ARRAY);
+
     window.render([]() {
         Window::instance().clear();
-#if 0
-        // glEnableVertexAttribArray함수에서 지정한 꼭지점 배열을 활용하여 draw한다.
-        // void glDrawArrays(GLenum mode, GLint first, GLsizei count)
-        // mode -> 그려지는 도형
-        // count -> 읽어들일 개수
-        glDrawArrays(GL_TRIANGLES, 0, 6);
-#else
-        //vao->bind();
-        ibo->bind();
-        glDrawElements(GL_TRIANGLES, ibo->getCount(), GL_UNSIGNED_SHORT, 0);
-        ibo->bind();
-        vao->unbind();
-#endif
+
+        render();
 
         glutSwapBuffers();
     });
@@ -155,3 +94,32 @@ void update()
     shader->setUniform2f("light_pos", vec2((float)(x * 16.0f / 960.0f), (float)(9.0f - y * 9.0f / 540.f)));
     glutPostRedisplay();
 }
+
+void render()
+{
+    vao->bind();
+    ibo->bind();
+
+    // 배열 데이터로부터 기본 모델을 렌더링한다 배열에는 인덱스가 적용되며 유효한 인덱스값의 범위 또한 지정된다
+    // 배열 데이터를 순차적으로 읽는 것이 아니라 인덱스 배열을 순차적으로 읽는 함수이다.
+    // 인덱스 배열은 단순히 버텍스 데이터가 나열된 순서대로 읽어들이지 않으며, 공유 버텍스 데이터 활용을 위해 중보되는 경우도 있다
+    // void glDrawElements(GLenum mode, GLsizei count, GLenum type, const GLvoid * indices);
+    // 모드, 시작, 끝, 개수, 타입, 포인터
+    // GLsizei: 배열 내에 있는 좌표 사이의 바이트 간격
+    //    type: 인덱스 배열에 사용되는 데이터 타입
+    // GLvoid*: 인덱스 배열의 위치를 지정하는 포인터
+    glDrawElements(GL_TRIANGLES, ibo->getCount(), GL_UNSIGNED_SHORT, 0);
+
+
+    // 버텍스 배열로부터 순차적인 기본 모델을 만들어낸다.
+    // 설정된 버텍스 배열의 내용을 사용하여 일련의 기본 모델들을 그리는 데 사용되는 함수이다.
+    // 기본 모델의 타입을 받아 지정된 범위의 모든 버텍스를 사용할 떄까지 드로잉이 계속된다.
+    // GLenum: 드로잉할 기본 모델의 종류
+    //  GLint: 배열의 첫 번재 인덱스
+    // GLsizei: 사용할 인덱스의 수
+    // glDrawArrays(GL_TRIANGLES, 0, 12);
+
+    ibo->unbind();
+    vao->unbind();
+}
+

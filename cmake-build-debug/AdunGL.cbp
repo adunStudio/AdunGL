@@ -84,9 +84,6 @@
 				</MakeCommands>
 			</Target>
 		</Build>
-		<Unit filename="/Users/adun/Desktop/AdunGL/example22.cpp">
-			<Option target="AdunGL"/>
-		</Unit>
 		<Unit filename="/Users/adun/Desktop/AdunGL/graphics/buffers/buffer.cpp">
 			<Option target="AdunGL"/>
 		</Unit>
@@ -121,6 +118,9 @@
 			<Option target="AdunGL"/>
 		</Unit>
 		<Unit filename="/Users/adun/Desktop/AdunGL/graphics/window.h">
+			<Option target="AdunGL"/>
+		</Unit>
+		<Unit filename="/Users/adun/Desktop/AdunGL/main.cpp">
 			<Option target="AdunGL"/>
 		</Unit>
 		<Unit filename="/Users/adun/Desktop/AdunGL/maths/mat4.cpp">

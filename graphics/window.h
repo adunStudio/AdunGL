@@ -31,7 +31,11 @@ namespace AdunGL
 
             static double mx, my;
 
+
         public:
+
+            static bool DEFAULT_MOUSE;
+
             static Window& instance()
             {
                 assert(instance_ != nullptr);

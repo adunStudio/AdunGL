@@ -42,6 +42,8 @@ namespace AdunGL
 
             static void drawAxis();
 
+            static float getRotateZ();
+
         private:
             Camera() = default;
 

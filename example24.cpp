@@ -19,10 +19,14 @@ using namespace utils;
 void draw();
 void timer(int);
 
+
+
 int main(int argc, char** argv)
 {
-    Window window = Window::instance(argc, argv, "AdunGL", 500, 500);
+    Window window = Window::instance(argc, argv, "AdunGL", 700, 700);
     Camera camera = Camera::instance();
+
+    Camera::rotateX(30);
 
     window.update([]() {
 
@@ -68,18 +72,20 @@ int main(int argc, char** argv)
         if(Window::isKeyPressed('q'))
             exit(0);
 
+
+
         glutPostRedisplay();
     });
 
     window.render([]() {
 
-        Window::instance().clear(0.196078, 0.6, 0.8);
+        Window::instance().clear(1, 1, 1);
 
         glLoadIdentity();
 
         Camera::inCamera();
 
-        Camera::drawAxis();
+        //Camera::drawAxis();
 
         draw();
 
@@ -108,130 +114,123 @@ int main(int argc, char** argv)
 
 
 
+
+
+
 const int   SPEED =  50;
 const int       R =  120;
 
-float angle_airplane  = 0;
-float angle_propeller = 0;
+bool smooth = true;
+bool culling = false;
+bool depth = true;
 
-float scale_boost1 = 5;
-float scale_boost2 = 3;
+float wire_angle = 0;
+
+int max_height = 100;
+int height = max_height;
+int torus_height = 22;
+int c = 0;
+
+
 
 void draw()
 {
-    glTranslatef(sin(toRadians(angle_airplane)) * R, 0, cos(toRadians(angle_airplane)) * R);
 
-    glRotatef(angle_airplane, 0, 1, 0);
+    if(smooth)
+        glShadeModel(GL_SMOOTH);
+    else
+        glShadeModel(GL_FLAT);
 
-    // 프로펠러
-    glColor3f(0.90, 0.91, 0.98);
+    if(culling)
+        glEnable(GL_CULL_FACE);
+    else
+        glDisable(GL_CULL_FACE);
+
+    if(depth)
+        glEnable(GL_DEPTH_TEST);
+    else
+        glDisable(GL_DEPTH_TEST);
+
+
     glPushMatrix();
     {
-        glRotatef(angle_propeller, 1, 0, 0);
-        glScalef(1, 15, 1);
-        glutSolidCube(3);
-    }
-    glPopMatrix();
-    glPushMatrix();
-    {
-        glRotatef(angle_propeller, 1, 0, 0);
-        glScalef(1, 1, 15);
-        glutSolidCube(3);
-    }
-    glPopMatrix();
-
-    // 몸체
-    glColor3f(0.85, 0.85, 0.10);
-    glPushMatrix();
-    {
-        glTranslatef(-35, 0, 0);
-        glRotatef(90, 0, 1, 0);
-        glScalef(1, 0.3, 1);
-        glutSolidCone(9, 45, 10, 10);
-    }
-    glPopMatrix();
-
-    // 조종석
-    glColor3f(1, 1, 1);
-    glPushMatrix();
-    {
-        glTranslatef(-15, 1, 0);
-        glRotatef(90, 0, 1, 0);
-        glScalef(1, 0.7, 1);
-        glutSolidCone(4, 10, 10, 10);
-    }
-    glPopMatrix();
-
-    // 날개쪽 머시기
-    glColor3f(1, 1, 1);
-    glPushMatrix();
-    {
-        glTranslatef(-35, 1, 0);
-        glRotatef(90, 0, 1, 0);
-        glScalef(1, 0.7, 1);
-        glutSolidCube(4);
-    }
-    glPopMatrix();
-
-    // 날개
-    glColor3f(0.35, 0.85, 0.50);
-    glPushMatrix();
-    {
-        glTranslatef(-32, 0, 0);
-        glScalef(3, 1, 15);
-        glutSolidCube(3);
-    }
-    glPopMatrix();
-
-    // 부스터 1
-    glColor3f(1, 1, 1);
-    glPushMatrix();
-    {
-        glColor3f(1, 0, 0);
-        glTranslatef(-40, 0, 15);
-        glutSolidSphere(scale_boost1, 10, 10);
+        glTranslatef(0, -10, 0);
         glColor3f(0, 1, 0);
-        glTranslatef(-7, 0, 0);
-        glutSolidSphere(scale_boost2, 10, 10);
-        glColor3f(0, 0, 1);
-        glTranslatef(-7, 0, 0);
-        glScalef(13, 1, 1);
-        glutSolidSphere(1, 10, 10);
+        glScalef(1, 0.01, 1);
+        glutSolidCube(300);
     }
     glPopMatrix();
 
-    // 부스터 2
-    glColor3f(1, 1, 1);
+
     glPushMatrix();
     {
-        glColor3f(1, 0, 0);
-        glTranslatef(-40, 0, -15);
-        glutSolidSphere(scale_boost1, 10, 10);
-        glColor3f(0, 1, 0);
-        glTranslatef(-7, 0, 0);
-        glutSolidSphere(scale_boost2, 10, 10);
-        glColor3f(0, 0, 1);
-        glTranslatef(-7, 0, 0);
-        glScalef(13, 1, 1);
-        glutSolidSphere(1, 10, 10);
+        glColor4f(1, 0, 0, 1);
+        glLineWidth(3);
+        glBegin(GL_LINES);
+        {
+            glVertex3f(0, 0, 0);
+            glVertex3f(0, max_height, 0);
+        }
+        glEnd();
     }
     glPopMatrix();
+
+    for(int i = 0; i < c; ++i)
+    {
+        glPushMatrix();
+        {
+            glTranslatef(0, i * torus_height, 0);
+            glColor4f(1, 1, 0, 0);
+            glRotatef(90, 1 , 0, 0);
+            glutWireTorus(10, 40, 30, 30);
+        }
+        glPopMatrix();
+    }
+
+
+    glPushMatrix();
+    {
+        glTranslatef(0, height, 0);
+        glColor4f(1, 1, 0, 0);
+        glRotatef(90, 1 , 0, 0);
+        glRotatef(wire_angle, 0, 0, 1);
+        glTranslatef(22, 0, 0);
+        glutWireTorus(10, 40, 30, 30);
+    }
+    glPopMatrix();
+
+
+
 
 }
 
 void timer(int time)
 {
-    angle_propeller += 15;
+    height -= 2;
 
-    angle_airplane  += 5;
-
-    if(rand() % 5 == 2)
+    if(height < c * torus_height)
     {
-        scale_boost1 = scale_boost1 == 5 ? 9 : 5;
-        scale_boost2 = scale_boost2 == 3 ? 6 : 3;
+        height = max_height;
+        c++;
     }
 
+    if(c == 6)
+    {
+        c = 0;
+    }
+
+    wire_angle += 35;
+
+    if(Window::isKeyPressed('s'))
+        smooth = !smooth;
+
+    if(Window::isKeyPressed('d'))
+        depth = !depth;
+
+    if(Window::isKeyPressed('c'))
+        culling = !culling;
+
     glutPostRedisplay();
-    glutTimerFunc(SPEED, timer, 1);
+    glutTimerFunc(SPEED, timer, 100);
 
 }

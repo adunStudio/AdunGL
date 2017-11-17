@@ -40,6 +40,12 @@ namespace AdunGL
             instance_->trans_z += d;
         }
 
+        float Camera::getRotateZ()
+        {
+            return instance_->rotate_z;
+        }
+
+
         void Camera::reset()
         {
             instance_->rotate_x = instance_->rotate_y = instance_->rotate_z =

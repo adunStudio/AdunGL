@@ -6,30 +6,6 @@
 
 #IncludeRegexTransform: 
 
-/Users/adun/Desktop/AdunGL/example22.cpp
-iostream
--
-GLUT/glut.h
--
-cmath
--
-graphics/window.h
-/Users/adun/Desktop/AdunGL/graphics/window.h
-graphics/shader.h
-/Users/adun/Desktop/AdunGL/graphics/shader.h
-maths/maths.h
-/Users/adun/Desktop/AdunGL/maths/maths.h
-utils/fileutils.h
-/Users/adun/Desktop/AdunGL/utils/fileutils.h
-graphics/buffers/buffer.h
-/Users/adun/Desktop/AdunGL/graphics/buffers/buffer.h
-graphics/buffers/indexBuffer.h
-/Users/adun/Desktop/AdunGL/graphics/buffers/indexBuffer.h
-graphics/buffers/vertexArray.h
-/Users/adun/Desktop/AdunGL/graphics/buffers/vertexArray.h
-graphics/camera.h
-/Users/adun/Desktop/AdunGL/graphics/camera.h
-
 /Users/adun/Desktop/AdunGL/graphics/buffers/buffer.cpp
 buffer.h
 /Users/adun/Desktop/AdunGL/graphics/buffers/buffer.h
@@ -97,6 +73,26 @@ cassert
 -
 map
 -
+
+/Users/adun/Desktop/AdunGL/main.cpp
+iostream
+-
+GLUT/glut.h
+-
+graphics/window.h
+/Users/adun/Desktop/AdunGL/graphics/window.h
+graphics/shader.h
+/Users/adun/Desktop/AdunGL/graphics/shader.h
+maths/maths.h
+/Users/adun/Desktop/AdunGL/maths/maths.h
+utils/fileutils.h
+/Users/adun/Desktop/AdunGL/utils/fileutils.h
+graphics/buffers/buffer.h
+/Users/adun/Desktop/AdunGL/graphics/buffers/buffer.h
+graphics/buffers/indexBuffer.h
+/Users/adun/Desktop/AdunGL/graphics/buffers/indexBuffer.h
+graphics/buffers/vertexArray.h
+/Users/adun/Desktop/AdunGL/graphics/buffers/vertexArray.h
 
 /Users/adun/Desktop/AdunGL/maths/mat4.cpp
 mat4.h

@@ -123,33 +123,6 @@ AdunGL/fast:
 	$(MAKE) -f CMakeFiles/AdunGL.dir/build.make CMakeFiles/AdunGL.dir/build
 .PHONY : AdunGL/fast
 
-example22.o: example22.cpp.o
-
-.PHONY : example22.o
-
-# target to build an object file
-example22.cpp.o:
-	$(MAKE) -f CMakeFiles/AdunGL.dir/build.make CMakeFiles/AdunGL.dir/example22.cpp.o
-.PHONY : example22.cpp.o
-
-example22.i: example22.cpp.i
-
-.PHONY : example22.i
-
-# target to preprocess a source file
-example22.cpp.i:
-	$(MAKE) -f CMakeFiles/AdunGL.dir/build.make CMakeFiles/AdunGL.dir/example22.cpp.i
-.PHONY : example22.cpp.i
-
-example22.s: example22.cpp.s
-
-.PHONY : example22.s
-
-# target to generate assembly for a file
-example22.cpp.s:
-	$(MAKE) -f CMakeFiles/AdunGL.dir/build.make CMakeFiles/AdunGL.dir/example22.cpp.s
-.PHONY : example22.cpp.s
-
 graphics/buffers/buffer.o: graphics/buffers/buffer.cpp.o
 
 .PHONY : graphics/buffers/buffer.o
@@ -312,6 +285,33 @@ graphics/window.cpp.s:
 	$(MAKE) -f CMakeFiles/AdunGL.dir/build.make CMakeFiles/AdunGL.dir/graphics/window.cpp.s
 .PHONY : graphics/window.cpp.s
 
+main.o: main.cpp.o
+
+.PHONY : main.o
+
+# target to build an object file
+main.cpp.o:
+	$(MAKE) -f CMakeFiles/AdunGL.dir/build.make CMakeFiles/AdunGL.dir/main.cpp.o
+.PHONY : main.cpp.o
+
+main.i: main.cpp.i
+
+.PHONY : main.i
+
+# target to preprocess a source file
+main.cpp.i:
+	$(MAKE) -f CMakeFiles/AdunGL.dir/build.make CMakeFiles/AdunGL.dir/main.cpp.i
+.PHONY : main.cpp.i
+
+main.s: main.cpp.s
+
+.PHONY : main.s
+
+# target to generate assembly for a file
+main.cpp.s:
+	$(MAKE) -f CMakeFiles/AdunGL.dir/build.make CMakeFiles/AdunGL.dir/main.cpp.s
+.PHONY : main.cpp.s
+
 maths/mat4.o: maths/mat4.cpp.o
 
 .PHONY : maths/mat4.o
@@ -456,9 +456,6 @@ help:
 	@echo "... rebuild_cache"
 	@echo "... edit_cache"
 	@echo "... AdunGL"
-	@echo "... example22.o"
-	@echo "... example22.i"
-	@echo "... example22.s"
 	@echo "... graphics/buffers/buffer.o"
 	@echo "... graphics/buffers/buffer.i"
 	@echo "... graphics/buffers/buffer.s"
@@ -477,6 +474,9 @@ help:
 	@echo "... graphics/window.o"
 	@echo "... graphics/window.i"
 	@echo "... graphics/window.s"
+	@echo "... main.o"
+	@echo "... main.i"
+	@echo "... main.s"
 	@echo "... maths/mat4.o"
 	@echo "... maths/mat4.i"
 	@echo "... maths/mat4.s"
