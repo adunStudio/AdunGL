@@ -44,10 +44,6 @@ cassert
 GLUT/glut.h
 -
 
-/Users/adun/Desktop/AdunGL/graphics/renderable2d.cpp
-renderable2d.h
-/Users/adun/Desktop/AdunGL/graphics/renderable2d.h
-
 /Users/adun/Desktop/AdunGL/graphics/renderable2d.h
 buffers/buffer.h
 /Users/adun/Desktop/AdunGL/graphics/buffers/buffer.h
@@ -55,6 +51,16 @@ buffers/indexBuffer.h
 /Users/adun/Desktop/AdunGL/graphics/buffers/indexBuffer.h
 buffers/vertexArray.h
 /Users/adun/Desktop/AdunGL/graphics/buffers/vertexArray.h
+shader.h
+/Users/adun/Desktop/AdunGL/graphics/shader.h
+../maths/maths.h
+/Users/adun/Desktop/AdunGL/maths/maths.h
+
+/Users/adun/Desktop/AdunGL/graphics/renderer2d.h
+gl/glut.h
+-
+renderable2d.h
+/Users/adun/Desktop/AdunGL/graphics/renderable2d.h
 ../maths/maths.h
 /Users/adun/Desktop/AdunGL/maths/maths.h
 
@@ -73,6 +79,16 @@ GLUT/glut.h
 /Users/adun/Desktop/AdunGL/utils/fileutils.h
 ../maths/maths.h
 /Users/adun/Desktop/AdunGL/maths/maths.h
+
+/Users/adun/Desktop/AdunGL/graphics/simple2drenderer.cpp
+simple2drenderer.h
+/Users/adun/Desktop/AdunGL/graphics/simple2drenderer.h
+
+/Users/adun/Desktop/AdunGL/graphics/simple2drenderer.h
+deque
+-
+renderer2d.h
+/Users/adun/Desktop/AdunGL/graphics/renderer2d.h
 
 /Users/adun/Desktop/AdunGL/graphics/window.cpp
 window.h
@@ -107,6 +123,10 @@ graphics/buffers/indexBuffer.h
 /Users/adun/Desktop/AdunGL/graphics/buffers/indexBuffer.h
 graphics/buffers/vertexArray.h
 /Users/adun/Desktop/AdunGL/graphics/buffers/vertexArray.h
+graphics/renderer2d.h
+/Users/adun/Desktop/AdunGL/graphics/renderer2d.h
+graphics/simple2drenderer.h
+/Users/adun/Desktop/AdunGL/graphics/simple2drenderer.h
 
 /Users/adun/Desktop/AdunGL/maths/mat4.cpp
 mat4.h
@@ -229,4 +249,22 @@ GL/gl.h
 /usr/X11R6/include/GL/glut.h
 freeglut_std.h
 /usr/X11R6/include/GL/freeglut_std.h
+
+/usr/X11R6/include/gl/freeglut_std.h
+windows.h
+-
+OpenGL/gl.h
+-
+OpenGL/glu.h
+-
+GL/gl.h
+-
+GL/glu.h
+-
+stdlib.h
+-
+
+/usr/X11R6/include/gl/glut.h
+freeglut_std.h
+/usr/X11R6/include/gl/freeglut_std.h
 

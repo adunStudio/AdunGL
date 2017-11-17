@@ -345,28 +345,28 @@ CMakeFiles/AdunGL.dir/graphics/camera.cpp.o.provides: CMakeFiles/AdunGL.dir/grap
 CMakeFiles/AdunGL.dir/graphics/camera.cpp.o.provides.build: CMakeFiles/AdunGL.dir/graphics/camera.cpp.o
 
 
-CMakeFiles/AdunGL.dir/graphics/renderable2d.cpp.o: CMakeFiles/AdunGL.dir/flags.make
-CMakeFiles/AdunGL.dir/graphics/renderable2d.cpp.o: ../graphics/renderable2d.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/Users/adun/Desktop/AdunGL/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_13) "Building CXX object CMakeFiles/AdunGL.dir/graphics/renderable2d.cpp.o"
-	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/c++   $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/AdunGL.dir/graphics/renderable2d.cpp.o -c /Users/adun/Desktop/AdunGL/graphics/renderable2d.cpp
+CMakeFiles/AdunGL.dir/graphics/simple2drenderer.cpp.o: CMakeFiles/AdunGL.dir/flags.make
+CMakeFiles/AdunGL.dir/graphics/simple2drenderer.cpp.o: ../graphics/simple2drenderer.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/Users/adun/Desktop/AdunGL/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_13) "Building CXX object CMakeFiles/AdunGL.dir/graphics/simple2drenderer.cpp.o"
+	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/c++   $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/AdunGL.dir/graphics/simple2drenderer.cpp.o -c /Users/adun/Desktop/AdunGL/graphics/simple2drenderer.cpp
 
-CMakeFiles/AdunGL.dir/graphics/renderable2d.cpp.i: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/AdunGL.dir/graphics/renderable2d.cpp.i"
-	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /Users/adun/Desktop/AdunGL/graphics/renderable2d.cpp > CMakeFiles/AdunGL.dir/graphics/renderable2d.cpp.i
+CMakeFiles/AdunGL.dir/graphics/simple2drenderer.cpp.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/AdunGL.dir/graphics/simple2drenderer.cpp.i"
+	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /Users/adun/Desktop/AdunGL/graphics/simple2drenderer.cpp > CMakeFiles/AdunGL.dir/graphics/simple2drenderer.cpp.i
 
-CMakeFiles/AdunGL.dir/graphics/renderable2d.cpp.s: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/AdunGL.dir/graphics/renderable2d.cpp.s"
-	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /Users/adun/Desktop/AdunGL/graphics/renderable2d.cpp -o CMakeFiles/AdunGL.dir/graphics/renderable2d.cpp.s
+CMakeFiles/AdunGL.dir/graphics/simple2drenderer.cpp.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/AdunGL.dir/graphics/simple2drenderer.cpp.s"
+	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /Users/adun/Desktop/AdunGL/graphics/simple2drenderer.cpp -o CMakeFiles/AdunGL.dir/graphics/simple2drenderer.cpp.s
 
-CMakeFiles/AdunGL.dir/graphics/renderable2d.cpp.o.requires:
+CMakeFiles/AdunGL.dir/graphics/simple2drenderer.cpp.o.requires:
 
-.PHONY : CMakeFiles/AdunGL.dir/graphics/renderable2d.cpp.o.requires
+.PHONY : CMakeFiles/AdunGL.dir/graphics/simple2drenderer.cpp.o.requires
 
-CMakeFiles/AdunGL.dir/graphics/renderable2d.cpp.o.provides: CMakeFiles/AdunGL.dir/graphics/renderable2d.cpp.o.requires
-	$(MAKE) -f CMakeFiles/AdunGL.dir/build.make CMakeFiles/AdunGL.dir/graphics/renderable2d.cpp.o.provides.build
-.PHONY : CMakeFiles/AdunGL.dir/graphics/renderable2d.cpp.o.provides
+CMakeFiles/AdunGL.dir/graphics/simple2drenderer.cpp.o.provides: CMakeFiles/AdunGL.dir/graphics/simple2drenderer.cpp.o.requires
+	$(MAKE) -f CMakeFiles/AdunGL.dir/build.make CMakeFiles/AdunGL.dir/graphics/simple2drenderer.cpp.o.provides.build
+.PHONY : CMakeFiles/AdunGL.dir/graphics/simple2drenderer.cpp.o.provides
 
-CMakeFiles/AdunGL.dir/graphics/renderable2d.cpp.o.provides.build: CMakeFiles/AdunGL.dir/graphics/renderable2d.cpp.o
+CMakeFiles/AdunGL.dir/graphics/simple2drenderer.cpp.o.provides.build: CMakeFiles/AdunGL.dir/graphics/simple2drenderer.cpp.o
 
 
 # Object files for target AdunGL
@@ -383,7 +383,7 @@ AdunGL_OBJECTS = \
 "CMakeFiles/AdunGL.dir/graphics/buffers/indexBuffer.cpp.o" \
 "CMakeFiles/AdunGL.dir/graphics/buffers/vertexArray.cpp.o" \
 "CMakeFiles/AdunGL.dir/graphics/camera.cpp.o" \
-"CMakeFiles/AdunGL.dir/graphics/renderable2d.cpp.o"
+"CMakeFiles/AdunGL.dir/graphics/simple2drenderer.cpp.o"
 
 # External object files for target AdunGL
 AdunGL_EXTERNAL_OBJECTS =
@@ -400,7 +400,7 @@ AdunGL: CMakeFiles/AdunGL.dir/graphics/buffers/buffer.cpp.o
 AdunGL: CMakeFiles/AdunGL.dir/graphics/buffers/indexBuffer.cpp.o
 AdunGL: CMakeFiles/AdunGL.dir/graphics/buffers/vertexArray.cpp.o
 AdunGL: CMakeFiles/AdunGL.dir/graphics/camera.cpp.o
-AdunGL: CMakeFiles/AdunGL.dir/graphics/renderable2d.cpp.o
+AdunGL: CMakeFiles/AdunGL.dir/graphics/simple2drenderer.cpp.o
 AdunGL: CMakeFiles/AdunGL.dir/build.make
 AdunGL: CMakeFiles/AdunGL.dir/link.txt
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --bold --progress-dir=/Users/adun/Desktop/AdunGL/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_14) "Linking CXX executable AdunGL"
@@ -423,7 +423,7 @@ CMakeFiles/AdunGL.dir/requires: CMakeFiles/AdunGL.dir/graphics/buffers/buffer.cp
 CMakeFiles/AdunGL.dir/requires: CMakeFiles/AdunGL.dir/graphics/buffers/indexBuffer.cpp.o.requires
 CMakeFiles/AdunGL.dir/requires: CMakeFiles/AdunGL.dir/graphics/buffers/vertexArray.cpp.o.requires
 CMakeFiles/AdunGL.dir/requires: CMakeFiles/AdunGL.dir/graphics/camera.cpp.o.requires
-CMakeFiles/AdunGL.dir/requires: CMakeFiles/AdunGL.dir/graphics/renderable2d.cpp.o.requires
+CMakeFiles/AdunGL.dir/requires: CMakeFiles/AdunGL.dir/graphics/simple2drenderer.cpp.o.requires
 
 .PHONY : CMakeFiles/AdunGL.dir/requires
 

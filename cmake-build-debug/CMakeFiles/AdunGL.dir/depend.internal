@@ -35,25 +35,6 @@ CMakeFiles/AdunGL.dir/graphics/buffers/vertexArray.cpp.o
 CMakeFiles/AdunGL.dir/graphics/camera.cpp.o
  /Users/adun/Desktop/AdunGL/graphics/camera.cpp
  /Users/adun/Desktop/AdunGL/graphics/camera.h
-CMakeFiles/AdunGL.dir/graphics/renderable2d.cpp.o
- /Users/adun/Desktop/AdunGL/graphics/buffers/buffer.h
- /Users/adun/Desktop/AdunGL/graphics/buffers/indexBuffer.h
- /Users/adun/Desktop/AdunGL/graphics/buffers/vertexArray.h
- /Users/adun/Desktop/AdunGL/graphics/renderable2d.cpp
- /Users/adun/Desktop/AdunGL/graphics/renderable2d.h
- /Users/adun/Desktop/AdunGL/maths/mat4.h
- /Users/adun/Desktop/AdunGL/maths/math_func.h
- /Users/adun/Desktop/AdunGL/maths/maths.h
- /Users/adun/Desktop/AdunGL/maths/vec2.h
- /Users/adun/Desktop/AdunGL/maths/vec3.h
- /Users/adun/Desktop/AdunGL/maths/vec4.h
- /usr/X11R6/include/GL/freeglut_std.h
- /usr/X11R6/include/GL/gl.h
- /usr/X11R6/include/GL/gl_mangle.h
- /usr/X11R6/include/GL/glext.h
- /usr/X11R6/include/GL/glu.h
- /usr/X11R6/include/GL/glu_mangle.h
- /usr/X11R6/include/GL/glut.h
 CMakeFiles/AdunGL.dir/graphics/shader.cpp.o
  /Users/adun/Desktop/AdunGL/graphics/shader.cpp
  /Users/adun/Desktop/AdunGL/graphics/shader.h
@@ -64,6 +45,30 @@ CMakeFiles/AdunGL.dir/graphics/shader.cpp.o
  /Users/adun/Desktop/AdunGL/maths/vec3.h
  /Users/adun/Desktop/AdunGL/maths/vec4.h
  /Users/adun/Desktop/AdunGL/utils/fileutils.h
+CMakeFiles/AdunGL.dir/graphics/simple2drenderer.cpp.o
+ /Users/adun/Desktop/AdunGL/graphics/buffers/buffer.h
+ /Users/adun/Desktop/AdunGL/graphics/buffers/indexBuffer.h
+ /Users/adun/Desktop/AdunGL/graphics/buffers/vertexArray.h
+ /Users/adun/Desktop/AdunGL/graphics/renderable2d.h
+ /Users/adun/Desktop/AdunGL/graphics/renderer2d.h
+ /Users/adun/Desktop/AdunGL/graphics/shader.h
+ /Users/adun/Desktop/AdunGL/graphics/simple2drenderer.cpp
+ /Users/adun/Desktop/AdunGL/graphics/simple2drenderer.h
+ /Users/adun/Desktop/AdunGL/maths/mat4.h
+ /Users/adun/Desktop/AdunGL/maths/math_func.h
+ /Users/adun/Desktop/AdunGL/maths/maths.h
+ /Users/adun/Desktop/AdunGL/maths/vec2.h
+ /Users/adun/Desktop/AdunGL/maths/vec3.h
+ /Users/adun/Desktop/AdunGL/maths/vec4.h
+ /Users/adun/Desktop/AdunGL/utils/fileutils.h
+ /usr/X11R6/include/GL/gl.h
+ /usr/X11R6/include/GL/gl_mangle.h
+ /usr/X11R6/include/GL/glext.h
+ /usr/X11R6/include/GL/glu.h
+ /usr/X11R6/include/GL/glu_mangle.h
+ /usr/X11R6/include/GL/glut.h
+ /usr/X11R6/include/gl/freeglut_std.h
+ /usr/X11R6/include/gl/glut.h
 CMakeFiles/AdunGL.dir/graphics/window.cpp.o
  /Users/adun/Desktop/AdunGL/graphics/window.cpp
  /Users/adun/Desktop/AdunGL/graphics/window.h
@@ -71,7 +76,10 @@ CMakeFiles/AdunGL.dir/main.cpp.o
  /Users/adun/Desktop/AdunGL/graphics/buffers/buffer.h
  /Users/adun/Desktop/AdunGL/graphics/buffers/indexBuffer.h
  /Users/adun/Desktop/AdunGL/graphics/buffers/vertexArray.h
+ /Users/adun/Desktop/AdunGL/graphics/renderable2d.h
+ /Users/adun/Desktop/AdunGL/graphics/renderer2d.h
  /Users/adun/Desktop/AdunGL/graphics/shader.h
+ /Users/adun/Desktop/AdunGL/graphics/simple2drenderer.h
  /Users/adun/Desktop/AdunGL/graphics/window.h
  /Users/adun/Desktop/AdunGL/main.cpp
  /Users/adun/Desktop/AdunGL/maths/mat4.h
@@ -88,6 +96,7 @@ CMakeFiles/AdunGL.dir/main.cpp.o
  /usr/X11R6/include/GL/glu.h
  /usr/X11R6/include/GL/glu_mangle.h
  /usr/X11R6/include/GL/glut.h
+ /usr/X11R6/include/gl/glut.h
 CMakeFiles/AdunGL.dir/maths/mat4.cpp.o
  /Users/adun/Desktop/AdunGL/maths/mat4.cpp
  /Users/adun/Desktop/AdunGL/maths/mat4.h
