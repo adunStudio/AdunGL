@@ -12,6 +12,8 @@ namespace AdunGL
         :componentCount(componentCount)
         {
             // 버퍼 생성
+            // 사용되지 않는 버퍼 개체 이름을 리턴한다.
+            // 이 함수를 호출한 후에는 glBindBuffer를 호출하여 이름을 연결하고 만들 수 있다.
             // void glGenBuffers(GLsizei n, GLuint* buffers)
             // glGenBuffers([생성할 버퍼 개수 integer], [버퍼 변수 array of GLuint])
             glGenBuffers(1, &bufferID);
@@ -26,7 +28,19 @@ namespace AdunGL
 
             //
             // 바인드된 버퍼에 데이터를 넣는다.
+            // 버퍼 개체의 데이터 저장고를 만들고 초기화한다.
+            // 지정된 크기와 성능 힌트에 따라 버퍼 개체의 데이터 저장고를 만들고 초기화 하는 함수이다 기존에 존재하던 데이터는 모두 삭제된다.
+            // 만약 데이터 포인터가 null이 아니면 데이터 저장고로 데이터를 복사하며 버퍼 개체의 데이터 저장고가 맵핑되어 있으면 맵핑이 종료된다.
             // void glBufferData( GLenum target, GLsizeiptr size, const GLvoid * data, GLenum usage)
+
+            // 타겟: 데이터 저장고를 만들 버퍼 개체 타겟 다음 상수 중 하나가 될 수 있다
+            // GL_ARRAY_BUFFER: 버텍스 배열 버퍼 개체의 데이터 저장고가 만들어 진다.
+            // GL_ELEMENT_ARRAY_BUFFER: 배열 인덱스 버퍼 개체의 데이터 저장고가 만들어진다.
+
+            // size: 기본 기계 단위로 지정하는 버퍼 개체의 데이터 저장고 크기
+
+            // data: 초기화 시에 데이터 저장고로 복사될 데이터로의 포인터, 데이터 복사가 필요치 않은 경우에는 NULL
+
             // GL_STATIC_DRAW -> 데이터가 변경되지 않는다.
             glBufferData(GL_ARRAY_BUFFER, count * sizeof(GLfloat), data, GL_STATIC_DRAW);
 
@@ -52,6 +66,7 @@ namespace AdunGL
 
         void Buffer::bind() const
         {
+            //
             glBindBuffer(GL_ARRAY_BUFFER, bufferID);
         }
 
