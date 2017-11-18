@@ -35,7 +35,7 @@ namespace AdunGL
 
             float elapsed()
             {
-                return duration_cast<fs>(clock::now() - m_start).count();
+                return duration_cast<fs>(clock::now() - m_start).count() * 1000.0f;
             }
 
         };

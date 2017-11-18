@@ -3,7 +3,6 @@
 #include <vector>
 #include "AdunGL-Core/src.h"
 
-
 using namespace std;
 using namespace AdunGL;
 using namespace graphics;
@@ -37,6 +36,9 @@ int main(int argc, char** argv)
     std::cout << "Hello, AdunGL!" << std::endl;
 
     srand(time(NULL));
+
+
+
 
     Window window = Window::instance(argc, argv, "AdunGL", 960, 540);
 
