@@ -9,6 +9,7 @@
 #include <GLUT/glut.h>
 #include <cassert>
 #include <map>
+#include <functional>
 
 using namespace std;
 

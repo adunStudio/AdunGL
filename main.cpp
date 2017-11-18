@@ -1,6 +1,8 @@
 #include <iostream>
 #include <GLUT/glut.h>
+#include <vector>
 #include "AdunGL-Core/src.h"
+
 
 using namespace std;
 using namespace AdunGL;
@@ -19,6 +21,7 @@ Shader* shader;
 
 BatchRenderer2D* renderer;
 Sprite* sprite1, * sprite2;
+std::vector<Sprite*> sprites;
 
 #else
 
@@ -31,6 +34,8 @@ int main(int argc, char** argv)
 {
     std::cout << "Hello, AdunGL!" << std::endl;
 
+    srand(time(NULL));
+
     Window window = Window::instance(argc, argv, "AdunGL", 960, 540);
 
     mat4 ortho = mat4::orthographic(0.0f, 16.0f, 0.0f, 9.0f, -1.0f, 1.0f);
@@ -38,7 +43,6 @@ int main(int argc, char** argv)
     shader = new Shader("/Users/adun/Desktop/AdunGL/AdunGL-Core/shaders/basic.vert", "/Users/adun/Desktop/AdunGL/AdunGL-Core/shaders/basic.frag");
     shader->enable();
     shader->setUniformMat4("pr_matrix", ortho);
-    shader->setUniformMat4("ml_matrix", mat4::translation(vec3(4, 3, 0)));
     shader->setUniform2f("light_pos", vec2 (4.0f, 1.5f));
 
 #if BATCH_RENDERER
@@ -46,8 +50,16 @@ int main(int argc, char** argv)
 
     renderer = new BatchRenderer2D();
 
-    sprite1 = new Sprite(5, 5, 4, 4, maths::vec4(1, 0, 1, 1)  );
-    sprite2 = new Sprite(7, 1, 2, 3, maths::vec4(0.2, 0, 1, 1));
+    //sprite1 = new Sprite(5, 5, 4, 4, maths::vec4(1, 0, 1, 1)  );
+    //sprite2 = new Sprite(7, 1, 2, 3, maths::vec4(0.2, 0, 1, 1));
+
+    for(float y = 0; y < 9.0f; ++y)
+    {
+        for(float x = 0; x < 16.0f; ++x)
+        {
+            sprites.push_back(new Sprite(x, y, 0.9f, 0.9f, maths::vec4(rand() % 1000 / 1000.0f, 0, 1, 1)));
+        }
+    }
 
 #else
 
@@ -87,9 +99,12 @@ void render()
 #if BATCH_RENDERER
 
     renderer->begin();
-    renderer->submit(sprite1);
-    renderer->submit(sprite2);
+
+     for(int i = 0; i < sprites.size(); ++i)
+        renderer->submit(sprites[i]);
+
     renderer->end();
+
     renderer->flush();
 
 #else
