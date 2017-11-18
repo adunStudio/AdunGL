@@ -95,6 +95,13 @@ void update()
 {
     int x, y;
     Window::instance().getMousePosition(x, y);
+
+    mat4 mat= mat4::translation(vec3(8, 4.5, 0));
+    mat *=  mat4::rotation(timer.elapsed() / 50.0f, vec3(0, 0, 1));
+    mat *= mat4::translation(vec3(-8, -4.5, 0));
+
+    shader->setUniformMat4("ml_matrix", mat);
+
     shader->setUniform2f("light_pos", vec2((float)(x * 16.0f / 960.0f), (float)(9.0f - y * 9.0f / 540.f)));
     glutPostRedisplay();
 }
@@ -104,9 +111,11 @@ void render()
 
 #if BATCH_RENDERER
 
+
+
     renderer->begin();
 
-     for(int i = 0; i < sprites.size(); ++i)
+    for(int i = 0; i < sprites.size(); ++i)
         renderer->submit(sprites[i]);
 
     renderer->end();

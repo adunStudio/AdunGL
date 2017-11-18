@@ -44,7 +44,7 @@ namespace AdunGL
 
             glVertexAttribPointer(SHADER_VERTEX_INDEX, 3, GL_FLOAT, GL_FALSE, RENDERER_VERTEX_SIZE, (const GLvoid*)0);
 
-            glVertexAttribPointer(SHADER_COLOR_INDEX , 4, GL_FLOAT, GL_FALSE, RENDERER_VERTEX_SIZE, (const GLvoid*)(3 * sizeof(GLfloat)));
+            glVertexAttribPointer(SHADER_COLOR_INDEX , 4, GL_UNSIGNED_BYTE, GL_TRUE, RENDERER_VERTEX_SIZE, (const GLvoid*)(offsetof(VertexData, color)));
 
             glBindBuffer(GL_ARRAY_BUFFER, 0);
 
@@ -97,19 +97,19 @@ namespace AdunGL
             unsigned int c = a << 24 | b << 16 | g << 8 | r;
 
             m_buffer->vertex = position;
-            m_buffer->color  = color;
+            m_buffer->color  = c;//olor;
             m_buffer++;
 
             m_buffer->vertex = maths::vec3(position.x         , position.y + size.y, position.z);
-            m_buffer->color  = color;
+            m_buffer->color  = c;//olor;
             m_buffer++;
 
             m_buffer->vertex = maths::vec3(position.x + size.x, position.y + size.y, position.z);
-            m_buffer->color  = color;
+            m_buffer->color  = c;//olor;
             m_buffer++;
 
             m_buffer->vertex = maths::vec3(position.x + size.x, position.y         , position.z);;
-            m_buffer->color  = color;
+            m_buffer->color  = c;//olor;
             m_buffer++;
 
             m_indexCount += 6;

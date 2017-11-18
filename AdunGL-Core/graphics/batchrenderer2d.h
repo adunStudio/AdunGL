@@ -5,6 +5,7 @@
 #ifndef ADUNGL_BATCHRENDERER2D_H
 #define ADUNGL_BATCHRENDERER2D_H
 
+#include <cstddef>
 #include "renderer2d.h"
 
 namespace AdunGL
