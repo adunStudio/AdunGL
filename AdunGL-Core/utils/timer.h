@@ -7,7 +7,6 @@
 
 #include <chrono>
 
-
 namespace AdunGL
 {
     namespace utils

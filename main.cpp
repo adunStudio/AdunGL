@@ -15,6 +15,8 @@ void render();
 Shader* shader;
 
 Timer timer;
+float current_time = 0;
+unsigned int frame = 0;
 
 #define BATCH_RENDERER 1
 
@@ -36,7 +38,6 @@ int main(int argc, char** argv)
     std::cout << "Hello, AdunGL!" << std::endl;
 
     srand(time(NULL));
-
 
 
 
@@ -100,7 +101,6 @@ void update()
 
 void render()
 {
-    timer.reset();
 
 #if BATCH_RENDERER
 
@@ -121,6 +121,13 @@ void render()
 
 #endif
 
-    cout << timer.elapsed() << " ms" << endl;
+    frame++;
+
+    if(timer.elapsed() - current_time > 1000.0f)
+    {
+        current_time += 1000.0f;
+        cout << frame << " fps" << endl;
+        frame = 0;
+    }
 }
 
