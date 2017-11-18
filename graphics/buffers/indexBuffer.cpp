@@ -17,6 +17,11 @@ namespace AdunGL
             glBindBuffer(GL_ELEMENT_ARRAY_BUFFER, 0); // unbind
         }
 
+        IndexBuffer::~IndexBuffer()
+        {
+            glDeleteBuffers(1, &bufferID);
+        }
+
         void IndexBuffer::bind() const
         {
             glBindBuffer(GL_ELEMENT_ARRAY_BUFFER, bufferID);

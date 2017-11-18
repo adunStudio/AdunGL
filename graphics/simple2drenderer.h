@@ -7,6 +7,7 @@
 
 #include <deque>
 #include "renderer2d.h"
+#include "static_sprite.h"
 
 using namespace std;
 

@@ -23,6 +23,8 @@ namespace AdunGL
         {
             for(int i = 0; i < buffers.size(); ++i)
                 delete buffers[i];
+
+            glDeleteVertexArraysAPPLE(1, &arrayID);
         }
 
         void VertexArray::addBuffer(Buffer *buffer, GLuint index)

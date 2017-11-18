@@ -64,6 +64,11 @@ namespace AdunGL
             */
         }
 
+        Buffer::~Buffer()
+        {
+            glDeleteBuffers(GL_ARRAY_BUFFER, &bufferID);
+        }
+
         void Buffer::bind() const
         {
             //

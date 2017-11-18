@@ -10,6 +10,8 @@
 #include "graphics/renderer2d.h"
 #include "graphics/simple2drenderer.h"
 
+#include "graphics/static_sprite.h"
+
 using namespace std;
 using namespace AdunGL;
 using namespace graphics;
@@ -21,7 +23,7 @@ void render();
 
 Shader* shader;
 Simple2DRenderer* renderer;
-Renderable2D* sprite1, * sprite2;
+StaticSprite* sprite1, * sprite2;
 
 
 int main(int argc, char** argv)
@@ -41,8 +43,8 @@ int main(int argc, char** argv)
 
     renderer = new Simple2DRenderer();
 
-    sprite1 = new Renderable2D(maths::vec3(5, 5, 0), maths::vec2(4, 4), maths::vec4(1, 0, 1, 1), *shader);
-    sprite2 = new Renderable2D(maths::vec3(7, 1, 0), maths::vec2(2, 3), maths::vec4(0.2, 0, 1, 1), *shader);
+    sprite1 = new StaticSprite(5, 5, 4, 4, maths::vec4(1, 0, 1, 1)  , *shader);
+    sprite2 = new StaticSprite(7, 1, 2, 3, maths::vec4(0.2, 0, 1, 1), *shader);
 
 
     window.update(update);
