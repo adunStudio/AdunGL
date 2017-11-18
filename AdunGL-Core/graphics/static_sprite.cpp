@@ -43,5 +43,9 @@ namespace AdunGL
             delete m_indexBuffer;
         }
 
+        //inline const VertexArray* getVAO()      const { return m_vertexArray; }
+        //inline const IndexBuffer* getIBO()      const { return m_indexBuffer; }
+
+        //inline            Shader& getShader()   const { return m_shader;      }
     }
 }

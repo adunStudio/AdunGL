@@ -5,7 +5,7 @@
 #ifndef ADUNGL_RENDERER2D_H
 #define ADUNGL_RENDERER2D_H
 
-#include <gl/glut.h>
+#include <GL/glut.h>
 #include "renderable2d.h"
 #include "../maths/maths.h"
 

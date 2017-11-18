@@ -13,7 +13,7 @@ namespace AdunGL
         {
             glGenBuffers(1, &bufferID);
             glBindBuffer(GL_ELEMENT_ARRAY_BUFFER, bufferID);
-            glBufferData(GL_ELEMENT_ARRAY_BUFFER, count * sizeof(GLfloat), data, GL_STATIC_DRAW);
+            glBufferData(GL_ELEMENT_ARRAY_BUFFER, count * sizeof(GLushort), data, GL_STATIC_DRAW);
             glBindBuffer(GL_ELEMENT_ARRAY_BUFFER, 0); // unbind
         }
 

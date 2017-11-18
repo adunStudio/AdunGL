@@ -1,16 +1,6 @@
 #include <iostream>
 #include <GLUT/glut.h>
-#include "graphics/window.h"
-#include "graphics/shader.h"
-#include "maths/maths.h"
-#include "utils/fileutils.h"
-#include "graphics/buffers/buffer.h"
-#include "graphics/buffers/indexBuffer.h"
-#include "graphics/buffers/vertexArray.h"
-#include "graphics/renderer2d.h"
-#include "graphics/simple2drenderer.h"
-
-#include "graphics/static_sprite.h"
+#include "AdunGL-Core/src.h"
 
 using namespace std;
 using namespace AdunGL;
@@ -22,9 +12,20 @@ void update();
 void render();
 
 Shader* shader;
+
+#define BATCH_RENDERER 1
+
+#if BATCH_RENDERER
+
+BatchRenderer2D* renderer;
+Sprite* sprite1, * sprite2;
+
+#else
+
 Simple2DRenderer* renderer;
 StaticSprite* sprite1, * sprite2;
 
+#endif
 
 int main(int argc, char** argv)
 {
@@ -37,15 +38,24 @@ int main(int argc, char** argv)
     shader = new Shader("/Users/adun/Desktop/AdunGL/shaders/basic.vert", "/Users/adun/Desktop/AdunGL/shaders/basic.frag");
     shader->enable();
     shader->setUniformMat4("pr_matrix", ortho);
-    //shader->setUniformMat4("ml_matrix", mat4::translation(vec3(3233330, -112340, 0)));
+    shader->setUniformMat4("ml_matrix", mat4::translation(vec3(4, 3, 0)));
     shader->setUniform2f("light_pos", vec2 (4.0f, 1.5f));
 
+#if BATCH_RENDERER
+
+    renderer = new BatchRenderer2D();
+
+    sprite1 = new Sprite(5, 5, 4, 4, maths::vec4(1, 0, 1, 1)  );
+    sprite2 = new Sprite(7, 1, 2, 3, maths::vec4(0.2, 0, 1, 1));
+
+#else
 
     renderer = new Simple2DRenderer();
 
     sprite1 = new StaticSprite(5, 5, 4, 4, maths::vec4(1, 0, 1, 1)  , *shader);
     sprite2 = new StaticSprite(7, 1, 2, 3, maths::vec4(0.2, 0, 1, 1), *shader);
 
+#endif
 
     window.update(update);
 
@@ -73,8 +83,21 @@ void update()
 
 void render()
 {
+#if BATCH_RENDERER
+
+    renderer->begin();
+    renderer->submit(sprite1);
+    renderer->submit(sprite2);
+    renderer->end();
+    renderer->flush();
+
+#else
+
     renderer->submit(sprite1);
     renderer->submit(sprite2);
     renderer->flush();
+
+#endif
+
 }
 
