@@ -15,6 +15,8 @@ void render();
 
 Shader* shader;
 
+Timer timer;
+
 #define BATCH_RENDERER 1
 
 #if BATCH_RENDERER
@@ -53,11 +55,11 @@ int main(int argc, char** argv)
     //sprite1 = new Sprite(5, 5, 4, 4, maths::vec4(1, 0, 1, 1)  );
     //sprite2 = new Sprite(7, 1, 2, 3, maths::vec4(0.2, 0, 1, 1));
 
-    for(float y = 0; y < 9.0f; ++y)
+    for(float y = 0; y < 9.0f; y += 0.05)
     {
-        for(float x = 0; x < 16.0f; ++x)
+        for(float x = 0; x < 16.0f; x += 0.05)
         {
-            sprites.push_back(new Sprite(x, y, 0.9f, 0.9f, maths::vec4(rand() % 1000 / 1000.0f, 0, 1, 1)));
+            sprites.push_back(new Sprite(x, y, 0.04f, 0.04f, maths::vec4(rand() % 1000 / 1000.0f, 0, 1, 1)));
         }
     }
 
@@ -96,6 +98,8 @@ void update()
 
 void render()
 {
+    timer.reset();
+
 #if BATCH_RENDERER
 
     renderer->begin();
@@ -115,5 +119,6 @@ void render()
 
 #endif
 
+    cout << timer.elapsed() << " ms" << endl;
 }
 
