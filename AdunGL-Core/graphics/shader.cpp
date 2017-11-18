@@ -148,8 +148,6 @@ namespace AdunGL
             //GLint a = glGetAttribLocation(program, "position");
             //GLint b = glGetAttribLocation(program, "coloror");
 
-            //std::cout << a << std::endl;
-            //std::cout << b << std::endl;
 
             glDeleteShader(vertex);
             glDeleteShader(fragment);

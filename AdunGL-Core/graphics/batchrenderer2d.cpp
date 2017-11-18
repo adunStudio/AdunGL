@@ -26,19 +26,29 @@ namespace AdunGL
 
             // gl레퍼런스의 자세한 내용은 vertexArray.cpp, buffer.cpp 참조
 
+
+
             glGenVertexArraysAPPLE(1, &m_vao);
+
             glGenBuffers(1, &m_vbo);
 
             glBindVertexArrayAPPLE(m_vao);
+
             glBindBuffer(GL_ARRAY_BUFFER, m_vbo);
+
             glBufferData(GL_ARRAY_BUFFER, RENDERER_BUFFER_SIZE, NULL, GL_DYNAMIC_DRAW);
+
             glEnableVertexAttribArray(SHADER_VERTEX_INDEX);
+
             glEnableVertexAttribArray(SHADER_COLOR_INDEX );
+
             glVertexAttribPointer(SHADER_VERTEX_INDEX, 3, GL_FLOAT, GL_FALSE, RENDERER_VERTEX_SIZE, (const GLvoid*)0);
-            glVertexAttribPointer(SHADER_COLOR_INDEX , 4, GL_FLOAT, GL_FALSE, RENDERER_VERTEX_SIZE, (const GLvoid*)(3 * sizeof(GLushort)));
+
+            glVertexAttribPointer(SHADER_COLOR_INDEX , 4, GL_FLOAT, GL_FALSE, RENDERER_VERTEX_SIZE, (const GLvoid*)(3 * sizeof(GLfloat)));
+
             glBindBuffer(GL_ARRAY_BUFFER, 0);
 
-            GLushort indices[RENDERER_INDICES_SIZE];
+            GLuint indices[RENDERER_INDICES_SIZE];
 
             int offset = 0;
 
@@ -48,9 +58,9 @@ namespace AdunGL
                 indices[  i  ] = offset + 0;
                 indices[i + 1] = offset + 1;
                 indices[i + 2] = offset + 2;
-                indices[i + 2] = offset + 2;
-                indices[i + 2] = offset + 3;
-                indices[i + 2] = offset + 0;
+                indices[i + 3] = offset + 2;
+                indices[i + 4] = offset + 3;
+                indices[i + 5] = offset + 0;
 
                 offset += 4;
             }
@@ -73,11 +83,18 @@ namespace AdunGL
             m_buffer = (VertexData*)glMapBuffer(GL_ARRAY_BUFFER, GL_WRITE_ONLY);
         }
 
-        void BatchRenderer2D::submit(const Renderable2D *renderable)
+        void BatchRenderer2D::submit(const Renderable2D* renderable)
         {
             const maths::vec3& position = renderable->getPosition();
             const maths::vec2& size     = renderable->getSize();
             const maths::vec4& color    = renderable->getColor();
+
+            int r = color.x * 255.0f;
+            int g = color.y * 255.0f;
+            int b = color.z * 255.0f;
+            int a = color.w * 255.0f;
+
+            unsigned int c = a << 24 | b << 16 | g << 8 | r;
 
             m_buffer->vertex = position;
             m_buffer->color  = color;
@@ -109,7 +126,7 @@ namespace AdunGL
             glBindVertexArrayAPPLE(m_vao);
             m_ibo->bind();
 
-            glDrawElements(GL_TRIANGLES, m_indexCount, GL_UNSIGNED_SHORT, NULL);
+            glDrawElements(GL_TRIANGLES, m_indexCount, GL_UNSIGNED_INT, NULL);
 
             m_ibo->unbind();
             glBindVertexArrayAPPLE(0);
