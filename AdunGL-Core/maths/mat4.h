@@ -19,7 +19,7 @@ namespace AdunGL
             union
             {
                 float elements[4 * 4];
-                vec4 rows[4];
+                vec4 columns[4];
             };
 
             mat4();
@@ -27,14 +27,20 @@ namespace AdunGL
 
             vec4 getColumn(int index)
             {
-                // row index *= 4;
-                // row return vec4(elements[index + 0], elements[index + 1], elements[index + 2], elements[index + 3]);
-                return vec4(elements[index + 0 * 4], elements[index + 1 * 4], elements[index + 2 * 4], elements[index + 3 * 4]);
+                index *= 4;
+                return vec4(elements[index + 0], elements[index + 1], elements[index + 2], elements[index + 3]);
+                // return vec4(elements[index + 0 * 4], elements[index + 1 * 4], elements[index + 2 * 4], elements[index + 3 * 4]);
             }
 
             mat4& multiply(const mat4& other);
             friend mat4& operator*(mat4 left, const mat4& right);
             mat4& operator*=(const mat4& other);
+
+            vec3 multiply(const vec3& other) const;
+            friend vec3 operator*(const mat4& left, const vec3& right);
+
+            vec4 multiply(const vec4& other) const;
+            friend vec4 operator*(const mat4& left, const vec4& right);
 
             static mat4 identity();
 

@@ -37,8 +37,11 @@ namespace AdunGL
 
             m_renderer->begin();
 
+
             for(const Renderable2D* renderable : m_renderables)
+            {
                 m_renderer->submit(renderable);
+            }
 
             m_renderer->end();
 

@@ -23,6 +23,7 @@ Shader* shader2;
 TileLayer* layer;
 TileLayer* layer2;
 
+#define TEST_ADUN 0
 
 int main(int argc, char** argv)
 {
@@ -42,6 +43,8 @@ int main(int argc, char** argv)
 
     layer = new TileLayer(shader);
 
+#if TEST_ADUN
+
     for(float y = -9.0; y < 9.0; y += 0.1)
     {
         for(float x = -16.0; x < 16.0; x += 0.1)
@@ -50,14 +53,21 @@ int main(int argc, char** argv)
         }
     }
 
+#else
+
+    Sprite* button = new Sprite(-15, 5, 6, 3, maths::vec4(1, 1, 1, 1));
+    layer->add(button);
+    //layer->push(maths::mat4(button->getPosition()));
+    //layer->add(new Sprite(0.5, 0.5, 5.0, 2.0, maths::vec4(1, 0, 1, 1)));
+
+#endif
+
+
     layer2 = new TileLayer(shader2);
 
     layer2->add(new Sprite(-2, -2, 4, 4, maths::vec4(1, 0, 1, 1)));
 
-
     window.update(update);
-
-    glEnableClientState(GL_VERTEX_ARRAY);
 
     window.render([]() {
         Window::instance().clear();
@@ -87,7 +97,7 @@ void update()
 void render()
 {
     layer->render();
-    layer2->render();
+    //layer2->render();
 
     frame++;
 

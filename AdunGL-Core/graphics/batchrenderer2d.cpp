@@ -73,6 +73,7 @@ namespace AdunGL
         void BatchRenderer2D::begin()
         {
             glBindBuffer(GL_ARRAY_BUFFER, m_vbo);
+
             // 버퍼 개체의 데이터 저장고를 맵핑한다.
             // GLvoid* glMapBuffer(GLenum 타겟, GLenum 접근방식);
             // 버퍼 개체의 데이터 저장고를 클라이언트의 주소 공간과 맵핑한다.
@@ -97,19 +98,21 @@ namespace AdunGL
             // http://www.fayewilliams.com/2011/09/21/bitwise-rgba-values/
             unsigned int c = a << 24 | b << 16 | g << 8 | r;
 
-            m_buffer->vertex = position;
+            //  4X4 * 4X1 = 4X1
+
+            m_buffer->vertex = *m_transformationBack * position;
             m_buffer->color  = c;//olor;
             m_buffer++;
 
-            m_buffer->vertex = maths::vec3(position.x         , position.y + size.y, position.z);
+            m_buffer->vertex = *m_transformationBack * maths::vec3(position.x         , position.y + size.y, position.z);
             m_buffer->color  = c;//olor;
             m_buffer++;
 
-            m_buffer->vertex = maths::vec3(position.x + size.x, position.y + size.y, position.z);
+            m_buffer->vertex = *m_transformationBack * maths::vec3(position.x + size.x, position.y + size.y, position.z);
             m_buffer->color  = c;//olor;
             m_buffer++;
 
-            m_buffer->vertex = maths::vec3(position.x + size.x, position.y         , position.z);;
+            m_buffer->vertex = *m_transformationBack * maths::vec3(position.x + size.x, position.y         , position.z);
             m_buffer->color  = c;//olor;
             m_buffer++;
 
