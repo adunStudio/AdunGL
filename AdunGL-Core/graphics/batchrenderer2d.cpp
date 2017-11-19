@@ -53,7 +53,7 @@ namespace AdunGL
             int offset = 0;
 
             // 사각형 인덱스
-            for(int i = 0; i < RENDERER_INDICES_SIZE; i+=6)
+            for(int i = 0; i < RENDERER_INDICES_SIZE; i += 6)
             {
                 indices[  i  ] = offset + 0;
                 indices[i + 1] = offset + 1;
@@ -94,6 +94,7 @@ namespace AdunGL
             int b = color.z * 255.0f;
             int a = color.w * 255.0f;
 
+            // http://www.fayewilliams.com/2011/09/21/bitwise-rgba-values/
             unsigned int c = a << 24 | b << 16 | g << 8 | r;
 
             m_buffer->vertex = position;

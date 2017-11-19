@@ -24,4 +24,7 @@
 #include "graphics/static_sprite.h"
 #include "graphics/sprite.h"
 
+#include "graphics/layers/layer.h"
+#include "graphics/layers/tilelayer.h"
+
 #endif //ADUNGL_SRC_H

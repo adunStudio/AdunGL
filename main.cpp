@@ -12,26 +12,17 @@ using namespace utils;
 void update();
 void render();
 
-Shader* shader;
 
 Timer timer;
 float current_time = 0;
 unsigned int frame = 0;
 
-#define BATCH_RENDERER 1
+Shader* shader;
+Shader* shader2;
 
-#if BATCH_RENDERER
+TileLayer* layer;
+TileLayer* layer2;
 
-BatchRenderer2D* renderer;
-Sprite* sprite1, * sprite2;
-std::vector<Sprite*> sprites;
-
-#else
-
-Simple2DRenderer* renderer;
-StaticSprite* sprite1, * sprite2;
-
-#endif
 
 int main(int argc, char** argv)
 {
@@ -39,41 +30,30 @@ int main(int argc, char** argv)
 
     srand(time(NULL));
 
-
-
     Window window = Window::instance(argc, argv, "AdunGL", 960, 540);
 
-    mat4 ortho = mat4::orthographic(0.0f, 16.0f, 0.0f, 9.0f, -1.0f, 1.0f);
+    shader  = new Shader("/Users/adun/Desktop/AdunGL/AdunGL-Core/shaders/basic.vert", "/Users/adun/Desktop/AdunGL/AdunGL-Core/shaders/basic.frag");
+    shader2 = new Shader("/Users/adun/Desktop/AdunGL/AdunGL-Core/shaders/basic.vert", "/Users/adun/Desktop/AdunGL/AdunGL-Core/shaders/basic.frag");
 
-    shader = new Shader("/Users/adun/Desktop/AdunGL/AdunGL-Core/shaders/basic.vert", "/Users/adun/Desktop/AdunGL/AdunGL-Core/shaders/basic.frag");
     shader->enable();
-    shader->setUniformMat4("pr_matrix", ortho);
+    shader2->enable();
     shader->setUniform2f("light_pos", vec2 (4.0f, 1.5f));
+    shader2->setUniform2f("light_pos", vec2 (4.0f, 1.5f));
 
-#if BATCH_RENDERER
+    layer = new TileLayer(shader);
 
-
-    renderer = new BatchRenderer2D();
-
-    //sprite1 = new Sprite(5, 5, 4, 4, maths::vec4(1, 0, 1, 1)  );
-    //sprite2 = new Sprite(7, 1, 2, 3, maths::vec4(0.2, 0, 1, 1));
-
-    for(float y = 0; y < 9.0f; y += 0.05)
+    for(float y = -9.0; y < 9.0; y += 0.1)
     {
-        for(float x = 0; x < 16.0f; x += 0.05)
+        for(float x = -16.0; x < 16.0; x += 0.1)
         {
-            sprites.push_back(new Sprite(x, y, 0.04f, 0.04f, maths::vec4(rand() % 1000 / 1000.0f, 0, 1, 1)));
+            layer->add(new Sprite(x, y, 0.08, 0.04, maths::vec4(rand() % 1000 / 1000.0f, 0, 1, 1)));
         }
     }
 
-#else
+    layer2 = new TileLayer(shader2);
 
-    renderer = new Simple2DRenderer();
+    layer2->add(new Sprite(-2, -2, 4, 4, maths::vec4(1, 0, 1, 1)));
 
-    sprite1 = new StaticSprite(5, 5, 4, 4, maths::vec4(1, 0, 1, 1)  , *shader);
-    sprite2 = new StaticSprite(7, 1, 2, 3, maths::vec4(0.2, 0, 1, 1), *shader);
-
-#endif
 
     window.update(update);
 
@@ -96,39 +76,18 @@ void update()
     int x, y;
     Window::instance().getMousePosition(x, y);
 
-    mat4 mat= mat4::translation(vec3(8, 4.5, 0));
-    mat *=  mat4::rotation(timer.elapsed() / 50.0f, vec3(0, 0, 1));
-    mat *= mat4::translation(vec3(-8, -4.5, 0));
+    shader->enable();
+    shader->setUniform2f("light_pos", vec2((float)(x * 32.0f / 960.0f - 16.0f), (float)(9.0f - y * 18.0f / 540.f)));
+    shader2->enable();
+    shader2->setUniform2f("light_pos", vec2((float)(x * 32.0f / 960.0f - 16.0f), (float)(9.0f - y * 18.0f / 540.f)));
 
-    shader->setUniformMat4("ml_matrix", mat);
-
-    shader->setUniform2f("light_pos", vec2((float)(x * 16.0f / 960.0f), (float)(9.0f - y * 9.0f / 540.f)));
     glutPostRedisplay();
 }
 
 void render()
 {
-
-#if BATCH_RENDERER
-
-
-
-    renderer->begin();
-
-    for(int i = 0; i < sprites.size(); ++i)
-        renderer->submit(sprites[i]);
-
-    renderer->end();
-
-    renderer->flush();
-
-#else
-
-    renderer->submit(sprite1);
-    renderer->submit(sprite2);
-    renderer->flush();
-
-#endif
+    layer->render();
+    layer2->render();
 
     frame++;
 
