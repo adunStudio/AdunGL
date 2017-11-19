@@ -55,10 +55,17 @@ int main(int argc, char** argv)
 
 #else
 
-    Sprite* button = new Sprite(-15, 5, 6, 3, maths::vec4(1, 1, 1, 1));
-    layer->add(button);
-    //layer->push(maths::mat4(button->getPosition()));
-    //layer->add(new Sprite(0.5, 0.5, 5.0, 2.0, maths::vec4(1, 0, 1, 1)));
+    mat4 transform = mat4::translation(vec3(-15, 5, 0)) * mat4::rotation(45, vec3(0, 0, 1));
+    Group* group = new Group(transform);
+    group->add(new Sprite(0, 0, 6, 3, vec4(1, 1, 1, 1)));
+
+    Group* button = new Group(mat4::translation(vec3(0.5, 0.5, 0)));
+    button->add(new Sprite(0, 0, 5, 2, vec4(1, 0, 1, 1)));
+    button->add(new Sprite(0.5, 0.5, 3, 1, vec4(0.2, 0.3, 0.8, 1)));
+
+    group->add(button);
+
+    layer->add(group);
 
 #endif
 

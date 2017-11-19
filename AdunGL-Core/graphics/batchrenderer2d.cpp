@@ -3,6 +3,7 @@
 //
 
 #include "batchrenderer2d.h"
+#include "renderer2d.h"
 
 namespace AdunGL
 {

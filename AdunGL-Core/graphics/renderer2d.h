@@ -7,13 +7,14 @@
 
 #include <vector>
 #include <GL/glut.h>
-#include "renderable2d.h"
 #include "../maths/maths.h"
 
 namespace AdunGL
 {
     namespace graphics
     {
+        class Renderable2D;
+
         class Renderer2D
         {
         protected:

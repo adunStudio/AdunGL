@@ -10,6 +10,7 @@
 #include "buffers/vertexArray.h"
 #include "shader.h"
 #include "../maths/maths.h"
+#include "renderer2d.h"
 
 
 namespace AdunGL
@@ -30,11 +31,19 @@ namespace AdunGL
             maths::vec2 m_size;
             maths::vec4 m_color;
 
+        protected:
+            Renderable2D() {};
+
         public:
             Renderable2D(maths::vec3 position, maths::vec2 size, maths::vec4 color)
             : m_position(position), m_size(size), m_color(color) { }
 
             virtual ~Renderable2D() { }
+
+            virtual void submit(Renderer2D* renderer) const
+            {
+                renderer->submit(this);
+            }
 
         public:
             inline const maths::vec3& getPosition() const { return m_position;    }

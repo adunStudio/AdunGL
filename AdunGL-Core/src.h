@@ -27,4 +27,6 @@
 #include "graphics/layers/layer.h"
 #include "graphics/layers/tilelayer.h"
 
+#include "graphics/layers/group.h"
+
 #endif //ADUNGL_SRC_H
