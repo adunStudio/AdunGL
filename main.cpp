@@ -3,7 +3,7 @@
 #include <vector>
 #include "AdunGL-Core/src.h"
 
-#include "AdunGL-Core/FreeImage/mac/include/FreeImage.h"
+#include <FreeImage.h>
 
 using namespace std;
 using namespace AdunGL;
