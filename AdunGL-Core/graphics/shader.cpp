@@ -13,12 +13,12 @@ namespace AdunGL
         Shader::Shader(const char* vertPath, const char* fragPath)
         : vertPath(vertPath), fragPath(fragPath)
         {
-            shaderID = load();
+            m_shaderID = load();
         }
 
         Shader::~Shader()
         {
-            glDeleteShader(shaderID);
+            glDeleteShader(m_shaderID);
         }
 
         GLuint Shader::load()
@@ -157,7 +157,7 @@ namespace AdunGL
 
         GLint Shader::getUniformLocation(const GLchar* name)
         {
-            return glGetUniformLocation(shaderID, name);
+            return glGetUniformLocation(m_shaderID, name);
         }
 
         void Shader::setUniform1f(const GLchar* name, float value)
@@ -193,7 +193,7 @@ namespace AdunGL
 
         void Shader::enable() const
         {
-            glUseProgram(shaderID);
+            glUseProgram(m_shaderID);
         }
 
         void Shader::disable() const

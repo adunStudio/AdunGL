@@ -23,7 +23,7 @@ namespace AdunGL
             const char* vertPath, * fragPath;
 
         public:
-            GLuint shaderID;
+            GLuint m_shaderID;
 
             Shader(const char* vertPath, const char* fragPath);
             ~Shader();

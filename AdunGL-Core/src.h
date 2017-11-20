@@ -29,4 +29,8 @@
 
 #include "graphics/layers/group.h"
 
+#include "utils/imageload.h"
+
+#include "graphics/texture.h"
+
 #endif //ADUNGL_SRC_H
