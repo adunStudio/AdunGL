@@ -29,6 +29,9 @@ namespace AdunGL
             }
 
         public:
+
+            virtual ~Renderer2D() {};
+
             void push(maths::mat4 matrix, bool override = false)
             {
                 if(override)
