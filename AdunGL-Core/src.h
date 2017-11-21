@@ -33,4 +33,6 @@
 
 #include "graphics/texture.h"
 
+#include "graphics/camera.h"
+
 #endif //ADUNGL_SRC_H

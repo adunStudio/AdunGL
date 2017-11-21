@@ -25,11 +25,11 @@ namespace AdunGL
             Texture(const std::string fileName);
             ~Texture();
 
-            void bind() const;
+            void bind()   const;
             void unbind() const;
 
-            inline const unsigned int getWidth () const { return m_width; }
-            inline const unsigned int getHeight() const { return m_width; }
+            inline const unsigned int getWidth () const { return m_width;  }
+            inline const unsigned int getHeight() const { return m_height; }
 
         private:
             GLuint load();
