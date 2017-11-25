@@ -7,6 +7,8 @@
 
 #include <iostream>
 #include <vector>
+#include <OpenGL/gl3.h>
+#include <OpenGL/glu.h>
 #include <GLUT/glut.h>
 #include "../utils/fileutils.h"
 #include "../maths/maths.h"

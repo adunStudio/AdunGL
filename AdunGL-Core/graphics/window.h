@@ -6,6 +6,8 @@
 #define ADUNGL_WINDOW_H
 
 #include <iostream>
+#include <OpenGL/gl3.h>
+#include <OpenGL/glu.h>
 #include <GLUT/glut.h>
 #include <cassert>
 #include <map>

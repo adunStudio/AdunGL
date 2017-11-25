@@ -15,7 +15,7 @@ namespace AdunGL
             // glGenVertexArrays(GLsizei n, GLuint *arrays);
             // n -> Specifies the number of vertex array object names to generate.
             // arrays -> Specifies an array in which the generated vertex array object names are stored.
-            glGenVertexArraysAPPLE(1, &arrayID);
+            glGenVertexArrays(1, &arrayID);
 
         }
 
@@ -24,7 +24,7 @@ namespace AdunGL
             for(int i = 0; i < buffers.size(); ++i)
                 delete buffers[i];
 
-            glDeleteVertexArraysAPPLE(1, &arrayID);
+            glDeleteVertexArrays(1, &arrayID);
         }
 
         void VertexArray::addBuffer(Buffer *buffer, GLuint index)
@@ -51,12 +51,12 @@ namespace AdunGL
 
         void VertexArray::bind() const
         {
-            glBindVertexArrayAPPLE(arrayID);
+            glBindVertexArray(arrayID);
         }
 
         void VertexArray::unbind() const
         {
-            glBindVertexArrayAPPLE(0);
+            glBindVertexArray(0);
         }
     }
 }

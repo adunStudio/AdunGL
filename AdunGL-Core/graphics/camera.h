@@ -6,6 +6,8 @@
 #define ADUNGL_CAMERA_H
 
 #include <cassert>
+#include <OpenGL/gl3.h>
+#include <OpenGL/glu.h>
 #include <GLUT/glut.h>
 
 namespace AdunGL

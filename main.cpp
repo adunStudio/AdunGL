@@ -31,6 +31,10 @@ int main(int argc, char** argv)
 
     Window window = Window::instance(argc, argv, "AdunGL", 960, 540);
 
+    cout << window.getVersion() << endl;
+    cout << window.getGLSLVersion() << endl;
+    cout << glGetString(GL_SHADING_LANGUAGE_VERSION) << endl;
+
     shader  = new Shader("/Users/adun/Desktop/AdunGL/AdunGL-Core/shaders/basic.vert", "/Users/adun/Desktop/AdunGL/AdunGL-Core/shaders/basic.frag");
 
     shader->enable();
@@ -54,7 +58,7 @@ int main(int argc, char** argv)
     texture.bind();
 
     shader->enable();
-    shader->setUniform1i("tex0", 0);
+    shader->setUniform1i("tex", 0);
     shader->setUniformMat4("pr_matrix", maths::mat4::orthographic(-16, 16, -9, 9, -1, 1));
 
     window.update(update);

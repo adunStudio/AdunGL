@@ -19,7 +19,8 @@ namespace AdunGL
 
 #define SHADER_VERTEX_INDEX   0
 #define SHADER_UV_INDEX       1
-#define SHADER_COLOR_INDEX    2
+#define SHADER_TID_INDEX      2
+#define SHADER_COLOR_INDEX    3
 
     namespace graphics {
         class BatchRenderer2D : public Renderer2D {
@@ -29,6 +30,8 @@ namespace AdunGL
             IndexBuffer* m_ibo;
             GLsizei m_indexCount = 0;
             VertexData* m_buffer;
+            std::vector<GLuint> m_textureSlots;
+
         public:
             BatchRenderer2D();
             ~BatchRenderer2D();

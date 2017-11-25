@@ -131,8 +131,9 @@ namespace AdunGL
 
             glBindAttribLocation(program, 0, "position");
             glBindAttribLocation(program, 1, "uv");
-            glBindAttribLocation(program, 2, "coloror");
-
+            glBindAttribLocation(program, 2, "tid");
+            glBindAttribLocation(program, 3, "color");
+            glBindFragDataLocation(program, 0, "color");
             /*
              * 프로그램을 링크한다. 이 단계를 수행하기 위해서 쉐이더는 반드시 컴파일 되어있어야한다.
              * void glLinkProgram(GLuint program);
@@ -146,11 +147,13 @@ namespace AdunGL
 
 
 
-            //GLint a = glGetAttribLocation(program, "position");
-            //GLint b = glGetAttribLocation(program, "uv");
-            //GLint c = glGetAttribLocation(program, "coloror");
+            GLint a = glGetAttribLocation(program, "position");
+            GLint b = glGetAttribLocation(program, "uv");
+            GLint c = glGetAttribLocation(program, "tid");
+            GLint d = glGetAttribLocation(program, "color");
+            GLint e = glGetFragDataLocation(program, "color");
 
-            //std::cout << a << b << c << std::endl;
+            std::cout << a << b << c << d << e << std::endl;
 
 
             glDeleteShader(vertex);

@@ -6,6 +6,8 @@
 #define ADUNGL_RENDERER2D_H
 
 #include <vector>
+#include <OpenGL/gl3.h>
+#include <OpenGL/glu.h>
 #include <GL/glut.h>
 #include "../maths/maths.h"
 

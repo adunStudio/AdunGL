@@ -29,24 +29,23 @@ namespace AdunGL
 
 
 
-            glGenVertexArraysAPPLE(1, &m_vao);
-
+            glGenVertexArrays(1, &m_vao);
             glGenBuffers(1, &m_vbo);
 
-            glBindVertexArrayAPPLE(m_vao);
-
+            glBindVertexArray(m_vao);
             glBindBuffer(GL_ARRAY_BUFFER, m_vbo);
-
             glBufferData(GL_ARRAY_BUFFER, RENDERER_BUFFER_SIZE, NULL, GL_DYNAMIC_DRAW);
 
 
             glEnableVertexAttribArray(SHADER_VERTEX_INDEX);
             glEnableVertexAttribArray(SHADER_UV_INDEX    );
+            glEnableVertexAttribArray(SHADER_TID_INDEX   );
             glEnableVertexAttribArray(SHADER_COLOR_INDEX );
 
 
             glVertexAttribPointer(SHADER_VERTEX_INDEX, 3, GL_FLOAT        , GL_FALSE, RENDERER_VERTEX_SIZE, (const GLvoid*)(0)                          );
             glVertexAttribPointer(SHADER_UV_INDEX,     2, GL_FLOAT        , GL_FALSE, RENDERER_VERTEX_SIZE, (const GLvoid*)(offsetof(VertexData, uv))   );
+            glVertexAttribPointer(SHADER_TID_INDEX,    1, GL_FLOAT        , GL_FALSE, RENDERER_VERTEX_SIZE, (const GLvoid*)(offsetof(VertexData, tid))   );
             glVertexAttribPointer(SHADER_COLOR_INDEX , 4, GL_UNSIGNED_BYTE, GL_TRUE , RENDERER_VERTEX_SIZE, (const GLvoid*)(offsetof(VertexData, color)));
 
             glBindBuffer(GL_ARRAY_BUFFER, 0);
@@ -70,7 +69,7 @@ namespace AdunGL
 
             m_ibo = new IndexBuffer(indices, RENDERER_INDICES_SIZE);
 
-            glBindVertexArrayAPPLE(0);
+            glBindVertexArray(0);
         }
 
         void BatchRenderer2D::begin()
@@ -93,34 +92,77 @@ namespace AdunGL
             const maths::vec2&              size     = renderable->getSize();
             const maths::vec4&              color    = renderable->getColor();
             const std::vector<maths::vec2>& uv       = renderable->getUV();
+            const GLuint                    tid      = renderable->getTID();
 
-            int r = color.x * 255.0f;
-            int g = color.y * 255.0f;
-            int b = color.z * 255.0f;
-            int a = color.w * 255.0f;
 
-            // http://www.fayewilliams.com/2011/09/21/bitwise-rgba-values/
-            unsigned int c = a << 24 | b << 16 | g << 8 | r;
+            unsigned int c = 0;
+
+            float ts = 0.0f;
+
+            if(tid > 0)
+            {
+                // 0->0
+                // 1->3
+                // 2->4
+                bool found = false;
+                for(int i = 0; i < m_textureSlots.size(); ++i)
+                {
+                    if(m_textureSlots[i] == tid)
+                    {
+                        ts = (float)i;
+                        found = true;
+                        break;
+                    }
+                }
+
+                if(!found)
+                {
+                    if(m_textureSlots.size() >= 32)
+                    {
+                        end();
+                        flush();
+                        begin();
+                    }
+
+                    m_textureSlots.push_back(tid);
+                    ts = (float)(m_textureSlots.size() - 1);
+                }
+            }
+            else
+            {
+
+                int r = color.x * 255.0f;
+                int g = color.y * 255.0f;
+                int b = color.z * 255.0f;
+                int a = color.w * 255.0f;
+
+                // http://www.fayewilliams.com/2011/09/21/bitwise-rgba-values/
+                c = a << 24 | b << 16 | g << 8 | r;
+            }
 
             //  4X4 * 4X1 = 4X1
 
             m_buffer->vertex = *m_transformationBack * position;
             m_buffer->uv = uv[0];
+            m_buffer->tid = ts;
             m_buffer->color  = c;//olor;
             m_buffer++;
 
             m_buffer->vertex = *m_transformationBack * maths::vec3(position.x         , position.y + size.y, position.z);
             m_buffer->uv = uv[1];
+            m_buffer->tid = ts;
             m_buffer->color  = c;//olor;
             m_buffer++;
 
             m_buffer->vertex = *m_transformationBack * maths::vec3(position.x + size.x, position.y + size.y, position.z);
             m_buffer->uv = uv[2];
+            m_buffer->tid = ts;
             m_buffer->color  = c;//olor;
             m_buffer++;
 
             m_buffer->vertex = *m_transformationBack * maths::vec3(position.x + size.x, position.y         , position.z);
             m_buffer->uv = uv[3];
+            m_buffer->tid = ts;
             m_buffer->color  = c;//olor;
             m_buffer++;
 
@@ -135,13 +177,13 @@ namespace AdunGL
 
         void BatchRenderer2D::flush()
         {
-            glBindVertexArrayAPPLE(m_vao);
+            glBindVertexArray(m_vao);
             m_ibo->bind();
 
             glDrawElements(GL_TRIANGLES, m_indexCount, GL_UNSIGNED_INT, NULL);
 
             m_ibo->unbind();
-            glBindVertexArrayAPPLE(0);
+            glBindVertexArray(0);
 
             m_indexCount = 0;
         }

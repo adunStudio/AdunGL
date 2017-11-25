@@ -39,7 +39,8 @@ namespace AdunGL
 
         void Window::init()
         {
-            glutInitDisplayMode(GLUT_DOUBLE | GLUT_RGBA | GLUT_DEPTH);
+
+            glutInitDisplayMode(GLUT_3_2_CORE_PROFILE | GLUT_DOUBLE | GLUT_RGBA | GLUT_DEPTH);
             glutInitWindowPosition(100, 100);
             glutInitWindowSize(width, height);
 

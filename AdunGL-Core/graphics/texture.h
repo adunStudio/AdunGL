@@ -7,6 +7,8 @@
 
 #include <FreeImage.h>
 #include <string>
+#include <OpenGL/gl3.h>
+#include <OpenGL/glu.h>
 #include <GL/glut.h>
 #include "../utils/imageload.h"
 
@@ -30,6 +32,7 @@ namespace AdunGL
 
             inline const unsigned int getWidth () const { return m_width;  }
             inline const unsigned int getHeight() const { return m_height; }
+            inline const unsigned int getID    () const { return m_TID; }
 
         private:
             GLuint load();
