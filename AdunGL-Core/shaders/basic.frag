@@ -15,5 +15,5 @@ void main(void)
     intensity = 1.0 / length(pos.xy - light_pos);
     //gl_FragColor = colour * intensity;
     gl_FragColor = color * intensity;
-    //gl_FragColor = texture(tex, uvv) * intensity;
+    gl_FragColor = texture2D(tex, uvv) * intensity;
 }

@@ -32,28 +32,30 @@ int main(int argc, char** argv)
     Window window = Window::instance(argc, argv, "AdunGL", 960, 540);
 
     shader  = new Shader("/Users/adun/Desktop/AdunGL/AdunGL-Core/shaders/basic.vert", "/Users/adun/Desktop/AdunGL/AdunGL-Core/shaders/basic.frag");
-    shader2 = new Shader("/Users/adun/Desktop/AdunGL/AdunGL-Core/shaders/basic.vert", "/Users/adun/Desktop/AdunGL/AdunGL-Core/shaders/basic.frag");
 
     shader->enable();
-    shader2->enable();
     shader->setUniform2f("light_pos", vec2 (4.0f, 1.5f));
-    shader2->setUniform2f("light_pos", vec2 (4.0f, 1.5f));
 
     layer = new TileLayer(shader);
 
 
-    for(float y = -9.0; y < 9.0; y += 0.1)
+    for(float y = -9.0; y < 9.0; ++y)
     {
-        for(float x = -16.0; x < 16.0; x += 0.1)
+        for(float x = -16.0; x < 16.0; ++x)
         {
-            layer->add(new Sprite(x, y, 0.08, 0.04, maths::vec4(rand() % 1000 / 1000.0f, 0, 1, 1)));
+            layer->add(new Sprite(x, y, 0.9, 0.9, maths::vec4(rand() % 1000 / 1000.0f, 0, 1, 1)));
         }
     }
 
-    layer2 = new TileLayer(shader2);
 
-    layer2->add(new Sprite(-2, -2, 4, 4, maths::vec4(1, 0, 1, 1)));
+    glActiveTexture(GL_TEXTURE0);
 
+    Texture texture("/Users/adun/Desktop/AdunGL/test-2.png");
+    texture.bind();
+
+    shader->enable();
+    shader->setUniform1i("tex0", 0);
+    shader->setUniformMat4("pr_matrix", maths::mat4::orthographic(-16, 16, -9, 9, -1, 1));
 
     window.update(update);
 
@@ -76,8 +78,6 @@ void update()
 
     shader->enable();
     shader->setUniform2f("light_pos", vec2((float)(x * 32.0f / 960.0f - 16.0f), (float)(9.0f - y * 18.0f / 540.f)));
-    shader2->enable();
-    shader2->setUniform2f("light_pos", vec2((float)(x * 32.0f / 960.0f - 16.0f), (float)(9.0f - y * 18.0f / 540.f)));
 
     glutPostRedisplay();
 }
@@ -85,7 +85,6 @@ void update()
 void render()
 {
     layer->render();
-    //layer2->render();
 
     frame++;
 
