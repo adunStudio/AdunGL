@@ -74,7 +74,7 @@ namespace AdunGL
             // 폰트
 
             // const size_t width, const size_t height, const size_t depth
-            m_FTAtlas = ftgl::texture_atlas_new(512, 512, 2);
+            m_FTAtlas = ftgl::texture_atlas_new(512, 512, 3);
 
             // texture_atlas_t * atlas, const float pt_size, const char * filename
             m_FTFonts = ftgl::texture_font_new_from_file(m_FTAtlas, 32, "/Users/adun/Desktop/AdunGL/asset/arial.ttf");

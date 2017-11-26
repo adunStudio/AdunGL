@@ -44,6 +44,8 @@ namespace AdunGL
 
             static mat4 identity();
 
+            mat4& invert();
+
             static mat4 orthographic(float left, float right, float bottom, float top, float near, float far);
             static mat4 perspective(float fov, float aspectRatio, float near, float far);
 

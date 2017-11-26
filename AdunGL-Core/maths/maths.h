@@ -5,6 +5,7 @@
 #ifndef ADUNGL_MATHS_H
 #define ADUNGL_MATHS_H
 
+#include <cmath>
 #include "math_func.h"
 #include "vec2.h"
 #include "vec3.h"

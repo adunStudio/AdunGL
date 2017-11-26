@@ -68,7 +68,7 @@ int main(int argc, char** argv)
 
     group = new Group(maths::mat4::translation(maths::vec3(-15.8f, 7.0f, 0.0f)));
 
-    fps = new Label("", 0.4f, 0.4f, maths::vec4(1, 1, 1, 1));
+    fps = new Label("", 0.4f, 0.4f, maths::vec4(0, 1, 1, 1));
 
     group->add(new Sprite(0, 0, 5, 1.5f, maths::vec4(0.3f, 0.3f, 0.3f, 0.9f)));
     group->add(fps);
