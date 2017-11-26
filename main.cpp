@@ -47,9 +47,9 @@ int main(int argc, char** argv)
 
     Texture* textures[] =
             {
-                    new Texture("/Users/adun/Desktop/AdunGL/test.png"),
-                    new Texture("/Users/adun/Desktop/AdunGL/tb.png"),
-                    new Texture("/Users/adun/Desktop/AdunGL/tc.png")
+                    new Texture("/Users/adun/Desktop/AdunGL/asset/test.png"),
+                    new Texture("/Users/adun/Desktop/AdunGL/asset/tb.png"),
+                    new Texture("/Users/adun/Desktop/AdunGL/asset/tc.png")
             };
 
 
