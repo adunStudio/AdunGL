@@ -35,4 +35,6 @@
 
 #include "graphics/camera.h"
 
+#include "graphics/label.h"
+
 #endif //ADUNGL_SRC_H

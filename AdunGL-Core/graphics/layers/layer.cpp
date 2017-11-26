@@ -44,8 +44,6 @@ namespace AdunGL
             }
 
 
-            m_renderer->drawString("Hello!.", maths::vec3(0, 0, 0), maths::vec4(0, 1, 0, 0));
-
             m_renderer->end();
 
             m_renderer->flush();

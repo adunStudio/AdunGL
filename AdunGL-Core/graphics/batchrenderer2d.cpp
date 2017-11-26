@@ -74,10 +74,10 @@ namespace AdunGL
             // 폰트
 
             // const size_t width, const size_t height, const size_t depth
-            m_FTAtlas = ftgl::texture_atlas_new(512, 512, 1);
+            m_FTAtlas = ftgl::texture_atlas_new(512, 512, 2);
 
             // texture_atlas_t * atlas, const float pt_size, const char * filename
-            m_FTFonts = ftgl::texture_font_new_from_file(m_FTAtlas, 200, "/Users/adun/Desktop/AdunGL/asset/arial.ttf");
+            m_FTFonts = ftgl::texture_font_new_from_file(m_FTAtlas, 32, "/Users/adun/Desktop/AdunGL/asset/arial.ttf");
         }
 
         void BatchRenderer2D::begin()
@@ -134,17 +134,14 @@ namespace AdunGL
                     ts = (float)(m_textureSlots.size());
                 }
             }
-            else
-            {
 
-                int r = color.x * 255.0f;
-                int g = color.y * 255.0f;
-                int b = color.z * 255.0f;
-                int a = color.w * 255.0f;
+            int r = color.x * 255.0f;
+            int g = color.y * 255.0f;
+            int b = color.z * 255.0f;
+            int a = color.w * 255.0f;
 
-                // http://www.fayewilliams.com/2011/09/21/bitwise-rgba-values/
-                c = a << 24 | b << 16 | g << 8 | r;
-            }
+            // http://www.fayewilliams.com/2011/09/21/bitwise-rgba-values/
+            c = a << 24 | b << 16 | g << 8 | r;
 
             //  4X4 * 4X1 = 4X1
 
@@ -223,7 +220,7 @@ namespace AdunGL
 
             for(int i = 0; i < text.length(); ++i)
             {
-                char c = text.at(i);
+                char c = text[i];
                 texture_glyph_t* glyph = texture_font_get_glyph(m_FTFonts, c);
 
                 if(glyph != NULL)
@@ -232,7 +229,7 @@ namespace AdunGL
                     {
                         // 글 간격
                         float kerning = texture_glyph_get_kerning(glyph, text[i - 1]);
-                        x += kerning / scaleX;
+                        x += (kerning / scaleX);
                     }
 
                     float x0 = x + glyph->offset_x / scaleX;
@@ -271,7 +268,7 @@ namespace AdunGL
 
                     m_indexCount += 6;
 
-                    x += glyph->advance_x / scaleX;
+                    x += (glyph->advance_x / scaleX);
                 }
             }
         }

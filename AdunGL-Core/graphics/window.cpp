@@ -40,12 +40,17 @@ namespace AdunGL
         void Window::init()
         {
 
-            glutInitDisplayMode(GLUT_3_2_CORE_PROFILE | GLUT_DOUBLE | GLUT_RGBA | GLUT_DEPTH);
+            glutInitDisplayMode(GLUT_3_2_CORE_PROFILE | GLUT_DOUBLE | GLUT_RGBA | GLUT_ALPHA | GLUT_DEPTH);
             glutInitWindowPosition(100, 100);
             glutInitWindowSize(width, height);
 
             window = glutCreateWindow(name);
+
+
             //glEnable(GL_DEPTH_TEST);
+            glEnable(GL_BLEND);
+            glBlendFunc(GL_SRC_ALPHA, GL_ONE_MINUS_SRC_ALPHA);
+
 
             //glutIdleFunc(updateCallback);
             //glutDisplayFunc(renderCallback);
@@ -58,6 +63,8 @@ namespace AdunGL
                 glutMouseFunc(mouseCallback);
             glutPassiveMotionFunc(mouseMoveCallback);
             glutMotionFunc(mouseMoveCallback);
+
+
         }
 
         void Window::update(void (*func)())
@@ -91,8 +98,8 @@ namespace AdunGL
 
         void Window::clear(float r, float g, float b) const
         {
-            glClearColor(r, g, b, 1.0f);
-            glClear( GL_COLOR_BUFFER_BIT | GL_DEPTH_BUFFER_BIT );
+            glClearColor(r, g, b, 0.0f);
+            glClear( GL_COLOR_BUFFER_BIT | GL_DEPTH_BUFFER_BIT);
             glColor4f(1, 1, 1, 1);
         }
 

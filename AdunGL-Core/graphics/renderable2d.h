@@ -55,7 +55,7 @@ namespace AdunGL
             inline const maths::vec2&              getSize()     const { return m_size;        }
             inline const maths::vec4&              getColor()    const { return m_color;       }
             inline const std::vector<maths::vec2>& getUV()       const { return m_uv;          }
-            inline const GLuint                    getTID()      const { return m_texture == nullptr ? 0 : m_texture->getID(); }
+            inline const GLuint                    getTID()      const { return m_texture ? m_texture->getID() : 0; }
 
         private:
             void setUVDefaults()

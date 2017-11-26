@@ -9,7 +9,7 @@ namespace AdunGL
     namespace graphics
     {
         Label::Label(std::string text, float x, float y, maths::vec4 color)
-        : Renderable2D(),  m_text(text)
+        : Renderable2D(),  text(text), position(m_position)
         {
             m_position = maths::vec3(x, y, 0.0f);
             m_color = color;
@@ -17,7 +17,7 @@ namespace AdunGL
 
         void Label::submit(Renderer2D* renderer) const
         {
-            renderer->drawString(m_text, m_position, m_color);
+            renderer->drawString(text, m_position, m_color);
         }
     }
 }

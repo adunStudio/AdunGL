@@ -16,7 +16,7 @@ namespace AdunGL
         }
 
         Sprite::Sprite(float x, float y , float width, float height, Texture* texture)
-        : Renderable2D(maths::vec3(x, y, 0), maths::vec2(width, height), maths::vec4(1, 0, 1, 1))
+        : Renderable2D(maths::vec3(x, y, 0), maths::vec2(width, height), maths::vec4(1, 1 , 1, 1))
         {
             m_texture = texture;
         }

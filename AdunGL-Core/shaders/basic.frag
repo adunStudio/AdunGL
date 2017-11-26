@@ -26,37 +26,37 @@ void main()
 	    int tid = int(fs_in.tid);
 
         if(tid == 1)
-            texColor = texture(textures[0], fs_in.uv);
+            texColor = fs_in.color * texture(textures[0], fs_in.uv);
         else if(tid == 2)
-            texColor = texture(textures[1], fs_in.uv);
+            texColor = fs_in.color * texture(textures[1], fs_in.uv);
         else if(tid == 3)
-            texColor = texture(textures[2], fs_in.uv);
+            texColor = fs_in.color * texture(textures[2], fs_in.uv);
         else if(tid == 4)
-            texColor = texture(textures[3], fs_in.uv);
+            texColor = fs_in.color * texture(textures[3], fs_in.uv);
         else if(tid == 5)
-            texColor = texture(textures[4], fs_in.uv);
+            texColor = fs_in.color * texture(textures[4], fs_in.uv);
         else if(tid == 6)
-            texColor = texture(textures[5], fs_in.uv);
+            texColor = fs_in.color * texture(textures[5], fs_in.uv);
         else if(tid == 7)
-            texColor = texture(textures[6], fs_in.uv);
+            texColor = fs_in.color * texture(textures[6], fs_in.uv);
         else if(tid == 8)
-            texColor = texture(textures[7], fs_in.uv);
+            texColor = fs_in.color * texture(textures[7], fs_in.uv);
         else if(tid == 9)
-            texColor = texture(textures[8], fs_in.uv);
+            texColor = fs_in.color * texture(textures[8], fs_in.uv);
         else if(tid == 10)
-            texColor = texture(textures[9], fs_in.uv);
+            texColor = fs_in.color * texture(textures[9], fs_in.uv);
         else if(tid == 11)
-            texColor = texture(textures[10], fs_in.uv);
+            texColor = fs_in.color * texture(textures[10], fs_in.uv);
         else if(tid == 12)
-            texColor = texture(textures[11], fs_in.uv);
+            texColor = fs_in.color * texture(textures[11], fs_in.uv);
         else if(tid == 13)
-            texColor = texture(textures[12], fs_in.uv);
+            texColor = fs_in.color * texture(textures[12], fs_in.uv);
         else if(tid == 14)
-            texColor = texture(textures[13], fs_in.uv);
+            texColor = fs_in.color * texture(textures[13], fs_in.uv);
         else if(tid == 15)
-            texColor = texture(textures[14], fs_in.uv);
+            texColor = fs_in.color * texture(textures[14], fs_in.uv);
         else if(tid == 16)
-            texColor = texture(textures[15], fs_in.uv);
+            texColor = fs_in.color * texture(textures[15], fs_in.uv);
 	}
 
 	color = texColor;// * intensity;
