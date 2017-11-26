@@ -70,6 +70,20 @@ namespace AdunGL
             m_ibo = new IndexBuffer(indices, RENDERER_INDICES_SIZE);
 
             glBindVertexArray(0);
+
+            // 폰트
+
+            // const size_t width, const size_t height, const size_t depth
+            m_FTAtlas = ftgl::texture_atlas_new(512, 512, 1);
+
+            // texture_atlas_t * atlas, const float pt_size, const char * filename
+            m_FTFonts = ftgl::texture_font_new_from_file(m_FTAtlas, 80, "/Users/adun/Desktop/AdunGL/asset/arial.ttf");
+
+            ftgl::texture_font_get_glyph(m_FTFonts, 'A');
+            ftgl::texture_font_get_glyph(m_FTFonts, 'B');
+            ftgl::texture_font_get_glyph(m_FTFonts, '$');
+            ftgl::texture_font_get_glyph(m_FTFonts, 'a');
+            ftgl::texture_font_get_glyph(m_FTFonts, '!');
         }
 
         void BatchRenderer2D::begin()
@@ -101,10 +115,6 @@ namespace AdunGL
 
             if(tid > 0)
             {
-                // 0 -> 0
-                // 1 -> 3
-                // 2 -> 5
-                // 3 -> 7
                 bool found = false;
 
                 for(int i = 0; i < m_textureSlots.size(); ++i)
@@ -169,6 +179,61 @@ namespace AdunGL
             m_buffer++;
 
             m_indexCount += 6;
+        }
+
+        void BatchRenderer2D::drawString(const std::string& text, const maths::vec3& position, const maths::vec4& color)
+        {
+            using namespace ftgl;
+
+            float ts = 0.0f;
+
+            bool found = false;
+
+            for(int i = 0; i < m_textureSlots.size(); ++i)
+            {
+                if(m_textureSlots[i] == m_FTAtlas->id)
+                {
+                    ts = (float)(i + 1);
+                    found = true;
+                    break;
+                }
+            }
+
+            if(!found)
+            {
+                if(m_textureSlots.size() >= 32)
+                {
+                    end();
+                    flush();
+                    begin();
+                }
+
+                m_textureSlots.push_back(m_FTAtlas->id);
+                ts = (float)(m_textureSlots.size());
+            }
+
+            m_buffer->vertex = maths::vec3(-8, -8, 0);
+            m_buffer->uv = maths::vec2(0, 1);
+            m_buffer->tid = ts;
+            m_buffer++;
+
+            m_buffer->vertex = maths::vec3(-8,  8, 0);
+            m_buffer->uv = maths::vec2(0, 0);
+            m_buffer->tid = ts;
+            m_buffer++;
+
+            m_buffer->vertex = maths::vec3( 8,  8, 0);
+            m_buffer->uv = maths::vec2(1, 0);
+            m_buffer->tid = ts;
+            m_buffer++;
+
+            m_buffer->vertex = maths::vec3( 8, -8, 0);
+            m_buffer->uv = maths::vec2(1, 1);
+            m_buffer->tid = ts;
+            m_buffer++;
+
+            m_indexCount += 6;
+
         }
 
         void BatchRenderer2D::end()

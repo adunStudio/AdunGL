@@ -8,6 +8,7 @@
 #include <cstddef>
 #include "renderer2d.h"
 #include "renderable2d.h"
+#include "../exc/freetype-gl/freetype-gl.h"
 
 namespace AdunGL
 {
@@ -24,13 +25,18 @@ namespace AdunGL
 
     namespace graphics {
         class BatchRenderer2D : public Renderer2D {
+
         private:
             GLuint m_vao;
             GLuint m_vbo;
             IndexBuffer* m_ibo;
             GLsizei m_indexCount = 0;
             VertexData* m_buffer;
+
             std::vector<GLuint> m_textureSlots;
+
+            ftgl::texture_atlas_t* m_FTAtlas;
+            ftgl::texture_font_t*  m_FTFonts;
 
         public:
             BatchRenderer2D();
@@ -38,6 +44,7 @@ namespace AdunGL
 
             void begin() override;
             void submit(const Renderable2D *renderable) override;
+            void drawString(const std::string& text, const maths::vec3& position, const maths::vec4& color) override;
             void end() override;
             void flush() override;
 

@@ -64,7 +64,7 @@ int main(int argc, char** argv)
         }
     }
 
-    GLint texIDs[] = { 0, 1, 2, 3, 4, 5, 6, 7, 8, 9 };
+    GLint texIDs[] = { 0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10 };
 
 
     shader->enable();
