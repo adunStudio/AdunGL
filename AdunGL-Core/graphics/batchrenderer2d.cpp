@@ -45,7 +45,7 @@ namespace AdunGL
 
             glVertexAttribPointer(SHADER_VERTEX_INDEX, 3, GL_FLOAT        , GL_FALSE, RENDERER_VERTEX_SIZE, (const GLvoid*)(0)                          );
             glVertexAttribPointer(SHADER_UV_INDEX,     2, GL_FLOAT        , GL_FALSE, RENDERER_VERTEX_SIZE, (const GLvoid*)(offsetof(VertexData, uv))   );
-            glVertexAttribPointer(SHADER_TID_INDEX,    1, GL_FLOAT        , GL_FALSE, RENDERER_VERTEX_SIZE, (const GLvoid*)(offsetof(VertexData, tid))   );
+            glVertexAttribPointer(SHADER_TID_INDEX,    1, GL_FLOAT        , GL_FALSE, RENDERER_VERTEX_SIZE, (const GLvoid*)(offsetof(VertexData, tid))  );
             glVertexAttribPointer(SHADER_COLOR_INDEX , 4, GL_UNSIGNED_BYTE, GL_TRUE , RENDERER_VERTEX_SIZE, (const GLvoid*)(offsetof(VertexData, color)));
 
             glBindBuffer(GL_ARRAY_BUFFER, 0);
@@ -89,10 +89,10 @@ namespace AdunGL
         void BatchRenderer2D::submit(const Renderable2D* renderable)
         {
             const maths::vec3&              position = renderable->getPosition();
-            const maths::vec2&              size     = renderable->getSize();
-            const maths::vec4&              color    = renderable->getColor();
-            const std::vector<maths::vec2>& uv       = renderable->getUV();
-            const GLuint                    tid      = renderable->getTID();
+            const maths::vec2&              size     = renderable->getSize    ();
+            const maths::vec4&              color    = renderable->getColor   ();
+            const std::vector<maths::vec2>& uv       = renderable->getUV      ();
+            const GLuint                    tid      = renderable->getTID     ();
 
 
             unsigned int c = 0;
@@ -101,15 +101,17 @@ namespace AdunGL
 
             if(tid > 0)
             {
-                // 0->0
-                // 1->3
-                // 2->4
+                // 0 -> 0
+                // 1 -> 3
+                // 2 -> 5
+                // 3 -> 7
                 bool found = false;
+
                 for(int i = 0; i < m_textureSlots.size(); ++i)
                 {
                     if(m_textureSlots[i] == tid)
                     {
-                        ts = (float)i;
+                        ts = (float)(i + 1);
                         found = true;
                         break;
                     }
@@ -125,7 +127,7 @@ namespace AdunGL
                     }
 
                     m_textureSlots.push_back(tid);
-                    ts = (float)(m_textureSlots.size() - 1);
+                    ts = (float)(m_textureSlots.size());
                 }
             }
             else
@@ -177,6 +179,12 @@ namespace AdunGL
 
         void BatchRenderer2D::flush()
         {
+            for(int i = 0; i < m_textureSlots.size(); ++i)
+            {
+                glActiveTexture(GL_TEXTURE0 + i);
+                glBindTexture(GL_TEXTURE_2D, m_textureSlots[i]);
+            }
+
             glBindVertexArray(m_vao);
             m_ibo->bind();
 

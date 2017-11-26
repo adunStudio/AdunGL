@@ -1,38 +1,10 @@
-/*#version 120
-#extension GL_EXT_texture_array : enable
-
-varying vec4 color;
-varying vec2 uvv;
-varying float tidd;
-varying vec4 pos;
-
-uniform vec4 colour;
-uniform vec2 light_pos;
-uniform sampler2D texture[32];
-float intensity = 1.0;
-
-void main(void)
-{
-    intensity = 1.0 / length(pos.xy - light_pos);
-
-    vec4 texColor = color;
-
-    if(tidd > 0.0)
-    {
-        //int texture_id = ;
-        //texColor = texture2D(texture[int(tidd)], uvv);
-    }
-
-    gl_FragColor = texColor * intensity;
-}*/
-
-#version 330 core
+#version 410 core
 
 layout (location = 0) out vec4 color;
 
 uniform vec4 colour;
 uniform vec2 light_pos;
-uniform sampler2D textures[32];
+uniform float tid;
 
 in DATA
 {
@@ -42,11 +14,50 @@ in DATA
 	vec4 color;
 } fs_in;
 
-uniform sampler2D tex;
+uniform sampler2D textures[32];
 
 void main()
 {
 	float intensity = 1.0 / length(fs_in.position.xy - light_pos);
-	color = fs_in.color * intensity;
-	color = texture(tex, fs_in.uv) * intensity;
+	vec4 texColor = fs_in.color;
+
+	if(fs_in.tid > 0.0)
+	{
+	    int tid = int(fs_in.tid);
+
+        if(tid == 1)
+            texColor = texture(textures[0], fs_in.uv);
+        else if(tid == 2)
+            texColor = texture(textures[1], fs_in.uv);
+        else if(tid == 3)
+            texColor = texture(textures[2], fs_in.uv);
+        else if(tid == 4)
+            texColor = texture(textures[3], fs_in.uv);
+        else if(tid == 5)
+            texColor = texture(textures[4], fs_in.uv);
+        else if(tid == 6)
+            texColor = texture(textures[5], fs_in.uv);
+        else if(tid == 7)
+            texColor = texture(textures[6], fs_in.uv);
+        else if(tid == 8)
+            texColor = texture(textures[7], fs_in.uv);
+        else if(tid == 9)
+            texColor = texture(textures[8], fs_in.uv);
+        else if(tid == 10)
+            texColor = texture(textures[9], fs_in.uv);
+        else if(tid == 11)
+            texColor = texture(textures[10], fs_in.uv);
+        else if(tid == 12)
+            texColor = texture(textures[11], fs_in.uv);
+        else if(tid == 13)
+            texColor = texture(textures[12], fs_in.uv);
+        else if(tid == 14)
+            texColor = texture(textures[13], fs_in.uv);
+        else if(tid == 15)
+            texColor = texture(textures[14], fs_in.uv);
+        else if(tid == 16)
+            texColor = texture(textures[15], fs_in.uv);
+	}
+
+	color = texColor * intensity;
 }

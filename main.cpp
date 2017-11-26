@@ -42,23 +42,30 @@ int main(int argc, char** argv)
 
     layer = new TileLayer(shader);
 
+    Texture* textures[] =
+            {
+                    new Texture("/Users/adun/Desktop/AdunGL/test.png"),
+                    new Texture("/Users/adun/Desktop/AdunGL/tb.png"),
+                    new Texture("/Users/adun/Desktop/AdunGL/tc.png")
+            };
+
 
     for(float y = -9.0; y < 9.0; ++y)
     {
         for(float x = -16.0; x < 16.0; ++x)
         {
-            layer->add(new Sprite(x, y, 0.9, 0.9, maths::vec4(rand() % 1000 / 1000.0f, 0, 1, 1)));
+            if (rand() % 4 == 0)
+                layer->add(new Sprite(x, y, 0.9f, 0.9f, maths::vec4(rand() % 1000 / 1000.0f, 0, 1, 1)));
+            else
+                layer->add(new Sprite(x, y, 0.9f, 0.9f, textures[rand() % 3]));
         }
     }
 
+    GLint texIDs[] = { 0, 1, 2, 3, 4, 5, 6, 7, 8, 9 };
 
-    glActiveTexture(GL_TEXTURE0);
-
-    Texture texture("/Users/adun/Desktop/AdunGL/test-2.png");
-    texture.bind();
 
     shader->enable();
-    shader->setUniform1i("tex", 0);
+    shader->setUniform1iv("textures", texIDs, 10);
     shader->setUniformMat4("pr_matrix", maths::mat4::orthographic(-16, 16, -9, 9, -1, 1));
 
     window.update(update);
@@ -72,6 +79,10 @@ int main(int argc, char** argv)
     });
 
     window.run();
+
+    for(int i = 0; i < 3; i++)
+        delete textures[i];
+
     return 1;
 }
 

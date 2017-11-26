@@ -32,7 +32,7 @@ namespace AdunGL
 
             inline const unsigned int getWidth () const { return m_width;  }
             inline const unsigned int getHeight() const { return m_height; }
-            inline const unsigned int getID    () const { return m_TID; }
+            inline const unsigned int getID    () const { return m_TID;    }
 
         private:
             GLuint load();
