@@ -1,7 +1,10 @@
 #include <iostream>
+#include <OpenGL/gl3.h>
+#include <OpenGL/glu.h>
 #include <GLUT/glut.h>
 #include <vector>
 #include "AdunGL-Core/src.h"
+
 
 using namespace std;
 using namespace AdunGL;

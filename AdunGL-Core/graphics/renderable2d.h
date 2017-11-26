@@ -34,14 +34,14 @@ namespace AdunGL
             maths::vec2 m_size;
             maths::vec4 m_color;
             std::vector<maths::vec2> m_uv;
-            Texture*    m_texture = nullptr;
+            Texture*    m_texture;
 
         protected:
             Renderable2D() { setUVDefaults(); };
 
         public:
             Renderable2D(maths::vec3 position, maths::vec2 size, maths::vec4 color)
-            : m_position(position), m_size(size), m_color(color) { setUVDefaults(); }
+            : m_position(position), m_size(size), m_color(color), m_texture(nullptr) { setUVDefaults(); }
 
             virtual ~Renderable2D() { }
 
