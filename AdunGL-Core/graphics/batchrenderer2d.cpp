@@ -77,13 +77,7 @@ namespace AdunGL
             m_FTAtlas = ftgl::texture_atlas_new(512, 512, 1);
 
             // texture_atlas_t * atlas, const float pt_size, const char * filename
-            m_FTFonts = ftgl::texture_font_new_from_file(m_FTAtlas, 80, "/Users/adun/Desktop/AdunGL/asset/arial.ttf");
-
-            ftgl::texture_font_get_glyph(m_FTFonts, 'A');
-            ftgl::texture_font_get_glyph(m_FTFonts, 'B');
-            ftgl::texture_font_get_glyph(m_FTFonts, '$');
-            ftgl::texture_font_get_glyph(m_FTFonts, 'a');
-            ftgl::texture_font_get_glyph(m_FTFonts, '!');
+            m_FTFonts = ftgl::texture_font_new_from_file(m_FTAtlas, 200, "/Users/adun/Desktop/AdunGL/asset/arial.ttf");
         }
 
         void BatchRenderer2D::begin()
@@ -185,6 +179,14 @@ namespace AdunGL
         {
             using namespace ftgl;
 
+            int r = color.x * 255.0f;
+            int g = color.y * 255.0f;
+            int b = color.z * 255.0f;
+            int a = color.w * 255.0f;
+
+            // http://www.fayewilliams.com/2011/09/21/bitwise-rgba-values/
+            unsigned int colorr = a << 24 | b << 16 | g << 8 | r;
+
             float ts = 0.0f;
 
             bool found = false;
@@ -212,28 +214,66 @@ namespace AdunGL
                 ts = (float)(m_textureSlots.size());
             }
 
-            m_buffer->vertex = maths::vec3(-8, -8, 0);
-            m_buffer->uv = maths::vec2(0, 1);
-            m_buffer->tid = ts;
-            m_buffer++;
+            // Todo Window Size!
+            float scaleX = 960.0f / 32.0f;
+            float scaleY = 540.0f / 18.0f;
 
-            m_buffer->vertex = maths::vec3(-8,  8, 0);
-            m_buffer->uv = maths::vec2(0, 0);
-            m_buffer->tid = ts;
-            m_buffer++;
+            // 시작 위치
+            float x = position.x;
 
-            m_buffer->vertex = maths::vec3( 8,  8, 0);
-            m_buffer->uv = maths::vec2(1, 0);
-            m_buffer->tid = ts;
-            m_buffer++;
+            for(int i = 0; i < text.length(); ++i)
+            {
+                char c = text.at(i);
+                texture_glyph_t* glyph = texture_font_get_glyph(m_FTFonts, c);
 
-            m_buffer->vertex = maths::vec3( 8, -8, 0);
-            m_buffer->uv = maths::vec2(1, 1);
-            m_buffer->tid = ts;
-            m_buffer++;
+                if(glyph != NULL)
+                {
+                    if(i > 0)
+                    {
+                        // 글 간격
+                        float kerning = texture_glyph_get_kerning(glyph, text[i - 1]);
+                        x += kerning / scaleX;
+                    }
 
-            m_indexCount += 6;
+                    float x0 = x + glyph->offset_x / scaleX;
+                    float y0 = position.y + glyph->offset_y / scaleY;
+                    float x1 = x0 + glyph->width / scaleX;
+                    float y1 = y0 - glyph->height / scaleY;
 
+                    float u0 = glyph->s0;
+                    float v0 = glyph->t0;
+                    float u1 = glyph->s1;
+                    float v1 = glyph->t1;
+
+                    m_buffer->vertex = *m_transformationBack * maths::vec3(x0, y0, 0);
+                    m_buffer->uv = maths::vec2(u0, v0);
+                    m_buffer->tid = ts;
+                    m_buffer->color = colorr;
+                    m_buffer++;
+
+                    m_buffer->vertex = *m_transformationBack * maths::vec3(x0, y1, 0);
+                    m_buffer->uv = maths::vec2(u0, v1);
+                    m_buffer->tid = ts;
+                    m_buffer->color = colorr;
+                    m_buffer++;
+
+                    m_buffer->vertex = *m_transformationBack * maths::vec3(x1, y1, 0);
+                    m_buffer->uv = maths::vec2(u1, v1);
+                    m_buffer->tid = ts;
+                    m_buffer->color = colorr;
+                    m_buffer++;
+
+                    m_buffer->vertex = *m_transformationBack * maths::vec3(x1, y0, 0);
+                    m_buffer->uv = maths::vec2(u1, v0);
+                    m_buffer->tid = ts;
+                    m_buffer->color = colorr;
+                    m_buffer++;
+
+                    m_indexCount += 6;
+
+                    x += glyph->advance_x / scaleX;
+                }
+            }
         }
 
         void BatchRenderer2D::end()

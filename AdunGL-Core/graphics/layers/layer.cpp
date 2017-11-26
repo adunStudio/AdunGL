@@ -43,7 +43,8 @@ namespace AdunGL
                 renderable->submit(m_renderer);
             }
 
-            m_renderer->drawString("", maths::vec3(0, 0, 0), maths::vec4(0, 0, 0, 0));
+
+            m_renderer->drawString("Hello!.", maths::vec3(0, 0, 0), maths::vec4(0, 1, 0, 0));
 
             m_renderer->end();
 
