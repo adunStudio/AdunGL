@@ -70,14 +70,6 @@ namespace AdunGL
             m_ibo = new IndexBuffer(indices, RENDERER_INDICES_SIZE);
 
             glBindVertexArray(0);
-
-            // 폰트
-
-            // const size_t width, const size_t height, const size_t depth
-            m_FTAtlas = ftgl::texture_atlas_new(512, 512, 3);
-
-            // texture_atlas_t * atlas, const float pt_size, const char * filename
-            m_FTFonts = ftgl::texture_font_new_from_file(m_FTAtlas, 32, "/Users/adun/Desktop/AdunGL/asset/arial.ttf");
         }
 
         void BatchRenderer2D::begin()
@@ -172,7 +164,7 @@ namespace AdunGL
             m_indexCount += 6;
         }
 
-        void BatchRenderer2D::drawString(const std::string& text, const maths::vec3& position, const maths::vec4& color)
+        void BatchRenderer2D::drawString(const std::string& text, const maths::vec3& position, const Font& font, const maths::vec4& color)
         {
             using namespace ftgl;
 
@@ -190,7 +182,7 @@ namespace AdunGL
 
             for(int i = 0; i < m_textureSlots.size(); ++i)
             {
-                if(m_textureSlots[i] == m_FTAtlas->id)
+                if(m_textureSlots[i] == font.getID())
                 {
                     ts = (float)(i + 1);
                     found = true;
@@ -207,7 +199,7 @@ namespace AdunGL
                     begin();
                 }
 
-                m_textureSlots.push_back(m_FTAtlas->id);
+                m_textureSlots.push_back(font.getID());
                 ts = (float)(m_textureSlots.size());
             }
 
@@ -218,10 +210,12 @@ namespace AdunGL
             // 시작 위치
             float x = position.x;
 
+            texture_font_t* ftFont = font.getFTFont();
+
             for(int i = 0; i < text.length(); ++i)
             {
                 char c = text[i];
-                texture_glyph_t* glyph = texture_font_get_glyph(m_FTFonts, c);
+                texture_glyph_t* glyph = texture_font_get_glyph(ftFont, c);
 
                 if(glyph != NULL)
                 {

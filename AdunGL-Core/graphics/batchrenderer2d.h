@@ -8,7 +8,6 @@
 #include <cstddef>
 #include "renderer2d.h"
 #include "renderable2d.h"
-#include "../exc/freetype-gl/freetype-gl.h"
 
 namespace AdunGL
 {
@@ -35,16 +34,13 @@ namespace AdunGL
 
             std::vector<GLuint> m_textureSlots;
 
-            ftgl::texture_atlas_t* m_FTAtlas;
-            ftgl::texture_font_t*  m_FTFonts;
-
         public:
             BatchRenderer2D();
             ~BatchRenderer2D();
 
             void begin() override;
             void submit(const Renderable2D *renderable) override;
-            void drawString(const std::string& text, const maths::vec3& position, const maths::vec4& color) override;
+            void drawString(const std::string& text, const maths::vec3& position, const Font& font, const maths::vec4& color) override;
             void end() override;
             void flush() override;
 

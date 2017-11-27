@@ -12,6 +12,7 @@
 #include <cassert>
 #include <map>
 #include <functional>
+#include "font_manager.h"
 
 using namespace std;
 

@@ -51,6 +51,8 @@ namespace AdunGL
             glEnable(GL_BLEND);
             glBlendFunc(GL_SRC_ALPHA, GL_ONE_MINUS_SRC_ALPHA);
 
+            // default 폰트
+            FontManager::add(new Font("arial", "/Users/adun/Desktop/AdunGL/asset/arial.ttf", 32));
 
             //glutIdleFunc(updateCallback);
             //glutDisplayFunc(renderCallback);

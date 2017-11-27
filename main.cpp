@@ -68,7 +68,7 @@ int main(int argc, char** argv)
 
     group = new Group(maths::mat4::translation(maths::vec3(-15.8f, 7.0f, 0.0f)));
 
-    fps = new Label("", 0.4f, 0.4f, maths::vec4(0, 1, 1, 1));
+    fps = new Label("", 0.4f, 0.4f, "arial", maths::vec4(0, 1, 1, 1));
 
     group->add(new Sprite(0, 0, 5, 1.5f, maths::vec4(0.3f, 0.3f, 0.3f, 0.9f)));
     group->add(fps);
@@ -106,7 +106,7 @@ void update()
     Window::instance().getMousePosition(x, y);
 
     shader->enable();
-    shader->setUniform2f("light_pos", vec2((float)(x * 32.0f / 960.0f - 16.0f), (float)(9.0f - y * 18.0f / 540.f)));
+    shader->setUniform2f("light_pos", vec2((float)(x * 32.0f / Window::instance().getWidth() - 16.0f), (float)(9.0f - y * 18.0f / Window::instance().getHeight())));
 
     glutPostRedisplay();
 }

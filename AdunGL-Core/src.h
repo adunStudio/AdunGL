@@ -37,4 +37,7 @@
 
 #include "graphics/label.h"
 
+#include "graphics/font.h"
+#include "graphics/font_manager.h"
+
 #endif //ADUNGL_SRC_H

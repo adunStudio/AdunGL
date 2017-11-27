@@ -33,6 +33,8 @@ namespace AdunGL
             virtual void add(Renderable2D* renderable);
 
             virtual void render();
+
+            inline const std::vector<Renderable2D*> getRenderalbes() const { return m_renderables; };
         };
     }
 };
