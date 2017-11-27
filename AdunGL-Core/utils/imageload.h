@@ -6,7 +6,7 @@
 #define ADUNGL_IMAGELOAD_H
 
 #include <string>
-#include <GL/glut.h>
+#include "../opengl.h"
 #include <FreeImage.h>
 
 namespace AdunGL

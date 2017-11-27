@@ -7,9 +7,7 @@
 
 #include <FreeImage.h>
 #include <string>
-#include <OpenGL/gl3.h>
-#include <OpenGL/glu.h>
-#include <GL/glut.h>
+#include "../opengl.h"
 #include "../utils/imageload.h"
 
 namespace AdunGL

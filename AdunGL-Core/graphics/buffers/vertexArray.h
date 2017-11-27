@@ -5,9 +5,7 @@
 #ifndef ADUNGL_VERTEXARRAY_H
 #define ADUNGL_VERTEXARRAY_H
 
-#include <GLUT/glut.h>
-#include <OpenGL/gl3.h>
-#include <OpenGL/glu.h>
+#include "../../opengl.h"
 #include <vector>
 #include "buffer.h"
 

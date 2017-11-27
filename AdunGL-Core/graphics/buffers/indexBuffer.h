@@ -5,9 +5,7 @@
 #ifndef ADUNGL_INDEXBUFFER_H
 #define ADUNGL_INDEXBUFFER_H
 
-#include <GL/glut.h>
-#include <OpenGL/gl3.h>
-#include <OpenGL/glu.h>
+#include "../../opengl.h"
 
 namespace AdunGL
 {

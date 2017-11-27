@@ -1,8 +1,6 @@
 #include <iostream>
-#include <OpenGL/gl3.h>
-#include <OpenGL/glu.h>
-#include <GLUT/glut.h>
 #include <vector>
+#include "AdunGL-Core/opengl.h"
 #include "AdunGL-Core/src.h"
 
 
@@ -125,3 +123,4 @@ void render()
         frame = 0;
     }
 }
+

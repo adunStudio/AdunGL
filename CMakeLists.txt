@@ -4,7 +4,7 @@ project(AdunGL)
 
 set(CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} -std=c++11 -framework GLUT -framework OpenGL") # compiler version and compiler flags.
 
-set(MAIN_FILES main.cpp AdunGL-Core/graphics/font_manager.cpp AdunGL-Core/graphics/font_manager.h) # which files should be compiled
+set(MAIN_FILES main.cpp AdunGL-Core/graphics/font_manager.cpp AdunGL-Core/graphics/font_manager.h AdunGL-Core/opengl.h) # which files should be compiled
 
 file(GLOB ADUNGL-CORE
         AdunGL-Core/graphics/buffers/*.h
