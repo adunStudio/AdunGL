@@ -8,6 +8,7 @@
 #include <string>
 #include <fstream>
 #include <cassert>
+#include "log.h"
 
 namespace AdunGL
 {

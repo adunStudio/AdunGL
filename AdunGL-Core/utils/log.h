@@ -18,6 +18,8 @@
 
 #if ADUNGL_LOG_LEVEL >= ADUNGL_LOG_LEVEL_FATAL
 #define ADUNGL_FATAL(x, ...) { printf("[ADUNGL][FATAL]: "); printf(x, __VA_ARGS__); printf("\n");  }
+#else
+#define ADUNGL_FATAL(x, ...) {}
 #endif
 
 #if ADUNGL_LOG_LEVEL >= ADUNGL_LOG_LEVEL_ERROR

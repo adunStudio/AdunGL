@@ -7,6 +7,7 @@
 
 #include <string>
 #include "../opengl.h"
+#include "log.h"
 #include <FreeImage.h>
 
 namespace AdunGL
@@ -31,7 +32,10 @@ namespace AdunGL
                 dib = FreeImage_Load(fif, fileName);
 
             if (!dib)
+            {
+                ADUNGL_FATAL("[imageload.h 35] Could not load image: '%s'", fileName);
                 return nullptr;
+            }
 
             BYTE* pixels = FreeImage_GetBits(dib);
 
@@ -48,6 +52,8 @@ namespace AdunGL
             memcpy(result, pixels, size);
 
             FreeImage_Unload(dib);
+
+            ADUNGL_INFO("[imageload.h 56] Load image success: '%s'", fileName);
 
             return result;
         }
