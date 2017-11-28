@@ -20,11 +20,14 @@ public:
     void init() override
     {
 
+        char* vertPath = "/Users/adun/Desktop/AdunGL/AdunGL-Core/shaders/basic120.vert";
+        char* fragPath = "/Users/adun/Desktop/AdunGL/AdunGL-Core/shaders/basic120.frag";
+
         window = createWindow("AdunGL Test Game", 960, 540);
 
         FontManager::get()->setScale(window->getWidth() / 32.0f, window->getHeight() / 18.0f);
 
-        shader = new Shader("/Users/adun/Desktop/AdunGL/AdunGL-Core/shaders/basic120.vert", "/Users/adun/Desktop/AdunGL/AdunGL-Core/shaders/basic120.frag");
+        shader = new Shader(vertPath, fragPath);
 
         layer = new Layer(new BatchRenderer2D(), shader, maths::mat4::orthographic(-16.0f, 16.0f, -9.0f, 9.0f, -1.0f, 1.0f));
 
@@ -41,7 +44,7 @@ public:
     void tick() override // 1초 마다 실행
     {
         fps->text = std::to_string(getFPS()) + " fps";
-        //std::cout << getUPS() << " ups, " << getFPS() << " fps" << std::endl;
+        ADUNGL_INFO("%d ups, %d fps", getUPS(), getFPS());
     }
 
     void update() override // frame마다 실행
