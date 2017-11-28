@@ -11,6 +11,7 @@ private:
     Label*  fps;
     Sprite* sprite;
     Shader* shader;
+    Mask*   mask;
 
 public:
     ~Game()
@@ -21,8 +22,8 @@ public:
     void init() override
     {
 
-        const char* vertPath = "/Users/adun/Desktop/AdunGL/AdunGL-Core/shaders/basic120.vert";
-        const char* fragPath = "/Users/adun/Desktop/AdunGL/AdunGL-Core/shaders/basic120.frag";
+        const char* vertPath = "/Users/adun/Desktop/AdunGL/shaders/basic120.vert";
+        const char* fragPath = "/Users/adun/Desktop/AdunGL/shaders/basic120.frag";
 
         window = createWindow("AdunGL Test Game", 960, 540);
 
@@ -32,15 +33,20 @@ public:
 
         layer = new Layer(new BatchRenderer2D(), shader, maths::mat4::orthographic(-16.0f, 16.0f, -9.0f, 9.0f, -1.0f, 1.0f));
 
-        TextureManager::add(new Texture("basic", "/Users/adun/Desktop/AdunGL/asset/boycoding.png"));
+        TextureManager::add(new Texture("Basic", "/Users/adun/Desktop/AdunGL/asset/tb.png"));
 
-        sprite = new Sprite(0, 0, 8, 8, TextureManager::get("basic"));
+        sprite = new Sprite(0, 0, 8, 4, TextureManager::get("Basic"));
 
         layer->add(sprite);
 
         fps = new Label("", -15.5f, 7.8f, "arial", maths::vec4(0, 1, 1, 1));
 
         layer->add(fps);
+
+        Texture::SetWrap(TextureWrap::CLAMP_TO_BORDER);
+        mask = new Mask(new Texture("Mask", "/Users/adun/Desktop/AdunGL/asset/mask.png"));
+
+        //layer->setMask(mask);
 
     }
 
@@ -66,11 +72,24 @@ public:
         if(window->isKeyPressed('q'))
             exit(0);
 
-        int x, y;
         vec2 mouse = window->getMousePosition();
         shader->enable();
         shader->setUniform2f("light_pos", vec2((float)(mouse.x * 32.0f / window->getWidth() - 16.0f), (float)(9.0f - mouse.y * 18.0f / window->getHeight())));
 
+        static maths::vec3 scale(1.777778f, 1, 1);
+
+        if(window->isKeyPressed("up"))
+        {
+            scale.x += speed * 1.777778f;
+            scale.y += speed;
+        }
+        if(window->isKeyPressed("down"))
+        {
+            scale.x -= speed * 1.777778f;
+            scale.y -= speed;
+        }
+
+        mask->transform = maths::mat4::scale(scale);
     }
 
 

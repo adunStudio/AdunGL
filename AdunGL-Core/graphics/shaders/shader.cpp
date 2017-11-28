@@ -10,18 +10,45 @@ namespace AdunGL
     {
 
 
+        Shader::Shader(const char* name, const char* vertSrc, const char* fragSrc)
+        : m_name(name), m_vertSrc(vertSrc), m_fragSrc(fragSrc)
+        {
+            m_shaderID = load(m_vertSrc, m_fragSrc);
+        }
+
         Shader::Shader(const char* vertPath, const char* fragPath)
         : vertPath(vertPath), fragPath(fragPath)
         {
-            m_shaderID = load();
+            std::string vertSourceString = FileUtils::read_file(vertPath);
+            std::string fragSourceString = FileUtils::read_file(fragPath);
+
+            m_vertSrc = vertSourceString.c_str();
+            m_fragSrc = fragSourceString.c_str();
+
+            m_shaderID = load(m_vertSrc, m_fragSrc);
         }
+
+        Shader* Shader::FromFile(const char* vertPath, const char* fragPath)
+        {
+            return new Shader(vertPath, fragPath);
+        }
+
+        Shader* Shader::FromSource(                  const char* vertSrc, const char* fragSrc)
+        {
+            return new Shader(vertSrc, vertSrc, fragSrc);
+        }
+        Shader* Shader::FromSource(const char* name, const char* vertSrc, const char* fragSrc)
+        {
+            return new Shader(name, vertSrc, fragSrc);
+        }
+
 
         Shader::~Shader()
         {
             glDeleteShader(m_shaderID);
         }
 
-        GLuint Shader::load()
+        GLuint Shader::load(const char* vertSrc, const char* fragSrc)
         {
             /*
              * 프로그램(쉐이더에 대한) 컨테이너를 위한 객체를 생성한다.
@@ -40,13 +67,6 @@ namespace AdunGL
             GLuint vertex   = glCreateShader(GL_VERTEX_SHADER);
             GLuint fragment = glCreateShader(GL_FRAGMENT_SHADER);
 
-            /* Read */
-            std::string vertSourceString = FileUtils::read_file(vertPath);
-            std::string fragSourceString = FileUtils::read_file(fragPath);
-
-            const char* vertSource = vertSourceString.c_str();
-            const char* fragSource = fragSourceString.c_str();
-
             GLint result;
 
 
@@ -61,7 +81,7 @@ namespace AdunGL
              * strings - 문자 배열
              * lenOfStrings - 각 문자열의 길이를 가지는 배열 또는 NUL값(문자열들이 NULL로 끝남)
              */
-            glShaderSource(vertex, 1, &vertSource, NULL);
+            glShaderSource(vertex, 1, &vertSrc, NULL);
 
             /*
              * 쉐이더 코드를 컴파일한다.
@@ -93,7 +113,7 @@ namespace AdunGL
 
 
             /* Fragment */
-            glShaderSource(fragment, 1, &fragSource, NULL);
+            glShaderSource(fragment, 1, &fragSrc, NULL);
             glCompileShader(fragment);
 
             glGetShaderiv(fragment, GL_COMPILE_STATUS, &result);
@@ -132,9 +152,12 @@ namespace AdunGL
             glAttachShader(program, fragment);
 
             glBindAttribLocation(program, 0, "position");
-            glBindAttribLocation(program, 1, "uv");
-            glBindAttribLocation(program, 2, "tid");
-            glBindAttribLocation(program, 3, "color");
+            glBindAttribLocation(program, 1, "uv"      );
+            glBindAttribLocation(program, 2, "mask_uv" );
+            glBindAttribLocation(program, 3, "tid"     );
+            glBindAttribLocation(program, 4, "mid"     );
+            glBindAttribLocation(program, 5, "color"   );
+
             glBindFragDataLocation(program, 0, "color");
             /*
              * 프로그램을 링크한다. 이 단계를 수행하기 위해서 쉐이더는 반드시 컴파일 되어있어야한다.
@@ -147,11 +170,13 @@ namespace AdunGL
             glValidateProgram(program);
 
             GLint a = glGetAttribLocation(program, "position");
-            GLint b = glGetAttribLocation(program, "uv");
-            GLint c = glGetAttribLocation(program, "tid");
-            GLint d = glGetAttribLocation(program, "color");
-            GLint e = glGetFragDataLocation(program, "color");
-            ADUNGL_INFO("[shader.cpp 152] Attribute Location: position(%d), uv(%d), tid(%d), color(%d)", a, b, c, d, e);
+            GLint b = glGetAttribLocation(program, "uv"      );
+            GLint c = glGetAttribLocation(program, "mask_uv" );
+            GLint d = glGetAttribLocation(program, "tid"     );
+            GLint e = glGetAttribLocation(program, "mid"     );
+            GLint f = glGetAttribLocation(program, "color"   );
+
+            ADUNGL_INFO("[shader.cpp 152] Attribute Location: position(%d), uv(%d), mask_uv(%d), tid(%d), mid(%d) color(%d)", a, b, c, d, e, f);
 
             glDeleteShader(vertex);
             glDeleteShader(fragment);

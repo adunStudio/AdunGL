@@ -8,6 +8,7 @@
 #include <vector>
 #include "../renderer2d.h"
 #include "../renderable2d.h"
+#include "../mask.h"
 
 namespace AdunGL
 {
@@ -29,6 +30,8 @@ namespace AdunGL
             virtual void add(Renderable2D* renderable);
 
             virtual void render();
+
+            inline void setMask(const Mask* mask) const { m_renderer->setMask(mask); }
 
             inline const std::vector<Renderable2D*> getRenderalbes() const { return m_renderables; };
         };

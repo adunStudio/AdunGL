@@ -9,6 +9,7 @@
 #include "../opengl.h"
 #include "../maths/maths.h"
 #include "font.h"
+#include "mask.h"
 
 namespace AdunGL
 {
@@ -21,9 +22,11 @@ namespace AdunGL
         protected:
             std::vector<maths::mat4> m_transformationStack;
             const maths::mat4* m_transformationBack;
+            const Mask* m_mask;
 
         protected:
             Renderer2D()
+            : m_mask(nullptr)
             {
                 m_transformationStack.push_back(maths::mat4::identity());
                 m_transformationBack = &m_transformationStack.back();
@@ -52,6 +55,7 @@ namespace AdunGL
                 // TODO: Add to log!
             }
 
+            virtual void setMask(const Mask* mask) { m_mask = mask; }
             virtual void begin() {};
             virtual void submit(const Renderable2D* renderable) = 0;
             virtual void drawString(const std::string& text, const maths::vec3& position, const Font& font, const maths::vec4& color) { };

@@ -39,16 +39,20 @@ namespace AdunGL
             glBufferData(GL_ARRAY_BUFFER, RENDERER_BUFFER_SIZE, NULL, GL_DYNAMIC_DRAW);
 
 
-            glEnableVertexAttribArray(SHADER_VERTEX_INDEX);
-            glEnableVertexAttribArray(SHADER_UV_INDEX    );
-            glEnableVertexAttribArray(SHADER_TID_INDEX   );
-            glEnableVertexAttribArray(SHADER_COLOR_INDEX );
+            glEnableVertexAttribArray(SHADER_VERTEX_INDEX );
+            glEnableVertexAttribArray(SHADER_UV_INDEX     );
+            glEnableVertexAttribArray(SHADER_MASK_UV_INDEX);
+            glEnableVertexAttribArray(SHADER_TID_INDEX    );
+            glEnableVertexAttribArray(SHADER_MID_INDEX    );
+            glEnableVertexAttribArray(SHADER_COLOR_INDEX  );
 
 
-            glVertexAttribPointer(SHADER_VERTEX_INDEX, 3, GL_FLOAT        , GL_FALSE, RENDERER_VERTEX_SIZE, (const GLvoid*)(0)                          );
-            glVertexAttribPointer(SHADER_UV_INDEX,     2, GL_FLOAT        , GL_FALSE, RENDERER_VERTEX_SIZE, (const GLvoid*)(offsetof(VertexData, uv))   );
-            glVertexAttribPointer(SHADER_TID_INDEX,    1, GL_FLOAT        , GL_FALSE, RENDERER_VERTEX_SIZE, (const GLvoid*)(offsetof(VertexData, tid))  );
-            glVertexAttribPointer(SHADER_COLOR_INDEX , 4, GL_UNSIGNED_BYTE, GL_TRUE , RENDERER_VERTEX_SIZE, (const GLvoid*)(offsetof(VertexData, color)));
+            glVertexAttribPointer(SHADER_VERTEX_INDEX, 3, GL_FLOAT        , GL_FALSE, RENDERER_VERTEX_SIZE, (const GLvoid*)(0)                             );
+            glVertexAttribPointer(SHADER_UV_INDEX,     2, GL_FLOAT        , GL_FALSE, RENDERER_VERTEX_SIZE, (const GLvoid*)(offsetof(VertexData, uv))      );
+            glVertexAttribPointer(SHADER_MASK_UV_INDEX,2, GL_FLOAT        , GL_FALSE, RENDERER_VERTEX_SIZE, (const GLvoid*)(offsetof(VertexData, mask_uv)) );
+            glVertexAttribPointer(SHADER_TID_INDEX,    1, GL_FLOAT        , GL_FALSE, RENDERER_VERTEX_SIZE, (const GLvoid*)(offsetof(VertexData, tid))     );
+            glVertexAttribPointer(SHADER_MID_INDEX,    1, GL_FLOAT        , GL_FALSE, RENDERER_VERTEX_SIZE, (const GLvoid*)(offsetof(VertexData, mid))     );
+            glVertexAttribPointer(SHADER_COLOR_INDEX , 4, GL_UNSIGNED_BYTE, GL_TRUE , RENDERER_VERTEX_SIZE, (const GLvoid*)(offsetof(VertexData, color))   );
 
             glBindBuffer(GL_ARRAY_BUFFER, 0);
 
@@ -88,6 +92,43 @@ namespace AdunGL
             m_buffer = (VertexData*)glMapBuffer(GL_ARRAY_BUFFER, GL_WRITE_ONLY);
         }
 
+        float BatchRenderer2D::submitTexture(GLuint textureID)
+        {
+            float result = 0.0f;
+
+            bool  found = false;
+
+            for(int i = 0; i < m_textureSlots.size(); ++i)
+            {
+                if(m_textureSlots[i] == textureID)
+                {
+                    result = (float)(i + 1);
+                    found = true;
+                    break;
+                }
+            }
+
+            if(!found)
+            {
+                if(m_textureSlots.size() >= RENDERER_MAX_TEXTURES)
+                {
+                    end();
+                    flush();
+                    begin();
+                }
+
+                m_textureSlots.push_back(textureID);
+                result = (float)(m_textureSlots.size());
+            }
+
+            return result;
+        }
+
+        float BatchRenderer2D::submitTexture(const Texture* texture)
+        {
+            return submitTexture(texture->getID());
+        }
+
         void BatchRenderer2D::submit(const Renderable2D* renderable)
         {
             const maths::vec3&              position = renderable->getPosition();
@@ -102,32 +143,7 @@ namespace AdunGL
             float ts = 0.0f;
 
             if(tid > 0)
-            {
-                bool found = false;
-
-                for(int i = 0; i < m_textureSlots.size(); ++i)
-                {
-                    if(m_textureSlots[i] == tid)
-                    {
-                        ts = (float)(i + 1);
-                        found = true;
-                        break;
-                    }
-                }
-
-                if(!found)
-                {
-                    if(m_textureSlots.size() >= RENDERER_MAX_TEXTURES)
-                    {
-                        end();
-                        flush();
-                        begin();
-                    }
-
-                    m_textureSlots.push_back(tid);
-                    ts = (float)(m_textureSlots.size());
-                }
-            }
+                ts = submitTexture(renderable->getTexture());
 
             int r = color.x * 255.0f;
             int g = color.y * 255.0f;
@@ -137,29 +153,51 @@ namespace AdunGL
             // http://www.fayewilliams.com/2011/09/21/bitwise-rgba-values/
             c = a << 24 | b << 16 | g << 8 | r;
 
-            //  4X4 * 4X1 = 4X1
+            maths::mat4 maskTransform = maths::mat4::identity();
 
-            m_buffer->vertex = *m_transformationBack * position;
+            const GLuint mid = m_mask ? m_mask->texture->getID() : 0;
+
+            float ms = 0.0f;
+
+            if(m_mask != nullptr)
+            {
+                maskTransform = maths::mat4::invert(m_mask->transform);
+                ms = submitTexture(m_mask->texture);
+            }
+
+            maths::vec3 vertex =                                               *m_transformationBack * position;
+            m_buffer->vertex = vertex;
             m_buffer->uv = uv[0];
+            m_buffer->mask_uv = maskTransform *  vertex;
             m_buffer->tid = ts;
+            m_buffer->mid = ms;
             m_buffer->color  = c;//olor;
             m_buffer++;
 
-            m_buffer->vertex = *m_transformationBack * maths::vec3(position.x         , position.y + size.y, position.z);
+            vertex =  *m_transformationBack * maths::vec3(position.x         , position.y + size.y, position.z);
+            m_buffer->vertex = vertex;
             m_buffer->uv = uv[1];
+            m_buffer->mask_uv = maskTransform * vertex;
             m_buffer->tid = ts;
+            m_buffer->mid = ms;
             m_buffer->color  = c;//olor;
             m_buffer++;
 
-            m_buffer->vertex = *m_transformationBack * maths::vec3(position.x + size.x, position.y + size.y, position.z);
+            vertex = *m_transformationBack * maths::vec3(position.x + size.x, position.y + size.y, position.z);
+            m_buffer->vertex = vertex;
             m_buffer->uv = uv[2];
+            m_buffer->mask_uv = maskTransform * vertex;
             m_buffer->tid = ts;
+            m_buffer->mid = ms;
             m_buffer->color  = c;//olor;
             m_buffer++;
 
-            m_buffer->vertex = *m_transformationBack * maths::vec3(position.x + size.x, position.y         , position.z);
+            vertex = *m_transformationBack * maths::vec3(position.x + size.x, position.y         , position.z);
+            m_buffer->vertex = vertex;
             m_buffer->uv = uv[3];
+            m_buffer->mask_uv = maskTransform * vertex;
             m_buffer->tid = ts;
+            m_buffer->mid = ms;
             m_buffer->color  = c;//olor;
             m_buffer++;
 

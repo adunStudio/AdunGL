@@ -11,6 +11,8 @@ file(GLOB ADUNGL-CORE
         AdunGL-Core/graphics/buffers/*.cpp
         AdunGL-Core/graphics/layers/*.h
         AdunGL-Core/graphics/layers/*.cpp
+        AdunGL-Core/graphics/shaders/*.h
+        AdunGL-Core/graphics/shaders/*.cpp
         AdunGL-Core/graphics/*.h
         AdunGL-Core/graphics/*.cpp
         AdunGL-Core/maths/*.h

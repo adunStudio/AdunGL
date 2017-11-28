@@ -9,7 +9,7 @@
 #include "buffers/buffer.h"
 #include "buffers/indexBuffer.h"
 #include "buffers/vertexArray.h"
-#include "shader.h"
+#include "shaders/shader.h"
 #include "../maths/maths.h"
 #include "renderer2d.h"
 #include "texture.h"
@@ -23,7 +23,9 @@ namespace AdunGL
         {
             maths::vec3  vertex;
             maths::vec2  uv;
+            maths::vec2  mask_uv;
             float        tid;
+            float        mid;
             unsigned int color;
         };
 
@@ -56,6 +58,7 @@ namespace AdunGL
             inline const maths::vec4&              getColor()    const { return m_color;       }
             inline const std::vector<maths::vec2>& getUV()       const { return m_uv;          }
             inline const GLuint                    getTID()      const { return m_texture ? m_texture->getID() : 0; }
+            inline const Texture*                  getTexture()  const { return m_texture;     }
 
         private:
             void setUVDefaults()

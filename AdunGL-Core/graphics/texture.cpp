@@ -8,6 +8,8 @@ namespace AdunGL
 {
     namespace graphics
     {
+        TextureWrap Texture::s_wrapMode = REPEAT;
+
         Texture::Texture(const std::string name, const std::string fileName)
         : m_name(name), m_fileName(fileName)
         {
@@ -31,6 +33,8 @@ namespace AdunGL
 
             glTexParameteri(GL_TEXTURE_2D, GL_TEXTURE_MIN_FILTER, GL_NEAREST);
             glTexParameteri(GL_TEXTURE_2D, GL_TEXTURE_MAG_FILTER, GL_NEAREST);
+            glTexParameteri(GL_TEXTURE_2D, GL_TEXTURE_WRAP_S, (GLint)s_wrapMode);
+            glTexParameteri(GL_TEXTURE_2D, GL_TEXTURE_WRAP_S, (GLint)s_wrapMode);
 
 
             if(m_bits != 24 && m_bits !=32)
@@ -46,6 +50,15 @@ namespace AdunGL
             delete[] pixels;
 
             return result;
+
+            /*
+             (1) glGenTexture()    Texture ID를 생성
+             (2) glBindTexture()   생성한 Texture ID를 방인딩
+             (3) glTexImage2D()    RGBA byte array을 저장,
+             (4) glTexParameteri() 축소필터 GL_TEXTURE_MIN_FILTER, 확대 필터 GL_TEXTURE_MAG_FILTER를 설정
+             (5) glTexParameteri() GL_TEXTURE_WRAP_S, GL_TEXTURE_WRAP_T를 이용
+                                   Vertex 점정의 경계 지점을 부드럽게 보간 시켜주는 GL_CLAMP_TO_EDGE 와 텍스쳐를 계속 반복 시킬 GL_REPEAT를 설정
+             */
         }
 
         void Texture::bind() const

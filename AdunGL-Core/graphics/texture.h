@@ -15,8 +15,21 @@ namespace AdunGL
 {
     namespace graphics
     {
+
+        enum TextureWrap
+        {
+            REPEAT          = GL_REPEAT,
+            CLAMP           = GL_CLAMP,
+            MIRRORED_REPEAT = GL_MIRRORED_REPEAT,
+            CLAMP_TO_EDGE   = GL_CLAMP_TO_EDGE,
+            CLAMP_TO_BORDER = GL_CLAMP_TO_BORDER
+        };
+
         class Texture
         {
+        private:
+            static TextureWrap s_wrapMode;
+
         private:
             std::string m_name;
             std::string m_fileName;
@@ -31,10 +44,13 @@ namespace AdunGL
             void bind()   const;
             void unbind() const;
 
-            inline const std::string& getName () const  { return m_name;   }
+            inline const std::string& getName  () const { return m_name;   }
             inline const unsigned int getWidth () const { return m_width;  }
             inline const unsigned int getHeight() const { return m_height; }
             inline const unsigned int getID    () const { return m_TID;    }
+
+        public:
+            inline static void SetWrap(TextureWrap mode) { s_wrapMode = mode; }
 
         private:
             GLuint load();

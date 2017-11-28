@@ -7,10 +7,10 @@
 
 #include <iostream>
 #include <vector>
-#include "../opengl.h"
-#include "../utils/fileutils.h"
-#include "../maths/maths.h"
-#include "../utils/log.h"
+#include "../../opengl.h"
+#include "../../utils/fileutils.h"
+#include "../../maths/maths.h"
+#include "../../utils/log.h"
 
 namespace AdunGL
 {
@@ -21,11 +21,18 @@ namespace AdunGL
         class Shader
         {
         private:
+            const char* m_name;
+            const char* m_vertPath;
+            const char* m_fragPath;
+            const char* m_vertSrc;
+            const char* m_fragSrc;
+            ;
             const char* vertPath, * fragPath;
 
         public:
             GLuint m_shaderID;
 
+            Shader(const char* name, const char* vertSrc, const char* fragSrc);
             Shader(const char* vertPath, const char* fragPath);
             ~Shader();
 
@@ -42,8 +49,14 @@ namespace AdunGL
             void disable() const;
 
         private:
-            GLuint load();
+            GLuint load(const char* vertSrc, const char* fragSrc);
             GLint getUniformLocation(const GLchar* name);
+
+        public:
+            static Shader* FromFile(const char* vertPath, const char* fragPath);
+
+            static Shader* FromSource(                  const char* vertSrc, const char* fragSrc);
+            static Shader* FromSource(const char* name, const char* vertSrc, const char* fragSrc);
         };
     }
 }
