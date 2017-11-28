@@ -20,6 +20,12 @@ namespace AdunGL
             this->y = y;
         }
 
+        vec2::vec2(const vec3& vector)
+        {
+            this->x = vector.x;
+            this->y = vector.y;
+        }
+
         vec2& vec2::add(const vec2& other)
         {
             x += other.x;
@@ -52,24 +58,34 @@ namespace AdunGL
             return *this;
         }
 
-        vec2& operator+(vec2& left, const vec2& right)
+        vec2 operator+(vec2 left, const vec2& right)
         {
             return left.add(right);
         }
 
-        vec2& operator-(vec2& left, const vec2& right)
+        vec2 operator-(vec2 left, const vec2& right)
         {
             return left.subtract(right);
         }
 
-        vec2& operator*(vec2& left, const vec2& right)
+        vec2 operator*(vec2 left, const vec2& right)
         {
             return left.multiply(right);
         }
 
-        vec2& operator/(vec2& left, const vec2& right)
+        vec2 operator/(vec2 left, const vec2& right)
         {
             return left.divide(right);
+        }
+
+        vec2 operator+(vec2 left, float value)
+        {
+            return vec2(left.x + value, left.y + value);
+        }
+
+        vec2 operator*(vec2 left, float value)
+        {
+            return vec2(left.x * value, left.y * value);
         }
 
         vec2& vec2::operator+=(const vec2& other)
@@ -100,6 +116,31 @@ namespace AdunGL
         bool vec2::operator!=(const vec2& other)
         {
             return !(*this == other);
+        }
+
+        float vec2::magnitude()                 const // 크기
+        {
+            return (float)sqrt(x * x + y * y);
+        }
+
+        vec2  vec2::normalize()                 const // 정규화
+        {
+            float length = magnitude();
+
+            return vec2(x / length, y /length);
+        }
+
+        float vec2::distance(const vec2& other) const // 거리
+        {
+            float dist_x = x - other.x;
+            float dist_y = y - other.y;
+
+            return (float)sqrt(dist_x * dist_x + dist_y * dist_y);
+        }
+
+        float vec2::dot(const vec2& other)      const // 내적
+        {
+            return x * other.x + y * other.y;
         }
 
         std::ostream& operator<<(std::ostream& stream, const vec2& vector)

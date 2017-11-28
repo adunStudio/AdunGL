@@ -31,7 +31,9 @@ public:
 
         layer = new Layer(new BatchRenderer2D(), shader, maths::mat4::orthographic(-16.0f, 16.0f, -9.0f, 9.0f, -1.0f, 1.0f));
 
-        sprite = new Sprite(0, 0, 8, 8, new Texture("basic", "/Users/adun/Desktop/AdunGL/asset/boycoding.png"));
+        TextureManager::add(new Texture("basic", "/Users/adun/Desktop/AdunGL/asset/boycoding.png"));
+
+        sprite = new Sprite(0, 0, 8, 8, TextureManager::get("basic"));
 
         layer->add(sprite);
 
@@ -59,6 +61,9 @@ public:
             sprite->position.y += speed;
         if(window->isKeyPressed('s'))
             sprite->position.y -= speed;
+
+        if(window->isKeyPressed('q'))
+            exit(0);
 
         int x, y;
         vec2 mouse = window->getMousePosition();

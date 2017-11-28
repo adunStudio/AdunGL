@@ -53,5 +53,5 @@ float intensity = 3.0 / length(pos.xy - light_pos);
         else if(tid == 16)
             texColor = coloror * texture2D(textures[15], uvv);
     }
-    gl_FragColor = texColor * intensity;
+    gl_FragColor = texColor;// * intensity;
 }

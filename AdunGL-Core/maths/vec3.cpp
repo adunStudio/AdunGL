@@ -3,6 +3,7 @@
 //
 
 #include "vec3.h"
+#include "vec2.h"
 
 namespace AdunGL
 {
@@ -21,6 +22,14 @@ namespace AdunGL
             this->y = y;
             this->z = z;
         }
+
+        vec3::vec3(const AdunGL::maths::vec2& other)
+        {
+            this->x = other.x;
+            this->y = other.y;
+            this->z = 0.0f;
+        }
+
 
         vec3& vec3::add(const vec3& other)
         {
@@ -106,6 +115,15 @@ namespace AdunGL
         bool vec3::operator!=(const vec3& other)
         {
             return !(*this == other);
+        }
+
+        float vec3::distance(const vec3& other)
+        {
+            float dist_x = x - other.x;
+            float dist_y = y - other.y;
+            float dist_z = z - other.z;
+
+            return (float)sqrt(dist_x * dist_x + dist_y * dist_y + dist_z * dist_z);
         }
 
         std::ostream& operator<<(std::ostream& stream, const vec3& vector)

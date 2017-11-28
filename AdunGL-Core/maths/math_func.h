@@ -17,7 +17,13 @@ namespace AdunGL
             return degrees * (M_PI / 180.0f);
         }
 
-        const float RADIAN = static_cast<float>(M_PI / 180);
+        inline const float RADIAN = static_cast<float>(M_PI / 180);
+
+        inline int sign(float value)
+        {
+            /* 0 / 양수 / 음수 => 0 / 1 / -1 */
+            return (value > 0) - (value < 0);
+        }
 
     }
 }
