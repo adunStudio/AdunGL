@@ -22,14 +22,12 @@ public:
     void init() override
     {
 
-        const char* vertPath = "/Users/adun/Desktop/AdunGL/shaders/basic120.vert";
-        const char* fragPath = "/Users/adun/Desktop/AdunGL/shaders/basic120.frag";
 
         window = createWindow("AdunGL Test Game", 960, 540);
 
         FontManager::get()->setScale(window->getWidth() / 32.0f, window->getHeight() / 18.0f);
 
-        shader = new Shader(vertPath, fragPath);
+        shader = ShaderFactory::DefaultShader();
 
         layer = new Layer(new BatchRenderer2D(), shader, maths::mat4::orthographic(-16.0f, 16.0f, -9.0f, 9.0f, -1.0f, 1.0f));
 
