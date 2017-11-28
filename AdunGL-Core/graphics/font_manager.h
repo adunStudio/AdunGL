@@ -20,13 +20,14 @@ namespace AdunGL
         public:
             static void add(Font* font);
 
+            static Font* get();
             static Font* get(const std::string& name);
             static Font* get(const std::string& name, unsigned int size);
 
             static void clean();
 
         private:
-            FontManager();  // default 생성자 X => 인스턴스 X
+            FontManager() = delete;  // default 생성자 X => 인스턴스 X
         };
     }
 }

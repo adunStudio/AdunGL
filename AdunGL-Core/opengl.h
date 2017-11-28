@@ -8,8 +8,11 @@
 #if __APPLE__
 
     #include <OpenGL/gl3.h>
-    #include <OpenGL/glu.h>
-    #include <GLUT/glut.h>
+    #include <GL/freeglut.h>
+    //#include <OpenGL/glu.h>
+    //#include <GLUT/glut.h>
+    //#include <GL/glut.h>
+   // #include <GL/freeglut.h>
 
 #else
 

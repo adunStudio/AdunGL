@@ -2,9 +2,9 @@ cmake_minimum_required(VERSION 3.7)
 
 project(AdunGL)
 
-set(CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} -std=c++11 -framework GLUT -framework OpenGL") # compiler version and compiler flags.
+set(CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} -std=c++11 -framework OpenGL") # compiler version and compiler flags.
 
-set(MAIN_FILES main.cpp AdunGL-Core/graphics/font_manager.cpp AdunGL-Core/graphics/font_manager.h AdunGL-Core/opengl.h) # which files should be compiled
+set(MAIN_FILES main.cpp) # which files should be compiled
 
 file(GLOB ADUNGL-CORE
         AdunGL-Core/graphics/buffers/*.h
@@ -32,6 +32,13 @@ find_package(FREETYPE)
 target_include_directories (AdunGL PUBLIC ${FREETYPE_INCLUDE_DIR_freetype2})
 target_link_libraries(AdunGL ${FREETYPE_LIBRARY})
 
+
+find_package(FREEGLUT)
+target_include_directories (AdunGL PUBLIC ${FREEGLUT_INCLUDE_DIR})
+target_link_libraries(AdunGL ${FREEGLUT_LIBRARY})
+
+
+
 message("----freeimage----")
 message(${FREEIMAGE_FOUND})
 message(${FREEIMAGE_INCLUDE_DIRS})
@@ -39,3 +46,6 @@ message(${FREEIMAGE_LIBRARY})
 message("----freetype----")
 message(${FREETYPE_LIBRARY})
 message(${FREETYPE_INCLUDE_DIR_freetype2})
+message("----freeglut----")
+message(${FREEGLUT_INCLUDE_DIR})
+message(${FREEGLUT_LIBRARY})

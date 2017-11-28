@@ -8,13 +8,17 @@ namespace AdunGL
 {
     namespace graphics
     {
-        Layer::Layer() {};
-
         Layer::Layer(Renderer2D* renderer, Shader* shader, maths::mat4 projectionMatrix)
         : m_renderer(renderer), m_shader(shader), m_projectionMatrix(projectionMatrix)
         {
             m_shader->enable();
+
             m_shader->setUniformMat4("pr_matrix", m_projectionMatrix);
+
+            GLint texIDs[] = {0,  1,  2,  3,  4,  5,  6,  7,  8,  9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20, 21, 22, 23, 24, 25, 26, 27, 28, 29, 30, 31};
+
+            m_shader->setUniform1iv("textures", texIDs, 32);
+
             m_shader->disable();
         }
 

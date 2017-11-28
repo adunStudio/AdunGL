@@ -13,7 +13,8 @@ namespace AdunGL
     {
         class Sprite : public Renderable2D
         {
-        private:
+        public:
+            maths::vec3& position;
 
         public:
             Sprite(float x, float y , float width, float height, const maths::vec4& color);

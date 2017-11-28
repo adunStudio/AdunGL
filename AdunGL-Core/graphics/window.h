@@ -6,9 +6,7 @@
 #define ADUNGL_WINDOW_H
 
 #include <iostream>
-#include <OpenGL/gl3.h>
-#include <OpenGL/glu.h>
-#include <GLUT/glut.h>
+#include "../opengl.h"
 #include <cassert>
 #include <map>
 #include <functional>
@@ -26,8 +24,6 @@ namespace AdunGL
         class Window
         {
         private:
-            static Window* instance_;
-
             static bool keys[MAX_KEYS];
             static bool mouseButtons[MAX_BUTTONS];
             static map<string, bool> keyMaps;
@@ -37,27 +33,6 @@ namespace AdunGL
 
 
         public:
-
-            static bool DEFAULT_MOUSE;
-
-            static Window& instance()
-            {
-                assert(instance_ != nullptr);
-
-                return *instance_;
-            }
-
-            static Window& instance(int argc, char** argv, const char* name, int width, int height)
-            {
-                if(!instance_)
-                {
-                    glutInit(&argc, argv);
-                    instance_ = new Window(name, width, height);
-                }
-
-                return *instance_;
-            }
-
             static bool isKeyPressed(unsigned char key);
             static bool isKeyPressed(const string& key);
             static bool isMouseButtonPressed(int button);
@@ -69,16 +44,15 @@ namespace AdunGL
             int width, height;
 
         public:
+            Window(const char* name, int width, int height);
+
             ~Window();
 
             void clear(float r = 0.0f, float g = 0.0f, float b = 0.0f) const;
 
-            void run() const;
-
             bool closed() const;
 
-            void update(void (*func)());
-            void render(void (*func)());
+            void update();
             void reshape(void (func)(int, int));
             void timer(void (*func)(int));
 
@@ -93,7 +67,6 @@ namespace AdunGL
             inline void draw() { glutSwapBuffers(); }
 
         private:
-            Window(const char* name, int width, int height);
             Window() = default;
             void init();
 
@@ -103,6 +76,7 @@ namespace AdunGL
             friend GLvoid specialKeyboardDownCallback(int key, int x, int y);
             friend GLvoid mouseCallback(int button, int state, int x, int y);
             friend GLvoid mouseMoveCallback(int x, int y);
+            friend GLvoid renderCallback();
         };
     }
 }

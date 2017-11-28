@@ -115,7 +115,7 @@ namespace AdunGL
 
                 if(!found)
                 {
-                    if(m_textureSlots.size() >= 32)
+                    if(m_textureSlots.size() >= RENDERER_MAX_TEXTURES)
                     {
                         end();
                         flush();
@@ -192,7 +192,7 @@ namespace AdunGL
 
             if(!found)
             {
-                if(m_textureSlots.size() >= 32)
+                if(m_textureSlots.size() >= RENDERER_MAX_TEXTURES)
                 {
                     end();
                     flush();
@@ -203,9 +203,7 @@ namespace AdunGL
                 ts = (float)(m_textureSlots.size());
             }
 
-            // Todo Window Size!
-            float scaleX = 960.0f / 32.0f;
-            float scaleY = 540.0f / 18.0f;
+            const maths::vec2& scale = font.getScale();
 
             // 시작 위치
             float x = position.x;
@@ -223,13 +221,13 @@ namespace AdunGL
                     {
                         // 글 간격
                         float kerning = texture_glyph_get_kerning(glyph, text[i - 1]);
-                        x += (kerning / scaleX);
+                        x += (kerning / scale.x);
                     }
 
-                    float x0 = x + glyph->offset_x / scaleX;
-                    float y0 = position.y + glyph->offset_y / scaleY;
-                    float x1 = x0 + glyph->width / scaleX;
-                    float y1 = y0 - glyph->height / scaleY;
+                    float x0 = x + glyph->offset_x / scale.x;
+                    float y0 = position.y + glyph->offset_y / scale.y;
+                    float x1 = x0 + glyph->width / scale.x;
+                    float y1 = y0 - glyph->height / scale.y;
 
                     float u0 = glyph->s0;
                     float v0 = glyph->t0;
@@ -262,7 +260,7 @@ namespace AdunGL
 
                     m_indexCount += 6;
 
-                    x += (glyph->advance_x / scaleX);
+                    x += (glyph->advance_x / scale.x);
                 }
             }
         }

@@ -14,10 +14,8 @@ namespace AdunGL
         GLvoid specialKeyboardUpCallback(int key, int x, int y);
         GLvoid mouseCallback(int button, int state, int x, int y);
         GLvoid mouseMoveCallback(int x, int y);
+        GLvoid renderCallback();
 
-        bool Window::DEFAULT_MOUSE = true;
-
-        Window* Window::instance_ = nullptr;
 
         bool Window::keys[MAX_KEYS] = { false };
         bool Window::mouseButtons[MAX_BUTTONS] = { false };
@@ -39,8 +37,13 @@ namespace AdunGL
 
         void Window::init()
         {
+            int   default_argc   = 0 ;
+            char** default_argv;
 
-            glutInitDisplayMode(GLUT_3_2_CORE_PROFILE | GLUT_DOUBLE | GLUT_RGBA | GLUT_ALPHA | GLUT_DEPTH);
+            glutInit(&default_argc, default_argv);
+
+            glutInitDisplayMode(GLUT_DOUBLE | GLUT_RGBA | GLUT_ALPHA | GLUT_DEPTH);
+
             glutInitWindowPosition(100, 100);
             glutInitWindowSize(width, height);
 
@@ -55,29 +58,26 @@ namespace AdunGL
             FontManager::add(new Font("arial", "/Users/adun/Desktop/AdunGL/asset/arial.ttf", 32));
 
             //glutIdleFunc(updateCallback);
-            //glutDisplayFunc(renderCallback);
+            glutDisplayFunc(renderCallback);
             //glutReshapeFunc(reshapeCallback);
+            glutDisplayFunc(renderCallback);
             glutKeyboardFunc(keyboardDownCallback);
             glutKeyboardUpFunc(keyboardUpCallback);
             glutSpecialFunc(specialKeyboardDownCallback);
             glutSpecialUpFunc(specialKeyboardUpCallback);
-            if(DEFAULT_MOUSE)
-                glutMouseFunc(mouseCallback);
+            glutMouseFunc(mouseCallback);
             glutPassiveMotionFunc(mouseMoveCallback);
             glutMotionFunc(mouseMoveCallback);
 
 
+
         }
 
-        void Window::update(void (*func)())
+        void Window::update()
         {
-            glutIdleFunc(func);
+            glutSwapBuffers();
         }
 
-        void Window::render(void (*func)())
-        {
-            glutDisplayFunc(func);
-        }
 
         void Window::reshape(void (*func)(int, int))
         {
@@ -88,14 +88,11 @@ namespace AdunGL
         {
             glutTimerFunc(0, func, 0);
         }
-        void Window::run() const
-        {
-            glutMainLoop();
-        }
+
 
         bool Window::closed() const
         {
-            return glutGetWindow();
+            return glutGetWindow() == 0;
         }
 
         void Window::clear(float r, float g, float b) const
@@ -149,6 +146,13 @@ namespace AdunGL
             Window::mx =  x; // - Window::instance().width / 2;
             Window::my =  y;//(y - Window::instance().height / 2) * -1 ;
         }
+
+        GLvoid renderCallback()
+        {
+            //
+        }
+
+
 
         bool Window::isKeyPressed(unsigned char key)
         {
