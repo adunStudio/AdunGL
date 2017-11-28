@@ -9,6 +9,7 @@
 #include <string>
 #include "../opengl.h"
 #include "../utils/imageload.h"
+#include "../utils/log.h"
 
 namespace AdunGL
 {
@@ -21,6 +22,7 @@ namespace AdunGL
             std::string m_fileName;
             GLuint m_TID;
             GLsizei m_width, m_height;
+            unsigned m_bits;
 
         public:
             Texture(const std::string name, const std::string fileName);

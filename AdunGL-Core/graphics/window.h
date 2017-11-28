@@ -11,6 +11,7 @@
 #include <map>
 #include <functional>
 #include "font_manager.h"
+#include "texture_manager.h"
 
 using namespace std;
 
@@ -27,16 +28,13 @@ namespace AdunGL
             static bool keys[MAX_KEYS];
             static bool mouseButtons[MAX_BUTTONS];
             static map<string, bool> keyMaps;
-
-
-            static double mx, my;
-
+            static maths::vec2 m_mousePosition;
 
         public:
             static bool isKeyPressed(unsigned char key);
             static bool isKeyPressed(const string& key);
             static bool isMouseButtonPressed(int button);
-            static void getMousePosition(int& x, int& y);
+            static const maths::vec2& getMousePosition();
 
         private:
             int window;

@@ -29,6 +29,7 @@
 #include "utils/imageload.h"
 
 #include "graphics/texture.h"
+#include "graphics/texture_manager.h"
 
 #include "graphics/camera.h"
 

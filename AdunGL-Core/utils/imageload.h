@@ -13,7 +13,7 @@ namespace AdunGL
 {
     namespace utils
     {
-        static BYTE* load_image(const char* fileName, GLsizei* width, GLsizei* height)
+        static BYTE* load_image(const char* fileName, GLsizei* width, GLsizei* height, unsigned int* bits)
         {
             FREE_IMAGE_FORMAT fif = FIF_UNKNOWN;
 
@@ -35,13 +35,13 @@ namespace AdunGL
 
             BYTE* pixels = FreeImage_GetBits(dib);
 
-            *width = FreeImage_GetWidth(dib);
+            *width  = FreeImage_GetWidth(dib);
 
             *height = FreeImage_GetHeight(dib);
 
-            int bits = FreeImage_GetBPP(dib);
+            *bits   = FreeImage_GetBPP(dib);
 
-            int size = *width * *height * (bits / 8);
+            int size = *width * *height * (*bits / 8);
 
             BYTE* result = new BYTE[size];
 

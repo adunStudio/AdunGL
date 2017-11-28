@@ -21,7 +21,7 @@ namespace AdunGL
 
         GLuint Texture::load()
         {
-            BYTE* pixels = utils::load_image(m_fileName.c_str(), &m_width, &m_height);
+            BYTE* pixels = utils::load_image(m_fileName.c_str(), &m_width, &m_height, &m_bits);
 
             GLuint result;
 
@@ -32,7 +32,14 @@ namespace AdunGL
             glTexParameteri(GL_TEXTURE_2D, GL_TEXTURE_MIN_FILTER, GL_NEAREST);
             glTexParameteri(GL_TEXTURE_2D, GL_TEXTURE_MAG_FILTER, GL_NEAREST);
 
-            glTexImage2D(GL_TEXTURE_2D, 0, GL_RGB, m_width, m_height, 0, GL_BGR, GL_UNSIGNED_BYTE, pixels);
+
+            if(m_bits != 24 && m_bits !=32)
+                ADUNGL_ERROR("[texture.cpp 37] Unsupported image bit-depth! (%d)", m_bits);
+
+            GLint  internalFormat = m_bits == 32 ? GL_RGBA : GL_RGB;
+            GLenum format         = m_bits == 32 ? GL_BGRA : GL_BGR;
+
+            glTexImage2D(GL_TEXTURE_2D, 0, internalFormat, m_width, m_height, 0, format, GL_UNSIGNED_BYTE, pixels);
 
             glBindTexture(GL_TEXTURE_2D, 0);
 

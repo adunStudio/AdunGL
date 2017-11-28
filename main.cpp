@@ -20,8 +20,8 @@ public:
     void init() override
     {
 
-        char* vertPath = "/Users/adun/Desktop/AdunGL/AdunGL-Core/shaders/basic120.vert";
-        char* fragPath = "/Users/adun/Desktop/AdunGL/AdunGL-Core/shaders/basic120.frag";
+        const char* vertPath = "/Users/adun/Desktop/AdunGL/AdunGL-Core/shaders/basic120.vert";
+        const char* fragPath = "/Users/adun/Desktop/AdunGL/AdunGL-Core/shaders/basic120.frag";
 
         window = createWindow("AdunGL Test Game", 960, 540);
 
@@ -31,7 +31,7 @@ public:
 
         layer = new Layer(new BatchRenderer2D(), shader, maths::mat4::orthographic(-16.0f, 16.0f, -9.0f, 9.0f, -1.0f, 1.0f));
 
-        sprite = new Sprite(new Texture("basic", "/Users/adun/Desktop/AdunGL/asset/tb.png"));
+        sprite = new Sprite(0, 0, 8, 8, new Texture("basic", "/Users/adun/Desktop/AdunGL/asset/boycoding.png"));
 
         layer->add(sprite);
 
@@ -59,6 +59,11 @@ public:
             sprite->position.y += speed;
         if(window->isKeyPressed('s'))
             sprite->position.y -= speed;
+
+        int x, y;
+        vec2 mouse = window->getMousePosition();
+        shader->enable();
+        shader->setUniform2f("light_pos", vec2((float)(mouse.x * 32.0f / window->getWidth() - 16.0f), (float)(9.0f - mouse.y * 18.0f / window->getHeight())));
 
     }
 

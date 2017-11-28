@@ -20,9 +20,8 @@ namespace AdunGL
         bool Window::keys[MAX_KEYS] = { false };
         bool Window::mouseButtons[MAX_BUTTONS] = { false };
         map<string, bool> Window::keyMaps = {{"up", false}, {"down", false}, {"left", false}, {"right", false}};
+        maths::vec2 Window::m_mousePosition;
 
-        double Window::mx;
-        double Window::my;
 
         Window::Window(const char* name, int width, int height)
                 : name(name), width(width), height(height)
@@ -32,6 +31,9 @@ namespace AdunGL
 
         Window::~Window()
         {
+            FontManager::clean();
+            TextureManager::clean();
+
             glutDestroyWindow(window);
         }
 
@@ -143,8 +145,11 @@ namespace AdunGL
 
         GLvoid mouseMoveCallback(int x, int y)
         {
-            Window::mx =  x; // - Window::instance().width / 2;
-            Window::my =  y;//(y - Window::instance().height / 2) * -1 ;
+            Window::m_mousePosition.x = (float)x;
+            Window::m_mousePosition.y = (float)y;
+
+            //Window::mx =  x; // - Window::instance().width / 2;
+            //Window::my =  y;//(y - Window::instance().height / 2) * -1 ;
         }
 
         GLvoid renderCallback()
@@ -177,10 +182,9 @@ namespace AdunGL
             return mouseButtons[button];
         }
 
-        void Window::getMousePosition(int& x, int& y)
+        const maths::vec2& Window::getMousePosition()
         {
-            x = mx;
-            y = my;
+            return Window::m_mousePosition;
         }
 
     }
