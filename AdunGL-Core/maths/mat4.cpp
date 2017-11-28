@@ -317,5 +317,13 @@ namespace AdunGL
 
             return result;
         }
+
+        // 역행렬
+        mat4 mat4::invert(const mat4& matrix)
+        {
+            mat4 result = matrix;
+
+            return result.invert();
+        }
     }
 }

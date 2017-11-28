@@ -40,6 +40,8 @@
 
 #include "utils/log.h"
 
+#include "graphics/mask.h"
+
 using namespace std;
 using namespace AdunGL;
 using namespace graphics;

@@ -1,6 +1,5 @@
 #version 120
 
-
 attribute vec4 position;
 attribute vec2 uv;
 attribute float tid;

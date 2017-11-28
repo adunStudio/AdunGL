@@ -83,7 +83,8 @@ namespace AdunGL
 
                 glGetShaderInfoLog(vertex, length, &length, &error[0]);
 
-                std::cout << "Failed to vertex shader compile! " << std::endl << &error[0] << std::endl;
+                ADUNGL_ERROR("[shader.cpp 86] Failed to compile vertex shader!", NULL);
+                ADUNGL_FATAL("%s", &error[0]);
 
                 glDeleteShader(vertex);
 
@@ -108,7 +109,8 @@ namespace AdunGL
 
                 glGetShaderInfoLog(fragment, length, &length, &error[0]);
 
-                std::cout << "Failed to fragment shader compile! " << std::endl << &error[0] << std::endl;
+                ADUNGL_ERROR("[shader.cpp 112] Failed to compile fragment shader!", NULL);
+                ADUNGL_FATAL("%s", &error[0]);
 
                 glDeleteShader(fragment);
 
