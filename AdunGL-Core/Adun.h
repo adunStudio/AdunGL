@@ -48,8 +48,8 @@ namespace AdunGL
     class Adun
     {
     private:
-        graphics::Window* m_window;
-        utils::Timer*     m_timer;
+        Window* m_window;
+        Timer*  m_timer;
 
         unsigned int m_framesPerSecond, m_updatesPerSecond;
 
@@ -67,7 +67,7 @@ namespace AdunGL
         }
 
 
-        graphics::Window* createWindow(const char* name, int width, int height)
+        Window* createWindow(const char* name, int width, int height)
         {
             m_window = new graphics::Window(name, width, height);
 

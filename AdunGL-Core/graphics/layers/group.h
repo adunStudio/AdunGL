@@ -26,6 +26,8 @@ namespace AdunGL
             void add(Renderable2D* renderable);
 
             void submit(Renderer2D* renderer) const override;
+
+            inline maths::mat4& getTranslationMatrix() { return m_translationMatrix; }
         };
     }
 }

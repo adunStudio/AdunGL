@@ -10,6 +10,7 @@ namespace AdunGL
     namespace graphics
     {
         BatchRenderer2D::BatchRenderer2D()
+        : m_indexCount(0)
         {
             init();
         }
@@ -18,6 +19,7 @@ namespace AdunGL
         {
             delete m_ibo;
             glDeleteBuffers(1, &m_vbo);
+            glDeleteVertexArrays(1, &m_vao);
         }
 
         void BatchRenderer2D::init()
