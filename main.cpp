@@ -22,7 +22,6 @@ public:
     void init() override
     {
 
-
         window = createWindow("AdunGL Test Game", 960, 540);
 
         FontManager::get()->setScale(window->getWidth() / 32.0f, window->getHeight() / 18.0f);
@@ -36,6 +35,8 @@ public:
         sprite = new Sprite(0, 0, 8, 4, TextureManager::get("Basic"));
 
         layer->add(sprite);
+
+        layer->add(new Sprite(0, 0, 10, 10, Color(1, 1, 1, 1)));
 
         fps = new Label("", -15.5f, 7.8f, "arial", maths::vec4(0, 1, 1, 1));
 

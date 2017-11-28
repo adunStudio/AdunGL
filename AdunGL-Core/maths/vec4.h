@@ -38,6 +38,8 @@ namespace AdunGL
 
             friend std::ostream& operator<<(std::ostream& stream, const vec4& vector);
         };
+
+        typedef vec4 Color;
     }
 }
 #endif //ADUNGL_vec4_H
