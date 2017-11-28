@@ -10,6 +10,7 @@
 #include "../opengl.h"
 #include "../utils/fileutils.h"
 #include "../maths/maths.h"
+#include "../utils/log.h"
 
 namespace AdunGL
 {

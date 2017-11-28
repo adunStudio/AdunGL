@@ -37,6 +37,8 @@
 #include "graphics/font.h"
 #include "graphics/font_manager.h"
 
+#include "utils/log.h"
+
 using namespace std;
 using namespace AdunGL;
 using namespace graphics;

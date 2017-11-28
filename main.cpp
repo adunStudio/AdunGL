@@ -28,13 +28,14 @@ public:
 
         layer = new Layer(new BatchRenderer2D(), shader, maths::mat4::orthographic(-16.0f, 16.0f, -9.0f, 9.0f, -1.0f, 1.0f));
 
-        sprite = new Sprite(new Texture("/Users/adun/Desktop/AdunGL/asset/tb.png"));
+        sprite = new Sprite(new Texture("basic", "/Users/adun/Desktop/AdunGL/asset/tb.png"));
 
         layer->add(sprite);
 
         fps = new Label("", -15.5f, 7.8f, "arial", maths::vec4(0, 1, 1, 1));
 
         layer->add(fps);
+
     }
 
     void tick() override // 1초 마다 실행

@@ -17,17 +17,19 @@ namespace AdunGL
         class Texture
         {
         private:
+            std::string m_name;
             std::string m_fileName;
             GLuint m_TID;
             GLsizei m_width, m_height;
 
         public:
-            Texture(const std::string fileName);
+            Texture(const std::string name, const std::string fileName);
             ~Texture();
 
             void bind()   const;
             void unbind() const;
 
+            inline const std::string& getName () const  { return m_name;   }
             inline const unsigned int getWidth () const { return m_width;  }
             inline const unsigned int getHeight() const { return m_height; }
             inline const unsigned int getID    () const { return m_TID;    }

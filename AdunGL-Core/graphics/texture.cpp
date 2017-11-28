@@ -8,8 +8,8 @@ namespace AdunGL
 {
     namespace graphics
     {
-        Texture::Texture(const std::string fileName)
-        : m_fileName(fileName)
+        Texture::Texture(const std::string name, const std::string fileName)
+        : m_name(name), m_fileName(fileName)
         {
             m_TID = load();
         }

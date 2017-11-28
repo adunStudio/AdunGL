@@ -4,7 +4,7 @@ project(AdunGL)
 
 set(CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} -std=c++11 -framework OpenGL") # compiler version and compiler flags.
 
-set(MAIN_FILES main.cpp) # which files should be compiled
+set(MAIN_FILES main.cpp AdunGL-Core/utils/log.h) # which files should be compiled
 
 file(GLOB ADUNGL-CORE
         AdunGL-Core/graphics/buffers/*.h

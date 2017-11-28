@@ -144,17 +144,12 @@ namespace AdunGL
 
             glValidateProgram(program);
 
-
-
-
             GLint a = glGetAttribLocation(program, "position");
             GLint b = glGetAttribLocation(program, "uv");
             GLint c = glGetAttribLocation(program, "tid");
             GLint d = glGetAttribLocation(program, "color");
             GLint e = glGetFragDataLocation(program, "color");
-
-            std::cout << a << b << c << d << e << std::endl;
-
+            ADUNGL_INFO("Location-> position: %d, uv: %d, tid: %d, color: %d", a, b, c, d, e);
 
             glDeleteShader(vertex);
             glDeleteShader(fragment);
