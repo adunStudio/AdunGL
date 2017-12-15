@@ -1,0 +1,248 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Project DefaultTargets="Build" ToolsVersion="15.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup Label="ProjectConfigurations">
+    <ProjectConfiguration Include="Debug|Win32">
+      <Configuration>Debug</Configuration>
+      <Platform>Win32</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="Release|Win32">
+      <Configuration>Release</Configuration>
+      <Platform>Win32</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="Debug|x64">
+      <Configuration>Debug</Configuration>
+      <Platform>x64</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="Release|x64">
+      <Configuration>Release</Configuration>
+      <Platform>x64</Platform>
+    </ProjectConfiguration>
+  </ItemGroup>
+  <PropertyGroup Label="Globals">
+    <VCProjectVersion>15.0</VCProjectVersion>
+    <ProjectGuid>{1F837EC5-CA11-4EF9-9569-A4CCB873EC64}</ProjectGuid>
+    <Keyword>Win32Proj</Keyword>
+    <RootNamespace>AdunGL</RootNamespace>
+    <WindowsTargetPlatformVersion>10.0.15063.0</WindowsTargetPlatformVersion>
+  </PropertyGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.Default.props" />
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'" Label="Configuration">
+    <ConfigurationType>Application</ConfigurationType>
+    <UseDebugLibraries>true</UseDebugLibraries>
+    <PlatformToolset>v141</PlatformToolset>
+    <CharacterSet>Unicode</CharacterSet>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'" Label="Configuration">
+    <ConfigurationType>Application</ConfigurationType>
+    <UseDebugLibraries>false</UseDebugLibraries>
+    <PlatformToolset>v141</PlatformToolset>
+    <WholeProgramOptimization>true</WholeProgramOptimization>
+    <CharacterSet>Unicode</CharacterSet>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'" Label="Configuration">
+    <ConfigurationType>Application</ConfigurationType>
+    <UseDebugLibraries>true</UseDebugLibraries>
+    <PlatformToolset>v141</PlatformToolset>
+    <CharacterSet>Unicode</CharacterSet>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'" Label="Configuration">
+    <ConfigurationType>Application</ConfigurationType>
+    <UseDebugLibraries>false</UseDebugLibraries>
+    <PlatformToolset>v141</PlatformToolset>
+    <WholeProgramOptimization>true</WholeProgramOptimization>
+    <CharacterSet>Unicode</CharacterSet>
+  </PropertyGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.props" />
+  <ImportGroup Label="ExtensionSettings">
+  </ImportGroup>
+  <ImportGroup Label="Shared">
+  </ImportGroup>
+  <ImportGroup Label="PropertySheets" Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+  </ImportGroup>
+  <ImportGroup Label="PropertySheets" Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+  </ImportGroup>
+  <ImportGroup Label="PropertySheets" Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+  </ImportGroup>
+  <ImportGroup Label="PropertySheets" Condition="'$(Configuration)|$(Platform)'=='Release|x64'">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+  </ImportGroup>
+  <PropertyGroup Label="UserMacros" />
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
+    <LinkIncremental>true</LinkIncremental>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
+    <LinkIncremental>true</LinkIncremental>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
+    <LinkIncremental>false</LinkIncremental>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'">
+    <LinkIncremental>false</LinkIncremental>
+  </PropertyGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
+    <ClCompile>
+      <PrecompiledHeader>
+      </PrecompiledHeader>
+      <WarningLevel>Level3</WarningLevel>
+      <Optimization>Disabled</Optimization>
+      <PreprocessorDefinitions>WIN32;_DEBUG;_CONSOLE;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <SDLCheck>false</SDLCheck>
+      <ForcedIncludeFiles>GL/glew.h;</ForcedIncludeFiles>
+      <RuntimeLibrary>MultiThreadedDebug</RuntimeLibrary>
+      <AdditionalIncludeDirectories>C:\Users\adunstudio\Desktop\AdunGL\AdunGL\Dependencies\FreeImage;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+    </ClCompile>
+    <Link>
+      <SubSystem>Console</SubSystem>
+      <GenerateDebugInformation>true</GenerateDebugInformation>
+      <AdditionalDependencies>Dependencies/FreeImage/FreeImage.lib;%(AdditionalDependencies)</AdditionalDependencies>
+      <PreventDllBinding>true</PreventDllBinding>
+      <AdditionalLibraryDirectories>C:\Users\adunstudio\Desktop\AdunGL\AdunGL\Dependencies\FreeImage;%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
+    </Link>
+  </ItemDefinitionGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
+    <ClCompile>
+      <PrecompiledHeader>
+      </PrecompiledHeader>
+      <WarningLevel>Level3</WarningLevel>
+      <Optimization>Disabled</Optimization>
+      <PreprocessorDefinitions>_DEBUG;_CONSOLE;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <SDLCheck>true</SDLCheck>
+    </ClCompile>
+    <Link>
+      <SubSystem>Console</SubSystem>
+      <GenerateDebugInformation>true</GenerateDebugInformation>
+    </Link>
+  </ItemDefinitionGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
+    <ClCompile>
+      <PrecompiledHeader>
+      </PrecompiledHeader>
+      <WarningLevel>Level3</WarningLevel>
+      <Optimization>MaxSpeed</Optimization>
+      <FunctionLevelLinking>true</FunctionLevelLinking>
+      <IntrinsicFunctions>true</IntrinsicFunctions>
+      <PreprocessorDefinitions>WIN32;NDEBUG;_CONSOLE;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <SDLCheck>false</SDLCheck>
+    </ClCompile>
+    <Link>
+      <SubSystem>Console</SubSystem>
+      <EnableCOMDATFolding>true</EnableCOMDATFolding>
+      <OptimizeReferences>true</OptimizeReferences>
+      <GenerateDebugInformation>true</GenerateDebugInformation>
+    </Link>
+  </ItemDefinitionGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'">
+    <ClCompile>
+      <PrecompiledHeader>
+      </PrecompiledHeader>
+      <WarningLevel>Level3</WarningLevel>
+      <Optimization>MaxSpeed</Optimization>
+      <FunctionLevelLinking>true</FunctionLevelLinking>
+      <IntrinsicFunctions>true</IntrinsicFunctions>
+      <PreprocessorDefinitions>NDEBUG;_CONSOLE;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <SDLCheck>true</SDLCheck>
+    </ClCompile>
+    <Link>
+      <SubSystem>Console</SubSystem>
+      <EnableCOMDATFolding>true</EnableCOMDATFolding>
+      <OptimizeReferences>true</OptimizeReferences>
+      <GenerateDebugInformation>true</GenerateDebugInformation>
+    </Link>
+  </ItemDefinitionGroup>
+  <ItemGroup>
+    <None Include="FreeImage.dll" />
+    <None Include="packages.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="AdunGL-Core\exc\freetype-gl\platform.c" />
+    <ClCompile Include="AdunGL-Core\exc\freetype-gl\texture-atlas.c" />
+    <ClCompile Include="AdunGL-Core\exc\freetype-gl\texture-font.c" />
+    <ClCompile Include="AdunGL-Core\exc\freetype-gl\vector.c" />
+    <ClCompile Include="AdunGL-Core\graphics\buffers\buffer.cpp" />
+    <ClCompile Include="AdunGL-Core\graphics\buffers\indexBuffer.cpp" />
+    <ClCompile Include="AdunGL-Core\graphics\buffers\vertexArray.cpp" />
+    <ClCompile Include="AdunGL-Core\graphics\font.cpp" />
+    <ClCompile Include="AdunGL-Core\graphics\font_manager.cpp" />
+    <ClCompile Include="AdunGL-Core\graphics\label.cpp" />
+    <ClCompile Include="AdunGL-Core\graphics\layers\group.cpp" />
+    <ClCompile Include="AdunGL-Core\graphics\layers\layer.cpp" />
+    <ClCompile Include="AdunGL-Core\graphics\renderers\batchrenderer2d.cpp" />
+    <ClCompile Include="AdunGL-Core\graphics\shaders\shader.cpp" />
+    <ClCompile Include="AdunGL-Core\graphics\shaders\shader_factory.cpp" />
+    <ClCompile Include="AdunGL-Core\graphics\sprite.cpp" />
+    <ClCompile Include="AdunGL-Core\graphics\texture.cpp" />
+    <ClCompile Include="AdunGL-Core\graphics\texture_manager.cpp" />
+    <ClCompile Include="AdunGL-Core\graphics\window.cpp" />
+    <ClCompile Include="AdunGL-Core\maths\mat4.cpp" />
+    <ClCompile Include="AdunGL-Core\maths\vec2.cpp" />
+    <ClCompile Include="AdunGL-Core\maths\vec3.cpp" />
+    <ClCompile Include="AdunGL-Core\maths\vec4.cpp" />
+    <ClCompile Include="AdunGL-Core\utils\fileutils.cpp" />
+    <ClCompile Include="main.cpp" />
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="AdunGL-Core\Adun.h" />
+    <ClInclude Include="AdunGL-Core\exc\freetype-gl\freetype-gl.h" />
+    <ClInclude Include="AdunGL-Core\exc\freetype-gl\opengl.h" />
+    <ClInclude Include="AdunGL-Core\exc\freetype-gl\platform.h" />
+    <ClInclude Include="AdunGL-Core\exc\freetype-gl\texture-atlas.h" />
+    <ClInclude Include="AdunGL-Core\exc\freetype-gl\texture-font.h" />
+    <ClInclude Include="AdunGL-Core\exc\freetype-gl\vec234.h" />
+    <ClInclude Include="AdunGL-Core\exc\freetype-gl\vector.h" />
+    <ClInclude Include="AdunGL-Core\graphics\bases\renderable2d.h" />
+    <ClInclude Include="AdunGL-Core\graphics\bases\renderer2d.h" />
+    <ClInclude Include="AdunGL-Core\graphics\buffers\buffer.h" />
+    <ClInclude Include="AdunGL-Core\graphics\buffers\indexBuffer.h" />
+    <ClInclude Include="AdunGL-Core\graphics\buffers\vertexArray.h" />
+    <ClInclude Include="AdunGL-Core\graphics\font.h" />
+    <ClInclude Include="AdunGL-Core\graphics\font_manager.h" />
+    <ClInclude Include="AdunGL-Core\graphics\label.h" />
+    <ClInclude Include="AdunGL-Core\graphics\layers\group.h" />
+    <ClInclude Include="AdunGL-Core\graphics\layers\layer.h" />
+    <ClInclude Include="AdunGL-Core\graphics\mask.h" />
+    <ClInclude Include="AdunGL-Core\graphics\renderers\batchrenderer2d.h" />
+    <ClInclude Include="AdunGL-Core\graphics\shaders\shader.h" />
+    <ClInclude Include="AdunGL-Core\graphics\shaders\shader_factory.h" />
+    <ClInclude Include="AdunGL-Core\graphics\sprite.h" />
+    <ClInclude Include="AdunGL-Core\graphics\texture.h" />
+    <ClInclude Include="AdunGL-Core\graphics\texture_manager.h" />
+    <ClInclude Include="AdunGL-Core\graphics\window.h" />
+    <ClInclude Include="AdunGL-Core\maths\mat4.h" />
+    <ClInclude Include="AdunGL-Core\maths\maths.h" />
+    <ClInclude Include="AdunGL-Core\maths\math_func.h" />
+    <ClInclude Include="AdunGL-Core\maths\tvec2.h" />
+    <ClInclude Include="AdunGL-Core\maths\vec2.h" />
+    <ClInclude Include="AdunGL-Core\maths\vec3.h" />
+    <ClInclude Include="AdunGL-Core\maths\vec4.h" />
+    <ClInclude Include="AdunGL-Core\utils\fileutils.h" />
+    <ClInclude Include="AdunGL-Core\utils\imageload.h" />
+    <ClInclude Include="AdunGL-Core\utils\log.h" />
+    <ClInclude Include="AdunGL-Core\utils\timer.h" />
+  </ItemGroup>
+  <ItemGroup>
+    <Font Include="AdunGL-Core\assets\arial.ttf" />
+  </ItemGroup>
+  <ItemGroup>
+    <Image Include="Asset\Images\mask.png" />
+    <Image Include="Asset\Images\slime.png" />
+  </ItemGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
+  <ImportGroup Label="ExtensionTargets">
+    <Import Project="..\packages\freetype.redist.2.8.0.1\build\native\freetype.redist.targets" Condition="Exists('..\packages\freetype.redist.2.8.0.1\build\native\freetype.redist.targets')" />
+    <Import Project="..\packages\freetype.2.8.0.1\build\native\freetype.targets" Condition="Exists('..\packages\freetype.2.8.0.1\build\native\freetype.targets')" />
+    <Import Project="..\packages\nupengl.core.redist.0.1.0.1\build\native\nupengl.core.redist.targets" Condition="Exists('..\packages\nupengl.core.redist.0.1.0.1\build\native\nupengl.core.redist.targets')" />
+    <Import Project="..\packages\nupengl.core.0.1.0.1\build\native\nupengl.core.targets" Condition="Exists('..\packages\nupengl.core.0.1.0.1\build\native\nupengl.core.targets')" />
+  </ImportGroup>
+  <Target Name="EnsureNuGetPackageBuildImports" BeforeTargets="PrepareForBuild">
+    <PropertyGroup>
+      <ErrorText>이 프로젝트는 이 컴퓨터에 없는 NuGet 패키지를 참조합니다. 해당 패키지를 다운로드하려면 NuGet 패키지 복원을 사용하십시오. 자세한 내용은 http://go.microsoft.com/fwlink/?LinkID=322105를 참조하십시오. 누락된 파일은 {0}입니다.</ErrorText>
+    </PropertyGroup>
+    <Error Condition="!Exists('..\packages\freetype.redist.2.8.0.1\build\native\freetype.redist.targets')" Text="$([System.String]::Format('$(ErrorText)', '..\packages\freetype.redist.2.8.0.1\build\native\freetype.redist.targets'))" />
+    <Error Condition="!Exists('..\packages\freetype.2.8.0.1\build\native\freetype.targets')" Text="$([System.String]::Format('$(ErrorText)', '..\packages\freetype.2.8.0.1\build\native\freetype.targets'))" />
+    <Error Condition="!Exists('..\packages\nupengl.core.redist.0.1.0.1\build\native\nupengl.core.redist.targets')" Text="$([System.String]::Format('$(ErrorText)', '..\packages\nupengl.core.redist.0.1.0.1\build\native\nupengl.core.redist.targets'))" />
+    <Error Condition="!Exists('..\packages\nupengl.core.0.1.0.1\build\native\nupengl.core.targets')" Text="$([System.String]::Format('$(ErrorText)', '..\packages\nupengl.core.0.1.0.1\build\native\nupengl.core.targets'))" />
+  </Target>
+</Project>

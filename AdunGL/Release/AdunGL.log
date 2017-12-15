@@ -1,0 +1,305 @@
+﻿  platform.c
+  texture-atlas.c
+c:\users\adunstudio\desktop\adungl\adungl\adungl-core\exc\freetype-gl\texture-atlas.h : warning C4819: 현재 코드 페이지(949)에서 표시할 수 없는 문자가 파일에 들어 있습니다. 데이터가 손실되지 않게 하려면 해당 파일을 유니코드 형식으로 저장하십시오.
+AdunGL-Core\exc\freetype-gl\texture-atlas.c(132): warning C4090: '=': 'const' 한정자가 서로 다릅니다.
+AdunGL-Core\exc\freetype-gl\texture-atlas.c(236): warning C4018: '<': signed 또는 unsigned가 일치하지 않습니다.
+  texture-font.c
+c:\users\adunstudio\desktop\adungl\adungl\adungl-core\exc\freetype-gl\texture-atlas.h : warning C4819: 현재 코드 페이지(949)에서 표시할 수 없는 문자가 파일에 들어 있습니다. 데이터가 손실되지 않게 하려면 해당 파일을 유니코드 형식으로 저장하십시오.
+AdunGL-Core\exc\freetype-gl\texture-font.c(340): warning C4996: 'strdup': The POSIX name for this item is deprecated. Instead, use the ISO C and C++ conformant name: _strdup. See online help for details.
+  C:\Program Files (x86)\Windows Kits\10\Include\10.0.15063.0\ucrt\string.h(538): note: 'strdup' 선언을 참조하십시오.
+  vector.c
+  buffer.cpp
+AdunGL-Core\graphics\buffers\buffer.cpp(19): error C3861: 'glGenBuffers': 식별자를 찾을 수 없습니다.
+AdunGL-Core\graphics\buffers\buffer.cpp(27): error C2065: 'GL_ARRAY_BUFFER': 선언되지 않은 식별자입니다.
+AdunGL-Core\graphics\buffers\buffer.cpp(27): error C3861: 'glBindBuffer': 식별자를 찾을 수 없습니다.
+AdunGL-Core\graphics\buffers\buffer.cpp(45): error C2065: 'GL_ARRAY_BUFFER': 선언되지 않은 식별자입니다.
+AdunGL-Core\graphics\buffers\buffer.cpp(45): error C2065: 'GL_STATIC_DRAW': 선언되지 않은 식별자입니다.
+AdunGL-Core\graphics\buffers\buffer.cpp(45): error C3861: 'glBufferData': 식별자를 찾을 수 없습니다.
+AdunGL-Core\graphics\buffers\buffer.cpp(48): error C2065: 'GL_ARRAY_BUFFER': 선언되지 않은 식별자입니다.
+AdunGL-Core\graphics\buffers\buffer.cpp(48): error C3861: 'glBindBuffer': 식별자를 찾을 수 없습니다.
+AdunGL-Core\graphics\buffers\buffer.cpp(64): error C2065: 'GL_ARRAY_BUFFER': 선언되지 않은 식별자입니다.
+AdunGL-Core\graphics\buffers\buffer.cpp(64): error C3861: 'glDeleteBuffers': 식별자를 찾을 수 없습니다.
+AdunGL-Core\graphics\buffers\buffer.cpp(70): error C2065: 'GL_ARRAY_BUFFER': 선언되지 않은 식별자입니다.
+AdunGL-Core\graphics\buffers\buffer.cpp(70): error C3861: 'glBindBuffer': 식별자를 찾을 수 없습니다.
+AdunGL-Core\graphics\buffers\buffer.cpp(75): error C2065: 'GL_ARRAY_BUFFER': 선언되지 않은 식별자입니다.
+AdunGL-Core\graphics\buffers\buffer.cpp(75): error C3861: 'glBindBuffer': 식별자를 찾을 수 없습니다.
+  indexBuffer.cpp
+AdunGL-Core\graphics\buffers\indexBuffer.cpp(14): error C3861: 'glGenBuffers': 식별자를 찾을 수 없습니다.
+AdunGL-Core\graphics\buffers\indexBuffer.cpp(15): error C2065: 'GL_ELEMENT_ARRAY_BUFFER': 선언되지 않은 식별자입니다.
+AdunGL-Core\graphics\buffers\indexBuffer.cpp(15): error C3861: 'glBindBuffer': 식별자를 찾을 수 없습니다.
+AdunGL-Core\graphics\buffers\indexBuffer.cpp(16): error C2065: 'GL_ELEMENT_ARRAY_BUFFER': 선언되지 않은 식별자입니다.
+AdunGL-Core\graphics\buffers\indexBuffer.cpp(16): error C2065: 'GL_STATIC_DRAW': 선언되지 않은 식별자입니다.
+AdunGL-Core\graphics\buffers\indexBuffer.cpp(16): error C3861: 'glBufferData': 식별자를 찾을 수 없습니다.
+AdunGL-Core\graphics\buffers\indexBuffer.cpp(17): error C2065: 'GL_ELEMENT_ARRAY_BUFFER': 선언되지 않은 식별자입니다.
+AdunGL-Core\graphics\buffers\indexBuffer.cpp(17): error C3861: 'glBindBuffer': 식별자를 찾을 수 없습니다.
+AdunGL-Core\graphics\buffers\indexBuffer.cpp(23): error C3861: 'glGenBuffers': 식별자를 찾을 수 없습니다.
+AdunGL-Core\graphics\buffers\indexBuffer.cpp(24): error C2065: 'GL_ELEMENT_ARRAY_BUFFER': 선언되지 않은 식별자입니다.
+AdunGL-Core\graphics\buffers\indexBuffer.cpp(24): error C3861: 'glBindBuffer': 식별자를 찾을 수 없습니다.
+AdunGL-Core\graphics\buffers\indexBuffer.cpp(25): error C2065: 'GL_ELEMENT_ARRAY_BUFFER': 선언되지 않은 식별자입니다.
+AdunGL-Core\graphics\buffers\indexBuffer.cpp(25): error C2065: 'GL_STATIC_DRAW': 선언되지 않은 식별자입니다.
+AdunGL-Core\graphics\buffers\indexBuffer.cpp(25): error C3861: 'glBufferData': 식별자를 찾을 수 없습니다.
+AdunGL-Core\graphics\buffers\indexBuffer.cpp(26): error C2065: 'GL_ELEMENT_ARRAY_BUFFER': 선언되지 않은 식별자입니다.
+AdunGL-Core\graphics\buffers\indexBuffer.cpp(26): error C3861: 'glBindBuffer': 식별자를 찾을 수 없습니다.
+AdunGL-Core\graphics\buffers\indexBuffer.cpp(31): error C3861: 'glDeleteBuffers': 식별자를 찾을 수 없습니다.
+AdunGL-Core\graphics\buffers\indexBuffer.cpp(36): error C2065: 'GL_ELEMENT_ARRAY_BUFFER': 선언되지 않은 식별자입니다.
+AdunGL-Core\graphics\buffers\indexBuffer.cpp(36): error C3861: 'glBindBuffer': 식별자를 찾을 수 없습니다.
+AdunGL-Core\graphics\buffers\indexBuffer.cpp(41): error C2065: 'GL_ELEMENT_ARRAY_BUFFER': 선언되지 않은 식별자입니다.
+AdunGL-Core\graphics\buffers\indexBuffer.cpp(41): error C3861: 'glBindBuffer': 식별자를 찾을 수 없습니다.
+  vertexArray.cpp
+AdunGL-Core\graphics\buffers\vertexArray.cpp(18): error C3861: 'glGenVertexArrays': 식별자를 찾을 수 없습니다.
+AdunGL-Core\graphics\buffers\vertexArray.cpp(24): warning C4018: '<': signed 또는 unsigned가 일치하지 않습니다.
+AdunGL-Core\graphics\buffers\vertexArray.cpp(27): error C3861: 'glDeleteVertexArrays': 식별자를 찾을 수 없습니다.
+AdunGL-Core\graphics\buffers\vertexArray.cpp(37): error C3861: 'glEnableVertexAttribArray': 식별자를 찾을 수 없습니다.
+AdunGL-Core\graphics\buffers\vertexArray.cpp(46): error C3861: 'glVertexAttribPointer': 식별자를 찾을 수 없습니다.
+AdunGL-Core\graphics\buffers\vertexArray.cpp(54): error C3861: 'glBindVertexArray': 식별자를 찾을 수 없습니다.
+AdunGL-Core\graphics\buffers\vertexArray.cpp(59): error C3861: 'glBindVertexArray': 식별자를 찾을 수 없습니다.
+  font.cpp
+c:\users\adunstudio\desktop\adungl\adungl\adungl-core\maths\math_func.h(18): warning C4244: 'return': 'double'에서 'float'(으)로 변환하면서 데이터가 손실될 수 있습니다.
+c:\users\adunstudio\desktop\adungl\adungl\adungl-core\exc\freetype-gl\texture-atlas.h : warning C4819: 현재 코드 페이지(949)에서 표시할 수 없는 문자가 파일에 들어 있습니다. 데이터가 손실되지 않게 하려면 해당 파일을 유니코드 형식으로 저장하십시오.
+AdunGL-Core\graphics\font.cpp(15): warning C4244: '인수': 'int'에서 'const float'(으)로 변환하면서 데이터가 손실될 수 있습니다.
+  font_manager.cpp
+c:\users\adunstudio\desktop\adungl\adungl\adungl-core\maths\math_func.h(18): warning C4244: 'return': 'double'에서 'float'(으)로 변환하면서 데이터가 손실될 수 있습니다.
+c:\users\adunstudio\desktop\adungl\adungl\adungl-core\exc\freetype-gl\texture-atlas.h : warning C4819: 현재 코드 페이지(949)에서 표시할 수 없는 문자가 파일에 들어 있습니다. 데이터가 손실되지 않게 하려면 해당 파일을 유니코드 형식으로 저장하십시오.
+AdunGL-Core\graphics\font_manager.cpp(43): warning C4018: '<': signed 또는 unsigned가 일치하지 않습니다.
+  label.cpp
+c:\users\adunstudio\desktop\adungl\adungl\adungl-core\maths\math_func.h(18): warning C4244: 'return': 'double'에서 'float'(으)로 변환하면서 데이터가 손실될 수 있습니다.
+c:\users\adunstudio\desktop\adungl\adungl\adungl-core\graphics\bases\../shaders/shader.h(39): error C4430: 형식 지정자가 없습니다. int로 가정합니다. 참고: C++에서는 기본 int를 지원하지 않습니다.
+c:\users\adunstudio\desktop\adungl\adungl\adungl-core\graphics\bases\../shaders/shader.h(39): error C2143: 구문 오류: ','이(가) '*' 앞에 없습니다.
+c:\users\adunstudio\desktop\adungl\adungl\adungl-core\graphics\bases\../shaders/shader.h(40): error C4430: 형식 지정자가 없습니다. int로 가정합니다. 참고: C++에서는 기본 int를 지원하지 않습니다.
+c:\users\adunstudio\desktop\adungl\adungl\adungl-core\graphics\bases\../shaders/shader.h(40): error C2143: 구문 오류: ','이(가) '*' 앞에 없습니다.
+c:\users\adunstudio\desktop\adungl\adungl\adungl-core\graphics\bases\../shaders/shader.h(41): error C4430: 형식 지정자가 없습니다. int로 가정합니다. 참고: C++에서는 기본 int를 지원하지 않습니다.
+c:\users\adunstudio\desktop\adungl\adungl\adungl-core\graphics\bases\../shaders/shader.h(41): error C2143: 구문 오류: ','이(가) '*' 앞에 없습니다.
+c:\users\adunstudio\desktop\adungl\adungl\adungl-core\graphics\bases\../shaders/shader.h(42): error C4430: 형식 지정자가 없습니다. int로 가정합니다. 참고: C++에서는 기본 int를 지원하지 않습니다.
+c:\users\adunstudio\desktop\adungl\adungl\adungl-core\graphics\bases\../shaders/shader.h(42): error C2143: 구문 오류: ','이(가) '*' 앞에 없습니다.
+c:\users\adunstudio\desktop\adungl\adungl\adungl-core\graphics\bases\../shaders/shader.h(43): error C4430: 형식 지정자가 없습니다. int로 가정합니다. 참고: C++에서는 기본 int를 지원하지 않습니다.
+c:\users\adunstudio\desktop\adungl\adungl\adungl-core\graphics\bases\../shaders/shader.h(43): error C2143: 구문 오류: ','이(가) '*' 앞에 없습니다.
+c:\users\adunstudio\desktop\adungl\adungl\adungl-core\graphics\bases\../shaders/shader.h(44): error C4430: 형식 지정자가 없습니다. int로 가정합니다. 참고: C++에서는 기본 int를 지원하지 않습니다.
+c:\users\adunstudio\desktop\adungl\adungl\adungl-core\graphics\bases\../shaders/shader.h(44): error C2143: 구문 오류: ','이(가) '*' 앞에 없습니다.
+c:\users\adunstudio\desktop\adungl\adungl\adungl-core\graphics\bases\../shaders/shader.h(45): error C4430: 형식 지정자가 없습니다. int로 가정합니다. 참고: C++에서는 기본 int를 지원하지 않습니다.
+c:\users\adunstudio\desktop\adungl\adungl\adungl-core\graphics\bases\../shaders/shader.h(45): error C2143: 구문 오류: ','이(가) '*' 앞에 없습니다.
+c:\users\adunstudio\desktop\adungl\adungl\adungl-core\graphics\bases\../shaders/shader.h(46): error C4430: 형식 지정자가 없습니다. int로 가정합니다. 참고: C++에서는 기본 int를 지원하지 않습니다.
+c:\users\adunstudio\desktop\adungl\adungl\adungl-core\graphics\bases\../shaders/shader.h(46): error C2143: 구문 오류: ','이(가) '*' 앞에 없습니다.
+c:\users\adunstudio\desktop\adungl\adungl\adungl-core\graphics\bases\../shaders/shader.h(53): error C4430: 형식 지정자가 없습니다. int로 가정합니다. 참고: C++에서는 기본 int를 지원하지 않습니다.
+c:\users\adunstudio\desktop\adungl\adungl\adungl-core\graphics\bases\../shaders/shader.h(53): error C2143: 구문 오류: ','이(가) '*' 앞에 없습니다.
+C:\Users\adunstudio\Desktop\AdunGL\packages\nupengl.core.0.1.0.1\build\native\include\GL/glew.h(84): fatal error C1189: #error:  gl.h included before glew.h
+  group.cpp
+c:\users\adunstudio\desktop\adungl\adungl\adungl-core\maths\math_func.h(18): warning C4244: 'return': 'double'에서 'float'(으)로 변환하면서 데이터가 손실될 수 있습니다.
+c:\users\adunstudio\desktop\adungl\adungl\adungl-core\graphics\bases\../shaders/shader.h(39): error C4430: 형식 지정자가 없습니다. int로 가정합니다. 참고: C++에서는 기본 int를 지원하지 않습니다.
+c:\users\adunstudio\desktop\adungl\adungl\adungl-core\graphics\bases\../shaders/shader.h(39): error C2143: 구문 오류: ','이(가) '*' 앞에 없습니다.
+c:\users\adunstudio\desktop\adungl\adungl\adungl-core\graphics\bases\../shaders/shader.h(40): error C4430: 형식 지정자가 없습니다. int로 가정합니다. 참고: C++에서는 기본 int를 지원하지 않습니다.
+c:\users\adunstudio\desktop\adungl\adungl\adungl-core\graphics\bases\../shaders/shader.h(40): error C2143: 구문 오류: ','이(가) '*' 앞에 없습니다.
+c:\users\adunstudio\desktop\adungl\adungl\adungl-core\graphics\bases\../shaders/shader.h(41): error C4430: 형식 지정자가 없습니다. int로 가정합니다. 참고: C++에서는 기본 int를 지원하지 않습니다.
+c:\users\adunstudio\desktop\adungl\adungl\adungl-core\graphics\bases\../shaders/shader.h(41): error C2143: 구문 오류: ','이(가) '*' 앞에 없습니다.
+c:\users\adunstudio\desktop\adungl\adungl\adungl-core\graphics\bases\../shaders/shader.h(42): error C4430: 형식 지정자가 없습니다. int로 가정합니다. 참고: C++에서는 기본 int를 지원하지 않습니다.
+c:\users\adunstudio\desktop\adungl\adungl\adungl-core\graphics\bases\../shaders/shader.h(42): error C2143: 구문 오류: ','이(가) '*' 앞에 없습니다.
+c:\users\adunstudio\desktop\adungl\adungl\adungl-core\graphics\bases\../shaders/shader.h(43): error C4430: 형식 지정자가 없습니다. int로 가정합니다. 참고: C++에서는 기본 int를 지원하지 않습니다.
+c:\users\adunstudio\desktop\adungl\adungl\adungl-core\graphics\bases\../shaders/shader.h(43): error C2143: 구문 오류: ','이(가) '*' 앞에 없습니다.
+c:\users\adunstudio\desktop\adungl\adungl\adungl-core\graphics\bases\../shaders/shader.h(44): error C4430: 형식 지정자가 없습니다. int로 가정합니다. 참고: C++에서는 기본 int를 지원하지 않습니다.
+c:\users\adunstudio\desktop\adungl\adungl\adungl-core\graphics\bases\../shaders/shader.h(44): error C2143: 구문 오류: ','이(가) '*' 앞에 없습니다.
+c:\users\adunstudio\desktop\adungl\adungl\adungl-core\graphics\bases\../shaders/shader.h(45): error C4430: 형식 지정자가 없습니다. int로 가정합니다. 참고: C++에서는 기본 int를 지원하지 않습니다.
+c:\users\adunstudio\desktop\adungl\adungl\adungl-core\graphics\bases\../shaders/shader.h(45): error C2143: 구문 오류: ','이(가) '*' 앞에 없습니다.
+c:\users\adunstudio\desktop\adungl\adungl\adungl-core\graphics\bases\../shaders/shader.h(46): error C4430: 형식 지정자가 없습니다. int로 가정합니다. 참고: C++에서는 기본 int를 지원하지 않습니다.
+c:\users\adunstudio\desktop\adungl\adungl\adungl-core\graphics\bases\../shaders/shader.h(46): error C2143: 구문 오류: ','이(가) '*' 앞에 없습니다.
+c:\users\adunstudio\desktop\adungl\adungl\adungl-core\graphics\bases\../shaders/shader.h(53): error C4430: 형식 지정자가 없습니다. int로 가정합니다. 참고: C++에서는 기본 int를 지원하지 않습니다.
+c:\users\adunstudio\desktop\adungl\adungl\adungl-core\graphics\bases\../shaders/shader.h(53): error C2143: 구문 오류: ','이(가) '*' 앞에 없습니다.
+C:\Users\adunstudio\Desktop\AdunGL\packages\nupengl.core.0.1.0.1\build\native\include\GL/glew.h(84): fatal error C1189: #error:  gl.h included before glew.h
+  layer.cpp
+c:\users\adunstudio\desktop\adungl\adungl\adungl-core\maths\math_func.h(18): warning C4244: 'return': 'double'에서 'float'(으)로 변환하면서 데이터가 손실될 수 있습니다.
+C:\Users\adunstudio\Desktop\AdunGL\packages\nupengl.core.0.1.0.1\build\native\include\GL/glew.h(84): fatal error C1189: #error:  gl.h included before glew.h
+  batchrenderer2d.cpp
+c:\users\adunstudio\desktop\adungl\adungl\adungl-core\maths\math_func.h(18): warning C4244: 'return': 'double'에서 'float'(으)로 변환하면서 데이터가 손실될 수 있습니다.
+C:\Users\adunstudio\Desktop\AdunGL\packages\nupengl.core.0.1.0.1\build\native\include\GL/glew.h(84): fatal error C1189: #error:  gl.h included before glew.h
+  shader.cpp
+c:\users\adunstudio\desktop\adungl\adungl\adungl-core\maths\math_func.h(18): warning C4244: 'return': 'double'에서 'float'(으)로 변환하면서 데이터가 손실될 수 있습니다.
+c:\users\adunstudio\desktop\adungl\adungl\adungl-core\graphics\shaders\shader.h(39): error C4430: 형식 지정자가 없습니다. int로 가정합니다. 참고: C++에서는 기본 int를 지원하지 않습니다.
+c:\users\adunstudio\desktop\adungl\adungl\adungl-core\graphics\shaders\shader.h(39): error C2143: 구문 오류: ','이(가) '*' 앞에 없습니다.
+c:\users\adunstudio\desktop\adungl\adungl\adungl-core\graphics\shaders\shader.h(40): error C4430: 형식 지정자가 없습니다. int로 가정합니다. 참고: C++에서는 기본 int를 지원하지 않습니다.
+c:\users\adunstudio\desktop\adungl\adungl\adungl-core\graphics\shaders\shader.h(40): error C2143: 구문 오류: ','이(가) '*' 앞에 없습니다.
+c:\users\adunstudio\desktop\adungl\adungl\adungl-core\graphics\shaders\shader.h(41): error C4430: 형식 지정자가 없습니다. int로 가정합니다. 참고: C++에서는 기본 int를 지원하지 않습니다.
+c:\users\adunstudio\desktop\adungl\adungl\adungl-core\graphics\shaders\shader.h(41): error C2143: 구문 오류: ','이(가) '*' 앞에 없습니다.
+c:\users\adunstudio\desktop\adungl\adungl\adungl-core\graphics\shaders\shader.h(42): error C4430: 형식 지정자가 없습니다. int로 가정합니다. 참고: C++에서는 기본 int를 지원하지 않습니다.
+c:\users\adunstudio\desktop\adungl\adungl\adungl-core\graphics\shaders\shader.h(42): error C2143: 구문 오류: ','이(가) '*' 앞에 없습니다.
+c:\users\adunstudio\desktop\adungl\adungl\adungl-core\graphics\shaders\shader.h(43): error C4430: 형식 지정자가 없습니다. int로 가정합니다. 참고: C++에서는 기본 int를 지원하지 않습니다.
+c:\users\adunstudio\desktop\adungl\adungl\adungl-core\graphics\shaders\shader.h(43): error C2143: 구문 오류: ','이(가) '*' 앞에 없습니다.
+c:\users\adunstudio\desktop\adungl\adungl\adungl-core\graphics\shaders\shader.h(44): error C4430: 형식 지정자가 없습니다. int로 가정합니다. 참고: C++에서는 기본 int를 지원하지 않습니다.
+c:\users\adunstudio\desktop\adungl\adungl\adungl-core\graphics\shaders\shader.h(44): error C2143: 구문 오류: ','이(가) '*' 앞에 없습니다.
+c:\users\adunstudio\desktop\adungl\adungl\adungl-core\graphics\shaders\shader.h(45): error C4430: 형식 지정자가 없습니다. int로 가정합니다. 참고: C++에서는 기본 int를 지원하지 않습니다.
+c:\users\adunstudio\desktop\adungl\adungl\adungl-core\graphics\shaders\shader.h(45): error C2143: 구문 오류: ','이(가) '*' 앞에 없습니다.
+c:\users\adunstudio\desktop\adungl\adungl\adungl-core\graphics\shaders\shader.h(46): error C4430: 형식 지정자가 없습니다. int로 가정합니다. 참고: C++에서는 기본 int를 지원하지 않습니다.
+c:\users\adunstudio\desktop\adungl\adungl\adungl-core\graphics\shaders\shader.h(46): error C2143: 구문 오류: ','이(가) '*' 앞에 없습니다.
+c:\users\adunstudio\desktop\adungl\adungl\adungl-core\graphics\shaders\shader.h(53): error C4430: 형식 지정자가 없습니다. int로 가정합니다. 참고: C++에서는 기본 int를 지원하지 않습니다.
+c:\users\adunstudio\desktop\adungl\adungl\adungl-core\graphics\shaders\shader.h(53): error C2143: 구문 오류: ','이(가) '*' 앞에 없습니다.
+AdunGL-Core\graphics\shaders\shader.cpp(48): error C3861: 'glDeleteShader': 식별자를 찾을 수 없습니다.
+AdunGL-Core\graphics\shaders\shader.cpp(58): error C3861: 'glCreateProgram': 식별자를 찾을 수 없습니다.
+AdunGL-Core\graphics\shaders\shader.cpp(67): error C2065: 'GL_VERTEX_SHADER': 선언되지 않은 식별자입니다.
+AdunGL-Core\graphics\shaders\shader.cpp(67): error C3861: 'glCreateShader': 식별자를 찾을 수 없습니다.
+AdunGL-Core\graphics\shaders\shader.cpp(68): error C2065: 'GL_FRAGMENT_SHADER': 선언되지 않은 식별자입니다.
+AdunGL-Core\graphics\shaders\shader.cpp(68): error C3861: 'glCreateShader': 식별자를 찾을 수 없습니다.
+AdunGL-Core\graphics\shaders\shader.cpp(84): error C3861: 'glShaderSource': 식별자를 찾을 수 없습니다.
+AdunGL-Core\graphics\shaders\shader.cpp(92): error C3861: 'glCompileShader': 식별자를 찾을 수 없습니다.
+AdunGL-Core\graphics\shaders\shader.cpp(94): error C2065: 'GL_COMPILE_STATUS': 선언되지 않은 식별자입니다.
+AdunGL-Core\graphics\shaders\shader.cpp(94): error C3861: 'glGetShaderiv': 식별자를 찾을 수 없습니다.
+AdunGL-Core\graphics\shaders\shader.cpp(100): error C2065: 'GL_INFO_LOG_LENGTH': 선언되지 않은 식별자입니다.
+AdunGL-Core\graphics\shaders\shader.cpp(100): error C3861: 'glGetShaderiv': 식별자를 찾을 수 없습니다.
+AdunGL-Core\graphics\shaders\shader.cpp(104): error C3861: 'glGetShaderInfoLog': 식별자를 찾을 수 없습니다.
+AdunGL-Core\graphics\shaders\shader.cpp(109): error C3861: 'glDeleteShader': 식별자를 찾을 수 없습니다.
+AdunGL-Core\graphics\shaders\shader.cpp(116): error C3861: 'glShaderSource': 식별자를 찾을 수 없습니다.
+AdunGL-Core\graphics\shaders\shader.cpp(117): error C3861: 'glCompileShader': 식별자를 찾을 수 없습니다.
+AdunGL-Core\graphics\shaders\shader.cpp(119): error C2065: 'GL_COMPILE_STATUS': 선언되지 않은 식별자입니다.
+AdunGL-Core\graphics\shaders\shader.cpp(119): error C3861: 'glGetShaderiv': 식별자를 찾을 수 없습니다.
+AdunGL-Core\graphics\shaders\shader.cpp(126): error C2065: 'GL_INFO_LOG_LENGTH': 선언되지 않은 식별자입니다.
+AdunGL-Core\graphics\shaders\shader.cpp(126): error C3861: 'glGetShaderiv': 식별자를 찾을 수 없습니다.
+AdunGL-Core\graphics\shaders\shader.cpp(130): error C3861: 'glGetShaderInfoLog': 식별자를 찾을 수 없습니다.
+AdunGL-Core\graphics\shaders\shader.cpp(135): error C3861: 'glDeleteShader': 식별자를 찾을 수 없습니다.
+AdunGL-Core\graphics\shaders\shader.cpp(151): error C3861: 'glAttachShader': 식별자를 찾을 수 없습니다.
+AdunGL-Core\graphics\shaders\shader.cpp(152): error C3861: 'glAttachShader': 식별자를 찾을 수 없습니다.
+AdunGL-Core\graphics\shaders\shader.cpp(154): error C3861: 'glBindAttribLocation': 식별자를 찾을 수 없습니다.
+AdunGL-Core\graphics\shaders\shader.cpp(155): error C3861: 'glBindAttribLocation': 식별자를 찾을 수 없습니다.
+AdunGL-Core\graphics\shaders\shader.cpp(156): error C3861: 'glBindAttribLocation': 식별자를 찾을 수 없습니다.
+AdunGL-Core\graphics\shaders\shader.cpp(157): error C3861: 'glBindAttribLocation': 식별자를 찾을 수 없습니다.
+AdunGL-Core\graphics\shaders\shader.cpp(158): error C3861: 'glBindAttribLocation': 식별자를 찾을 수 없습니다.
+AdunGL-Core\graphics\shaders\shader.cpp(159): error C3861: 'glBindAttribLocation': 식별자를 찾을 수 없습니다.
+AdunGL-Core\graphics\shaders\shader.cpp(161): error C3861: 'glBindFragDataLocation': 식별자를 찾을 수 없습니다.
+AdunGL-Core\graphics\shaders\shader.cpp(168): error C3861: 'glLinkProgram': 식별자를 찾을 수 없습니다.
+AdunGL-Core\graphics\shaders\shader.cpp(170): error C3861: 'glValidateProgram': 식별자를 찾을 수 없습니다.
+AdunGL-Core\graphics\shaders\shader.cpp(172): error C3861: 'glGetAttribLocation': 식별자를 찾을 수 없습니다.
+AdunGL-Core\graphics\shaders\shader.cpp(173): error C3861: 'glGetAttribLocation': 식별자를 찾을 수 없습니다.
+AdunGL-Core\graphics\shaders\shader.cpp(174): error C3861: 'glGetAttribLocation': 식별자를 찾을 수 없습니다.
+AdunGL-Core\graphics\shaders\shader.cpp(175): error C3861: 'glGetAttribLocation': 식별자를 찾을 수 없습니다.
+AdunGL-Core\graphics\shaders\shader.cpp(176): error C3861: 'glGetAttribLocation': 식별자를 찾을 수 없습니다.
+AdunGL-Core\graphics\shaders\shader.cpp(177): error C3861: 'glGetAttribLocation': 식별자를 찾을 수 없습니다.
+AdunGL-Core\graphics\shaders\shader.cpp(181): error C3861: 'glDeleteShader': 식별자를 찾을 수 없습니다.
+AdunGL-Core\graphics\shaders\shader.cpp(182): error C3861: 'glDeleteShader': 식별자를 찾을 수 없습니다.
+AdunGL-Core\graphics\shaders\shader.cpp(106): warning C4474: 'printf' : 서식 문자열에 전달된 인수가 너무 많습니다.
+  AdunGL-Core\graphics\shaders\shader.cpp(106): note: 자리 표시자 및 해당 매개 변수에는 variadic 인수가 0개 필요하지만 1개가 제공되었습니다.
+AdunGL-Core\graphics\shaders\shader.cpp(132): warning C4474: 'printf' : 서식 문자열에 전달된 인수가 너무 많습니다.
+  AdunGL-Core\graphics\shaders\shader.cpp(132): note: 자리 표시자 및 해당 매개 변수에는 variadic 인수가 0개 필요하지만 1개가 제공되었습니다.
+AdunGL-Core\graphics\shaders\shader.cpp(187): error C4430: 형식 지정자가 없습니다. int로 가정합니다. 참고: C++에서는 기본 int를 지원하지 않습니다.
+AdunGL-Core\graphics\shaders\shader.cpp(187): error C2143: 구문 오류: ','이(가) '*' 앞에 없습니다.
+AdunGL-Core\graphics\shaders\shader.cpp(189): error C2065: 'name': 선언되지 않은 식별자입니다.
+AdunGL-Core\graphics\shaders\shader.cpp(189): error C3861: 'glGetUniformLocation': 식별자를 찾을 수 없습니다.
+AdunGL-Core\graphics\shaders\shader.cpp(192): error C4430: 형식 지정자가 없습니다. int로 가정합니다. 참고: C++에서는 기본 int를 지원하지 않습니다.
+AdunGL-Core\graphics\shaders\shader.cpp(192): error C2143: 구문 오류: ','이(가) '*' 앞에 없습니다.
+AdunGL-Core\graphics\shaders\shader.cpp(194): error C2065: 'name': 선언되지 않은 식별자입니다.
+AdunGL-Core\graphics\shaders\shader.cpp(194): error C2065: 'value': 선언되지 않은 식별자입니다.
+AdunGL-Core\graphics\shaders\shader.cpp(194): error C3861: 'glUniform1f': 식별자를 찾을 수 없습니다.
+AdunGL-Core\graphics\shaders\shader.cpp(197): error C4430: 형식 지정자가 없습니다. int로 가정합니다. 참고: C++에서는 기본 int를 지원하지 않습니다.
+AdunGL-Core\graphics\shaders\shader.cpp(197): error C2143: 구문 오류: ','이(가) '*' 앞에 없습니다.
+AdunGL-Core\graphics\shaders\shader.cpp(199): error C2065: 'name': 선언되지 않은 식별자입니다.
+AdunGL-Core\graphics\shaders\shader.cpp(199): error C2065: 'count': 선언되지 않은 식별자입니다.
+AdunGL-Core\graphics\shaders\shader.cpp(199): error C2065: 'value': 선언되지 않은 식별자입니다.
+AdunGL-Core\graphics\shaders\shader.cpp(199): error C3861: 'glUniform1fv': 식별자를 찾을 수 없습니다.
+AdunGL-Core\graphics\shaders\shader.cpp(202): error C4430: 형식 지정자가 없습니다. int로 가정합니다. 참고: C++에서는 기본 int를 지원하지 않습니다.
+AdunGL-Core\graphics\shaders\shader.cpp(202): error C2143: 구문 오류: ','이(가) '*' 앞에 없습니다.
+AdunGL-Core\graphics\shaders\shader.cpp(204): error C2065: 'name': 선언되지 않은 식별자입니다.
+AdunGL-Core\graphics\shaders\shader.cpp(204): error C2065: 'value': 선언되지 않은 식별자입니다.
+AdunGL-Core\graphics\shaders\shader.cpp(204): error C3861: 'glUniform1i': 식별자를 찾을 수 없습니다.
+AdunGL-Core\graphics\shaders\shader.cpp(208): error C4430: 형식 지정자가 없습니다. int로 가정합니다. 참고: C++에서는 기본 int를 지원하지 않습니다.
+AdunGL-Core\graphics\shaders\shader.cpp(208): error C2143: 구문 오류: ','이(가) '*' 앞에 없습니다.
+AdunGL-Core\graphics\shaders\shader.cpp(210): error C2065: 'name': 선언되지 않은 식별자입니다.
+AdunGL-Core\graphics\shaders\shader.cpp(210): error C2065: 'count': 선언되지 않은 식별자입니다.
+AdunGL-Core\graphics\shaders\shader.cpp(210): error C2065: 'value': 선언되지 않은 식별자입니다.
+AdunGL-Core\graphics\shaders\shader.cpp(210): error C3861: 'glUniform1iv': 식별자를 찾을 수 없습니다.
+AdunGL-Core\graphics\shaders\shader.cpp(213): error C4430: 형식 지정자가 없습니다. int로 가정합니다. 참고: C++에서는 기본 int를 지원하지 않습니다.
+AdunGL-Core\graphics\shaders\shader.cpp(213): error C2143: 구문 오류: ','이(가) '*' 앞에 없습니다.
+AdunGL-Core\graphics\shaders\shader.cpp(215): error C2065: 'name': 선언되지 않은 식별자입니다.
+AdunGL-Core\graphics\shaders\shader.cpp(215): error C2065: 'vector': 선언되지 않은 식별자입니다.
+AdunGL-Core\graphics\shaders\shader.cpp(215): error C2228: '.x' 왼쪽에는 클래스/구조체/공용 구조체가 있어야 합니다.
+  AdunGL-Core\graphics\shaders\shader.cpp(215): note: 'unknown-type' 형식입니다.
+AdunGL-Core\graphics\shaders\shader.cpp(215): error C2228: '.y' 왼쪽에는 클래스/구조체/공용 구조체가 있어야 합니다.
+  AdunGL-Core\graphics\shaders\shader.cpp(215): note: 'unknown-type' 형식입니다.
+AdunGL-Core\graphics\shaders\shader.cpp(215): error C3861: 'glUniform2f': 식별자를 찾을 수 없습니다.
+AdunGL-Core\graphics\shaders\shader.cpp(218): error C4430: 형식 지정자가 없습니다. int로 가정합니다. 참고: C++에서는 기본 int를 지원하지 않습니다.
+AdunGL-Core\graphics\shaders\shader.cpp(218): error C2143: 구문 오류: ','이(가) '*' 앞에 없습니다.
+AdunGL-Core\graphics\shaders\shader.cpp(220): error C2065: 'name': 선언되지 않은 식별자입니다.
+AdunGL-Core\graphics\shaders\shader.cpp(220): error C2065: 'vector': 선언되지 않은 식별자입니다.
+AdunGL-Core\graphics\shaders\shader.cpp(220): error C2228: '.x' 왼쪽에는 클래스/구조체/공용 구조체가 있어야 합니다.
+  AdunGL-Core\graphics\shaders\shader.cpp(220): note: 'unknown-type' 형식입니다.
+AdunGL-Core\graphics\shaders\shader.cpp(220): error C2228: '.y' 왼쪽에는 클래스/구조체/공용 구조체가 있어야 합니다.
+  AdunGL-Core\graphics\shaders\shader.cpp(220): note: 'unknown-type' 형식입니다.
+AdunGL-Core\graphics\shaders\shader.cpp(220): error C2228: '.z' 왼쪽에는 클래스/구조체/공용 구조체가 있어야 합니다.
+  AdunGL-Core\graphics\shaders\shader.cpp(220): note: 'unknown-type' 형식입니다.
+AdunGL-Core\graphics\shaders\shader.cpp(220): error C3861: 'glUniform3f': 식별자를 찾을 수 없습니다.
+AdunGL-Core\graphics\shaders\shader.cpp(223): error C4430: 형식 지정자가 없습니다. int로 가정합니다. 참고: C++에서는 기본 int를 지원하지 않습니다.
+AdunGL-Core\graphics\shaders\shader.cpp(223): error C2143: 구문 오류: ','이(가) '*' 앞에 없습니다.
+AdunGL-Core\graphics\shaders\shader.cpp(225): error C2065: 'name': 선언되지 않은 식별자입니다.
+AdunGL-Core\graphics\shaders\shader.cpp(225): error C2065: 'vector': 선언되지 않은 식별자입니다.
+AdunGL-Core\graphics\shaders\shader.cpp(225): error C2228: '.x' 왼쪽에는 클래스/구조체/공용 구조체가 있어야 합니다.
+  AdunGL-Core\graphics\shaders\shader.cpp(225): note: 'unknown-type' 형식입니다.
+AdunGL-Core\graphics\shaders\shader.cpp(225): error C2228: '.y' 왼쪽에는 클래스/구조체/공용 구조체가 있어야 합니다.
+  AdunGL-Core\graphics\shaders\shader.cpp(225): note: 'unknown-type' 형식입니다.
+AdunGL-Core\graphics\shaders\shader.cpp(225): error C2228: '.z' 왼쪽에는 클래스/구조체/공용 구조체가 있어야 합니다.
+  AdunGL-Core\graphics\shaders\shader.cpp(225): note: 'unknown-type' 형식입니다.
+AdunGL-Core\graphics\shaders\shader.cpp(225): error C2228: '.w' 왼쪽에는 클래스/구조체/공용 구조체가 있어야 합니다.
+  AdunGL-Core\graphics\shaders\shader.cpp(225): note: 'unknown-type' 형식입니다.
+AdunGL-Core\graphics\shaders\shader.cpp(225): error C3861: 'glUniform4f': 식별자를 찾을 수 없습니다.
+AdunGL-Core\graphics\shaders\shader.cpp(228): error C4430: 형식 지정자가 없습니다. int로 가정합니다. 참고: C++에서는 기본 int를 지원하지 않습니다.
+AdunGL-Core\graphics\shaders\shader.cpp(228): error C2143: 구문 오류: ','이(가) '*' 앞에 없습니다.
+AdunGL-Core\graphics\shaders\shader.cpp(230): error C2065: 'name': 선언되지 않은 식별자입니다.
+AdunGL-Core\graphics\shaders\shader.cpp(230): error C2065: 'matrix': 선언되지 않은 식별자입니다.
+AdunGL-Core\graphics\shaders\shader.cpp(230): error C2228: '.elements' 왼쪽에는 클래스/구조체/공용 구조체가 있어야 합니다.
+  AdunGL-Core\graphics\shaders\shader.cpp(230): note: 'unknown-type' 형식입니다.
+AdunGL-Core\graphics\shaders\shader.cpp(230): error C3861: 'glUniformMatrix4fv': 식별자를 찾을 수 없습니다.
+AdunGL-Core\graphics\shaders\shader.cpp(235): error C3861: 'glUseProgram': 식별자를 찾을 수 없습니다.
+AdunGL-Core\graphics\shaders\shader.cpp(240): error C3861: 'glUseProgram': 식별자를 찾을 수 없습니다.
+  shader_factory.cpp
+c:\users\adunstudio\desktop\adungl\adungl\adungl-core\maths\math_func.h(18): warning C4244: 'return': 'double'에서 'float'(으)로 변환하면서 데이터가 손실될 수 있습니다.
+c:\users\adunstudio\desktop\adungl\adungl\adungl-core\graphics\shaders\shader.h(39): error C4430: 형식 지정자가 없습니다. int로 가정합니다. 참고: C++에서는 기본 int를 지원하지 않습니다.
+c:\users\adunstudio\desktop\adungl\adungl\adungl-core\graphics\shaders\shader.h(39): error C2143: 구문 오류: ','이(가) '*' 앞에 없습니다.
+c:\users\adunstudio\desktop\adungl\adungl\adungl-core\graphics\shaders\shader.h(40): error C4430: 형식 지정자가 없습니다. int로 가정합니다. 참고: C++에서는 기본 int를 지원하지 않습니다.
+c:\users\adunstudio\desktop\adungl\adungl\adungl-core\graphics\shaders\shader.h(40): error C2143: 구문 오류: ','이(가) '*' 앞에 없습니다.
+c:\users\adunstudio\desktop\adungl\adungl\adungl-core\graphics\shaders\shader.h(41): error C4430: 형식 지정자가 없습니다. int로 가정합니다. 참고: C++에서는 기본 int를 지원하지 않습니다.
+c:\users\adunstudio\desktop\adungl\adungl\adungl-core\graphics\shaders\shader.h(41): error C2143: 구문 오류: ','이(가) '*' 앞에 없습니다.
+c:\users\adunstudio\desktop\adungl\adungl\adungl-core\graphics\shaders\shader.h(42): error C4430: 형식 지정자가 없습니다. int로 가정합니다. 참고: C++에서는 기본 int를 지원하지 않습니다.
+c:\users\adunstudio\desktop\adungl\adungl\adungl-core\graphics\shaders\shader.h(42): error C2143: 구문 오류: ','이(가) '*' 앞에 없습니다.
+c:\users\adunstudio\desktop\adungl\adungl\adungl-core\graphics\shaders\shader.h(43): error C4430: 형식 지정자가 없습니다. int로 가정합니다. 참고: C++에서는 기본 int를 지원하지 않습니다.
+c:\users\adunstudio\desktop\adungl\adungl\adungl-core\graphics\shaders\shader.h(43): error C2143: 구문 오류: ','이(가) '*' 앞에 없습니다.
+c:\users\adunstudio\desktop\adungl\adungl\adungl-core\graphics\shaders\shader.h(44): error C4430: 형식 지정자가 없습니다. int로 가정합니다. 참고: C++에서는 기본 int를 지원하지 않습니다.
+c:\users\adunstudio\desktop\adungl\adungl\adungl-core\graphics\shaders\shader.h(44): error C2143: 구문 오류: ','이(가) '*' 앞에 없습니다.
+c:\users\adunstudio\desktop\adungl\adungl\adungl-core\graphics\shaders\shader.h(45): error C4430: 형식 지정자가 없습니다. int로 가정합니다. 참고: C++에서는 기본 int를 지원하지 않습니다.
+c:\users\adunstudio\desktop\adungl\adungl\adungl-core\graphics\shaders\shader.h(45): error C2143: 구문 오류: ','이(가) '*' 앞에 없습니다.
+c:\users\adunstudio\desktop\adungl\adungl\adungl-core\graphics\shaders\shader.h(46): error C4430: 형식 지정자가 없습니다. int로 가정합니다. 참고: C++에서는 기본 int를 지원하지 않습니다.
+c:\users\adunstudio\desktop\adungl\adungl\adungl-core\graphics\shaders\shader.h(46): error C2143: 구문 오류: ','이(가) '*' 앞에 없습니다.
+c:\users\adunstudio\desktop\adungl\adungl\adungl-core\graphics\shaders\shader.h(53): error C4430: 형식 지정자가 없습니다. int로 가정합니다. 참고: C++에서는 기본 int를 지원하지 않습니다.
+c:\users\adunstudio\desktop\adungl\adungl\adungl-core\graphics\shaders\shader.h(53): error C2143: 구문 오류: ','이(가) '*' 앞에 없습니다.
+  sprite.cpp
+c:\users\adunstudio\desktop\adungl\adungl\adungl-core\maths\math_func.h(18): warning C4244: 'return': 'double'에서 'float'(으)로 변환하면서 데이터가 손실될 수 있습니다.
+c:\users\adunstudio\desktop\adungl\adungl\adungl-core\graphics\bases\../shaders/shader.h(39): error C4430: 형식 지정자가 없습니다. int로 가정합니다. 참고: C++에서는 기본 int를 지원하지 않습니다.
+c:\users\adunstudio\desktop\adungl\adungl\adungl-core\graphics\bases\../shaders/shader.h(39): error C2143: 구문 오류: ','이(가) '*' 앞에 없습니다.
+c:\users\adunstudio\desktop\adungl\adungl\adungl-core\graphics\bases\../shaders/shader.h(40): error C4430: 형식 지정자가 없습니다. int로 가정합니다. 참고: C++에서는 기본 int를 지원하지 않습니다.
+c:\users\adunstudio\desktop\adungl\adungl\adungl-core\graphics\bases\../shaders/shader.h(40): error C2143: 구문 오류: ','이(가) '*' 앞에 없습니다.
+c:\users\adunstudio\desktop\adungl\adungl\adungl-core\graphics\bases\../shaders/shader.h(41): error C4430: 형식 지정자가 없습니다. int로 가정합니다. 참고: C++에서는 기본 int를 지원하지 않습니다.
+c:\users\adunstudio\desktop\adungl\adungl\adungl-core\graphics\bases\../shaders/shader.h(41): error C2143: 구문 오류: ','이(가) '*' 앞에 없습니다.
+c:\users\adunstudio\desktop\adungl\adungl\adungl-core\graphics\bases\../shaders/shader.h(42): error C4430: 형식 지정자가 없습니다. int로 가정합니다. 참고: C++에서는 기본 int를 지원하지 않습니다.
+c:\users\adunstudio\desktop\adungl\adungl\adungl-core\graphics\bases\../shaders/shader.h(42): error C2143: 구문 오류: ','이(가) '*' 앞에 없습니다.
+c:\users\adunstudio\desktop\adungl\adungl\adungl-core\graphics\bases\../shaders/shader.h(43): error C4430: 형식 지정자가 없습니다. int로 가정합니다. 참고: C++에서는 기본 int를 지원하지 않습니다.
+c:\users\adunstudio\desktop\adungl\adungl\adungl-core\graphics\bases\../shaders/shader.h(43): error C2143: 구문 오류: ','이(가) '*' 앞에 없습니다.
+c:\users\adunstudio\desktop\adungl\adungl\adungl-core\graphics\bases\../shaders/shader.h(44): error C4430: 형식 지정자가 없습니다. int로 가정합니다. 참고: C++에서는 기본 int를 지원하지 않습니다.
+c:\users\adunstudio\desktop\adungl\adungl\adungl-core\graphics\bases\../shaders/shader.h(44): error C2143: 구문 오류: ','이(가) '*' 앞에 없습니다.
+c:\users\adunstudio\desktop\adungl\adungl\adungl-core\graphics\bases\../shaders/shader.h(45): error C4430: 형식 지정자가 없습니다. int로 가정합니다. 참고: C++에서는 기본 int를 지원하지 않습니다.
+c:\users\adunstudio\desktop\adungl\adungl\adungl-core\graphics\bases\../shaders/shader.h(45): error C2143: 구문 오류: ','이(가) '*' 앞에 없습니다.
+c:\users\adunstudio\desktop\adungl\adungl\adungl-core\graphics\bases\../shaders/shader.h(46): error C4430: 형식 지정자가 없습니다. int로 가정합니다. 참고: C++에서는 기본 int를 지원하지 않습니다.
+c:\users\adunstudio\desktop\adungl\adungl\adungl-core\graphics\bases\../shaders/shader.h(46): error C2143: 구문 오류: ','이(가) '*' 앞에 없습니다.
+c:\users\adunstudio\desktop\adungl\adungl\adungl-core\graphics\bases\../shaders/shader.h(53): error C4430: 형식 지정자가 없습니다. int로 가정합니다. 참고: C++에서는 기본 int를 지원하지 않습니다.
+c:\users\adunstudio\desktop\adungl\adungl\adungl-core\graphics\bases\../shaders/shader.h(53): error C2143: 구문 오류: ','이(가) '*' 앞에 없습니다.
+C:\Users\adunstudio\Desktop\AdunGL\packages\nupengl.core.0.1.0.1\build\native\include\GL/glew.h(84): fatal error C1189: #error:  gl.h included before glew.h
+  texture.cpp
+c:\users\adunstudio\desktop\adungl\adungl\adungl-core\graphics\texture.h(8): fatal error C1083: 포함 파일을 열 수 없습니다. 'FreeImage.h': No such file or directory
+  texture_manager.cpp
+c:\users\adunstudio\desktop\adungl\adungl\adungl-core\graphics\texture.h(8): fatal error C1083: 포함 파일을 열 수 없습니다. 'FreeImage.h': No such file or directory
+  window.cpp
+c:\users\adunstudio\desktop\adungl\adungl\adungl-core\maths\math_func.h(18): warning C4244: 'return': 'double'에서 'float'(으)로 변환하면서 데이터가 손실될 수 있습니다.
+C:\Users\adunstudio\Desktop\AdunGL\packages\nupengl.core.0.1.0.1\build\native\include\GL/glew.h(84): fatal error C1189: #error:  gl.h included before glew.h
+  mat4.cpp
+c:\users\adunstudio\desktop\adungl\adungl\adungl-core\maths\math_func.h(18): warning C4244: 'return': 'double'에서 'float'(으)로 변환하면서 데이터가 손실될 수 있습니다.
+AdunGL-Core\maths\mat4.cpp(215): warning C4244: '=': 'double'에서 'float'(으)로 변환하면서 데이터가 손실될 수 있습니다.
+  vec2.cpp
+  vec3.cpp
+  vec4.cpp
+  fileutils.cpp
+AdunGL-Core\utils\fileutils.cpp(14): warning C4996: 'fopen': This function or variable may be unsafe. Consider using fopen_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+  C:\Program Files (x86)\Windows Kits\10\Include\10.0.15063.0\ucrt\stdio.h(207): note: 'fopen' 선언을 참조하십시오.
+  컴파일하고 있습니다...
+  main.cpp
+c:\users\adunstudio\desktop\adungl\adungl\adungl-core\maths\math_func.h(18): warning C4244: 'return': 'double'에서 'float'(으)로 변환하면서 데이터가 손실될 수 있습니다.
+C:\Users\adunstudio\Desktop\AdunGL\packages\nupengl.core.0.1.0.1\build\native\include\GL/glew.h(84): fatal error C1189: #error:  gl.h included before glew.h
