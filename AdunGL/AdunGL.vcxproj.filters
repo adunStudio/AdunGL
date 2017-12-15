@@ -18,11 +18,10 @@
     <None Include="packages.config" />
     <None Include="FreeImage.dll" />
     <None Include="Dependencies\FreeImage\FreeImage.dll" />
+    <None Include="MyGame\Shaders\postfx.frag" />
+    <None Include="MyGame\Shaders\postfx.vert" />
   </ItemGroup>
   <ItemGroup>
-    <ClCompile Include="main.cpp">
-      <Filter>소스 파일</Filter>
-    </ClCompile>
     <ClCompile Include="AdunGL-Core\utils\fileutils.cpp">
       <Filter>소스 파일</Filter>
     </ClCompile>
@@ -99,6 +98,15 @@
       <Filter>소스 파일</Filter>
     </ClCompile>
     <ClCompile Include="AdunGL-Core\graphics\buffers\frameBuffer.cpp">
+      <Filter>소스 파일</Filter>
+    </ClCompile>
+    <ClCompile Include="AdunGL-Core\graphics\postfx\post_effect_pass.cpp">
+      <Filter>소스 파일</Filter>
+    </ClCompile>
+    <ClCompile Include="AdunGL-Core\graphics\postfx\post_effect.cpp">
+      <Filter>소스 파일</Filter>
+    </ClCompile>
+    <ClCompile Include="MyGame\main.cpp">
       <Filter>소스 파일</Filter>
     </ClCompile>
   </ItemGroup>
@@ -223,18 +231,24 @@
     <ClInclude Include="Dependencies\FreeImage\FreeImage.h">
       <Filter>헤더 파일</Filter>
     </ClInclude>
+    <ClInclude Include="AdunGL-Core\graphics\postfx\post_effect.h">
+      <Filter>헤더 파일</Filter>
+    </ClInclude>
+    <ClInclude Include="AdunGL-Core\graphics\postfx\post_effect_pass.h">
+      <Filter>헤더 파일</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <Font Include="AdunGL-Core\assets\arial.ttf" />
   </ItemGroup>
   <ItemGroup>
-    <Image Include="Asset\Images\slime.png">
+    <Image Include="MyGame\Asset\Images\mask.png">
       <Filter>리소스 파일</Filter>
     </Image>
-    <Image Include="Asset\Images\mask.png">
+    <Image Include="MyGame\Asset\Images\slime.png">
       <Filter>리소스 파일</Filter>
     </Image>
-    <Image Include="Asset\Images\tb.png">
+    <Image Include="MyGame\Asset\Images\tb.png">
       <Filter>리소스 파일</Filter>
     </Image>
   </ItemGroup>

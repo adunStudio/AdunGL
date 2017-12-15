@@ -158,6 +158,8 @@
   <ItemGroup>
     <None Include="Dependencies\FreeImage\FreeImage.dll" />
     <None Include="FreeImage.dll" />
+    <None Include="MyGame\Shaders\postfx.frag" />
+    <None Include="MyGame\Shaders\postfx.vert" />
     <None Include="packages.config" />
   </ItemGroup>
   <ItemGroup>
@@ -175,6 +177,8 @@
     <ClCompile Include="AdunGL-Core\graphics\layers\group.cpp" />
     <ClCompile Include="AdunGL-Core\graphics\layers\layer.cpp" />
     <ClCompile Include="AdunGL-Core\graphics\mesh_factory.cpp" />
+    <ClCompile Include="AdunGL-Core\graphics\postfx\post_effect.cpp" />
+    <ClCompile Include="AdunGL-Core\graphics\postfx\post_effect_pass.cpp" />
     <ClCompile Include="AdunGL-Core\graphics\renderers\batchrenderer2d.cpp" />
     <ClCompile Include="AdunGL-Core\graphics\shaders\shader.cpp" />
     <ClCompile Include="AdunGL-Core\graphics\shaders\shader_factory.cpp" />
@@ -187,7 +191,7 @@
     <ClCompile Include="AdunGL-Core\maths\vec3.cpp" />
     <ClCompile Include="AdunGL-Core\maths\vec4.cpp" />
     <ClCompile Include="AdunGL-Core\utils\fileutils.cpp" />
-    <ClCompile Include="main.cpp" />
+    <ClCompile Include="MyGame\main.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="AdunGL-Core\Adun.h" />
@@ -211,6 +215,8 @@
     <ClInclude Include="AdunGL-Core\graphics\layers\layer.h" />
     <ClInclude Include="AdunGL-Core\graphics\mask.h" />
     <ClInclude Include="AdunGL-Core\graphics\mesh_factory.h" />
+    <ClInclude Include="AdunGL-Core\graphics\postfx\post_effect.h" />
+    <ClInclude Include="AdunGL-Core\graphics\postfx\post_effect_pass.h" />
     <ClInclude Include="AdunGL-Core\graphics\renderers\batchrenderer2d.h" />
     <ClInclude Include="AdunGL-Core\graphics\shaders\shader.h" />
     <ClInclude Include="AdunGL-Core\graphics\shaders\shader_factory.h" />
@@ -235,9 +241,9 @@
     <Font Include="AdunGL-Core\assets\arial.ttf" />
   </ItemGroup>
   <ItemGroup>
-    <Image Include="Asset\Images\mask.png" />
-    <Image Include="Asset\Images\slime.png" />
-    <Image Include="Asset\Images\tb.png" />
+    <Image Include="MyGame\Asset\Images\mask.png" />
+    <Image Include="MyGame\Asset\Images\slime.png" />
+    <Image Include="MyGame\Asset\Images\tb.png" />
   </ItemGroup>
   <ItemGroup>
     <Library Include="Dependencies\FreeImage\FreeImage.lib" />

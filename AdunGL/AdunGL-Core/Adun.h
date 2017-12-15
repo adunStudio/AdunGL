@@ -44,6 +44,9 @@
 
 #include "graphics/buffers/frameBuffer.h"
 
+#include "graphics/postfx/post_effect_pass.h"
+#include "graphics/postfx/post_effect.h"
+
 using namespace std;
 using namespace AdunGL;
 using namespace graphics;

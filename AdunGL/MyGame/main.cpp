@@ -1,7 +1,9 @@
 #include <iostream>
 #include <vector>
-#include "AdunGL-Core/Adun.h"
+#include "../AdunGL-Core/Adun.h"
 
+#define WIDTH 1280
+#define HEIGHT 720
 
 class Game : public Adun
 {
@@ -35,7 +37,7 @@ public:
 		
 		layer = new Layer(new BatchRenderer2D(maths::tvec2<GLuint>(1280, 720)), shader, maths::mat4::orthographic(-16.0f, 16.0f, -9.0f, 9.0f, -1.0f, 1.0f));
 
-		TextureManager::add(new Texture("Basic", "Asset/images/tb.png"));
+		TextureManager::add(new Texture("Basic", "MyGame/Asset/images/tb.png"));
 
 		sprite = new Sprite(0, 0, 8, 4, TextureManager::get("Basic"));
 		layer->add(sprite);
@@ -47,7 +49,7 @@ public:
 		layer->add(debugInfo);
 
 		Texture::SetWrap(TextureWrap::CLAMP_TO_BORDER);
-		mask = new Mask(new Texture("Mask", "Asset/images/mask.png"));
+		mask = new Mask(new Texture("Mask", "MyGame/Asset/images/mask.png"));
 
 		layer->setMask(mask);
 		
