@@ -40,7 +40,7 @@ public:
 		sprite = new Sprite(0, 0, 8, 4, TextureManager::get("Basic"));
 		layer->add(sprite);
 
-		fps = new Label("", -15.5f, 7.8f, "arial", maths::vec4(0, 1, 1, 1));
+		fps = new Label("", -15.5f, 7.8f, maths::vec4(0, 1, 1, 1));
 		layer->add(fps);
 
 		debugInfo = new Label("", -15.5f, 6.8f, "arial", maths::vec4(1, 1, 0, 1));

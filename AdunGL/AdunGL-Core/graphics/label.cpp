@@ -8,6 +8,13 @@ namespace AdunGL
 {
 	namespace graphics
 	{
+		Label::Label(std::string text, float x, float y, maths::vec4 color)
+			: Renderable2D(), text(text), position(m_position), m_font(FontManager::get("arial"))
+		{
+			m_position = maths::vec3(x, y, 0);
+			m_color = color;
+		}
+
 		Label::Label(std::string text, float x, float y, Font* font, maths::vec4 color)
 			: Renderable2D(), text(text), position(m_position), m_font(font)
 		{

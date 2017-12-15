@@ -20,6 +20,8 @@ namespace AdunGL
 			float        x, y;
 
 		public:
+			Label(std::string text, float x, float y, maths::vec4 color);
+
 			Label(std::string text, float x, float y, Font* font, maths::vec4 color);
 
 			Label(std::string text, float x, float y, const std::string& font, maths::vec4 color);
