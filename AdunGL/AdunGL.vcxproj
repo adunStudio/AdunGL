@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="utf-8"?>
+﻿<?xml version="1.0" encoding="utf-8"?>
 <Project DefaultTargets="Build" ToolsVersion="15.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
   <ItemGroup Label="ProjectConfigurations">
     <ProjectConfiguration Include="Debug|Win32">
@@ -92,7 +92,7 @@
       <SDLCheck>false</SDLCheck>
       <ForcedIncludeFiles>GL/glew.h;</ForcedIncludeFiles>
       <RuntimeLibrary>MultiThreadedDebug</RuntimeLibrary>
-      <AdditionalIncludeDirectories>C:\Users\adunstudio\Desktop\AdunGL\AdunGL\Dependencies\FreeImage;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <AdditionalIncludeDirectories>C:\Users\adun\Desktop\AdunGL\AdunGL\Dependencies\FreeImage;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
     </ClCompile>
     <Link>
       <SubSystem>Console</SubSystem>
@@ -110,10 +110,13 @@
       <Optimization>Disabled</Optimization>
       <PreprocessorDefinitions>_DEBUG;_CONSOLE;%(PreprocessorDefinitions)</PreprocessorDefinitions>
       <SDLCheck>true</SDLCheck>
+      <AdditionalIncludeDirectories>C:\Users\adun\Desktop\AdunGL\AdunGL\Dependencies\FreeImage;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
     </ClCompile>
     <Link>
       <SubSystem>Console</SubSystem>
       <GenerateDebugInformation>true</GenerateDebugInformation>
+      <AdditionalLibraryDirectories>C:\Users\adun\Desktop\AdunGL\AdunGL\Dependencies\FreeImage;%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
+      <AdditionalDependencies>Dependencies/FreeImage/FreeImage.lib;%(AdditionalDependencies)</AdditionalDependencies>
     </Link>
   </ItemDefinitionGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
@@ -153,6 +156,7 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
+    <None Include="Dependencies\FreeImage\FreeImage.dll" />
     <None Include="FreeImage.dll" />
     <None Include="packages.config" />
   </ItemGroup>
@@ -225,6 +229,7 @@
     <ClInclude Include="AdunGL-Core\utils\imageload.h" />
     <ClInclude Include="AdunGL-Core\utils\log.h" />
     <ClInclude Include="AdunGL-Core\utils\timer.h" />
+    <ClInclude Include="Dependencies\FreeImage\FreeImage.h" />
   </ItemGroup>
   <ItemGroup>
     <Font Include="AdunGL-Core\assets\arial.ttf" />
@@ -233,6 +238,9 @@
     <Image Include="Asset\Images\mask.png" />
     <Image Include="Asset\Images\slime.png" />
     <Image Include="Asset\Images\tb.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Library Include="Dependencies\FreeImage\FreeImage.lib" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">

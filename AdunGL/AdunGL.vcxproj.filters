@@ -17,6 +17,7 @@
   <ItemGroup>
     <None Include="packages.config" />
     <None Include="FreeImage.dll" />
+    <None Include="Dependencies\FreeImage\FreeImage.dll" />
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="main.cpp">
@@ -219,6 +220,9 @@
     <ClInclude Include="AdunGL-Core\graphics\buffers\frameBuffer.h">
       <Filter>헤더 파일</Filter>
     </ClInclude>
+    <ClInclude Include="Dependencies\FreeImage\FreeImage.h">
+      <Filter>헤더 파일</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <Font Include="AdunGL-Core\assets\arial.ttf" />
@@ -233,5 +237,8 @@
     <Image Include="Asset\Images\tb.png">
       <Filter>리소스 파일</Filter>
     </Image>
+  </ItemGroup>
+  <ItemGroup>
+    <Library Include="Dependencies\FreeImage\FreeImage.lib" />
   </ItemGroup>
 </Project>
