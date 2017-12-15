@@ -25,8 +25,10 @@ c:\users\adunstudio\desktop\adungl\adungl\debug\vec4.obj
 c:\users\adunstudio\desktop\adungl\adungl\debug\fileutils.obj
 c:\users\adunstudio\desktop\adungl\adungl\debug\main.obj
 c:\users\adunstudio\desktop\adungl\adungl\debug\buffer.obj
-c:\users\adunstudio\desktop\adungl\debug\adungl.ilk
+c:\users\adunstudio\desktop\adungl\adungl\debug\mesh_factory.obj
+c:\users\adunstudio\desktop\adungl\adungl\debug\framebuffer.obj
 c:\users\adunstudio\desktop\adungl\debug\adungl.exe
+c:\users\adunstudio\desktop\adungl\debug\adungl.ilk
 c:\users\adunstudio\desktop\adungl\debug\adungl.pdb
 c:\users\adunstudio\desktop\adungl\adungl\debug\adungl.tlog\cl.command.1.tlog
 c:\users\adunstudio\desktop\adungl\adungl\debug\adungl.tlog\cl.read.1.tlog

@@ -17,10 +17,12 @@ namespace AdunGL
 		class Layer
 		{
 		protected:
-			Renderer2D* m_renderer;
 			std::vector<Renderable2D*> m_renderables;
 			Shader* m_shader;
 			maths::mat4 m_projectionMatrix;
+
+		public:
+			Renderer2D* renderer;
 
 		public:
 			Layer(Renderer2D* renderer, Shader* shader, maths::mat4 projectionMatrix);
@@ -31,7 +33,7 @@ namespace AdunGL
 
 			virtual void render();
 
-			inline void setMask(const Mask* mask) const { m_renderer->setMask(mask); }
+			inline void setMask(const Mask* mask) const { renderer->setMask(mask); }
 
 			inline const std::vector<Renderable2D*> getRenderalbes() const { return m_renderables; };
 		};

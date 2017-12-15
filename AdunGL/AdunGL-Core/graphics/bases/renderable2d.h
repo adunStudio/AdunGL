@@ -18,6 +18,7 @@ namespace AdunGL
 {
 	namespace graphics
 	{
+
 		struct VertexData
 		{
 			maths::vec3  vertex;
@@ -27,6 +28,8 @@ namespace AdunGL
 			float        mid;
 			unsigned int color;
 		};
+
+#define RENDERER_VERTEX_SIZE    sizeof(AdunGL::graphics::VertexData) // renderable.c ±¸Á¶Ã¼
 
 		class Renderable2D
 		{

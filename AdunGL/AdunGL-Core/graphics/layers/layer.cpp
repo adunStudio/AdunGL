@@ -9,7 +9,7 @@ namespace AdunGL
 	namespace graphics
 	{
 		Layer::Layer(Renderer2D* renderer, Shader* shader, maths::mat4 projectionMatrix)
-			: m_renderer(renderer), m_shader(shader), m_projectionMatrix(projectionMatrix)
+			: renderer(renderer), m_shader(shader), m_projectionMatrix(projectionMatrix)
 		{
 			m_shader->enable();
 
@@ -25,7 +25,7 @@ namespace AdunGL
 		Layer::~Layer()
 		{
 			delete m_shader;
-			delete m_renderer;
+			delete renderer;
 			for (int i = 0; i < m_renderables.size(); ++i)
 				delete m_renderables[i];
 		}
@@ -39,18 +39,18 @@ namespace AdunGL
 		{
 			m_shader->enable();
 
-			m_renderer->begin();
+			renderer->begin();
 
 
 			for (const Renderable2D* renderable : m_renderables)
 			{
-				renderable->submit(m_renderer);
+				renderable->submit(renderer);
 			}
 
 
-			m_renderer->end();
+			renderer->end();
 
-			m_renderer->flush();
+			renderer->flush();
 
 			//m_shader->disable();
 		}

@@ -40,6 +40,10 @@
 
 #include "graphics/mask.h"
 
+#include "graphics/mesh_factory.h"
+
+#include "graphics/buffers/frameBuffer.h"
+
 using namespace std;
 using namespace AdunGL;
 using namespace graphics;

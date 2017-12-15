@@ -10,6 +10,12 @@ namespace AdunGL
 	{
 		TextureWrap Texture::s_wrapMode = REPEAT;
 
+		Texture::Texture(GLuint width, GLuint height)
+			: m_width(width), m_height(height), m_fileName("NULL")
+		{
+			m_TID = load();
+		}
+
 		Texture::Texture(const std::string name, const std::string fileName)
 			: m_name(name), m_fileName(fileName)
 		{
@@ -18,12 +24,18 @@ namespace AdunGL
 
 		Texture::~Texture()
 		{
-
+			glDeleteTextures(1, &m_TID);
 		}
 
 		GLuint Texture::load()
 		{
-			BYTE* pixels = utils::load_image(m_fileName.c_str(), &m_width, &m_height, &m_bits);
+			BYTE* pixels = nullptr;
+			
+			if (m_fileName != "NULL")
+				pixels = utils::load_image(m_fileName.c_str(), &m_width, &m_height, &m_bits);
+			else
+				m_bits = 32;
+
 
 			GLuint result;
 
@@ -43,11 +55,12 @@ namespace AdunGL
 			GLint  internalFormat = m_bits == 32 ? GL_RGBA : GL_RGB;
 			GLenum format = m_bits == 32 ? GL_BGRA : GL_BGR;
 
-			glTexImage2D(GL_TEXTURE_2D, 0, internalFormat, m_width, m_height, 0, format, GL_UNSIGNED_BYTE, pixels);
+			glTexImage2D(GL_TEXTURE_2D, 0, internalFormat, m_width, m_height, 0, format, GL_UNSIGNED_BYTE, pixels ? pixels : NULL);
 
 			glBindTexture(GL_TEXTURE_2D, 0);
 
-			delete[] pixels;
+			if(pixels != nullptr)
+				delete[] pixels;
 
 			return result;
 

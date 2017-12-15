@@ -94,6 +94,12 @@
     <ClCompile Include="AdunGL-Core\graphics\layers\group.cpp">
       <Filter>소스 파일</Filter>
     </ClCompile>
+    <ClCompile Include="AdunGL-Core\graphics\mesh_factory.cpp">
+      <Filter>소스 파일</Filter>
+    </ClCompile>
+    <ClCompile Include="AdunGL-Core\graphics\buffers\frameBuffer.cpp">
+      <Filter>소스 파일</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="AdunGL-Core\utils\imageload.h">
@@ -205,6 +211,12 @@
       <Filter>헤더 파일</Filter>
     </ClInclude>
     <ClInclude Include="AdunGL-Core\Adun.h">
+      <Filter>헤더 파일</Filter>
+    </ClInclude>
+    <ClInclude Include="AdunGL-Core\graphics\mesh_factory.h">
+      <Filter>헤더 파일</Filter>
+    </ClInclude>
+    <ClInclude Include="AdunGL-Core\graphics\buffers\frameBuffer.h">
       <Filter>헤더 파일</Filter>
     </ClInclude>
   </ItemGroup>

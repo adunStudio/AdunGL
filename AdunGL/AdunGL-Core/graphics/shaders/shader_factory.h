@@ -12,6 +12,8 @@ namespace AdunGL
 		namespace ShaderFactory
 		{
 			Shader* DefaultShader();
+			Shader* SimpleShader();
+			Shader* BasicLightShader();
 		}
 	}
 }

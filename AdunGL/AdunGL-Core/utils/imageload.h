@@ -13,7 +13,7 @@ namespace AdunGL
 {
 	namespace utils
 	{
-		static BYTE* load_image(const char* fileName, GLsizei* width, GLsizei* height, unsigned int* bits)
+		static BYTE* load_image(const char* fileName, GLuint* width, GLuint* height, unsigned int* bits)
 		{
 			FREE_IMAGE_FORMAT fif = FIF_UNKNOWN;
 
