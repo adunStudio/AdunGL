@@ -9,6 +9,12 @@ namespace AdunGL
 {
 	namespace graphics
 	{
+		BatchRenderer2D::BatchRenderer2D(const maths::tvec2<GLuint>& screenSize)
+			: m_indexCount(0), m_screenSize(screenSize), m_viewportSize(screenSize), m_target(RenderTarget::SCREEN)
+		{
+			init();
+		}
+
 		BatchRenderer2D::BatchRenderer2D()
 			: m_indexCount(0)
 		{
@@ -77,11 +83,45 @@ namespace AdunGL
 			m_ibo = new IndexBuffer(indices, RENDERER_INDICES_SIZE);
 
 			glBindVertexArray(0);
+
+			// FrameBuffer
+			glGetIntegerv(GL_FRAMEBUFFER_BINDING, &m_screenBuffer);
 			
+			std::cout << "dsfsd: ";
+			std::cout << m_screenBuffer << std::endl;
+
+			m_frameBuffer = new FrameBuffer(m_viewportSize);
+
+			m_simpleShader = ShaderFactory::SimpleShader();
+			
+			m_simpleShader->enable();
+			m_simpleShader->setUniformMat4("pr_matrix", maths::mat4::orthographic(0, m_screenSize.x, m_screenSize.y, 0, -1.0f, 1.0f));
+			m_simpleShader->setUniform1i("tex", 0);
+			
+			m_simpleShader->disable();
+			
+			m_screenQuad = MeshFactory::createQuad(0, 0, m_screenSize.x, m_screenSize.y);
 		}
 
 		void BatchRenderer2D::begin()
 		{
+			if (m_target == RenderTarget::BUFFER)
+			{
+				if (m_viewportSize != m_frameBuffer->getSIze())
+				{
+					delete m_frameBuffer;
+					m_frameBuffer = new FrameBuffer(m_viewportSize);
+				}
+
+				m_frameBuffer->bind();
+				m_frameBuffer->clear();
+			}
+			else
+			{
+				glBindFramebuffer(GL_FRAMEBUFFER, m_screenBuffer);
+				glViewport(0, 0, m_screenSize.x, m_screenSize.y);
+			}
+
 			glBindBuffer(GL_ARRAY_BUFFER, m_vbo);
 
 			// 버퍼 개체의 데이터 저장고를 맵핑한다.
@@ -330,6 +370,27 @@ namespace AdunGL
 			glBindVertexArray(0);
 
 			m_indexCount = 0;
+			m_textureSlots.clear();
+
+			if (m_target == RenderTarget::BUFFER)
+			{
+				glBindFramebuffer(GL_FRAMEBUFFER, m_screenBuffer);
+				glViewport(0, 0, m_screenSize.x, m_screenSize.y);
+
+				m_simpleShader->enable();
+				glActiveTexture(GL_TEXTURE0);
+				m_frameBuffer->getTexture()->bind();
+
+				glBindVertexArray(m_screenQuad);
+
+				m_ibo->bind();
+				glDrawElements(GL_TRIANGLES, 6, GL_UNSIGNED_INT, NULL);
+				m_ibo->unbind();
+				
+				glBindVertexArray(0);
+				
+				m_simpleShader->disable();
+			}
 		}
 
 	}

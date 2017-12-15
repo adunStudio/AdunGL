@@ -10,6 +10,9 @@
 #include <GL/glew.h>
 #include "../bases/renderer2d.h"
 #include "../bases/renderable2d.h"
+#include "../buffers/framebuffer.h"
+#include "../shaders/shader_factory.h"
+#include "../mesh_factory.h"
 
 namespace AdunGL
 {
@@ -17,11 +20,19 @@ namespace AdunGL
 #define RENDERER_SPRITE_SIZE    RENDERER_VERTEX_SIZE * 4
 #define RENDERER_BUFFER_SIZE    RENDERER_SPRITE_SIZE * RENDERER_MAX_SPRITES
 #define RENDERER_INDICES_SIZE   RENDERER_MAX_SPRITES * 6
-#define RENDERER_MAX_TEXTURES   32
+#define RENDERER_MAX_TEXTURES   32 - 1
 
 
+	// Á¤¿Õµ¿ 2295-10 501È£  1Ãþ Çö°ü #1212#
 
 	namespace graphics {
+		
+		enum class RenderTarget
+		{
+			SCREEN = 0,
+			BUFFER = 1
+		};
+
 		class BatchRenderer2D : public Renderer2D {
 
 		private:
@@ -33,7 +44,19 @@ namespace AdunGL
 
 			std::vector<GLuint> m_textureSlots;
 
+			FrameBuffer* m_frameBuffer;
+			int          m_screenBuffer;
+
+			maths::tvec2<GLuint> m_viewportSize, m_screenSize;
+
+			Shader* m_simpleShader;
+
+			GLuint m_screenQuad;
+
+			RenderTarget m_target;
+
 		public:
+			BatchRenderer2D(const maths::tvec2<GLuint>& screenSize);
 			BatchRenderer2D();
 			~BatchRenderer2D();
 
@@ -42,6 +65,16 @@ namespace AdunGL
 			void drawString(const std::string& text, const maths::vec3& position, const Font& font, const maths::vec4& color) override;
 			void end() override;
 			void flush() override;
+
+		public:
+			inline       void                  setScreenSize(const maths::tvec2<GLuint>& size)       { m_screenSize = size; }
+			inline const maths::tvec2<GLuint>& getScreenSize()                                 const { return m_screenSize; }
+
+			inline       void                  setViewportSize(const maths::tvec2<GLuint>& size)     { m_viewportSize = size; }
+			inline const maths::tvec2<GLuint>& getViewportSize()                               const { return m_viewportSize; }
+
+			inline       void                  setRenderTarget(RenderTarget target)                  { m_target = target; }
+			inline const RenderTarget          getRenderTarget()                               const { return m_target;   }
 
 		private:
 			void init();

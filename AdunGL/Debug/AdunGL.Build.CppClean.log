@@ -4,13 +4,13 @@ c:\users\adunstudio\desktop\adungl\adungl\debug\platform.obj
 c:\users\adunstudio\desktop\adungl\adungl\debug\texture-atlas.obj
 c:\users\adunstudio\desktop\adungl\adungl\debug\texture-font.obj
 c:\users\adunstudio\desktop\adungl\adungl\debug\vector.obj
-c:\users\adunstudio\desktop\adungl\adungl\debug\indexbuffer.obj
 c:\users\adunstudio\desktop\adungl\adungl\debug\vertexarray.obj
 c:\users\adunstudio\desktop\adungl\adungl\debug\font.obj
 c:\users\adunstudio\desktop\adungl\adungl\debug\font_manager.obj
 c:\users\adunstudio\desktop\adungl\adungl\debug\label.obj
 c:\users\adunstudio\desktop\adungl\adungl\debug\group.obj
 c:\users\adunstudio\desktop\adungl\adungl\debug\layer.obj
+c:\users\adunstudio\desktop\adungl\adungl\debug\mesh_factory.obj
 c:\users\adunstudio\desktop\adungl\adungl\debug\batchrenderer2d.obj
 c:\users\adunstudio\desktop\adungl\adungl\debug\shader.obj
 c:\users\adunstudio\desktop\adungl\adungl\debug\shader_factory.obj
@@ -25,8 +25,8 @@ c:\users\adunstudio\desktop\adungl\adungl\debug\vec4.obj
 c:\users\adunstudio\desktop\adungl\adungl\debug\fileutils.obj
 c:\users\adunstudio\desktop\adungl\adungl\debug\main.obj
 c:\users\adunstudio\desktop\adungl\adungl\debug\buffer.obj
-c:\users\adunstudio\desktop\adungl\adungl\debug\mesh_factory.obj
 c:\users\adunstudio\desktop\adungl\adungl\debug\framebuffer.obj
+c:\users\adunstudio\desktop\adungl\adungl\debug\indexbuffer.obj
 c:\users\adunstudio\desktop\adungl\debug\adungl.exe
 c:\users\adunstudio\desktop\adungl\debug\adungl.ilk
 c:\users\adunstudio\desktop\adungl\debug\adungl.pdb

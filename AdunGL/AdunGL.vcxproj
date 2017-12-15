@@ -232,6 +232,7 @@
   <ItemGroup>
     <Image Include="Asset\Images\mask.png" />
     <Image Include="Asset\Images\slime.png" />
+    <Image Include="Asset\Images\tb.png" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">
