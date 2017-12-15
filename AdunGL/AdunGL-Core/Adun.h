@@ -57,32 +57,36 @@ namespace AdunGL
 {
 	class Adun
 	{
+	public:
+		Window* window;
+
 	private:
-		Window* m_window;
 		Timer*  m_timer;
 
 		unsigned int m_framesPerSecond, m_updatesPerSecond;
 
+		Window* createWindow(const char* name, int width, int height)
+		{
+			window = new graphics::Window(name, width, height);
+
+			return window;
+		}
+
 	protected:
-		Adun()
+		Adun(const char* name, int width, int height)
 			: m_framesPerSecond(0), m_updatesPerSecond(0)
 		{
-
+			createWindow(name, width, height);
 		}
 
 		virtual ~Adun()
 		{
 			delete m_timer;
-			delete m_window;
+			delete window;
 		}
 
 
-		Window* createWindow(const char* name, int width, int height)
-		{
-			m_window = new graphics::Window(name, width, height);
-
-			return m_window;
-		}
+		
 
 	public:
 		void start()
@@ -115,9 +119,9 @@ namespace AdunGL
 			unsigned int frames = 0;
 			unsigned int updates = 0;
 
-			while (!m_window->closed())
+			while (!window->closed())
 			{
-				m_window->clear();
+				window->clear();
 
 				glutMainLoopEvent();
 
@@ -142,7 +146,7 @@ namespace AdunGL
 					tick();
 				}
 
-				m_window->update();
+				window->update();
 			}
 		}
 	};

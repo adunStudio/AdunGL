@@ -176,7 +176,7 @@ namespace AdunGL
 			GLint e = glGetAttribLocation(program, "mid");
 			GLint f = glGetAttribLocation(program, "color");
 
-			ADUNGL_INFO("[shader.cpp 152] Attribute Location: position(%d), uv(%d), mask_uv(%d), tid(%d), mid(%d) color(%d)", a, b, c, d, e, f);
+			ADUNGL_INFO("[shader.cpp 152] : Attribute Location: position(%d), uv(%d), mask_uv(%d), tid(%d), mid(%d) color(%d)", a, b, c, d, e, f);
 
 			glDeleteShader(vertex);
 			glDeleteShader(fragment);

@@ -8,16 +8,16 @@
 class Game : public Adun
 {
 private:
-	Window* window;
 	Layer*  layer;
 	Label*  fps;
 	Sprite* sprite;
 	Shader* shader;
 	Mask*   mask;
-	Label* debugInfo;
+	Label** debugInfo;
 
 public:
 	Game()
+		: Adun("AdunGL Test Game", WIDTH, HEIGHT)
 	{
 
 	}
@@ -29,27 +29,36 @@ public:
 
 	void init() override
 	{
-		window = createWindow("AdunGL Test Game", 1280, 720);
 
 		FontManager::get()->setScale(window->getWidth() / 32.0f, window->getHeight() / 18.0f);
 		
 		shader = ShaderFactory::DefaultShader();
 		
-		layer = new Layer(new BatchRenderer2D(maths::tvec2<GLuint>(1280, 720)), shader, maths::mat4::orthographic(-16.0f, 16.0f, -9.0f, 9.0f, -1.0f, 1.0f));
+		layer = new Layer(new BatchRenderer2D(maths::tvec2<GLuint>(WIDTH, HEIGHT)), shader, maths::mat4::orthographic(-16.0f, 16.0f, -9.0f, 9.0f, -1.0f, 1.0f));
+		layer->renderer->setRenderTarget(RenderTarget::BUFFER);
+		layer->renderer->addPostEffectsPass(new PostEffectsPass(Shader::FromFile("MyGame/Shaders/postfx.vert", "MyGame/Shaders/postfx.frag")));
+		layer->renderer->setPostEffects(true);
 
+
+		Texture::setFIlter(TextureFilter::NEARST);
 		TextureManager::add(new Texture("Basic", "MyGame/Asset/images/tb.png"));
-
-		sprite = new Sprite(0, 0, 8, 4, TextureManager::get("Basic"));
+		sprite = new Sprite(0, 0, 8, 8, TextureManager::get("Basic"));
 		layer->add(sprite);
+		layer->add(new Sprite(-8.0f, -8.0f, 6, 6, maths::vec4(1, 1, 0, 0)));
 
 		fps = new Label("", -15.5f, 7.8f, maths::vec4(0, 1, 1, 1));
 		layer->add(fps);
 
-		debugInfo = new Label("", -15.5f, 6.8f, "arial", maths::vec4(1, 1, 0, 1));
-		layer->add(debugInfo);
+		debugInfo = new Label*[10];
+		debugInfo[0] = new Label("", -15.5f, 6.8f, "arial", maths::vec4(1, 1, 0, 1));
+		debugInfo[1] = new Label("", -15.5f, 5.8f, "arial", maths::vec4(1, 1, 0, 1));
+		layer->add(debugInfo[0]);
+		layer->add(debugInfo[1]);
+
 
 		Texture::SetWrap(TextureWrap::CLAMP_TO_BORDER);
 		mask = new Mask(new Texture("Mask", "MyGame/Asset/images/mask.png"));
+		mask->transform = mat4::translation(vec3(-16.0f, -9.0f, 0.0f)) * mat4::scale(vec3(32, 18, 1));
 
 		layer->setMask(mask);
 		
@@ -64,32 +73,20 @@ public:
 
 	void update() override // frame마다 실행
 	{
-		if (window->isKeyPressed('z'))
+		if (window->isKeyPressed('t'))
 		{
-			((BatchRenderer2D*)layer->renderer)->setRenderTarget(RenderTarget::SCREEN);
+			layer->renderer->setRenderTarget(layer->renderer->getRenderTarget() == RenderTarget::SCREEN ? RenderTarget::BUFFER : RenderTarget::SCREEN);
+
 		}
-		if (window->isKeyPressed('Z'))
+		if (window->isKeyPressed('p'))
 		{
-			((BatchRenderer2D*)layer->renderer)->setRenderTarget(RenderTarget::BUFFER);
+			layer->renderer->setPostEffects(!layer->renderer->getPostEffects());
 		}
 		
 	
-		maths::tvec2<GLuint> size = ((BatchRenderer2D*)layer->renderer)->getViewportSize();
 
-
-		if (window->isKeyPressed("up"))
-		{
-			size.x++;
-			size.y++;
-		}
-		if (window->isKeyPressed("down"))
-		{
-			size.x--;
-			size.y--;
-		}
-
-		debugInfo->text = std::to_string(size.x) + ", " + std::to_string(size.y);
-		((BatchRenderer2D*)layer->renderer)->setViewportSize(size);
+		debugInfo[0]->text = std::string("Target: ") + (layer->renderer->getRenderTarget() == RenderTarget::SCREEN ? "Screen" : "Buffer");
+		debugInfo[1]->text = std::string("PostFX: ") + (layer->renderer->getPostEffects() ? "On" : "Off");
 	}
 
 

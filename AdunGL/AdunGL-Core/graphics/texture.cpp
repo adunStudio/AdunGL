@@ -8,10 +8,11 @@ namespace AdunGL
 {
 	namespace graphics
 	{
-		TextureWrap Texture::s_wrapMode = REPEAT;
+		TextureWrap Texture::s_wrapMode     = TextureWrap::REPEAT;       // DEFAULT => GL_REPEAT
+		TextureFilter Texture::s_filterMode = TextureFilter::LINEAR;     // DEFAULT => GL_LINEAR
 
-		Texture::Texture(GLuint width, GLuint height)
-			: m_width(width), m_height(height), m_fileName("NULL")
+		Texture::Texture(GLuint width, GLuint height, GLuint bits)
+			: m_width(width), m_height(height), m_fileName("NULL"), m_bits(bits)
 		{
 			m_TID = load();
 		}
@@ -43,8 +44,8 @@ namespace AdunGL
 
 			glBindTexture(GL_TEXTURE_2D, result);
 
-			glTexParameteri(GL_TEXTURE_2D, GL_TEXTURE_MIN_FILTER, GL_NEAREST);
-			glTexParameteri(GL_TEXTURE_2D, GL_TEXTURE_MAG_FILTER, GL_NEAREST);
+			glTexParameteri(GL_TEXTURE_2D, GL_TEXTURE_MIN_FILTER, (GLint)s_filterMode);
+			glTexParameteri(GL_TEXTURE_2D, GL_TEXTURE_MAG_FILTER, (GLint)s_filterMode);
 			glTexParameteri(GL_TEXTURE_2D, GL_TEXTURE_WRAP_S, (GLint)s_wrapMode);
 			glTexParameteri(GL_TEXTURE_2D, GL_TEXTURE_WRAP_S, (GLint)s_wrapMode);
 

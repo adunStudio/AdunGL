@@ -10,7 +10,7 @@ namespace AdunGL
 	namespace graphics
 	{
 		BatchRenderer2D::BatchRenderer2D(const maths::tvec2<GLuint>& screenSize)
-			: m_indexCount(0), m_screenSize(screenSize), m_viewportSize(screenSize), m_target(RenderTarget::SCREEN)
+			: m_indexCount(0), m_screenSize(screenSize), m_viewportSize(screenSize)
 		{
 			init();
 		}
@@ -84,7 +84,7 @@ namespace AdunGL
 
 			glBindVertexArray(0);
 
-			// FrameBuffer
+			// 프레임버퍼 세팅
 			glGetIntegerv(GL_FRAMEBUFFER_BINDING, &m_screenBuffer);
 			
 			std::cout << "dsfsd: ";
@@ -101,6 +101,10 @@ namespace AdunGL
 			m_simpleShader->disable();
 			
 			m_screenQuad = MeshFactory::createQuad(0, 0, m_screenSize.x, m_screenSize.y);
+
+			m_postEffects = new PostEffects();
+			m_postEffectsBuffer = new FrameBuffer(m_viewportSize);
+
 		}
 
 		void BatchRenderer2D::begin()
@@ -111,6 +115,19 @@ namespace AdunGL
 				{
 					delete m_frameBuffer;
 					m_frameBuffer = new FrameBuffer(m_viewportSize);
+
+					if (m_postEffectsEnabled)
+					{
+						delete m_postEffectsBuffer;
+						
+						m_postEffectsBuffer = new FrameBuffer(m_viewportSize);
+					}
+				}
+
+				if (m_postEffectsEnabled)
+				{
+					m_postEffectsBuffer->bind();
+					m_postEffectsBuffer->clear();
 				}
 
 				m_frameBuffer->bind();
@@ -374,12 +391,21 @@ namespace AdunGL
 
 			if (m_target == RenderTarget::BUFFER)
 			{
+				if (m_postEffectsEnabled)
+				{
+					m_postEffects->renderPostEffects(m_frameBuffer, m_postEffectsBuffer, m_screenQuad, m_ibo);
+				}
+
 				glBindFramebuffer(GL_FRAMEBUFFER, m_screenBuffer);
 				glViewport(0, 0, m_screenSize.x, m_screenSize.y);
 
 				m_simpleShader->enable();
 				glActiveTexture(GL_TEXTURE0);
-				m_frameBuffer->getTexture()->bind();
+
+				if (m_postEffectsEnabled)
+					m_postEffectsBuffer->getTexture()->bind();
+				else
+					m_frameBuffer->getTexture()->bind();
 
 				glBindVertexArray(m_screenQuad);
 

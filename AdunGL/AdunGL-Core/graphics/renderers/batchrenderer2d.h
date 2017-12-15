@@ -26,12 +26,6 @@ namespace AdunGL
 	// Á¤¿Õµ¿ 2295-10 501È£  1Ãþ Çö°ü #1212#
 
 	namespace graphics {
-		
-		enum class RenderTarget
-		{
-			SCREEN = 0,
-			BUFFER = 1
-		};
 
 		class BatchRenderer2D : public Renderer2D {
 
@@ -45,6 +39,8 @@ namespace AdunGL
 			std::vector<GLuint> m_textureSlots;
 
 			FrameBuffer* m_frameBuffer;
+			FrameBuffer* m_postEffectsBuffer;
+
 			int          m_screenBuffer;
 
 			maths::tvec2<GLuint> m_viewportSize, m_screenSize;
@@ -52,8 +48,6 @@ namespace AdunGL
 			Shader* m_simpleShader;
 
 			GLuint m_screenQuad;
-
-			RenderTarget m_target;
 
 		public:
 			BatchRenderer2D(const maths::tvec2<GLuint>& screenSize);
@@ -72,9 +66,6 @@ namespace AdunGL
 
 			inline       void                  setViewportSize(const maths::tvec2<GLuint>& size)     { m_viewportSize = size; }
 			inline const maths::tvec2<GLuint>& getViewportSize()                               const { return m_viewportSize; }
-
-			inline       void                  setRenderTarget(RenderTarget target)                  { m_target = target; }
-			inline const RenderTarget          getRenderTarget()                               const { return m_target;   }
 
 		private:
 			void init();

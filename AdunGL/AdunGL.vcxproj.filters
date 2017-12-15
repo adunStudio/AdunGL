@@ -43,18 +43,6 @@
     <ClCompile Include="AdunGL-Core\graphics\texture_manager.cpp">
       <Filter>소스 파일</Filter>
     </ClCompile>
-    <ClCompile Include="AdunGL-Core\exc\freetype-gl\platform.c">
-      <Filter>소스 파일</Filter>
-    </ClCompile>
-    <ClCompile Include="AdunGL-Core\exc\freetype-gl\texture-atlas.c">
-      <Filter>소스 파일</Filter>
-    </ClCompile>
-    <ClCompile Include="AdunGL-Core\exc\freetype-gl\texture-font.c">
-      <Filter>소스 파일</Filter>
-    </ClCompile>
-    <ClCompile Include="AdunGL-Core\exc\freetype-gl\vector.c">
-      <Filter>소스 파일</Filter>
-    </ClCompile>
     <ClCompile Include="AdunGL-Core\graphics\font.cpp">
       <Filter>소스 파일</Filter>
     </ClCompile>
@@ -71,12 +59,6 @@
       <Filter>소스 파일</Filter>
     </ClCompile>
     <ClCompile Include="AdunGL-Core\graphics\buffers\vertexArray.cpp">
-      <Filter>소스 파일</Filter>
-    </ClCompile>
-    <ClCompile Include="AdunGL-Core\graphics\shaders\shader.cpp">
-      <Filter>소스 파일</Filter>
-    </ClCompile>
-    <ClCompile Include="AdunGL-Core\graphics\shaders\shader_factory.cpp">
       <Filter>소스 파일</Filter>
     </ClCompile>
     <ClCompile Include="AdunGL-Core\graphics\renderers\batchrenderer2d.cpp">
@@ -107,6 +89,24 @@
       <Filter>소스 파일</Filter>
     </ClCompile>
     <ClCompile Include="MyGame\main.cpp">
+      <Filter>소스 파일</Filter>
+    </ClCompile>
+    <ClCompile Include="AdunGL-Core\exc\freetype-gl\platform.c">
+      <Filter>소스 파일</Filter>
+    </ClCompile>
+    <ClCompile Include="AdunGL-Core\exc\freetype-gl\texture-atlas.c">
+      <Filter>소스 파일</Filter>
+    </ClCompile>
+    <ClCompile Include="AdunGL-Core\exc\freetype-gl\texture-font.c">
+      <Filter>소스 파일</Filter>
+    </ClCompile>
+    <ClCompile Include="AdunGL-Core\exc\freetype-gl\vector.c">
+      <Filter>소스 파일</Filter>
+    </ClCompile>
+    <ClCompile Include="AdunGL-Core\graphics\shaders\shader.cpp">
+      <Filter>소스 파일</Filter>
+    </ClCompile>
+    <ClCompile Include="AdunGL-Core\graphics\shaders\shader_factory.cpp">
       <Filter>소스 파일</Filter>
     </ClCompile>
   </ItemGroup>
@@ -153,27 +153,6 @@
     <ClInclude Include="AdunGL-Core\graphics\font.h">
       <Filter>헤더 파일</Filter>
     </ClInclude>
-    <ClInclude Include="AdunGL-Core\exc\freetype-gl\freetype-gl.h">
-      <Filter>헤더 파일</Filter>
-    </ClInclude>
-    <ClInclude Include="AdunGL-Core\exc\freetype-gl\opengl.h">
-      <Filter>헤더 파일</Filter>
-    </ClInclude>
-    <ClInclude Include="AdunGL-Core\exc\freetype-gl\platform.h">
-      <Filter>헤더 파일</Filter>
-    </ClInclude>
-    <ClInclude Include="AdunGL-Core\exc\freetype-gl\texture-atlas.h">
-      <Filter>헤더 파일</Filter>
-    </ClInclude>
-    <ClInclude Include="AdunGL-Core\exc\freetype-gl\texture-font.h">
-      <Filter>헤더 파일</Filter>
-    </ClInclude>
-    <ClInclude Include="AdunGL-Core\exc\freetype-gl\vec234.h">
-      <Filter>헤더 파일</Filter>
-    </ClInclude>
-    <ClInclude Include="AdunGL-Core\exc\freetype-gl\vector.h">
-      <Filter>헤더 파일</Filter>
-    </ClInclude>
     <ClInclude Include="AdunGL-Core\graphics\font_manager.h">
       <Filter>헤더 파일</Filter>
     </ClInclude>
@@ -190,12 +169,6 @@
       <Filter>헤더 파일</Filter>
     </ClInclude>
     <ClInclude Include="AdunGL-Core\graphics\buffers\vertexArray.h">
-      <Filter>헤더 파일</Filter>
-    </ClInclude>
-    <ClInclude Include="AdunGL-Core\graphics\shaders\shader.h">
-      <Filter>헤더 파일</Filter>
-    </ClInclude>
-    <ClInclude Include="AdunGL-Core\graphics\shaders\shader_factory.h">
       <Filter>헤더 파일</Filter>
     </ClInclude>
     <ClInclude Include="AdunGL-Core\graphics\bases\renderer2d.h">
@@ -235,6 +208,33 @@
       <Filter>헤더 파일</Filter>
     </ClInclude>
     <ClInclude Include="AdunGL-Core\graphics\postfx\post_effect_pass.h">
+      <Filter>헤더 파일</Filter>
+    </ClInclude>
+    <ClInclude Include="AdunGL-Core\exc\freetype-gl\freetype-gl.h">
+      <Filter>헤더 파일</Filter>
+    </ClInclude>
+    <ClInclude Include="AdunGL-Core\exc\freetype-gl\opengl.h">
+      <Filter>헤더 파일</Filter>
+    </ClInclude>
+    <ClInclude Include="AdunGL-Core\exc\freetype-gl\platform.h">
+      <Filter>헤더 파일</Filter>
+    </ClInclude>
+    <ClInclude Include="AdunGL-Core\exc\freetype-gl\texture-atlas.h">
+      <Filter>헤더 파일</Filter>
+    </ClInclude>
+    <ClInclude Include="AdunGL-Core\exc\freetype-gl\texture-font.h">
+      <Filter>헤더 파일</Filter>
+    </ClInclude>
+    <ClInclude Include="AdunGL-Core\exc\freetype-gl\vec234.h">
+      <Filter>헤더 파일</Filter>
+    </ClInclude>
+    <ClInclude Include="AdunGL-Core\exc\freetype-gl\vector.h">
+      <Filter>헤더 파일</Filter>
+    </ClInclude>
+    <ClInclude Include="AdunGL-Core\graphics\shaders\shader.h">
+      <Filter>헤더 파일</Filter>
+    </ClInclude>
+    <ClInclude Include="AdunGL-Core\graphics\shaders\shader_factory.h">
       <Filter>헤더 파일</Filter>
     </ClInclude>
   </ItemGroup>

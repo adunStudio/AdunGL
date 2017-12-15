@@ -8,13 +8,13 @@ namespace AdunGL
 	namespace graphics
 	{
 		FrameBuffer::FrameBuffer(const maths::tvec2<GLuint>& size)
-			: m_size(size), m_width(m_size.x), m_height(m_size.y)
+			: m_size(size), m_width(m_size.x), m_height(m_size.y), m_clearColor(maths::vec4(0.0f, 0.0f, 0.0f, 0.1f))
 		{
 			create(m_width, m_height);
 		}
 
 		FrameBuffer::FrameBuffer(GLuint width, GLuint height)
-			: m_size(width, height), m_width(m_size.x), m_height(m_size.y)
+			: m_size(width, height), m_width(m_size.x), m_height(m_size.y), m_clearColor(maths::vec4(0.0f, 0.0f, 0.0f, 0.1f))
 		{
 			create(width, height);
 		}
@@ -41,6 +41,7 @@ namespace AdunGL
 			glGenFramebuffers (1, &m_data.framebufferID);
 			glGenRenderbuffers(1, &m_data.depthbufferID);
 
+			Texture::setFIlter(TextureFilter::LINEAR);
 			m_texture = new Texture(width, height);
 
 			glBindRenderbuffer(GL_RENDERBUFFER, m_data.depthbufferID);

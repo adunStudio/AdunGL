@@ -16,19 +16,26 @@ namespace AdunGL
 	namespace graphics
 	{
 
-		enum TextureWrap
+		enum class TextureWrap
 		{
-			REPEAT = GL_REPEAT,
-			CLAMP = GL_CLAMP,
+			REPEAT          = GL_REPEAT,
+			CLAMP           = GL_CLAMP,
 			MIRRORED_REPEAT = GL_MIRRORED_REPEAT,
-			CLAMP_TO_EDGE = GL_CLAMP_TO_EDGE,
+			CLAMP_TO_EDGE   = GL_CLAMP_TO_EDGE,
 			CLAMP_TO_BORDER = GL_CLAMP_TO_BORDER
+		};
+
+		enum class TextureFilter
+		{
+			LINEAR = GL_LINEAR,
+			NEARST = GL_NEAREST
 		};
 
 		class Texture
 		{
 		private:
-			static TextureWrap s_wrapMode;
+			static TextureWrap   s_wrapMode;
+			static TextureFilter s_filterMode;
 
 		private:
 			std::string m_name;
@@ -38,7 +45,7 @@ namespace AdunGL
 			unsigned m_bits;
 
 		public:
-			Texture(GLuint width, GLuint height);
+			Texture(GLuint width, GLuint height, GLuint bits = 24);
 			Texture(const std::string name, const std::string fileName);
 			~Texture();
 
@@ -51,7 +58,8 @@ namespace AdunGL
 			inline const unsigned int getID() const { return m_TID; }
 
 		public:
-			inline static void SetWrap(TextureWrap mode) { s_wrapMode = mode; }
+			inline static void SetWrap  (TextureWrap mode)   { s_wrapMode   = mode; }
+			inline static void setFIlter(TextureFilter mode) { s_filterMode = mode; }
 
 		private:
 			GLuint load();

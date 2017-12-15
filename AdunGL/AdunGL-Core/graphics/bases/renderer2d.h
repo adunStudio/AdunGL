@@ -9,12 +9,19 @@
 #include "../../maths/maths.h"
 #include "../font.h"
 #include "../mask.h"
+#include "../postfx/post_effect.h"
 
 namespace AdunGL
 {
 	namespace graphics
 	{
 		class Renderable2D;
+
+		enum class RenderTarget
+		{
+			SCREEN = 0,
+			BUFFER = 1
+		};
 
 		class Renderer2D
 		{
@@ -23,12 +30,18 @@ namespace AdunGL
 			const maths::mat4* m_transformationBack;
 			const Mask* m_mask;
 
+			RenderTarget m_target;
+			PostEffects* m_postEffects;
+
+			bool m_postEffectsEnabled;
+
 		protected:
 			Renderer2D()
-				: m_mask(nullptr)
+				: m_mask(nullptr), m_postEffectsEnabled(true)
 			{
 				m_transformationStack.push_back(maths::mat4::identity());
 				m_transformationBack = &m_transformationStack.back();
+				m_target = RenderTarget::SCREEN;
 			}
 
 		public:
@@ -54,6 +67,15 @@ namespace AdunGL
 				// TODO: Add to log!
 			}
 
+			inline               void setRenderTarget(RenderTarget target)       { m_target = target; }
+			inline const RenderTarget getRenderTarget()                    const { return m_target;   }
+
+			inline void setPostEffects(bool enabled)       { m_postEffectsEnabled = enabled;  }
+			inline bool getPostEffects()             const { return m_postEffectsEnabled;     }
+
+			inline void addPostEffectsPass(PostEffectsPass* pass) { m_postEffects->push(pass); }
+
+		public:
 			virtual void setMask(const Mask* mask) { m_mask = mask; }
 			virtual void begin() {};
 			virtual void submit(const Renderable2D* renderable) = 0;
