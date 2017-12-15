@@ -57,98 +57,53 @@ namespace AdunGL
 {
 	class Adun
 	{
+	private:
+		static Adun* s_instance;
+
 	public:
 		Window* window;
 
 	private:
-		Timer*  m_timer;
+		bool m_running, m_paused;
+
+		Timer* m_timer;
 
 		unsigned int m_framesPerSecond, m_updatesPerSecond;
 
-		Window* createWindow(const char* name, int width, int height)
-		{
-			window = new graphics::Window(name, width, height);
+		const char* m_name;
 
-			return window;
-		}
+		GLuint m_width, m_height;
 
-	protected:
-		Adun(const char* name, int width, int height)
-			: m_framesPerSecond(0), m_updatesPerSecond(0)
-		{
-			createWindow(name, width, height);
-		}
-
-		virtual ~Adun()
-		{
-			delete m_timer;
-			delete window;
-		}
-
-
-		
+		std::vector<Layer*> m_layerStack;
 
 	public:
-		void start()
-		{
-			init();
-			run();
-		}
+		Adun(const char* name, int width, int height);
+		virtual ~Adun();
+
+		virtual void init();
+
+		void pushLayer(Layer* layer);
+		Layer* popLayer();
+
+		void start();
+		void pause();
+		void resume();
+		void stop();
 
 	protected:
-		virtual void init() = 0;
+		void onTick();
+		void onUpdate();
+		void onRender();
 
-		virtual void tick() { };
-
-		virtual void update() {};
-
-		virtual void render() = 0;
-
+	public:
 		const unsigned int getFPS() const { return m_framesPerSecond; }
 		const unsigned int getUPS() const { return m_updatesPerSecond; }
 
 	private:
-		void run()
-		{
-			m_timer = new utils::Timer();
+		void run();
 
-			float timer = 0.0f;
-			float updateTimer = 0.0f;
-			float updateTick = 1.0f / 60.0f;
-
-			unsigned int frames = 0;
-			unsigned int updates = 0;
-
-			while (!window->closed())
-			{
-				window->clear();
-
-				glutMainLoopEvent();
-
-				if (m_timer->elapsed() - updateTimer > updateTick)
-				{
-					update();
-					updates++;
-					updateTimer += updateTick;
-				}
-
-				render();
-
-				frames++;
-
-				if (m_timer->elapsed() - timer > 1.0f)
-				{
-					timer += 1.0f;
-					m_framesPerSecond = frames;
-					m_updatesPerSecond = updates;
-					frames = 0;
-					updates = 0;
-					tick();
-				}
-
-				window->update();
-			}
-		}
+	public:
+		inline static Adun& getAdun() { return *s_instance; }
 	};
 }
 
