@@ -179,6 +179,7 @@
     <ClCompile Include="AdunGL-Core\graphics\buffers\frameBuffer.cpp" />
     <ClCompile Include="AdunGL-Core\graphics\buffers\indexBuffer.cpp" />
     <ClCompile Include="AdunGL-Core\graphics\buffers\vertexArray.cpp" />
+    <ClCompile Include="AdunGL-Core\graphics\cameras\camera.cpp" />
     <ClCompile Include="AdunGL-Core\graphics\font.cpp" />
     <ClCompile Include="AdunGL-Core\graphics\font_manager.cpp" />
     <ClCompile Include="AdunGL-Core\graphics\label.cpp" />
@@ -236,6 +237,7 @@
     <ClInclude Include="AdunGL-Core\graphics\buffers\frameBuffer.h" />
     <ClInclude Include="AdunGL-Core\graphics\buffers\indexBuffer.h" />
     <ClInclude Include="AdunGL-Core\graphics\buffers\vertexArray.h" />
+    <ClInclude Include="AdunGL-Core\graphics\cameras\camera.h" />
     <ClInclude Include="AdunGL-Core\graphics\font.h" />
     <ClInclude Include="AdunGL-Core\graphics\font_manager.h" />
     <ClInclude Include="AdunGL-Core\graphics\label.h" />
