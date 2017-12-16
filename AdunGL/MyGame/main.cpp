@@ -1,5 +1,6 @@
 #include "../AdunGL-Core/Adun.h"
 #include "TestLayer.h"
+#include "Test3D.h"
 
 #define WIDTH  960
 #define HEIGHT 540
@@ -21,7 +22,9 @@ public:
 	void init() override
 	{
 		Adun::init();
-		pushLayer(new TestLayer());
+		//pushLayer(new TestLayer());
+		pushLayer(new Test3D());
+
 	}
 };
 

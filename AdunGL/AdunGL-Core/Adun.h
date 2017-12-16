@@ -59,6 +59,9 @@
 #include "graphics/renderers/renderer3d.h"
 #include "graphics/renderers/forward_renderer.h"
 
+#include "graphics/scene.h"
+#include "graphics/layers/layer3d.h"
+
 using namespace std;
 using namespace AdunGL;
 using namespace graphics;

@@ -18,7 +18,7 @@ namespace AdunGL
 			
 			VertexArray* createQuad(const maths::vec2& position, const maths::vec2& size);
 		
-			Mesh* createCube(float size, MaterialInstance* meterial);
+			Mesh* createCube(float size, MaterialInstance* material);
 		}
 	}
 }

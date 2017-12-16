@@ -2,6 +2,7 @@ c:\users\adunstudio\desktop\adungl\adungl\debug\vc141.pdb
 c:\users\adunstudio\desktop\adungl\adungl\debug\vc141.idb
 c:\users\adunstudio\desktop\adungl\adungl\debug\post_effect.obj
 c:\users\adunstudio\desktop\adungl\adungl\debug\post_effect_pass.obj
+c:\users\adunstudio\desktop\adungl\adungl\debug\batchrenderer2d.obj
 c:\users\adunstudio\desktop\adungl\adungl\debug\forward_renderer.obj
 c:\users\adunstudio\desktop\adungl\adungl\debug\shader.obj
 c:\users\adunstudio\desktop\adungl\adungl\debug\shader_factory.obj
@@ -10,6 +11,7 @@ c:\users\adunstudio\desktop\adungl\adungl\debug\sprite.obj
 c:\users\adunstudio\desktop\adungl\adungl\debug\texture.obj
 c:\users\adunstudio\desktop\adungl\adungl\debug\texture_manager.obj
 c:\users\adunstudio\desktop\adungl\adungl\debug\window.obj
+c:\users\adunstudio\desktop\adungl\adungl\debug\aabb.obj
 c:\users\adunstudio\desktop\adungl\adungl\debug\mat4.obj
 c:\users\adunstudio\desktop\adungl\adungl\debug\vec2.obj
 c:\users\adunstudio\desktop\adungl\adungl\debug\vec3.obj
@@ -23,6 +25,7 @@ c:\users\adunstudio\desktop\adungl\adungl\debug\event.obj
 c:\users\adunstudio\desktop\adungl\adungl\debug\key_event.obj
 c:\users\adunstudio\desktop\adungl\adungl\debug\mouse_event.obj
 c:\users\adunstudio\desktop\adungl\adungl\debug\buffer.obj
+c:\users\adunstudio\desktop\adungl\adungl\debug\buffer_layout.obj
 c:\users\adunstudio\desktop\adungl\adungl\debug\framebuffer.obj
 c:\users\adunstudio\desktop\adungl\adungl\debug\indexbuffer.obj
 c:\users\adunstudio\desktop\adungl\adungl\debug\vertexarray.obj
@@ -34,14 +37,14 @@ c:\users\adunstudio\desktop\adungl\adungl\debug\layer.obj
 c:\users\adunstudio\desktop\adungl\adungl\debug\layer2d.obj
 c:\users\adunstudio\desktop\adungl\adungl\debug\material.obj
 c:\users\adunstudio\desktop\adungl\adungl\debug\mesh.obj
-c:\users\adunstudio\desktop\adungl\adungl\debug\buffer_layout.obj
-c:\users\adunstudio\desktop\adungl\adungl\debug\aabb.obj
-c:\users\adunstudio\desktop\adungl\adungl\debug\batchrenderer2d.obj
 c:\users\adunstudio\desktop\adungl\adungl\debug\mesh_factory.obj
 c:\users\adunstudio\desktop\adungl\adungl\debug\platform.obj
 c:\users\adunstudio\desktop\adungl\adungl\debug\texture-atlas.obj
 c:\users\adunstudio\desktop\adungl\adungl\debug\texture-font.obj
 c:\users\adunstudio\desktop\adungl\adungl\debug\vector.obj
+c:\users\adunstudio\desktop\adungl\adungl\debug\scene.obj
+c:\users\adunstudio\desktop\adungl\adungl\debug\layer3d.obj
+c:\users\adunstudio\desktop\adungl\adungl\debug\test3d.obj
 c:\users\adunstudio\desktop\adungl\debug\adungl.exe
 c:\users\adunstudio\desktop\adungl\debug\adungl.ilk
 c:\users\adunstudio\desktop\adungl\debug\adungl.pdb
