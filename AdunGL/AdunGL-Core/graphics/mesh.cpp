@@ -21,7 +21,7 @@ namespace AdunGL
 
 		void Mesh::render(Renderer3D& renderer)
 		{
-			m_materialInstance->getMaterial()->bind();
+			m_materialInstance->bind();
 
 			m_vertexArray->bind();
 			m_indexBuffer->bind();
@@ -31,7 +31,7 @@ namespace AdunGL
 			m_indexBuffer->unbind();
 			m_vertexArray->unbind();
 			
-			m_materialInstance->getMaterial()->unbind();
+			m_materialInstance->unbind();
 		}
 
 

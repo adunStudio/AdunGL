@@ -20,7 +20,6 @@ c:\users\adunstudio\desktop\adungl\adungl\debug\fileutils.obj
 c:\users\adunstudio\desktop\adungl\adungl\debug\main.obj
 c:\users\adunstudio\desktop\adungl\adungl\debug\test3d.obj
 c:\users\adunstudio\desktop\adungl\adungl\debug\testlayer.obj
-c:\users\adunstudio\desktop\adungl\adungl\debug\event.obj
 c:\users\adunstudio\desktop\adungl\adungl\debug\key_event.obj
 c:\users\adunstudio\desktop\adungl\adungl\debug\mouse_event.obj
 c:\users\adunstudio\desktop\adungl\adungl\debug\buffer.obj
@@ -38,14 +37,16 @@ c:\users\adunstudio\desktop\adungl\adungl\debug\layer3d.obj
 c:\users\adunstudio\desktop\adungl\adungl\debug\material.obj
 c:\users\adunstudio\desktop\adungl\adungl\debug\mesh.obj
 c:\users\adunstudio\desktop\adungl\adungl\debug\mesh_factory.obj
+c:\users\adunstudio\desktop\adungl\adungl\debug\model.obj
 c:\users\adunstudio\desktop\adungl\adungl\debug\post_effect.obj
 c:\users\adunstudio\desktop\adungl\adungl\debug\post_effect_pass.obj
 c:\users\adunstudio\desktop\adungl\adungl\debug\adun.obj
+c:\users\adunstudio\desktop\adungl\adungl\debug\event.obj
 c:\users\adunstudio\desktop\adungl\adungl\debug\platform.obj
 c:\users\adunstudio\desktop\adungl\adungl\debug\texture-atlas.obj
 c:\users\adunstudio\desktop\adungl\adungl\debug\texture-font.obj
 c:\users\adunstudio\desktop\adungl\adungl\debug\vector.obj
-c:\users\adunstudio\desktop\adungl\adungl\debug\model.obj
+c:\users\adunstudio\desktop\adungl\adungl\debug\quaternion.obj
 c:\users\adunstudio\desktop\adungl\debug\adungl.exe
 c:\users\adunstudio\desktop\adungl\debug\adungl.ilk
 c:\users\adunstudio\desktop\adungl\debug\adungl.pdb

@@ -5,10 +5,12 @@
 class Test3D : public Layer3D
 {
 private:
-	Mesh* m_cube;
-	Material* m_material;
+	MaterialInstance* m_cubeMaterial;
+	MaterialInstance* m_sphereMaterial;
 
 	float m_rotation;
+	
+	bool m_setUniforms[2];
 
 public:
 	Test3D();

@@ -17,11 +17,11 @@ namespace AdunGL
 			AABB(const vec2& min, const vec2& max);
 			AABB(const vec3& min, const vec3& max);
 
-			bool intersects(const AABB& other) const;
-			bool contains  (const vec2& point) const;
-			bool contains  (const vec3& point) const;
+			bool Intersects(const AABB& other) const;
+			bool Contains  (const vec2& point) const;
+			bool Contains  (const vec3& point) const;
 
-			vec3 center() const;
+			vec3 Center() const;
 
 			bool operator==(const AABB& other) const;
 			bool operator!=(const AABB& other) const;

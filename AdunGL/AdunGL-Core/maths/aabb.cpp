@@ -22,22 +22,22 @@ namespace AdunGL
 
 		}
 
-		bool AABB::intersects(const AABB& other) const
+		bool AABB::Intersects(const AABB& other) const
 		{
 			return (max > other.min && min < other.max) || (min > other.max && max < other.min);
 		}
 
-		bool AABB::contains(const vec2& point) const
+		bool AABB::Contains(const vec2& point) const
 		{
 			return vec3(point) > min && vec3(point) < max;
 		}
 
-		bool AABB::contains(const vec3& point) const
+		bool AABB::Contains(const vec3& point) const
 		{
 			return point > min && point < max;
 		}
 
-		vec3 AABB::center() const
+		vec3 AABB::Center() const
 		{
 			return (min - max) * 0.5f;
 		}

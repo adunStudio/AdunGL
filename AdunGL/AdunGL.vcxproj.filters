@@ -163,6 +163,9 @@
     <ClCompile Include="AdunGL-Core\graphics\model.cpp">
       <Filter>소스 파일</Filter>
     </ClCompile>
+    <ClCompile Include="AdunGL-Core\maths\quaternion.cpp">
+      <Filter>소스 파일</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="AdunGL-Core\utils\imageload.h">
@@ -352,6 +355,9 @@
       <Filter>헤더 파일</Filter>
     </ClInclude>
     <ClInclude Include="AdunGL-Core\graphics\model.h">
+      <Filter>헤더 파일</Filter>
+    </ClInclude>
+    <ClInclude Include="AdunGL-Core\maths\quaternion.h">
       <Filter>헤더 파일</Filter>
     </ClInclude>
   </ItemGroup>

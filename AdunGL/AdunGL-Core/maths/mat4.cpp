@@ -2,6 +2,7 @@
 //
 
 #include "mat4.h"
+#include "quaternion.h"
 
 namespace AdunGL
 {
@@ -9,13 +10,13 @@ namespace AdunGL
 	{
 		mat4::mat4()
 		{
-			for (int i = 0; i < 4 * 4; ++i)
+			for (int i = 0; i < 4 * 4; i++)
 				elements[i] = 0.0f;
 		}
 
 		mat4::mat4(float diagonal)
 		{
-			for (int i = 0; i < 4 * 4; ++i)
+			for (int i = 0; i < 4 * 4; i++)
 				elements[i] = 0.0f;
 
 			elements[0 + 0 * 4] = diagonal;
@@ -24,47 +25,43 @@ namespace AdunGL
 			elements[3 + 3 * 4] = diagonal;
 		}
 
-		mat4 mat4::identity()
+		mat4 mat4::Identity()
 		{
 			return mat4(1.0f);
 		}
 
-		mat4& mat4::multiply(const mat4& other)
+		mat4& mat4::Multiply(const mat4& other)
 		{
 			float data[16];
-
 			for (int y = 0; y < 4; y++)
 			{
 				for (int x = 0; x < 4; x++)
 				{
 					float sum = 0.0f;
-
 					for (int e = 0; e < 4; e++)
+					{
 						sum += elements[x + e * 4] * other.elements[e + y * 4];
-
+					}
 					data[x + y * 4] = sum;
 				}
 			}
-
 			memcpy(elements, data, 4 * 4 * sizeof(float));
 
 			return *this;
 		}
 
-		vec3 mat4::multiply(const vec3& other) const
+		vec3 mat4::Multiply(const vec3& other) const
 		{
-			return vec3
-			(
+			return vec3(
 				columns[0].x * other.x + columns[1].x * other.y + columns[2].x * other.z + columns[3].x,
 				columns[0].y * other.x + columns[1].y * other.y + columns[2].y * other.z + columns[3].y,
 				columns[0].z * other.x + columns[1].z * other.y + columns[2].z * other.z + columns[3].z
 			);
 		}
 
-		vec4 mat4::multiply(const vec4& other) const
+		vec4 mat4::Multiply(const vec4& other) const
 		{
-			return vec4
-			(
+			return vec4(
 				columns[0].x * other.x + columns[1].x * other.y + columns[2].x * other.z + columns[3].x * other.w,
 				columns[0].y * other.x + columns[1].y * other.y + columns[2].y * other.z + columns[3].y * other.w,
 				columns[0].z * other.x + columns[1].z * other.y + columns[2].z * other.z + columns[3].z * other.w,
@@ -72,27 +69,27 @@ namespace AdunGL
 			);
 		}
 
-		vec3 operator*(const mat4& left, const vec3& right)
+		mat4 operator*(mat4 left, const mat4& right)
 		{
-			return left.multiply(right);
-		}
-
-		vec4 operator*(const mat4& left, const vec4& right)
-		{
-			return left.multiply(right);
-		}
-
-		mat4& operator*(mat4 left, const mat4& right)
-		{
-			return left.multiply(right);
+			return left.Multiply(right);
 		}
 
 		mat4& mat4::operator*=(const mat4& other)
 		{
-			return multiply(other);
+			return Multiply(other);
 		}
 
-		mat4& mat4::invert()
+		vec3 operator*(const mat4& left, const vec3& right)
+		{
+			return left.Multiply(right);
+		}
+
+		vec4 operator*(const mat4& left, const vec4& right)
+		{
+			return left.Multiply(right);
+		}
+
+		mat4& mat4::Invert()
 		{
 			double temp[16];
 
@@ -217,14 +214,14 @@ namespace AdunGL
 			return *this;
 		}
 
-		// https://msdn.microsoft.com/ko-kr/library/windows/desktop/dd373965(v=vs.85).aspx
-		// https://www.safaribooksonline.com/library/view/opengl-es-2/9781941222560/f_0137.html
-		mat4 mat4::orthographic(float left, float right, float bottom, float top, float near, float far)
+		mat4 mat4::Orthographic(float left, float right, float bottom, float top, float near, float far)
 		{
 			mat4 result(1.0f);
 
 			result.elements[0 + 0 * 4] = 2.0f / (right - left);
+
 			result.elements[1 + 1 * 4] = 2.0f / (top - bottom);
+
 			result.elements[2 + 2 * 4] = 2.0f / (near - far);
 
 			result.elements[0 + 3 * 4] = (left + right) / (left - right);
@@ -232,17 +229,15 @@ namespace AdunGL
 			result.elements[2 + 3 * 4] = (far + near) / (far - near);
 
 			return result;
-
-
 		}
 
-		// http://ogldev.atspace.org/www/tutorial12/tutorial12.html
-		mat4 mat4::perspective(float fov, float aspectRatio, float near, float far)
+		mat4 mat4::Perspective(float fov, float aspectRatio, float near, float far)
 		{
 			mat4 result(1.0f);
 
-			float q = static_cast<float>(1.0f / tan(toRadians(0.5f * fov)));
+			float q = 1.0f / tan(toRadians(0.5f * fov));
 			float a = q / aspectRatio;
+
 			float b = (near + far) / (near - far);
 			float c = (2.0f * near * far) / (near - far);
 
@@ -251,16 +246,11 @@ namespace AdunGL
 			result.elements[2 + 2 * 4] = b;
 			result.elements[3 + 2 * 4] = -1.0f;
 			result.elements[2 + 3 * 4] = c;
-			//result.elements[3 + 2 * 4] = -1.0f;
-			//result.elements[3 + 2 * 4] = c;
+
 			return result;
 		}
 
-		// 1 0 0 x
-		// 0 1 0 y
-		// 0 0 1 z
-		// 0 0 0 1
-		mat4 mat4::translation(const vec3& translation)
+		mat4 mat4::Translate(const vec3& translation)
 		{
 			mat4 result(1.0f);
 
@@ -271,15 +261,13 @@ namespace AdunGL
 			return result;
 		}
 
-		// http://www.songho.ca/opengl/gl_anglestoaxes.html
-		// RxRyRz
-		mat4 mat4::rotation(float angle, const vec3& axis)
+		mat4 mat4::Rotate(float angle, const vec3& axis)
 		{
 			mat4 result(1.0f);
 
 			float r = toRadians(angle);
-			float c = static_cast<float>(cos(r));
-			float s = static_cast<float>(sin(r));
+			float c = cos(r);
+			float s = sin(r);
 			float omc = 1.0f - c;
 
 			float x = axis.x;
@@ -298,15 +286,39 @@ namespace AdunGL
 			result.elements[1 + 2 * 4] = y * z * omc - x * s;
 			result.elements[2 + 2 * 4] = z * omc + c;
 
+			return result;
+		}
+
+		mat4 mat4::Rotate(const Quaternion& quat)
+		{
+			mat4 result = Identity();
+
+			float qx, qy, qz, qw, qx2, qy2, qz2, qxqx2, qyqy2, qzqz2, qxqy2, qyqz2, qzqw2, qxqz2, qyqw2, qxqw2;
+			qx = quat.x;
+			qy = quat.y;
+			qz = quat.z;
+			qw = quat.w;
+			qx2 = (qx + qx);
+			qy2 = (qy + qy);
+			qz2 = (qz + qz);
+			qxqx2 = (qx * qx2);
+			qxqy2 = (qx * qy2);
+			qxqz2 = (qx * qz2);
+			qxqw2 = (qw * qx2);
+			qyqy2 = (qy * qy2);
+			qyqz2 = (qy * qz2);
+			qyqw2 = (qw * qy2);
+			qzqz2 = (qz * qz2);
+			qzqw2 = (qw * qz2);
+
+			result.columns[0] = vec4(((1.0f - qyqy2) - qzqz2), (qxqy2 + qzqw2), (qxqz2 - qyqw2), 0.0f);
+			result.columns[1] = vec4((qxqy2 - qzqw2), ((1.0f - qxqx2) - qzqz2), (qyqz2 + qxqw2), 0.0f);
+			result.columns[2] = vec4((qxqz2 + qyqw2), (qyqz2 - qxqw2), ((1.0f - qxqx2) - qyqy2), 0.0f);
 
 			return result;
 		}
 
-		// sx  0  0  0
-		// 0  sy  0  0
-		// 0   0  sz 0
-		// 0   0  0  1
-		mat4 mat4::scale(const vec3 & scale)
+		mat4 mat4::Scale(const vec3& scale)
 		{
 			mat4 result(1.0f);
 
@@ -317,12 +329,21 @@ namespace AdunGL
 			return result;
 		}
 
-		// ¿ªÇà·Ä
-		mat4 mat4::invert(const mat4& matrix)
+		mat4 mat4::Invert(const mat4& matrix)
 		{
 			mat4 result = matrix;
-
-			return result.invert();
+			return result.Invert();
 		}
+
+		std::string mat4::ToString() const
+		{
+			std::stringstream result;
+			result << "mat4: (" << columns[0].x << ", " << columns[1].x << ", " << columns[2].x << ", " << columns[3].x << "), ";
+			result << "(" << columns[0].y << ", " << columns[1].y << ", " << columns[2].y << ", " << columns[3].y << "), ";
+			result << "(" << columns[0].z << ", " << columns[1].z << ", " << columns[2].z << ", " << columns[3].z << "), ";
+			result << "(" << columns[0].w << ", " << columns[1].w << ", " << columns[2].w << ", " << columns[3].w << ")";
+			return result.str();
+		}
+		
 	}
 }

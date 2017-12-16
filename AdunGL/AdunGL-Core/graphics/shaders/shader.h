@@ -65,6 +65,9 @@ namespace AdunGL
 			void setUniform4f  (const string& name, const maths::vec4& vector);
 			void setUniformMat4(const string& name, const maths::mat4& matrix);
 
+			void resolveAndSetUniform(ShaderUniformDeclaration* uniform, unsigned char* data);
+			void resolveAndSetUniform(GLuint index, unsigned char* data);
+
 			void resolveAndSetUniforms(unsigned char* data, GLuint size);
 
 			void enable() const;
@@ -80,7 +83,6 @@ namespace AdunGL
 			GLuint load(const string& vertSrc, const string& fragSrc);
 			GLint getUniformLocation(const string& name);
 
-			void resolveAndSetUniform(ShaderUniformDeclaration* uniform, unsigned char* data);
 
 			void setUniform1f(GLuint location, float value);
 			void setUniform1fv(GLuint location, float* value, int count);

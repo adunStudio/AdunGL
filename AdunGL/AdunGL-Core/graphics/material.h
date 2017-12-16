@@ -12,6 +12,8 @@ namespace AdunGL
 		class Material
 		{
 		private:
+			friend class MaterialInstance;
+
 			Shader* m_shader;
 			unsigned char* m_uniformData;
 			unsigned int m_uniformDataSize;
@@ -58,6 +60,8 @@ namespace AdunGL
 		private:
 			Material* m_material;
 			unsigned char* m_uniformData;
+			GLuint m_uniformDataSize;
+			GLuint m_setUniforms;
 
 		public:
 			MaterialInstance(Material* material);
@@ -66,17 +70,28 @@ namespace AdunGL
 
 			void bind() const;
 			void unbind() const;
+			void unsetUniform(const string& name);
 
 			template<typename T>
 			void setUniform(const string& name, const T& value)
 			{
-				AdunGL_ERROR("Unknown type");
+				int index = getUniformDeclarationIndex(name);
+				if (index == -1)
+				{
+					ADUNGL_ERROR("Could not find uniform %s", name.c_str());
+					return;
+				}
+				ShaderUniformDeclaration* uniform = m_material->m_shader->getUniformDeclarations()[index];
+				memcpy(m_uniformData + uniform->getOffset(), &value, uniform->getSize());
+
+				m_setUniforms |= 1 << index;
 			}
 
 			template<> void setUniform<float>(const string& name, const float& value) {}
 
 		private:
 			void initUniformStorage();
+			int getUniformDeclarationIndex(const string& name) const;
 
 		};
 	}

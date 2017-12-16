@@ -99,7 +99,7 @@ namespace AdunGL
 			m_simpleShader = ShaderFactory::SimpleShader();
 			
 			m_simpleShader->enable();
-			m_simpleShader->setUniformMat4("pr_matrix", maths::mat4::orthographic(0, m_screenSize.x, m_screenSize.y, 0, -1.0f, 1.0f));
+			m_simpleShader->setUniformMat4("pr_matrix", maths::mat4::Orthographic(0, m_screenSize.x, m_screenSize.y, 0, -1.0f, 1.0f));
 			m_simpleShader->setUniform1i("tex", 0);
 			
 			m_simpleShader->disable();
@@ -216,7 +216,7 @@ namespace AdunGL
 			// http://www.fayewilliams.com/2011/09/21/bitwise-rgba-values/
 			c = a << 24 | b << 16 | g << 8 | r;
 
-			maths::mat4 maskTransform = maths::mat4::identity();
+			maths::mat4 maskTransform = maths::mat4::Identity();
 
 			const GLuint mid = m_mask ? m_mask->texture->getID() : 0;
 
@@ -224,7 +224,7 @@ namespace AdunGL
 
 			if (m_mask != nullptr)
 			{
-				maskTransform = maths::mat4::invert(m_mask->transform);
+				maskTransform = maths::mat4::Invert(m_mask->transform);
 				ms = submitTexture(m_mask->texture);
 			}
 

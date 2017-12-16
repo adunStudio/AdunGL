@@ -204,6 +204,7 @@
     <ClCompile Include="AdunGL-Core\graphics\window.cpp" />
     <ClCompile Include="AdunGL-Core\maths\aabb.cpp" />
     <ClCompile Include="AdunGL-Core\maths\mat4.cpp" />
+    <ClCompile Include="AdunGL-Core\maths\quaternion.cpp" />
     <ClCompile Include="AdunGL-Core\maths\vec2.cpp" />
     <ClCompile Include="AdunGL-Core\maths\vec3.cpp" />
     <ClCompile Include="AdunGL-Core\maths\vec4.cpp" />
@@ -264,6 +265,7 @@
     <ClInclude Include="AdunGL-Core\maths\mat4.h" />
     <ClInclude Include="AdunGL-Core\maths\maths.h" />
     <ClInclude Include="AdunGL-Core\maths\math_func.h" />
+    <ClInclude Include="AdunGL-Core\maths\quaternion.h" />
     <ClInclude Include="AdunGL-Core\maths\tvec2.h" />
     <ClInclude Include="AdunGL-Core\maths\vec2.h" />
     <ClInclude Include="AdunGL-Core\maths\vec3.h" />

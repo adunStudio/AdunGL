@@ -20,7 +20,7 @@ namespace AdunGL
 		void PostEffectsPass::renderPass(FrameBuffer* target)
 		{
 			m_shader->enable();
-			m_shader->setUniformMat4("pr_matrix", maths::mat4::orthographic(0, target->getWidth(), target->getHeight(), 0, -1.0f, 1.0f));
+			m_shader->setUniformMat4("pr_matrix", maths::mat4::Orthographic(0, target->getWidth(), target->getHeight(), 0, -1.0f, 1.0f));
 			glDrawElements(GL_TRIANGLES, 6, GL_UNSIGNED_INT, NULL);
 			m_shader->disable();
 		}

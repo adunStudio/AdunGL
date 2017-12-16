@@ -69,9 +69,67 @@ namespace AdunGL
 		}
 
 		MaterialInstance::MaterialInstance(Material* material)
-			: m_material(material)
+			: m_material(material), m_setUniforms(0)
 		{
+			initUniformStorage();
+		}
 
+		void MaterialInstance::initUniformStorage()
+		{
+			m_uniformDataSize = 0;
+
+			const std::vector<ShaderUniformDeclaration*>& uniforms = m_material->m_shader->getUniformDeclarations();
+		
+			for (ShaderUniformDeclaration* uniform : uniforms)
+				m_uniformDataSize += uniform->getSize();
+
+			m_uniformData = new unsigned char[m_uniformDataSize];
+
+			memset(m_uniformData, 0, m_uniformDataSize);
+		}
+		
+		int MaterialInstance::getUniformDeclarationIndex(const string& name) const
+		{
+			vector<ShaderUniformDeclaration*> uniforms = m_material->m_shader->getUniformDeclarations();
+			
+			for (GLuint i = 0; i < uniforms.size(); ++i)
+			{
+				if (uniforms[i]->getName() == name)
+					return i;
+			}
+
+			return -1;
+		}
+
+		void MaterialInstance::unsetUniform(const string& name)
+		{
+			// TODO: 코드 이해 불가 // 공부 필요
+			int index = getUniformDeclarationIndex(name);
+			GLuint mask = !(1 << index);
+			
+			m_setUniforms &= mask;
+		}
+
+		void MaterialInstance::bind() const
+		{
+			m_material->bind();
+
+			GLuint overrides = m_setUniforms;
+			GLuint index = 0;
+
+			while (overrides > 0)
+			{
+				if (overrides & 1)
+					m_material->m_shader->resolveAndSetUniform(index, m_uniformData);
+			
+				overrides >>= 1;
+				index++;
+			}
+		}
+
+		void MaterialInstance::unbind() const
+		{
+			m_material->unbind();
 		}
 	}
 }

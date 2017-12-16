@@ -22,7 +22,7 @@ public:
 	void init() override
 	{
 		Adun::init();
-		pushLayer(new TestLayer());
+		//pushLayer(new TestLayer());
 		pushLayer(new Test3D());
 
 	}

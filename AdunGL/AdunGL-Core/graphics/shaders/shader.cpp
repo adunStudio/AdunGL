@@ -380,6 +380,12 @@ namespace AdunGL
 			for (GLuint i = 0; i < uniforms.size(); i++)
 				resolveAndSetUniform(uniforms[i], data);
 		}
+		void Shader::resolveAndSetUniform(GLuint index, unsigned char* data)
+		{
+			ShaderUniformDeclaration* uniform = m_uniforms[index];
+
+			resolveAndSetUniform(uniform, data);
+		}
 
 		void Shader::resolveAndSetUniform(ShaderUniformDeclaration* uniform, unsigned char* data)
 		{

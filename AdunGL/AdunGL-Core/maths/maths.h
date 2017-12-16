@@ -12,3 +12,4 @@
 #include "aabb.h"
 #include "mat4.h"
 #include "tvec2.h"
+#include "quaternion.h"

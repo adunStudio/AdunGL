@@ -1,7 +1,7 @@
 #include "TestLayer.h"
 
 TestLayer::TestLayer()
-	: Layer2D(ShaderFactory::DefaultShader(), mat4::orthographic(-16.0f, 16.0f, -9.0f, 9.0f, -1.0f, 1.0f))
+	: Layer2D(ShaderFactory::DefaultShader(), mat4::Orthographic(-16.0f, 16.0f, -9.0f, 9.0f, -1.0f, 1.0f))
 {
 
 }
@@ -35,7 +35,7 @@ void TestLayer::onInit(Renderer2D& renderer, Shader& shader)
 
 	Texture::SetWrap(TextureWrap::CLAMP_TO_BORDER);
 	Mask* mask = new Mask(new Texture("Mask", "MyGame/Asset/images/mask.png"));
-	mask->transform = mat4::translation(vec3(-16.0f, -9.0f, 0.0f)) * mat4::scale(vec3(32, 18, 1));
+	mask->transform = mat4::Translate(vec3(-16.0f, -9.0f, 0.0f)) * mat4::Scale(vec3(32, 18, 1));
 	//setMask(mask);
 }
 
