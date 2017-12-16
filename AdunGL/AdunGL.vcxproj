@@ -189,6 +189,7 @@
     <ClCompile Include="AdunGL-Core\graphics\material.cpp" />
     <ClCompile Include="AdunGL-Core\graphics\mesh.cpp" />
     <ClCompile Include="AdunGL-Core\graphics\mesh_factory.cpp" />
+    <ClCompile Include="AdunGL-Core\graphics\model.cpp" />
     <ClCompile Include="AdunGL-Core\graphics\postfx\post_effect.cpp" />
     <ClCompile Include="AdunGL-Core\graphics\postfx\post_effect_pass.cpp" />
     <ClCompile Include="AdunGL-Core\graphics\renderers\batchrenderer2d.cpp" />
@@ -226,6 +227,7 @@
     <ClInclude Include="AdunGL-Core\exc\freetype-gl\vec234.h" />
     <ClInclude Include="AdunGL-Core\exc\freetype-gl\vector.h" />
     <ClInclude Include="AdunGL-Core\graphics\api\render_api.h" />
+    <ClInclude Include="AdunGL-Core\graphics\bases\irenderable.h" />
     <ClInclude Include="AdunGL-Core\graphics\bases\renderable2d.h" />
     <ClInclude Include="AdunGL-Core\graphics\bases\renderer2d.h" />
     <ClInclude Include="AdunGL-Core\graphics\buffers\buffer.h" />
@@ -244,6 +246,7 @@
     <ClInclude Include="AdunGL-Core\graphics\material.h" />
     <ClInclude Include="AdunGL-Core\graphics\mesh.h" />
     <ClInclude Include="AdunGL-Core\graphics\mesh_factory.h" />
+    <ClInclude Include="AdunGL-Core\graphics\model.h" />
     <ClInclude Include="AdunGL-Core\graphics\postfx\post_effect.h" />
     <ClInclude Include="AdunGL-Core\graphics\postfx\post_effect_pass.h" />
     <ClInclude Include="AdunGL-Core\graphics\renderers\batchrenderer2d.h" />

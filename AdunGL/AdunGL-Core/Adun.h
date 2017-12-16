@@ -62,6 +62,8 @@
 #include "graphics/scene.h"
 #include "graphics/layers/layer3d.h"
 
+#include "graphics/model.h"
+
 using namespace std;
 using namespace AdunGL;
 using namespace graphics;

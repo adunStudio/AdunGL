@@ -3,6 +3,7 @@
 #include "buffers/vertexArray.h"
 #include "buffers/indexBuffer.h"
 #include "material.h"
+#include "bases/irenderable.h"
 
 namespace AdunGL
 {
@@ -17,7 +18,7 @@ namespace AdunGL
 			maths::vec2 uv;
 		};
 
-		class Mesh
+		class Mesh : public IRenderable
 		{
 		private:
 			VertexArray* m_vertexArray;
@@ -28,9 +29,10 @@ namespace AdunGL
 			Mesh(VertexArray* vertexArray, IndexBuffer* indexBuffer, MaterialInstance* materialInstance);
 			~Mesh();
 
+			inline void setMaterial(MaterialInstance* materialInstance) { m_materialInstance = materialInstance;};
 			inline MaterialInstance* getMaterialInstance() const { return m_materialInstance;  }
 
-			void render(Renderer3D& renderer);
+			void render(Renderer3D& renderer) override;
 		};
 	}
 }

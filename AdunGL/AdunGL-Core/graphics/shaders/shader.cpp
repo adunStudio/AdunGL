@@ -273,7 +273,10 @@ namespace AdunGL
 		{
 			GLint result = glGetUniformLocation(m_shaderID, name.c_str());
 			if (result == -1)
-				ADUNGL_ERROR("%s: could not find uniform $s in shader!", m_name, name);
+			{
+				cout << m_name << " : " << name << endl;
+			}
+				//ADUNGL_ERROR("%s: could not find uniform s in shader!", name, name);
 
 			return result;
 		}

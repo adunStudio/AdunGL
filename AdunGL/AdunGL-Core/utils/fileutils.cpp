@@ -14,7 +14,7 @@ namespace  AdunGL
 			FILE* file = fopen(filepath.c_str(), "rt");
 
 			if (file == nullptr)
-				ADUNGL_FATAL("[fileutils.cpp 17] Could not open file: '%s'", filepath);
+				ADUNGL_FATAL("[fileutils.cpp 17] Could not open file: %s", filepath.c_str());
 
 
 			fseek(file, 0, SEEK_END);
@@ -26,6 +26,7 @@ namespace  AdunGL
 			fclose(file);
 
 			std::string result(data);
+
 			delete[] data;
 			return result;
 		}
