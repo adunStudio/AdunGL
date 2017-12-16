@@ -18,8 +18,11 @@
     <None Include="packages.config" />
     <None Include="FreeImage.dll" />
     <None Include="Dependencies\FreeImage\FreeImage.dll" />
-    <None Include="MyGame\Shaders\postfx.frag" />
-    <None Include="MyGame\Shaders\postfx.vert" />
+    <None Include="AdunGL-Core\graphics\shaders\default\Default.shader" />
+    <None Include="AdunGL-Core\graphics\shaders\default\BasicLight.shader" />
+    <None Include="AdunGL-Core\graphics\shaders\default\Simple.shader" />
+    <None Include="MyGame\Shaders\postfx.shader" />
+    <None Include="MyGame\Shaders\scene.shader" />
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="AdunGL-Core\utils\fileutils.cpp">
@@ -125,6 +128,21 @@
       <Filter>소스 파일</Filter>
     </ClCompile>
     <ClCompile Include="MyGame\TestLayer.cpp">
+      <Filter>소스 파일</Filter>
+    </ClCompile>
+    <ClCompile Include="AdunGL-Core\types\String.cpp">
+      <Filter>소스 파일</Filter>
+    </ClCompile>
+    <ClCompile Include="AdunGL-Core\graphics\shaders\shader_uniform.cpp">
+      <Filter>소스 파일</Filter>
+    </ClCompile>
+    <ClCompile Include="AdunGL-Core\graphics\material.cpp">
+      <Filter>소스 파일</Filter>
+    </ClCompile>
+    <ClCompile Include="AdunGL-Core\graphics\mesh.cpp">
+      <Filter>소스 파일</Filter>
+    </ClCompile>
+    <ClCompile Include="AdunGL-Core\graphics\renderers\forward_renderer.cpp">
       <Filter>소스 파일</Filter>
     </ClCompile>
   </ItemGroup>
@@ -271,6 +289,27 @@
       <Filter>헤더 파일</Filter>
     </ClInclude>
     <ClInclude Include="MyGame\TestLayer.h">
+      <Filter>헤더 파일</Filter>
+    </ClInclude>
+    <ClInclude Include="AdunGL-Core\utils\stringutils.h">
+      <Filter>헤더 파일</Filter>
+    </ClInclude>
+    <ClInclude Include="AdunGL-Core\types\String.h">
+      <Filter>헤더 파일</Filter>
+    </ClInclude>
+    <ClInclude Include="AdunGL-Core\graphics\material.h">
+      <Filter>헤더 파일</Filter>
+    </ClInclude>
+    <ClInclude Include="AdunGL-Core\graphics\shaders\shader_uniform.h">
+      <Filter>헤더 파일</Filter>
+    </ClInclude>
+    <ClInclude Include="AdunGL-Core\graphics\mesh.h">
+      <Filter>헤더 파일</Filter>
+    </ClInclude>
+    <ClInclude Include="AdunGL-Core\graphics\renderers\renderer3d.h">
+      <Filter>헤더 파일</Filter>
+    </ClInclude>
+    <ClInclude Include="AdunGL-Core\graphics\renderers\forward_renderer.h">
       <Filter>헤더 파일</Filter>
     </ClInclude>
   </ItemGroup>

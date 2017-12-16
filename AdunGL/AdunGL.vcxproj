@@ -156,10 +156,13 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
+    <None Include="AdunGL-Core\graphics\shaders\default\BasicLight.shader" />
+    <None Include="AdunGL-Core\graphics\shaders\default\Default.shader" />
+    <None Include="AdunGL-Core\graphics\shaders\default\Simple.shader" />
     <None Include="Dependencies\FreeImage\FreeImage.dll" />
     <None Include="FreeImage.dll" />
-    <None Include="MyGame\Shaders\postfx.frag" />
-    <None Include="MyGame\Shaders\postfx.vert" />
+    <None Include="MyGame\Shaders\postfx.shader" />
+    <None Include="MyGame\Shaders\scene.shader" />
     <None Include="packages.config" />
   </ItemGroup>
   <ItemGroup>
@@ -181,12 +184,16 @@
     <ClCompile Include="AdunGL-Core\graphics\layers\group.cpp" />
     <ClCompile Include="AdunGL-Core\graphics\layers\layer.cpp" />
     <ClCompile Include="AdunGL-Core\graphics\layers\layer2d.cpp" />
+    <ClCompile Include="AdunGL-Core\graphics\material.cpp" />
+    <ClCompile Include="AdunGL-Core\graphics\mesh.cpp" />
     <ClCompile Include="AdunGL-Core\graphics\mesh_factory.cpp" />
     <ClCompile Include="AdunGL-Core\graphics\postfx\post_effect.cpp" />
     <ClCompile Include="AdunGL-Core\graphics\postfx\post_effect_pass.cpp" />
     <ClCompile Include="AdunGL-Core\graphics\renderers\batchrenderer2d.cpp" />
+    <ClCompile Include="AdunGL-Core\graphics\renderers\forward_renderer.cpp" />
     <ClCompile Include="AdunGL-Core\graphics\shaders\shader.cpp" />
     <ClCompile Include="AdunGL-Core\graphics\shaders\shader_factory.cpp" />
+    <ClCompile Include="AdunGL-Core\graphics\shaders\shader_uniform.cpp" />
     <ClCompile Include="AdunGL-Core\graphics\sprite.cpp" />
     <ClCompile Include="AdunGL-Core\graphics\texture.cpp" />
     <ClCompile Include="AdunGL-Core\graphics\texture_manager.cpp" />
@@ -195,6 +202,7 @@
     <ClCompile Include="AdunGL-Core\maths\vec2.cpp" />
     <ClCompile Include="AdunGL-Core\maths\vec3.cpp" />
     <ClCompile Include="AdunGL-Core\maths\vec4.cpp" />
+    <ClCompile Include="AdunGL-Core\types\String.cpp" />
     <ClCompile Include="AdunGL-Core\utils\fileutils.cpp" />
     <ClCompile Include="MyGame\main.cpp" />
     <ClCompile Include="MyGame\TestLayer.cpp" />
@@ -225,12 +233,17 @@
     <ClInclude Include="AdunGL-Core\graphics\layers\layer.h" />
     <ClInclude Include="AdunGL-Core\graphics\layers\layer2d.h" />
     <ClInclude Include="AdunGL-Core\graphics\mask.h" />
+    <ClInclude Include="AdunGL-Core\graphics\material.h" />
+    <ClInclude Include="AdunGL-Core\graphics\mesh.h" />
     <ClInclude Include="AdunGL-Core\graphics\mesh_factory.h" />
     <ClInclude Include="AdunGL-Core\graphics\postfx\post_effect.h" />
     <ClInclude Include="AdunGL-Core\graphics\postfx\post_effect_pass.h" />
     <ClInclude Include="AdunGL-Core\graphics\renderers\batchrenderer2d.h" />
+    <ClInclude Include="AdunGL-Core\graphics\renderers\forward_renderer.h" />
+    <ClInclude Include="AdunGL-Core\graphics\renderers\renderer3d.h" />
     <ClInclude Include="AdunGL-Core\graphics\shaders\shader.h" />
     <ClInclude Include="AdunGL-Core\graphics\shaders\shader_factory.h" />
+    <ClInclude Include="AdunGL-Core\graphics\shaders\shader_uniform.h" />
     <ClInclude Include="AdunGL-Core\graphics\sprite.h" />
     <ClInclude Include="AdunGL-Core\graphics\texture.h" />
     <ClInclude Include="AdunGL-Core\graphics\texture_manager.h" />
@@ -242,9 +255,11 @@
     <ClInclude Include="AdunGL-Core\maths\vec2.h" />
     <ClInclude Include="AdunGL-Core\maths\vec3.h" />
     <ClInclude Include="AdunGL-Core\maths\vec4.h" />
+    <ClInclude Include="AdunGL-Core\types\String.h" />
     <ClInclude Include="AdunGL-Core\utils\fileutils.h" />
     <ClInclude Include="AdunGL-Core\utils\imageload.h" />
     <ClInclude Include="AdunGL-Core\utils\log.h" />
+    <ClInclude Include="AdunGL-Core\utils\stringutils.h" />
     <ClInclude Include="AdunGL-Core\utils\timer.h" />
     <ClInclude Include="Dependencies\FreeImage\FreeImage.h" />
     <ClInclude Include="MyGame\TestLayer.h" />

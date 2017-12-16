@@ -1,6 +1,6 @@
 #include "mesh_factory.h"
 
-GLuint AdunGL::graphics::MeshFactory::createQuad(float x, float y, float width, float height)
+AdunGL::graphics::VertexArray* AdunGL::graphics::MeshFactory::createQuad(float x, float y, float width, float height)
 {
 	GLuint result;
 	GLuint buffer;
@@ -47,7 +47,9 @@ GLuint AdunGL::graphics::MeshFactory::createQuad(float x, float y, float width, 
 	return result;
 }
 
-GLuint AdunGL::graphics::MeshFactory::createQuad(const maths::vec2& position, const maths::vec2& size)
+AdunGL::graphics::VertexArray* AdunGL::graphics::MeshFactory::createQuad(const maths::vec2& position, const maths::vec2& size)
 {
 	return createQuad(position.x, position.y, size.x, size.y);
 }
+
+Mesh* createCube(float size, MaterialInstance* meterial);

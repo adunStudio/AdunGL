@@ -58,5 +58,10 @@ namespace AdunGL
 		{
 			glBindVertexArray(0);
 		}
+
+		void VertexArray::draw(GLuint count) const
+		{
+			glDrawElements(GL_TRIANGLES, count, GL_UNSIGNED_INT, NULL);
+		}
 	}
 }

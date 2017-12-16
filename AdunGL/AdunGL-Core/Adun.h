@@ -53,6 +53,12 @@
 
 #include "graphics/layers/layer2d.h"
 
+#include "graphics/shaders/shader_uniform.h"
+#include "graphics/material.h"
+#include "graphics/mesh.h"
+#include "graphics/renderers/renderer3d.h"
+#include "graphics/renderers/forward_renderer.h"
+
 using namespace std;
 using namespace AdunGL;
 using namespace graphics;

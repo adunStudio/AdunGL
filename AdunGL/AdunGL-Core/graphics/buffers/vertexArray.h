@@ -25,6 +25,8 @@ namespace AdunGL
 
 			void bind() const;
 			void unbind() const;
+
+			void draw(GLuint count) const;
 		};
 
 	}

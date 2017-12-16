@@ -17,7 +17,7 @@ namespace AdunGL
 	{
 		struct FileUtils
 		{
-			static std::string read_file(const char* filepath);
+			static std::string read_file(const std::string& filepath);
 		};
 	}
 }

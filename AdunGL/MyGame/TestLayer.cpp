@@ -15,7 +15,7 @@ void TestLayer::onInit(Renderer2D& renderer, Shader& shader)
 {
 	FontManager::get()->setScale(m_window->getWidth() / 32.0f, m_window->getHeight() / 18.0f);
 	renderer.setRenderTarget(RenderTarget::BUFFER);
-	renderer.addPostEffectsPass(new PostEffectsPass(Shader::FromFile("MyGame/Shaders/postfx.vert", "MyGame/Shaders/postfx.frag")));
+	renderer.addPostEffectsPass(new PostEffectsPass(Shader::FromFile("Horizontal Blur", "MyGame/Shaders/postfx.shader")));
 	renderer.setPostEffects(false);
 	
 	Texture::setFIlter(TextureFilter::NEARST);
