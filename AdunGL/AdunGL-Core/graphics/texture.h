@@ -7,7 +7,7 @@
 
 #include <FreeImage.h>
 #include <string>
-#include <GL\freeglut.h>
+#include <GL/freeglut.h>
 #include "../utils/imageload.h"
 #include "../utils/log.h"
 

@@ -9,17 +9,19 @@ namespace AdunGL
 {
 	namespace graphics
 	{
+		BatchRenderer2D::BatchRenderer2D(GLuint width, GLuint height)
+			: m_indexCount(0), m_screenSize(maths::tvec2<GLuint>(width, height)), m_viewportSize(maths::tvec2<GLuint>(width, height))
+		{
+			init();
+		}
+
 		BatchRenderer2D::BatchRenderer2D(const maths::tvec2<GLuint>& screenSize)
 			: m_indexCount(0), m_screenSize(screenSize), m_viewportSize(screenSize)
 		{
 			init();
 		}
 
-		BatchRenderer2D::BatchRenderer2D()
-			: m_indexCount(0)
-		{
-			init();
-		}
+
 
 		BatchRenderer2D::~BatchRenderer2D()
 		{

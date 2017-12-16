@@ -19,12 +19,19 @@ namespace AdunGL
 
 		class KeyPressedEvent : public KeyEvent
 		{
+		private:
+			int m_repeat;
+		
+		public:
+			KeyPressedEvent(int button, int repeat);
 
+			inline const int getRepeat() const { return m_repeat;  }
 		};
 
 		class KeyReleasedEvent : public KeyEvent
 		{
-
+		public:
+			KeyReleasedEvent(int button);
 		};
 	}
 }

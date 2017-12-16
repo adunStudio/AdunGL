@@ -23,7 +23,7 @@ namespace AdunGL
 	void Adun::pushLayer(Layer* layer)
 	{
 		m_layerStack.push_back(layer);
-		//layer->init();
+		layer->init();
 	}
 
 	Layer* Adun::popLayer()
@@ -35,6 +35,7 @@ namespace AdunGL
 
 	void Adun::onTick()
 	{
+
 		for (auto layer : m_layerStack)
 			layer->onTick();
 	}
@@ -87,10 +88,12 @@ namespace AdunGL
 
 		while (m_running)
 		{
+
 			window->clear();
 
 			glutMainLoopEvent();
 
+			
 			if (m_timer->elapsed() - updateTimer > updateTick)
 			{
 				onUpdate();
@@ -112,9 +115,7 @@ namespace AdunGL
 				onTick();
 			}
 
-			
-			if (window->closed())
-				m_running = false;
+			window->update();
 		}
 	}
 	

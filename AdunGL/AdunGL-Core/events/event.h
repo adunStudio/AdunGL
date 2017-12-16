@@ -9,7 +9,7 @@ namespace AdunGL
 		public:
 			enum class Type
 			{
-				MOUSE_PRESSED, MOUSE_RELEASED, MOUSE_MOVED,
+				MOUSE_PRESSED, MOUSE_RELEASED, MOUSE_MOVEDD,
 				KEY_PRESSED, KEY_RELEASED
 			};
 

@@ -109,6 +109,24 @@
     <ClCompile Include="AdunGL-Core\graphics\shaders\shader_factory.cpp">
       <Filter>소스 파일</Filter>
     </ClCompile>
+    <ClCompile Include="AdunGL-Core\events\event.cpp">
+      <Filter>소스 파일</Filter>
+    </ClCompile>
+    <ClCompile Include="AdunGL-Core\Adun.cpp">
+      <Filter>소스 파일</Filter>
+    </ClCompile>
+    <ClCompile Include="AdunGL-Core\events\key_event.cpp">
+      <Filter>소스 파일</Filter>
+    </ClCompile>
+    <ClCompile Include="AdunGL-Core\events\mouse_event.cpp">
+      <Filter>소스 파일</Filter>
+    </ClCompile>
+    <ClCompile Include="AdunGL-Core\graphics\layers\layer2d.cpp">
+      <Filter>소스 파일</Filter>
+    </ClCompile>
+    <ClCompile Include="MyGame\TestLayer.cpp">
+      <Filter>소스 파일</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="AdunGL-Core\utils\imageload.h">
@@ -235,6 +253,24 @@
       <Filter>헤더 파일</Filter>
     </ClInclude>
     <ClInclude Include="AdunGL-Core\graphics\shaders\shader_factory.h">
+      <Filter>헤더 파일</Filter>
+    </ClInclude>
+    <ClInclude Include="AdunGL-Core\events\key_event.h">
+      <Filter>헤더 파일</Filter>
+    </ClInclude>
+    <ClInclude Include="AdunGL-Core\events\event.h">
+      <Filter>헤더 파일</Filter>
+    </ClInclude>
+    <ClInclude Include="AdunGL-Core\events\ieventlistener.h">
+      <Filter>헤더 파일</Filter>
+    </ClInclude>
+    <ClInclude Include="AdunGL-Core\events\mouse_event.h">
+      <Filter>헤더 파일</Filter>
+    </ClInclude>
+    <ClInclude Include="AdunGL-Core\graphics\layers\layer2d.h">
+      <Filter>헤더 파일</Filter>
+    </ClInclude>
+    <ClInclude Include="MyGame\TestLayer.h">
       <Filter>헤더 파일</Filter>
     </ClInclude>
   </ItemGroup>

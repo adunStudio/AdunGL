@@ -92,7 +92,7 @@
       <SDLCheck>false</SDLCheck>
       <ForcedIncludeFiles>GL/glew.h;</ForcedIncludeFiles>
       <RuntimeLibrary>MultiThreadedDebug</RuntimeLibrary>
-      <AdditionalIncludeDirectories>C:\Users\adun\Desktop\AdunGL\AdunGL\Dependencies\FreeImage;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <AdditionalIncludeDirectories>C:\Users\adunstudio\Desktop\AdunGL\AdunGL\Dependencies\FreeImage;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
     </ClCompile>
     <Link>
       <SubSystem>Console</SubSystem>
@@ -163,6 +163,10 @@
     <None Include="packages.config" />
   </ItemGroup>
   <ItemGroup>
+    <ClCompile Include="AdunGL-Core\Adun.cpp" />
+    <ClCompile Include="AdunGL-Core\events\event.cpp" />
+    <ClCompile Include="AdunGL-Core\events\key_event.cpp" />
+    <ClCompile Include="AdunGL-Core\events\mouse_event.cpp" />
     <ClCompile Include="AdunGL-Core\exc\freetype-gl\platform.c" />
     <ClCompile Include="AdunGL-Core\exc\freetype-gl\texture-atlas.c" />
     <ClCompile Include="AdunGL-Core\exc\freetype-gl\texture-font.c" />
@@ -176,6 +180,7 @@
     <ClCompile Include="AdunGL-Core\graphics\label.cpp" />
     <ClCompile Include="AdunGL-Core\graphics\layers\group.cpp" />
     <ClCompile Include="AdunGL-Core\graphics\layers\layer.cpp" />
+    <ClCompile Include="AdunGL-Core\graphics\layers\layer2d.cpp" />
     <ClCompile Include="AdunGL-Core\graphics\mesh_factory.cpp" />
     <ClCompile Include="AdunGL-Core\graphics\postfx\post_effect.cpp" />
     <ClCompile Include="AdunGL-Core\graphics\postfx\post_effect_pass.cpp" />
@@ -192,9 +197,14 @@
     <ClCompile Include="AdunGL-Core\maths\vec4.cpp" />
     <ClCompile Include="AdunGL-Core\utils\fileutils.cpp" />
     <ClCompile Include="MyGame\main.cpp" />
+    <ClCompile Include="MyGame\TestLayer.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="AdunGL-Core\Adun.h" />
+    <ClInclude Include="AdunGL-Core\events\event.h" />
+    <ClInclude Include="AdunGL-Core\events\ieventlistener.h" />
+    <ClInclude Include="AdunGL-Core\events\key_event.h" />
+    <ClInclude Include="AdunGL-Core\events\mouse_event.h" />
     <ClInclude Include="AdunGL-Core\exc\freetype-gl\freetype-gl.h" />
     <ClInclude Include="AdunGL-Core\exc\freetype-gl\opengl.h" />
     <ClInclude Include="AdunGL-Core\exc\freetype-gl\platform.h" />
@@ -213,6 +223,7 @@
     <ClInclude Include="AdunGL-Core\graphics\label.h" />
     <ClInclude Include="AdunGL-Core\graphics\layers\group.h" />
     <ClInclude Include="AdunGL-Core\graphics\layers\layer.h" />
+    <ClInclude Include="AdunGL-Core\graphics\layers\layer2d.h" />
     <ClInclude Include="AdunGL-Core\graphics\mask.h" />
     <ClInclude Include="AdunGL-Core\graphics\mesh_factory.h" />
     <ClInclude Include="AdunGL-Core\graphics\postfx\post_effect.h" />
@@ -236,6 +247,7 @@
     <ClInclude Include="AdunGL-Core\utils\log.h" />
     <ClInclude Include="AdunGL-Core\utils\timer.h" />
     <ClInclude Include="Dependencies\FreeImage\FreeImage.h" />
+    <ClInclude Include="MyGame\TestLayer.h" />
   </ItemGroup>
   <ItemGroup>
     <Font Include="AdunGL-Core\assets\arial.ttf" />

@@ -4,38 +4,28 @@
 // Created by adun on 2017. 11. 20..
 //
 
-
-#include <vector>
-#include "../bases/renderer2d.h"
-#include "../bases/renderable2d.h"
-#include "../mask.h"
+#include "../../events/event.h"
+#include "../../events/ieventlistener.h"
+#include "../window.h"
 
 namespace AdunGL
 {
 	namespace graphics
 	{
-		class Layer
+		class Layer : public events::IEventListener
 		{
 		protected:
-			std::vector<Renderable2D*> m_renderables;
-			Shader* m_shader;
-			maths::mat4 m_projectionMatrix;
+			Window* m_window;
 
 		public:
-			Renderer2D* renderer;
-
-		public:
-			Layer(Renderer2D* renderer, Shader* shader, maths::mat4 projectionMatrix);
-
+			Layer();
 			virtual ~Layer();
 
-			virtual void add(Renderable2D* renderable);
-
-			virtual void render();
-
-			inline void setMask(const Mask* mask) const { renderer->setMask(mask); }
-
-			inline const std::vector<Renderable2D*> getRenderalbes() const { return m_renderables; };
+			virtual void init();
+			virtual bool onEvent(const events::Event& event);
+			virtual void onTick();
+			virtual void onUpdate();
+			virtual void onRender();
 		};
 	}
-};
+}

@@ -50,8 +50,8 @@ namespace AdunGL
 			GLuint m_screenQuad;
 
 		public:
+			BatchRenderer2D(GLuint width, GLuint height);
 			BatchRenderer2D(const maths::tvec2<GLuint>& screenSize);
-			BatchRenderer2D();
 			~BatchRenderer2D();
 
 			void begin() override;

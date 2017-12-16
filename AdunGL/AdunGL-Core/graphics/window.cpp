@@ -8,6 +8,7 @@ namespace AdunGL
 {
 	namespace graphics
 	{
+
 		GLvoid keyboardDownCallback(unsigned char key, int x, int y);
 		GLvoid keyboardUpCallback(unsigned char key, int x, int y);
 		GLvoid specialKeyboardDownCallback(int key, int x, int y);
@@ -15,7 +16,12 @@ namespace AdunGL
 		GLvoid mouseCallback(int button, int state, int x, int y);
 		GLvoid mouseMoveCallback(int x, int y);
 		GLvoid renderCallback();
+		GLvoid reshapeCallback(int width, int height);
 
+
+		Window* Window::instance = nullptr;
+
+		map<void*, Window*> Window::s_handles;
 
 		bool Window::keys[MAX_KEYS] = { false };
 		bool Window::mouseButtons[MAX_BUTTONS] = { false };
@@ -26,6 +32,8 @@ namespace AdunGL
 		Window::Window(const char* name, int width, int height)
 			: name(name), width(width), height(height)
 		{
+			instance = this;
+
 			this->init();
 		}
 
@@ -55,7 +63,6 @@ namespace AdunGL
 			FontManager::add(new Font("arial", "AdunGL-Core/assets/arial.ttf", 32));
 
 			//glutIdleFunc(updateCallback);
-			glutDisplayFunc(renderCallback);
 			//glutReshapeFunc(reshapeCallback);
 			glutDisplayFunc(renderCallback);
 			glutKeyboardFunc(keyboardDownCallback);
@@ -152,6 +159,11 @@ namespace AdunGL
 			//
 		}
 
+		GLvoid reshapeCallback(int width, int height)
+		{
+		//	Window::instance->width = width;
+		//	Window::instance->height = height;
+		}
 
 
 		bool Window::isKeyPressed(unsigned char key)

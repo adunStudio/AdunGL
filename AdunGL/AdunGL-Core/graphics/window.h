@@ -4,9 +4,6 @@
 // Created by adun on 2017. 10. 29..
 //
 
-#ifndef ADUNGL_WINDOW_H
-#define ADUNGL_WINDOW_H
-
 #include <iostream>
 #include <GL/freeglut.h>
 #include <cassert>
@@ -27,12 +24,14 @@ namespace AdunGL
 		class Window
 		{
 		private:
+			static map<void*, Window*> s_handles;
 			static bool keys[MAX_KEYS];
 			static bool mouseButtons[MAX_BUTTONS];
 			static map<string, bool> keyMaps;
 			static maths::vec2 m_mousePosition;
 
 		public:
+			static Window* instance;
 			static bool isKeyPressed(unsigned char key);
 			static bool isKeyPressed(const string& key);
 			static bool isMouseButtonPressed(int button);
@@ -77,7 +76,7 @@ namespace AdunGL
 			friend GLvoid mouseCallback(int button, int state, int x, int y);
 			friend GLvoid mouseMoveCallback(int x, int y);
 			friend GLvoid renderCallback();
+			friend GLvoid reshapeCallback(int width, int height);
 		};
 	}
 }
-#endif //ADUNGL_WINDOW_H

@@ -10,7 +10,7 @@ namespace AdunGL
 		class IEventListener
 		{
 		public:
-			virtual void onEvent(const Event& event) = 0;
+			virtual bool onEvent(const Event& event) = 0;
 		};
 	}
 }

@@ -47,11 +47,18 @@
 #include "graphics/postfx/post_effect_pass.h"
 #include "graphics/postfx/post_effect.h"
 
+#include "events/event.h"
+#include "events/key_event.h"
+#include "events/mouse_event.h"
+
+#include "graphics/layers/layer2d.h"
+
 using namespace std;
 using namespace AdunGL;
 using namespace graphics;
 using namespace maths;
 using namespace utils;
+using namespace events;
 
 namespace AdunGL
 {
