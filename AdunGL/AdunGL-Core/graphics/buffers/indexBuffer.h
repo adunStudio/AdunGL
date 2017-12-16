@@ -4,7 +4,7 @@
 //
 
 #include <GL/freeglut.h>
-
+#include "buffer.h"
 namespace AdunGL
 {
 	namespace graphics
@@ -12,8 +12,8 @@ namespace AdunGL
 		class IndexBuffer
 		{
 		private:
-			GLuint bufferID;
-			GLuint count;
+			Buffer* m_buffer;
+			GLuint  m_count;
 
 		public:
 			IndexBuffer(GLushort* data, GLsizei count);
@@ -23,7 +23,7 @@ namespace AdunGL
 			void bind() const;
 			void unbind() const;
 
-			inline GLuint getCount() const { return count; }
+			inline GLuint getCount() const { return m_count; }
 		};
 	}
 }

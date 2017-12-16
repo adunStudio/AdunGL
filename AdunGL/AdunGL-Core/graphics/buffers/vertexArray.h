@@ -14,15 +14,19 @@ namespace AdunGL
 		class VertexArray
 		{
 		private:
+			static GLuint s_currentBinding;
+
+		private:
 			GLuint arrayID;
-			std::vector<Buffer* > buffers;
+			std::vector<Buffer* > m_buffers;
 
 		public:
 			VertexArray();
 			~VertexArray();
 
-			void addBuffer(Buffer* buffer, GLuint index);
+			Buffer* getBuffer(GLuint index = 0);
 
+			void pushBuffer(Buffer* buffer);
 			void bind() const;
 			void unbind() const;
 

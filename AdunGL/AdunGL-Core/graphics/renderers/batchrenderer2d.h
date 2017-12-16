@@ -13,6 +13,9 @@
 #include "../buffers/framebuffer.h"
 #include "../shaders/shader_factory.h"
 #include "../mesh_factory.h"
+#include "../buffers/vertexArray.h"
+#include "../buffers/indexBuffer.h"
+#include "../api/render_api.h"
 
 namespace AdunGL
 {
@@ -30,11 +33,14 @@ namespace AdunGL
 		class BatchRenderer2D : public Renderer2D {
 
 		private:
+			VertexArray* m_vertexArray;
 			GLuint m_vao;
 			GLuint m_vbo;
 			IndexBuffer* m_ibo;
-			GLsizei m_indexCount = 0;
+			IndexBuffer* m_lineIbo;
+			GLsizei m_indexCount, m_lineIndexCount;
 			VertexData* m_buffer;
+
 
 			std::vector<GLuint> m_textureSlots;
 
@@ -47,7 +53,7 @@ namespace AdunGL
 
 			Shader* m_simpleShader;
 
-			GLuint m_screenQuad;
+			VertexArray* m_screenQuad;
 
 		public:
 			BatchRenderer2D(GLuint width, GLuint height);
@@ -56,6 +62,7 @@ namespace AdunGL
 
 			void begin() override;
 			void submit(const Renderable2D *renderable) override;
+			void drawAABB(const maths::AABB& aabb, maths::vec4 color = maths::vec4(1, 0, 0, 0));
 			void drawString(const std::string& text, const maths::vec3& position, const Font& font, const maths::vec4& color) override;
 			void end() override;
 			void flush() override;

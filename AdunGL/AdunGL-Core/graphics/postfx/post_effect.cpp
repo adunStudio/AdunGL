@@ -24,20 +24,20 @@ namespace AdunGL
 			m_passes.pop_back();
 		}
 
-		void PostEffects::renderPostEffects(FrameBuffer* source, FrameBuffer* target, GLuint quad, IndexBuffer* indices)
+		void PostEffects::renderPostEffects(FrameBuffer* source, FrameBuffer* target, VertexArray* quad, IndexBuffer* indices)
 		{
 			target->bind();
-			glActiveTexture(GL_TEXTURE0);
+			API::SetActiveTexture(GL_TEXTURE0);
 			source->getTexture()->bind();
 
-			glBindVertexArray(quad);
+			quad->bind();
 			indices->bind();
 
 			for (auto pass : m_passes)
 				pass->renderPass(target);
 
 			indices->unbind();
-			glBindVertexArray(0);
+			quad->unbind();
 		}
 	}
 }

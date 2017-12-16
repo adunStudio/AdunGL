@@ -25,9 +25,11 @@ namespace AdunGL
 
 		BatchRenderer2D::~BatchRenderer2D()
 		{
+			delete m_screenQuad;
 			delete m_ibo;
-			glDeleteBuffers(1, &m_vbo);
-			glDeleteVertexArrays(1, &m_vao);
+
+			API::FreeBuffer(m_vbo);
+			API::FreeVertexArray(m_vao);
 		}
 
 		void BatchRenderer2D::init()
@@ -85,7 +87,7 @@ namespace AdunGL
 			m_ibo = new IndexBuffer(indices, RENDERER_INDICES_SIZE);
 
 			glBindVertexArray(0);
-
+			
 			// 프레임버퍼 세팅
 			glGetIntegerv(GL_FRAMEBUFFER_BINDING, &m_screenBuffer);
 			
@@ -409,13 +411,15 @@ namespace AdunGL
 				else
 					m_frameBuffer->getTexture()->bind();
 
-				glBindVertexArray(m_screenQuad);
+				//glBindVertexArray(m_screenQuad);
 
+				m_screenQuad->bind();
 				m_ibo->bind();
 				glDrawElements(GL_TRIANGLES, 6, GL_UNSIGNED_INT, NULL);
 				m_ibo->unbind();
-				
-				glBindVertexArray(0);
+				m_screenQuad->unbind();
+
+				//glBindVertexArray(0);
 				
 				m_simpleShader->disable();
 			}

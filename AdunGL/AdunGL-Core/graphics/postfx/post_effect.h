@@ -2,8 +2,10 @@
 
 #include <vector>
 #include "../buffers/frameBuffer.h"
+#include "../buffers/vertexArray.h"
 #include "../buffers/indexBuffer.h"
 #include "post_effect_pass.h"
+#include "../api/render_api.h"
 
 namespace AdunGL
 {
@@ -21,7 +23,7 @@ namespace AdunGL
 			void push(PostEffectsPass* pass);
 			void pop();
 
-			void renderPostEffects(FrameBuffer* source, FrameBuffer* target, GLuint quad, IndexBuffer* indices);
+			void renderPostEffects(FrameBuffer* source, FrameBuffer* target, VertexArray* quad, IndexBuffer* indices);
 		};
 	}
 }

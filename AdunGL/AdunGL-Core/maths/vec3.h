@@ -35,8 +35,13 @@ namespace AdunGL
 			vec3& operator*=(const vec3& other);
 			vec3& operator/=(const vec3& other);
 
-			bool operator==(const vec3& other);
-			bool operator!=(const vec3& other);
+			bool operator==(const vec3& other) const;
+			bool operator!=(const vec3& other) const;
+
+			bool operator< (const vec3& other) const;
+			bool operator<=(const vec3& other) const;
+			bool operator> (const vec3& other) const;
+			bool operator>=(const vec3& other) const;
 
 			float distance(const vec3& other);
 

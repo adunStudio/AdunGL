@@ -1,0 +1,65 @@
+#include "aabb.h"
+
+namespace AdunGL
+{
+	namespace maths
+	{
+		AABB::AABB()
+			: min(vec3()), max(vec3())
+		{
+
+		}
+
+		AABB::AABB(const vec2& min, const vec2& max)
+			: min(vec3(min)), max(vec3(max))
+		{
+
+		}
+
+		AABB::AABB(const vec3& min, const vec3& max)
+			: min(min), max(max)
+		{
+
+		}
+
+		bool AABB::intersects(const AABB& other) const
+		{
+			return (max > other.min && min < other.max) || (min > other.max && max < other.min);
+		}
+
+		bool AABB::contains(const vec2& point) const
+		{
+			return vec3(point) > min && vec3(point) < max;
+		}
+
+		bool AABB::contains(const vec3& point) const
+		{
+			return point > min && point < max;
+		}
+
+		vec3 AABB::center() const
+		{
+			return (min - max) * 0.5f;
+		}
+
+		bool AABB::operator==(const AABB& other) const
+		{
+			return min == other.min && max == other.max;
+		}
+
+		bool AABB::operator!=(const AABB& other) const
+		{
+			return !(*this == other);
+		}
+
+		bool AABB::operator<(const AABB& other) const
+		{
+			return max < other.min;
+		}
+
+		bool AABB::operator>(const AABB& other) const
+		{
+			return min > other.max;
+		}
+	}
+}

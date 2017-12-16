@@ -4,25 +4,38 @@
 //
 
 #include <GL/freeglut.h>
+#include "../api/render_api.h"
+#include "buffer_layout.h"
 
 namespace AdunGL
 {
 	namespace graphics
 	{
-		class Buffer
-		{
-		private:
-			GLuint bufferID;
-			GLuint componentCount;
 
-		public:
-			Buffer(GLfloat* data, GLsizei count, GLuint componentCount);
+		struct Buffer
+		{
+			GLuint id;
+			GLuint target, usage;
+			GLuint size;
+
+			BufferLayout layout;
+
+			Buffer(GLuint target, GLuint usage);
 			~Buffer();
 
-			void bind() const;
-			void unbind() const;
+			void resize(GLuint size);
+			void setData(GLuint size, const void* data);
 
-			inline GLuint getComponentCount() const { return componentCount; }
+			template<typename T>
+			T* getPointer(GLuint flags = GL_WRITE_ONLY)
+			{
+				return (T*)API::GetBufferPointer(target, flags);
+			}
+
+			void releasePointer();
+			
+			void bind();
+			void unbind();
 		};
 	}
 }

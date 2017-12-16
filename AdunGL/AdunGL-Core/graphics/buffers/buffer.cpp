@@ -8,7 +8,7 @@ namespace AdunGL
 {
 	namespace graphics
 	{
-		Buffer::Buffer(GLfloat* data, GLsizei count, GLuint componentCount)
+		/*Buffer::Buffer(GLfloat* data, GLsizei count, GLuint componentCount)
 			:componentCount(componentCount)
 		{
 			// 버퍼 생성
@@ -49,30 +49,52 @@ namespace AdunGL
 
 
 
-			/*
+			
 			1. glGen* 함수를 통해서 값을 생성하고
 			2. glBind* 함수를 통해서 변수에 Binding을 하고,
 			3. glBufferData 함수로 값을 저장하고,
 			4. Display에 대한 Callback을 받았을 때, glEnableVertexAttibArray() 함수를 통해 사용할 배열을 활성화시키고,
 			5. glVertexAttribPointer()함수를 통해 값을 어떻게 읽을지에 대해서 파라미터 지정을 하고,
 			6. 마지막으로 glDrawArray()함수를 통해 그리고 glDisableVertexAttribArray()함수를 통해 배열을 비활성화 시킨다.
-			*/
+			
+		}*/
+
+		
+		Buffer::Buffer(GLuint target, GLuint usage)
+			: target(target), usage(usage)
+		{
+			id = API::CreateBuffer();
 		}
 
 		Buffer::~Buffer()
 		{
-			glDeleteBuffers(GL_ARRAY_BUFFER, &bufferID);
+			API::FreeBuffer(id);
 		}
 
-		void Buffer::bind() const
+		void Buffer::resize(GLuint size)
 		{
-			//
-			glBindBuffer(GL_ARRAY_BUFFER, bufferID);
+			this->size = size;
+			API::SetBufferData(target, size, NULL, usage);
 		}
 
-		void Buffer::unbind() const
+		void Buffer::setData(GLuint size, const void* data)
 		{
-			glBindBuffer(GL_ARRAY_BUFFER, 0);
+			API::SetBufferData(target, size, data, usage);
+		}
+
+		void Buffer::releasePointer()
+		{
+			API::ReleaseBufferPointer(target);
+		}
+
+		void Buffer::bind()
+		{
+			API::BindBuffer(target, id);
+		}
+
+		void Buffer::unbind()
+		{
+			API::UnbindBuffers(target);
 		}
 	}
 }

@@ -145,6 +145,12 @@
     <ClCompile Include="AdunGL-Core\graphics\renderers\forward_renderer.cpp">
       <Filter>소스 파일</Filter>
     </ClCompile>
+    <ClCompile Include="AdunGL-Core\graphics\buffers\buffer_layout.cpp">
+      <Filter>소스 파일</Filter>
+    </ClCompile>
+    <ClCompile Include="AdunGL-Core\maths\aabb.cpp">
+      <Filter>소스 파일</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="AdunGL-Core\utils\imageload.h">
@@ -310,6 +316,15 @@
       <Filter>헤더 파일</Filter>
     </ClInclude>
     <ClInclude Include="AdunGL-Core\graphics\renderers\forward_renderer.h">
+      <Filter>헤더 파일</Filter>
+    </ClInclude>
+    <ClInclude Include="AdunGL-Core\graphics\api\render_api.h">
+      <Filter>헤더 파일</Filter>
+    </ClInclude>
+    <ClInclude Include="AdunGL-Core\graphics\buffers\buffer_layout.h">
+      <Filter>헤더 파일</Filter>
+    </ClInclude>
+    <ClInclude Include="AdunGL-Core\maths\aabb.h">
       <Filter>헤더 파일</Filter>
     </ClInclude>
   </ItemGroup>

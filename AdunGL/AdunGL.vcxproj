@@ -175,6 +175,7 @@
     <ClCompile Include="AdunGL-Core\exc\freetype-gl\texture-font.c" />
     <ClCompile Include="AdunGL-Core\exc\freetype-gl\vector.c" />
     <ClCompile Include="AdunGL-Core\graphics\buffers\buffer.cpp" />
+    <ClCompile Include="AdunGL-Core\graphics\buffers\buffer_layout.cpp" />
     <ClCompile Include="AdunGL-Core\graphics\buffers\frameBuffer.cpp" />
     <ClCompile Include="AdunGL-Core\graphics\buffers\indexBuffer.cpp" />
     <ClCompile Include="AdunGL-Core\graphics\buffers\vertexArray.cpp" />
@@ -198,6 +199,7 @@
     <ClCompile Include="AdunGL-Core\graphics\texture.cpp" />
     <ClCompile Include="AdunGL-Core\graphics\texture_manager.cpp" />
     <ClCompile Include="AdunGL-Core\graphics\window.cpp" />
+    <ClCompile Include="AdunGL-Core\maths\aabb.cpp" />
     <ClCompile Include="AdunGL-Core\maths\mat4.cpp" />
     <ClCompile Include="AdunGL-Core\maths\vec2.cpp" />
     <ClCompile Include="AdunGL-Core\maths\vec3.cpp" />
@@ -220,9 +222,11 @@
     <ClInclude Include="AdunGL-Core\exc\freetype-gl\texture-font.h" />
     <ClInclude Include="AdunGL-Core\exc\freetype-gl\vec234.h" />
     <ClInclude Include="AdunGL-Core\exc\freetype-gl\vector.h" />
+    <ClInclude Include="AdunGL-Core\graphics\api\render_api.h" />
     <ClInclude Include="AdunGL-Core\graphics\bases\renderable2d.h" />
     <ClInclude Include="AdunGL-Core\graphics\bases\renderer2d.h" />
     <ClInclude Include="AdunGL-Core\graphics\buffers\buffer.h" />
+    <ClInclude Include="AdunGL-Core\graphics\buffers\buffer_layout.h" />
     <ClInclude Include="AdunGL-Core\graphics\buffers\frameBuffer.h" />
     <ClInclude Include="AdunGL-Core\graphics\buffers\indexBuffer.h" />
     <ClInclude Include="AdunGL-Core\graphics\buffers\vertexArray.h" />
@@ -248,6 +252,7 @@
     <ClInclude Include="AdunGL-Core\graphics\texture.h" />
     <ClInclude Include="AdunGL-Core\graphics\texture_manager.h" />
     <ClInclude Include="AdunGL-Core\graphics\window.h" />
+    <ClInclude Include="AdunGL-Core\maths\aabb.h" />
     <ClInclude Include="AdunGL-Core\maths\mat4.h" />
     <ClInclude Include="AdunGL-Core\maths\maths.h" />
     <ClInclude Include="AdunGL-Core\maths\math_func.h" />
